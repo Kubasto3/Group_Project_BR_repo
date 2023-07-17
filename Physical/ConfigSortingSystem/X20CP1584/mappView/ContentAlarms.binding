@@ -5,6 +5,7 @@
 <Source xsi:type="mapp" refId="gAlarmXCore" attribute="link" />
 <Target xsi:type="brease" contentRefId="ContentAlarms" widgetRefId="AlarmList" attribute="mpLink" />
 </Binding>
+<<<<<<< HEAD
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Alarms:pendingAlarms" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentAlarms" widgetRefId="ButtonAcknowledgeOne" attribute="enable" />
@@ -13,5 +14,7 @@
 <Source xsi:type="opcUa" refId="::Alarms:pendingAlarms" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentAlarms" widgetRefId="ButtonAcknowledgeAll" attribute="enable" />
 </Binding>
+=======
+>>>>>>> 68ea2635d54442246b690e0137b85d5a5795ffdb
 </Bindings>
 </BindingsSet>
