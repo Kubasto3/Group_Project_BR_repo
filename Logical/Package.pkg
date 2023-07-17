@@ -8,5 +8,6 @@
     <Object Type="Package">mappView</Object>
     <Object Type="Program" Language="IEC">ProgramAuto</Object>
     <Object Type="Program" Language="IEC">ProgramManual</Object>
+    <Object Type="Program" Language="IEC">RecipeManag</Object>
   </Objects>
 </Package>

@@ -9,9 +9,20 @@
   </Aliases>
   <DefaultView>
     <Module Name="&lt;Default&gt;">
-      <Task Name="Program">
+      <Task Name="ProgramAut">
         <Variable Name="BAIT" />
+        <Variable Name="MotorBeltAxisBasic" RecursiveEnable="2" />
+        <Variable Name="MotorBeltParType" RecursiveEnable="2" />
         <Variable Name="Wysun" />
+      </Task>
+      <Task Name="ProgramMan">
+        <Variable Name="MpRecipeRegPar_0" RecursiveEnable="2" />
+        <Variable Name="MpRecipeUI_0" RecursiveEnable="2" />
+        <Variable Name="MpRecipeXml_0" RecursiveEnable="2" />
+        <Variable Name="ProcessRecipe0" RecursiveEnable="2" />
+        <Variable Name="Button" />
+        <Variable Name="UIConnect0" RecursiveEnable="2" />
+        <Variable Name="Button2" />
       </Task>
     </Module>
   </DefaultView>

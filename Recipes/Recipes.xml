@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DATA>
+	<Element Name="ProgramManual:ProcessRecipe0" Type="PvParameter">
+		<Group ID="ProgramManual:ProcessRecipe0">
+			<Property ID="RedSign" DataType="BOOL" Value="true" />
+			<Property ID="Int" DataType="USINT" Value="10" />
+			<Property ID="Widget" DataType="USINT" Value="60" />
+			<Property ID="BiR" DataType="BOOL" Value="true" />
+			<Property ID="RiB" DataType="USINT" Value="150" />
+		</Group>
+	</Element>
+</DATA>

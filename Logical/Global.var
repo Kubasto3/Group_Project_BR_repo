@@ -1,8 +1,4 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	gStop : USINT;
+	gStart : BOOL;
 END_VAR

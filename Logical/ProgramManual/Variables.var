@@ -1,8 +1,7 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	ProcessRecipe0 : ProcessRecipe := (RedSign:=FALSE,Int:=0,Widget:=10,BiR:=FALSE,RiB:=0);
+	MpRecipeXml_0 : MpRecipeXml;
+	MpRecipeRegPar_0 : MpRecipeRegPar;
+	MpRecipeUI_0 : MpRecipeUI;
+	UIConnect0 : MpRecipeUIConnectType;
 END_VAR
