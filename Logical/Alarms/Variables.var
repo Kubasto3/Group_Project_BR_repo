@@ -1,7 +1,11 @@
 VAR
+	test_alarm : BOOL;
 	MpAlarmXCore_0 : MpAlarmXCore;
-<<<<<<< HEAD
 	pendingAlarms : BOOL;
-=======
->>>>>>> 68ea2635d54442246b690e0137b85d5a5795ffdb
+	enableRedIcon : BOOL;
+	enableYellowIcon : BOOL;
+	redIconTimer : TON;
+	timerCycle : BOOL;
+	MpAlarmXHistory_0 : MpAlarmXHistory;
+	isAcknowledged : BOOL;
 END_VAR

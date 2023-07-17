@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
 <Configuration>
-<<<<<<< HEAD
   <Element ID="gAlarmXCore" Type="mpalarmxcore">
     <Group ID="mapp.AlarmX.Core.Configuration">
       <Group ID="[0]">
@@ -15,9 +14,18 @@
           </Group>
         </Selector>
       </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="test_alarm" />
+        <Property ID="Message" Value="remove after testing" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::Alarms:test_alarm" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="1" />
+            </Group>
+          </Group>
+        </Selector>
+      </Group>
     </Group>
   </Element>
-=======
-  <Element ID="gAlarmXCore" Type="mpalarmxcore" />
->>>>>>> 68ea2635d54442246b690e0137b85d5a5795ffdb
 </Configuration>

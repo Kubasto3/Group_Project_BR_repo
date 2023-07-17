@@ -9,16 +9,47 @@ PROGRAM _CYCLIC
 	MpAlarmXCore_0.Enable := TRUE;
 	MpAlarmXCore_0.MpLink := ADR(gAlarmXCore);
 	MpAlarmXCore_0();
-<<<<<<< HEAD
 	
+	MpAlarmXHistory_0.Enable := TRUE;
+	MpAlarmXHistory_0.MpLink := ADR(gAlarmXHistory);
+	MpAlarmXHistory_0();
+	
+	redIconTimer.PT := T#500ms;
+	redIconTimer();
+	
+	isAcknowledged := MpAlarmXCheckState(gAlarmXCore, 'test_alarm', mpALARMX_STATE_ACKNOWLEDGED);
+
 	IF (MpAlarmXCore_0.PendingAlarms > 0) THEN
 		pendingAlarms := TRUE;
 	ELSE
 		pendingAlarms := FALSE;
 	END_IF;
 	
-=======
->>>>>>> 68ea2635d54442246b690e0137b85d5a5795ffdb
+	IF (MpAlarmXCore_0.ActiveAlarms = 0 AND MpAlarmXCore_0.PendingAlarms > 0) THEN
+		enableYellowIcon := TRUE;
+	ELSE
+		enableYellowIcon := FALSE;
+	END_IF;
+	
+	IF (MpAlarmXCore_0.ActiveAlarms > 0) THEN
+		IF (NOT(isAcknowledged)) THEN
+			//blinking
+			IF (redIconTimer.IN = FALSE) THEN
+				redIconTimer.IN := TRUE;
+			ELSIF (redIconTimer.Q) THEN
+				timerCycle := NOT timerCycle;
+				redIconTimer.IN := FALSE;
+			END_IF;
+			enableRedIcon := timerCycle;
+		ELSE
+			//static
+			enableRedIcon := TRUE;
+		END_IF;
+	ELSE
+		enableRedIcon := FALSE;
+	END_IF;
+	
+	
 END_PROGRAM
 
 PROGRAM _EXIT
