@@ -1,6 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="ContentAuto" height="620" width="1280" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.Label" id="Label1" top="140" left="120" zIndex="0" text="auto" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="585" left="1201" zIndex="0" text="auto" visible="false" />
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxAutoControl" top="25" left="25" width="650" height="580" zIndex="1">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Button" id="ButtonAutoStart" top="48" left="148" width="354" height="125" zIndex="0" text="START" fontSize="25px" />
+        <Widget xsi:type="widgets.brease.Button" id="ButtonAutoStop" top="199" left="149" width="352" height="101" zIndex="1" text="STOP" cornerRadius="15px" fontSize="25px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelMachineStarted" top="324" left="149" width="351" height="76" zIndex="2" text="Working..." textColor="rgba(0, 192, 0, 1)" textAlign="center" fontSize="20px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelMachineStopped" top="324" left="149" width="351" height="76" zIndex="3" text="Machine stopped" textColor="rgba(255, 0, 0, 1)" textAlign="center" fontSize="20px" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxMachineState" top="25" left="700" width="549" height="350" zIndex="2">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDetectedWeight" top="98" left="348" width="151" height="29" zIndex="0" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDetectedConveyorPosition" top="149" left="349" width="151" zIndex="1" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDetectedConveyorSpeed" top="199" left="349" width="151" zIndex="2" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelItemWeight" top="99" left="150" width="179" height="28" zIndex="3" text="Item weight:" textAlign="left" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelConveyorPosition" top="149" left="150" width="179" zIndex="4" text="Current conveyor position:" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelConveyorSpeed" top="199" left="150" width="179" zIndex="5" text="Current Conveyor speed:" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelMachineStep" top="24" left="149" width="201" height="29" zIndex="6" text="Current machine step:" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputCurrentStep" top="24" left="349" width="151" height="28" zIndex="7" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxCounter" top="375" left="700" width="550" height="224" zIndex="3">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputLeftChamber" top="99" left="50" width="151" height="76" zIndex="0" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputRightChamber" top="99" left="349" width="151" height="76" zIndex="1" />
+        <Widget xsi:type="widgets.brease.Button" id="ButtonResetRightChamber" top="174" left="399" zIndex="2" text="RESET" />
+        <Widget xsi:type="widgets.brease.Button" id="ButtonResetLeftChamber" top="174" left="49" zIndex="3" text="RESET" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelChamberCaunter" top="24" left="99" width="376" zIndex="4" text="NUMBER OF ITEMS IN LEFT AND RIGHT CHAMBER" />
+      </Widgets>
+    </Widget>
   </Widgets>
 </Content>
