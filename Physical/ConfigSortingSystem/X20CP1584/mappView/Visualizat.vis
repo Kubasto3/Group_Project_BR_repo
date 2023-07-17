@@ -16,9 +16,11 @@
     <BindingsSet refId="ContentAlarms_binding" />
   </BindingsSets>
   <EventBindingsSets>
+    <EventBindingsSet refId="ContentTop_eventbinding" />
     <EventBindingsSet refId="ContentAlarms_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
+    <Dialog refId="dialogMessageBoxLogin" />
     <Dialog refId="dialogAlarmHistory" />
   </Dialogs>
   <Contents>
@@ -31,6 +33,7 @@
     <Content refId="ContentAlarms" />
     <Content refId="ContentCharts" />
     <Content refId="ContentDiagnostics" />
+    <Content refId="contentMessageBoxLogin" />
     <Content refId="ContentAlarmHistory" />
   </Contents>
   <SnippetsSets />
