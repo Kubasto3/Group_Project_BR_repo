@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Content id="ContentLeft" height="550" width="200" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Content id="ContentLeft" height="620" width="200" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
     <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButtonAuto" top="20" left="20" width="160" height="40" zIndex="0" pageId="PageAuto" text="Auto" />
     <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButtonManual" top="100" left="20" width="160" height="40" zIndex="1" pageId="PageManual" text="Manual" />

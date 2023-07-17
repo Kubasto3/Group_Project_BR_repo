@@ -11,12 +11,17 @@
     <Page refId="PageDiagnostics" />
   </Pages>
   <Navigations />
-  <BindingsSets />
+  <BindingsSets>
+    <BindingsSet refId="ContentAlarmHistory_binding" />
+    <BindingsSet refId="ContentAlarms_binding" />
+  </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentTop_eventbinding" />
+    <EventBindingsSet refId="ContentAlarms_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="dialogMessageBoxLogin" />
+    <Dialog refId="dialogAlarmHistory" />
   </Dialogs>
   <Contents>
     <Content refId="ContentTop" />
@@ -29,6 +34,7 @@
     <Content refId="ContentCharts" />
     <Content refId="ContentDiagnostics" />
     <Content refId="contentMessageBoxLogin" />
+    <Content refId="ContentAlarmHistory" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
