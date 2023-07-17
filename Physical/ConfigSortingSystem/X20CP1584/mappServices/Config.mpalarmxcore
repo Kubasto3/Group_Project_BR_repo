@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
 <Configuration>
-<<<<<<< HEAD
   <Element ID="gAlarmXCore" Type="mpalarmxcore">
     <Group ID="mapp.AlarmX.Core.Configuration">
       <Group ID="[0]">
@@ -17,7 +16,4 @@
       </Group>
     </Group>
   </Element>
-=======
-  <Element ID="gAlarmXCore" Type="mpalarmxcore" />
->>>>>>> 68ea2635d54442246b690e0137b85d5a5795ffdb
 </Configuration>

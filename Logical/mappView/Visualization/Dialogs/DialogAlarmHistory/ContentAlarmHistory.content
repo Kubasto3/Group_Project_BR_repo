@@ -5,7 +5,7 @@
       <Widgets>
         <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryItemTimestamp" zIndex="0" columnType="timestamp" text="Date" />
         <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryItemName" width="180" zIndex="1" columnType="name" text="Alarm" />
-        <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryItemMessage" zIndex="2" text="Description" />
+        <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryItemMessage" width="220" zIndex="2" text="Description" />
       </Widgets>
     </Widget>
   </Widgets>
