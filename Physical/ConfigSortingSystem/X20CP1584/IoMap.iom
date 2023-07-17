@@ -1,0 +1,3 @@
+VAR_CONFIG
+	::Program:BAIT AT %QW."Numatics_G3".Out01_I3201Out;
+END_VAR
