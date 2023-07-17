@@ -12,8 +12,12 @@
   </Pages>
   <Navigations />
   <BindingsSets />
-  <EventBindingsSets />
-  <Dialogs />
+  <EventBindingsSets>
+    <EventBindingsSet refId="ContentTop_eventbinding" />
+  </EventBindingsSets>
+  <Dialogs>
+    <Dialog refId="dialogMessageBoxLogin" />
+  </Dialogs>
   <Contents>
     <Content refId="ContentTop" />
     <Content refId="ContentLeft" />
@@ -24,6 +28,7 @@
     <Content refId="ContentAlarms" />
     <Content refId="ContentCharts" />
     <Content refId="ContentDiagnostics" />
+    <Content refId="contentMessageBoxLogin" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
