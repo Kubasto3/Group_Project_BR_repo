@@ -13,6 +13,10 @@
         <Variable Name="BAIT" />
         <Variable Name="Wysun" />
       </Task>
+      <Task Name="Alarms">
+        <Variable Name="MpAlarmXCore_0" />
+        <Variable Name="pendingAlarms" />
+      </Task>
     </Module>
   </DefaultView>
 </OpcUaSource>
