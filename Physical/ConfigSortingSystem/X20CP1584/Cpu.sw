@@ -5,9 +5,10 @@
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
-    <Task Name="ProgramAut" Source="ProgramAuto.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="ProgramMan" Source="ProgramManual.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="ProgramVis" Source="ProgramVisionCtr.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Auto" Source="Programs.Auto.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Manual" Source="Programs.Manual.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="VisionCtr" Source="Programs.VisionCtr.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="ProgramRec" Source="Programs.RecipesMgmnt.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <Libraries>
     <LibraryObject Name="McBase" Source="Libraries.McBase.lby" Memory="UserROM" Language="binary" Debugging="true" />

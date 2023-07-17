@@ -6,8 +6,6 @@
     <Object Type="File" Description="Global variables">Global.var</Object>
     <Object Type="Package" Description="Global libraries">Libraries</Object>
     <Object Type="Package">mappView</Object>
-    <Object Type="Program" Language="IEC">ProgramAuto</Object>
-    <Object Type="Program" Language="IEC">ProgramManual</Object>
-    <Object Type="Program" Language="IEC">ProgramVisionCtr</Object>
+    <Object Type="Package">Programs</Object>
   </Objects>
 </Package>
