@@ -3,5 +3,6 @@
 <Package SubType="Layouts" PackageType="Layouts" xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
     <Object Type="File">LayoutMain.layout</Object>
+    <Object Type="File">LayoutAlarmHistory.layout</Object>
   </Objects>
 </Package>
