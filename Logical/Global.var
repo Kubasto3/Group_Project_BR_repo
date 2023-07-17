@@ -1,7 +1,13 @@
 
 VAR
-
+	Coffee : CofeeType;
+	gMpRecipeXML_0 : MpRecipeXml;
+	gMpRecipeRegPar_0 : MpRecipeRegPar;
+	gMpRecipeUI_0 : MpRecipeUI;
+	gUISetup : MpRecipeUISetupType;
+	gUIConnect : MpRecipeUIConnectType;
 END_VAR
+
 
 VAR CONSTANT
 
