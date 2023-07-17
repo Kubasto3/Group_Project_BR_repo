@@ -1,4 +1,7 @@
 VAR
 	MpAlarmXCore_0 : MpAlarmXCore;
+<<<<<<< HEAD
 	pendingAlarms : BOOL;
+=======
+>>>>>>> 68ea2635d54442246b690e0137b85d5a5795ffdb
 END_VAR

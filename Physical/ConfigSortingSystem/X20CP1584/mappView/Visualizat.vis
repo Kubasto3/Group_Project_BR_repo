@@ -12,8 +12,8 @@
   </Pages>
   <Navigations />
   <BindingsSets>
-    <BindingsSet refId="ContentAlarms_binding" />
     <BindingsSet refId="ContentAlarmHistory_binding" />
+    <BindingsSet refId="ContentAlarms_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentAlarms_eventbinding" />
