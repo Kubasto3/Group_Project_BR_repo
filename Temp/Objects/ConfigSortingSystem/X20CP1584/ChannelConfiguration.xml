@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<?AutomationRuntimeIOSystem Version = 2.5.0.7?>
+<ChannelConfiguration xmlns="http://www.br-automation.com/AR/IO">
+  <Module ID="$root" Hardware="X20CP1584" HardwareModuleName="X20CP1584" ModuleID="35">
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/HW" Address="0" Direction="IN" Type="UDINT" Sig_St_Udint="1" ChannelType="SerialNumber" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/HW" Address="1" Direction="IN" Type="UINT" Sig_St_Uint="1" ChannelType="ModuleID" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="J4.25" Ext="/HW" Address="15" Direction="IN" Type="UINT" ChannelType="HardwareVariant" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="J4.25" Ext="/HW" Address="16" Direction="IN" Type="UINT" ChannelType="FirmwareVersion" />
+    <Channel ID="StorageWear" Description="Wear level of storage medium in percent" FromVersion="A4.90" Ext="/HW" Address="17" Direction="IN" Type="UINT" Sig_Ana_0percent_100percent_genuine="1" ChannelType="GenericFuncCall" Function="storageDpWear" CyclicUpdate="1" />
+    <Channel ID="ModeSwitch" Description="Mode switch" Ext="/HW" Address="2" Direction="IN" Type="USINT" Sig_St_Byte="1" ChannelType="Mode" />
+    <Channel ID="BatteryStatusCPU" Description="Battery status CPU (0 = battery low or missing, 1 = battery ok,)" Ext="/HW" Address="3" Direction="IN" Type="USINT" Sig_St_Byte="1" ChannelType="Battery" BatteryDetectionMethod="1" Ordinal="2" />
+    <Channel ID="TemperatureCPU" Description="Temperature CPU [1/10C]" Ext="/HW" Address="4" Direction="IN" Type="UINT" Sig_Temp_CpuTemp="1" ChannelType="Temp" Ordinal="1" />
+    <Channel ID="TemperatureENV" Description="Temperature cooling plate [1/10C]" Ext="/HW" Address="5" Direction="IN" Type="UINT" Sig_Temp_CpuTemp="1" ChannelType="Temp" Ordinal="2" />
+    <Channel ID="SystemTime" Description="System time at the start of the current task cycle [µs]" Ext="/HW" Address="9" Direction="IN" Type="DINT" Sig_St_Dint="1" ChannelType="SystemTime" />
+    <Channel ID="StatusInput01" Description="I/O power supply warning (0 = DC OK)" Ext="/HW" Address="8" Direction="IN" Type="BOOL" Sig_St_Bool="1" ChannelType="StatusInput" Ordinal="2" />
+    <Channel ID="SupplyCurrent" Description="Bus current 0.1 A  X2X Link IF6" FromVersion="A4.51" Ext="/HW" Address="11" Direction="IN" Type="USINT" Sig_St_Byte="1" ChannelType="StatusInput" Ordinal="3" />
+    <Channel ID="SupplyVoltage" Description="Bus voltage 0.1 V  X2X Link IF6" FromVersion="A4.51" Ext="/HW" Address="12" Direction="IN" Type="USINT" Sig_St_Byte="1" ChannelType="StatusInput" Ordinal="4" />
+    <Channel ID="IF2.NodeSwitch" Description="Node switch" Ext="/HW" Address="6" Direction="IN" Type="USINT" Sig_St_Byte="1" ChannelType="Node" Device="PCI.IF2" />
+    <Channel ID="IF3.LinkOk" Description="Link state" Ext="/INFO" Address="0x8000001A" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF3.OutputDMAMargin" Description="Margin to output cycle deadline in microseconds" Ext="/INFO" Address="0x8000000C" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF3.NodeNumber" Description="Node number currently in use (255 = invalid)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF3.CycleOk" Description="Indication for proper cyclic operation (1 = operational)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF3.SyncOk" Description="Indication for a synchronized POWERLINK-system (1 = synchronized)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF3.TimeSeconds" Description="Absolute time extracted from current SoC-Frame (NetTime in POWERLINK V2) - Seconds" FromVersion="M2.90" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.TimeNanoseconds" Description="Absolute time extracted from current SoC-Frame (NetTime in POWERLINK V2) - Nanoseconds" FromVersion="M2.90" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.NettimeSoC" Description="Network time extracted from current SoC-Frame [µs] (RelativeTime in POWERLINK V2)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF3.NettimeOffset" Description="Network time offset to local system time [µs]" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF3.CycleCount" Description="Overall number of bus cycles" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.FailedCycleCount" Description="Number of failed bus cycles" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.CycleTimeViolationCount" Description="Number of cycle time violations" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.CycleIdleTime" Description="Unoccupied time during one POWERLINK cycle [µs]" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.CycleCongestionCount" Description="allways 0, available for legacy projects" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF6.CycleCount" Description="Number of bus cycles" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.BreakCount" Description="Number of bus cycles with set break signal" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.Nettime" Description="Timestamp when the current input frame was started  [µs]" FromVersion="I2.90" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncErrorCount" Description="Number of failed synchronous frames" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncSramErrorCount" Description="Number of memory access errors within synchronous frame (overflow/underrun)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncBusyErrorCount" Description="Number of not sent synchronous frames (sender not ready)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncNoRxErrorCount" Description="Number of not received synchronous frames (timeout)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncFormatErrorCount" Description="Number of faulty synchronous frames" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncPendingErrorCount" Description="Number of synchronous frames which could not be sent because of receiving a frame" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncErrorCount" Description="Number of failed asynchronous frames" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncSramErrorCount" Description="Number of memory access errors within asynchronous frame (overflow/underrun)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncBusyErrorCount" Description="Number of not sent asynchronous frames (sender not ready)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncNoRxErrorCount" Description="Number of not received asynchronous frames (timeout)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncFormatErrorCount" Description="Number of faulty asynchronous frames" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncPendingErrorCount" Description="Number of asynchronous frames which could not be sent because of receiving a frame" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.DMALateOutputErrorCount" Description="Number of cycles when DMA for cyclic outputs was too late" FromVersion="G2.93" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.NrOfStationsMax" Description="Number of max. stations" FromVersion="A3.08" Ext="/INFO" Address="0x80000113" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF6.NrOfStationsConfigured" Description="Number of configured stations" FromVersion="A3.08" Ext="/INFO" Address="0x80000114" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF6.StationAtBusEnd" Description="Station at end of bus" FromVersion="A3.08" Ext="/INFO" Address="0x80000115" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF6.StationAtBusEndChangeTime" Description="Time of last change at station on end of bus" FromVersion="A3.08" Ext="/INFO" Address="0xC0000115" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" />
+    <Channel ID="IF6.StationPastOutFrameError" Description="First station which recognizes output frame error" FromVersion="A3.08" Ext="/INFO" Address="0x80000116" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF6.StationPastOutFrameErrorChangeTime" Description="Time of last change of channel StationPastOutFrameError" FromVersion="A3.08" Ext="/INFO" Address="0xC0000116" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" />
+    <Channel ID="IF6.StationPastInFrameError" Description="First station which recognizes input frame error" FromVersion="A3.08" Ext="/INFO" Address="0x80000117" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF6.StationPastInFrameErrorChangeTime" Description="Time of last change of channel StationPastInFrameError" FromVersion="A3.08" Ext="/INFO" Address="0xC0000117" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" />
+    <Channel ID="IF6.SyncInFrameSize" Description="Size of synchronous input frame [Bytes]" FromVersion="A3.08" Ext="/INFO" Address="0x80000118" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncOutFrameSize" Description="Size of synchronous output frame [Bytes]" FromVersion="A3.08" Ext="/INFO" Address="0x80000119" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncFrameSize" Description="Size of asynchronous frame [Bytes]" FromVersion="A3.08" Ext="/INFO" Address="0x8000011A" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncFrameSpareSize" Description="Size reserve within asynchronous frame [Bytes]" FromVersion="A3.08" Ext="/INFO" Address="0x8000011B" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.BusLengthConfigured" Description="Configured bus length [m]" FromVersion="A3.08" Ext="/INFO" Address="0x8000011C" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+  </Module>
+  <Module ID="IF3.ST1" Hardware="VSS112Q22.042P-000" HardwareModuleName="VSS112Q22.042P-000" ModuleID="32">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="0x00041018" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="0x00021018" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="0x00031018" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="0x000DFFF0" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+  </Module>
+  <Module ID="IF3.ST5" Hardware="X67BC8321-1" HardwareModuleName="X67BC8321-1" ModuleID="47" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" FromVersion="C2.87" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="EthRxLost" Description="Number of lost Rx-Frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000402" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxOversize" Description="Number of received oversized frames &gt; 1500 Bytes" FromVersion="C2.87" Ext="/INFO" Address="0x80000403" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxCRCError" Description="Number of Rx-Frames with wrong CRC" FromVersion="C2.87" Ext="/INFO" Address="0x80000404" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxOverflow" Description="Number of lost Rx-Frames due to performance shortage on BC" FromVersion="C2.87" Ext="/INFO" Address="0x80000405" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthTxCollision" Description="Number of collisions on ethernet while BC sending" FromVersion="C2.87" Ext="/INFO" Address="0x80000406" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthPhy1LinkLoss" Description="Increments each time when link of physical interface 1 is lost" FromVersion="C2.87" Ext="/INFO" Address="0x80000410" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="Nettime" Description="Nettime of cycle receiveing the Poll Respons of the station" FromVersion="I4.02" Ext="/INFO" Address="0x80000450" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+    <Channel ID="IF1.ST1.ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF1.ST1.SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.ST1.ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="IF1.ST1.HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="IF1.ST1.FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="IF1.ST1.DigitalInput01" Description="24 VDC, 0.01 to 25 ms switching delay, sink" Address="0" BitOffset="0" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="IF1.ST1.DigitalInput02" Description="24 VDC, 0.01 to 25 ms switching delay, sink" Address="0" BitOffset="1" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="IF1.ST1.DigitalInput03" Description="24 VDC, 0.01 to 25 ms switching delay, sink" Address="0" BitOffset="2" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="IF1.ST1.DigitalInput04" Description="24 VDC, 0.01 to 25 ms switching delay, sink" Address="0" BitOffset="3" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="IF1.ST1.DigitalInput05" Description="24 VDC, 0.07 to 25 ms switching delay, sink" Address="0" BitOffset="4" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="IF1.ST1.DigitalInput06" Description="24 VDC, 0.07 to 25 ms switching delay, sink" Address="0" BitOffset="5" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="IF1.ST1.DigitalInput07" Description="24 VDC, 0.07 to 25 ms switching delay, sink" Address="0" BitOffset="6" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="IF1.ST1.DigitalInput08" Description="24 VDC, 0.07 to 25 ms switching delay, sink" Address="0" BitOffset="7" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="IF1.CycleCount" Description="Number of bus cycles" FromVersion="C2.87" Ext="/INFO" Address="0x80000100" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.BreakCount" Description="Number of bus cycles with set break signal" FromVersion="C2.87" Ext="/INFO" Address="0x80000101" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncErrorCount" Description="Number of failed synchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000102" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncBusyErrorCount" Description="Number of not sent synchronous frames (sender not ready)" FromVersion="C2.87" Ext="/INFO" Address="0x80000105" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncNoRxErrorCount" Description="Number of not received synchronous frames (timeout)" FromVersion="C2.87" Ext="/INFO" Address="0x80000106" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncFormatErrorCount" Description="Number of faulty synchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000107" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncPendingErrorCount" Description="Number of synchronous frames which could not be sent because of receiving a frame" FromVersion="C2.87" Ext="/INFO" Address="0x80000108" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncErrorCount" Description="Number of failed asynchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000103" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncBusyErrorCount" Description="Number of not sent asynchronous frames (sender not ready)" FromVersion="C2.87" Ext="/INFO" Address="0x8000010A" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncNoRxErrorCount" Description="Number of not received asynchronous frames (timeout)" FromVersion="C2.87" Ext="/INFO" Address="0x8000010B" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncFormatErrorCount" Description="Number of faulty asynchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x8000010C" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncPendingErrorCount" Description="Number of asynchronous frames which could not be sent because of receiving a frame" FromVersion="C2.87" Ext="/INFO" Address="0x8000010D" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.ModuleLostWhileOperational" Description="Hardware configuration changed: module disconnected while operational" FromVersion="C2.87" Ext="/INFO" Address="0x8000010E" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.ModuleNewWhileOperational" Description="Hardware configuration changed: new module detected while operational" FromVersion="C2.87" Ext="/INFO" Address="0x8000010F" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.StationAtBusEnd" Description="Station at end of bus" FromVersion="J4.08" Ext="/INFO" Address="0x80000115" Direction="IN" Type="USINT" Resource="IF1" />
+    <Channel ID="IF1.StationAtBusEndChangeTime" Description="Time of last change at station on end of bus" FromVersion="J4.08" Ext="/INFO" Address="0xC0000115" Direction="IN" Type="DATE_AND_TIME" Resource="IF1" />
+    <Channel ID="IF1.StationPastOutFrameError" Description="First station which recognizes output frame error" FromVersion="J4.08" Ext="/INFO" Address="0x80000116" Direction="IN" Type="USINT" Resource="IF1" />
+    <Channel ID="IF1.StationPastOutFrameErrorChangeTime" Description="Time of last change of channel StationPastOutFrameError" FromVersion="J4.08" Ext="/INFO" Address="0xC0000116" Direction="IN" Type="DATE_AND_TIME" Resource="IF1" />
+    <Channel ID="IF1.StationPastInFrameError" Description="First station which recognizes input frame error" FromVersion="J4.08" Ext="/INFO" Address="0x80000117" Direction="IN" Type="USINT" Resource="IF1" />
+    <Channel ID="IF1.StationPastInFrameErrorChangeTime" Description="Time of last change of channel StationPastInFrameError" FromVersion="J4.08" Ext="/INFO" Address="0xC0000117" Direction="IN" Type="DATE_AND_TIME" Resource="IF1" />
+    <Channel ID="IF1.NrOfStationsMax" Description="Number of max. stations" FromVersion="J4.08" Ext="/INFO" Address="0x80000113" Direction="IN" Type="USINT" Resource="IF1" />
+    <Channel ID="IF1.NrOfStationsConfigured" Description="Number of configured stations" FromVersion="J4.08" Ext="/INFO" Address="0x80000114" Direction="IN" Type="USINT" Resource="IF1" />
+    <Channel ID="IF1.SyncInFrameSize" Description="Size of synchronous input frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x80000118" Direction="IN" Type="DINT" Resource="IF1" />
+    <Channel ID="IF1.SyncOutFrameSize" Description="Size of synchronous output frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x80000119" Direction="IN" Type="DINT" Resource="IF1" />
+    <Channel ID="IF1.AsyncFrameSize" Description="Size of asynchronous frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x8000011A" Direction="IN" Type="DINT" Resource="IF1" />
+    <Channel ID="IF1.AsyncFrameSpareSize" Description="Size reserve within asynchronous frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x8000011B" Direction="IN" Type="DINT" Resource="IF1" />
+    <Channel ID="IF1.BusLengthConfigured" Description="Configured bus length [m]" FromVersion="J4.08" Ext="/INFO" Address="0x8000011C" Direction="IN" Type="DINT" Resource="IF1" />
+  </Module>
+  <Module ID="IF3.ST6" Hardware="epl_any" HardwareModuleName="Numatics_G3" ModuleID="29" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" ArConfig="copy" Direction="IN" Type="BOOL" />
+    <Channel ID="Out01_I3201Out" Description="" Ext="/FIXED" Address="0x0" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out02_I3202Out" Description="" Ext="/FIXED" Address="0x2" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out03_I3203Out" Description="" Ext="/FIXED" Address="0x4" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out04_I3204Out" Description="" Ext="/FIXED" Address="0x6" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out05_I3205Out" Description="" Ext="/FIXED" Address="0x8" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out06_I3206Out" Description="" Ext="/FIXED" Address="0xA" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out07_I3207Out" Description="" Ext="/FIXED" Address="0xC" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out08_I3208Out" Description="" Ext="/FIXED" Address="0xE" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out09_I3209Out" Description="" Ext="/FIXED" Address="0x10" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out0A_I320AOut" Description="" Ext="/FIXED" Address="0x12" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out0B_I320BOut" Description="" Ext="/FIXED" Address="0x14" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out0C_I320COut" Description="" Ext="/FIXED" Address="0x16" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out0D_I320DOut" Description="" Ext="/FIXED" Address="0x18" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out0E_I320EOut" Description="" Ext="/FIXED" Address="0x1A" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out0F_I320FOut" Description="" Ext="/FIXED" Address="0x1C" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out10_I3210Out" Description="" Ext="/FIXED" Address="0x1E" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out11_I3211Out" Description="" Ext="/FIXED" Address="0x20" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out12_I3212Out" Description="" Ext="/FIXED" Address="0x22" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out13_I3213Out" Description="" Ext="/FIXED" Address="0x24" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out14_I3214Out" Description="" Ext="/FIXED" Address="0x26" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out15_I3215Out" Description="" Ext="/FIXED" Address="0x28" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out16_I3216Out" Description="" Ext="/FIXED" Address="0x2A" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out17_I3217Out" Description="" Ext="/FIXED" Address="0x2C" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out18_I3218Out" Description="" Ext="/FIXED" Address="0x2E" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out19_I3219Out" Description="" Ext="/FIXED" Address="0x30" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out1A_I321AOut" Description="" Ext="/FIXED" Address="0x32" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out1B_I321BOut" Description="" Ext="/FIXED" Address="0x34" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out1C_I321COut" Description="" Ext="/FIXED" Address="0x36" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out1D_I321DOut" Description="" Ext="/FIXED" Address="0x38" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out1F_I321FOut" Description="" Ext="/FIXED" Address="0x3A" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out20_I3220Out" Description="" Ext="/FIXED" Address="0x3C" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out21_I3221Out" Description="" Ext="/FIXED" Address="0x3E" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out22_I3222Out" Description="" Ext="/FIXED" Address="0x40" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out23_I3223Out" Description="" Ext="/FIXED" Address="0x42" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out24_I3224Out" Description="" Ext="/FIXED" Address="0x44" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out25_I3225Out" Description="" Ext="/FIXED" Address="0x46" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out26_I3226Out" Description="" Ext="/FIXED" Address="0x4A" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out27_I3227Out" Description="" Ext="/FIXED" Address="0x4C" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out28_I3228Out" Description="" Ext="/FIXED" Address="0x4E" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out29_I3229Out" Description="" Ext="/FIXED" Address="0x50" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out2A_I322AOut" Description="" Ext="/FIXED" Address="0x52" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out2B_I322BOut" Description="" Ext="/FIXED" Address="0x54" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out2C_I322COut" Description="" Ext="/FIXED" Address="0x56" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out2D_I322DOut" Description="" Ext="/FIXED" Address="0x58" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out2E_I322EOut" Description="" Ext="/FIXED" Address="0x5A" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out2F_I322FOut" Description="" Ext="/FIXED" Address="0x5C" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out30_I3230Out" Description="" Ext="/FIXED" Address="0x5E" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out31_I3231Out" Description="" Ext="/FIXED" Address="0x60" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out32_I3232Out" Description="" Ext="/FIXED" Address="0x62" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out33_I3233Out" Description="" Ext="/FIXED" Address="0x64" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out34_I3234Out" Description="" Ext="/FIXED" Address="0x66" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out35_I3235Out" Description="" Ext="/FIXED" Address="0x68" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out36_I3236Out" Description="" Ext="/FIXED" Address="0x6A" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out37_I3237Out" Description="" Ext="/FIXED" Address="0x6C" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out38_I3238Out" Description="" Ext="/FIXED" Address="0x6E" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out39_I3239Out" Description="" Ext="/FIXED" Address="0x70" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out3A_I323AOut" Description="" Ext="/FIXED" Address="0x72" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out3B_I323BOut" Description="" Ext="/FIXED" Address="0x74" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out3C_I323COut" Description="" Ext="/FIXED" Address="0x76" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out3D_I323DOut" Description="" Ext="/FIXED" Address="0x78" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out3E_I323EOut" Description="" Ext="/FIXED" Address="0x7A" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out3F_I323FOut" Description="" Ext="/FIXED" Address="0x7C" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out40_I3240Out" Description="" Ext="/FIXED" Address="0x7E" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out41_I3241Out" Description="" Ext="/FIXED" Address="0x80" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out42_I3242Out" Description="" Ext="/FIXED" Address="0x82" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out43_I3243Out" Description="" Ext="/FIXED" Address="0x84" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out44_I3244Out" Description="" Ext="/FIXED" Address="0x86" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out45_I3245Out" Description="" Ext="/FIXED" Address="0x88" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out46_I3246Out" Description="" Ext="/FIXED" Address="0x8A" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out47_I3247Out" Description="" Ext="/FIXED" Address="0x8C" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out48_I3248Out" Description="" Ext="/FIXED" Address="0x8E" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out49_I3249Out" Description="" Ext="/FIXED" Address="0x90" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out4A_I324AOut" Description="" Ext="/FIXED" Address="0x92" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Out4B_I324BOut" Description="" Ext="/FIXED" Address="0x94" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="In01_I3401" Description="" Ext="/FIXED" Address="0x0" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In02_I3402" Description="" Ext="/FIXED" Address="0x2" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In03_I3403" Description="" Ext="/FIXED" Address="0x4" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In04_I3404" Description="" Ext="/FIXED" Address="0x6" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In05_I3405" Description="" Ext="/FIXED" Address="0x8" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In06_I3406" Description="" Ext="/FIXED" Address="0xA" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In07_I3407" Description="" Ext="/FIXED" Address="0xC" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In08_I3408" Description="" Ext="/FIXED" Address="0xE" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In09_I3409" Description="" Ext="/FIXED" Address="0x10" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In0A_I340A" Description="" Ext="/FIXED" Address="0x12" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In0B_I340B" Description="" Ext="/FIXED" Address="0x14" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In0C_I340C" Description="" Ext="/FIXED" Address="0x16" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In0D_I340D" Description="" Ext="/FIXED" Address="0x18" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In0E_I340E" Description="" Ext="/FIXED" Address="0x1A" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In0F_I340F" Description="" Ext="/FIXED" Address="0x1C" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In10_I3410" Description="" Ext="/FIXED" Address="0x1E" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In11_I3411" Description="" Ext="/FIXED" Address="0x20" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In12_I3412" Description="" Ext="/FIXED" Address="0x22" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In13_I3413" Description="" Ext="/FIXED" Address="0x24" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In14_I3414" Description="" Ext="/FIXED" Address="0x26" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In15_I3415" Description="" Ext="/FIXED" Address="0x28" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In16_I3416" Description="" Ext="/FIXED" Address="0x2A" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In17_I3417" Description="" Ext="/FIXED" Address="0x2C" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In18_I3418" Description="" Ext="/FIXED" Address="0x2E" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In19_I3419" Description="" Ext="/FIXED" Address="0x30" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In1A_I341A" Description="" Ext="/FIXED" Address="0x32" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In1B_I341B" Description="" Ext="/FIXED" Address="0x34" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In1C_I341C" Description="" Ext="/FIXED" Address="0x36" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In1D_I341D" Description="" Ext="/FIXED" Address="0x38" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In1F_I341F" Description="" Ext="/FIXED" Address="0x3A" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In20_I3420" Description="" Ext="/FIXED" Address="0x3C" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In21_I3421" Description="" Ext="/FIXED" Address="0x3E" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In22_I3422" Description="" Ext="/FIXED" Address="0x40" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In23_I3423" Description="" Ext="/FIXED" Address="0x42" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In24_I3424" Description="" Ext="/FIXED" Address="0x44" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In25_I3425" Description="" Ext="/FIXED" Address="0x46" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In26_I3426" Description="" Ext="/FIXED" Address="0x4A" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In27_I3427" Description="" Ext="/FIXED" Address="0x4C" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In28_I3428" Description="" Ext="/FIXED" Address="0x4E" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In29_I3429" Description="" Ext="/FIXED" Address="0x50" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In2A_I342A" Description="" Ext="/FIXED" Address="0x52" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In2B_I342B" Description="" Ext="/FIXED" Address="0x54" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In2C_I342C" Description="" Ext="/FIXED" Address="0x56" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In2D_I342D" Description="" Ext="/FIXED" Address="0x58" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In2E_I342E" Description="" Ext="/FIXED" Address="0x5A" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In2F_I342F" Description="" Ext="/FIXED" Address="0x5C" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In30_I3430" Description="" Ext="/FIXED" Address="0x5E" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In31_I3431" Description="" Ext="/FIXED" Address="0x60" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In32_I3432" Description="" Ext="/FIXED" Address="0x62" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In33_I3433" Description="" Ext="/FIXED" Address="0x64" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In34_I3434" Description="" Ext="/FIXED" Address="0x66" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In35_I3435" Description="" Ext="/FIXED" Address="0x68" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In36_I3436" Description="" Ext="/FIXED" Address="0x6A" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In37_I3437" Description="" Ext="/FIXED" Address="0x6C" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In38_I3438" Description="" Ext="/FIXED" Address="0x6E" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In39_I3439" Description="" Ext="/FIXED" Address="0x70" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In3A_I343A" Description="" Ext="/FIXED" Address="0x72" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In3B_I343B" Description="" Ext="/FIXED" Address="0x74" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In3C_I343C" Description="" Ext="/FIXED" Address="0x76" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In3D_I343D" Description="" Ext="/FIXED" Address="0x78" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In3E_I343E" Description="" Ext="/FIXED" Address="0x7A" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In3F_I343F" Description="" Ext="/FIXED" Address="0x7C" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In40_I3440" Description="" Ext="/FIXED" Address="0x7E" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In41_I3441" Description="" Ext="/FIXED" Address="0x80" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In42_I3442" Description="" Ext="/FIXED" Address="0x82" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In43_I3443" Description="" Ext="/FIXED" Address="0x84" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In44_I3444" Description="" Ext="/FIXED" Address="0x86" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In45_I3445" Description="" Ext="/FIXED" Address="0x88" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In46_I3446" Description="" Ext="/FIXED" Address="0x8A" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In47_I3447" Description="" Ext="/FIXED" Address="0x8C" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In48_I3448" Description="" Ext="/FIXED" Address="0x8E" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In49_I3449" Description="" Ext="/FIXED" Address="0x90" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In4A_I344A" Description="" Ext="/FIXED" Address="0x92" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="In4B_I344B" Description="" Ext="/FIXED" Address="0x94" ArConfig="Copy" Direction="IN" Type="UINT" />
+  </Module>
+  <Module ID="IF3.ST3" Hardware="epl_any" HardwareModuleName="NORD_SK_TU3-POL_SK54xE_Inverter" ModuleID="26" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" ArConfig="copy" Direction="IN" Type="BOOL" />
+    <Channel ID="Controlword_I5000" Description="" Ext="/FIXED" Address="0x0" ArConfig="Copy" Direction="OUT" Type="UINT" />
+    <Channel ID="Statusword_I5001" Description="" Ext="/FIXED" Address="0x0" ArConfig="Copy" Direction="IN" Type="UINT" />
+    <Channel ID="Setpoint1_I5002_S01" Description="" Ext="/FIXED" Address="0x2" ArConfig="Copy" Direction="OUT" Type="INT" />
+    <Channel ID="Setpoint2_I5002_S02" Description="" Ext="/FIXED" Address="0x4" ArConfig="Copy" Direction="OUT" Type="INT" />
+    <Channel ID="Setpoint3_I5002_S03" Description="" Ext="/FIXED" Address="0x6" ArConfig="Copy" Direction="OUT" Type="INT" />
+    <Channel ID="Setpoint4_I5002_S04" Description="" Ext="/FIXED" Address="0x8" ArConfig="Copy" Direction="OUT" Type="INT" />
+    <Channel ID="Setpoint5_I5002_S05" Description="" Ext="/FIXED" Address="0xA" ArConfig="Copy" Direction="OUT" Type="INT" />
+    <Channel ID="Actual_Value1_I5003_S01" Description="" Ext="/FIXED" Address="0x2" ArConfig="Copy" Direction="IN" Type="INT" />
+    <Channel ID="Actual_Value2_I5003_S02" Description="" Ext="/FIXED" Address="0x4" ArConfig="Copy" Direction="IN" Type="INT" />
+    <Channel ID="Actual_Value3_I5003_S03" Description="" Ext="/FIXED" Address="0x6" ArConfig="Copy" Direction="IN" Type="INT" />
+    <Channel ID="Actual_Value4_I5003_S04" Description="" Ext="/FIXED" Address="0x8" ArConfig="Copy" Direction="IN" Type="INT" />
+    <Channel ID="Actual_Value5_I5003_S05" Description="" Ext="/FIXED" Address="0xA" ArConfig="Copy" Direction="IN" Type="INT" />
+  </Module>
+  <Module ID="IF3.ST2" Hardware="epl_any" HardwareModuleName="NIC_50-RE/PLS" ModuleID="23" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" ArConfig="copy" Direction="IN" Type="BOOL" />
+    <Channel ID="_1ByteOut_01_I2000_S01" Description="" Ext="/FIXED" Address="0x0" ArConfig="Copy" Direction="OUT" Type="USINT" />
+    <Channel ID="_1ByteOut_02_I2000_S02" Description="" Ext="/FIXED" Address="0x1" ArConfig="Copy" Direction="OUT" Type="USINT" />
+    <Channel ID="_1ByteOut_03_I2000_S03" Description="" Ext="/FIXED" Address="0x2" ArConfig="Copy" Direction="OUT" Type="USINT" />
+    <Channel ID="_1ByteOut_04_I2000_S04" Description="" Ext="/FIXED" Address="0x3" ArConfig="Copy" Direction="OUT" Type="USINT" />
+    <Channel ID="_1ByteOut_05_I2000_S05" Description="" Ext="/FIXED" Address="0x4" ArConfig="Copy" Direction="OUT" Type="USINT" />
+    <Channel ID="_1ByteOut_06_I2000_S06" Description="" Ext="/FIXED" Address="0x5" ArConfig="Copy" Direction="OUT" Type="USINT" />
+    <Channel ID="_1ByteOut_07_I2000_S07" Description="" Ext="/FIXED" Address="0x6" ArConfig="Copy" Direction="OUT" Type="USINT" />
+    <Channel ID="_1ByteOut_08_I2000_S08" Description="" Ext="/FIXED" Address="0x7" ArConfig="Copy" Direction="OUT" Type="USINT" />
+    <Channel ID="_1ByteIn_01_I2100_S01" Description="" Ext="/FIXED" Address="0x0" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_02_I2100_S02" Description="" Ext="/FIXED" Address="0x1" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_03_I2100_S03" Description="" Ext="/FIXED" Address="0x2" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_04_I2100_S04" Description="" Ext="/FIXED" Address="0x3" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_05_I2100_S05" Description="" Ext="/FIXED" Address="0x4" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_06_I2100_S06" Description="" Ext="/FIXED" Address="0x5" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_07_I2100_S07" Description="" Ext="/FIXED" Address="0x6" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_08_I2100_S08" Description="" Ext="/FIXED" Address="0x7" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_09_I2100_S09" Description="" Ext="/FIXED" Address="0x8" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_10_I2100_S0A" Description="" Ext="/FIXED" Address="0x9" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_11_I2100_S0B" Description="" Ext="/FIXED" Address="0xA" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_12_I2100_S0C" Description="" Ext="/FIXED" Address="0xB" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_13_I2100_S0D" Description="" Ext="/FIXED" Address="0xC" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_14_I2100_S0E" Description="" Ext="/FIXED" Address="0xD" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_15_I2100_S0F" Description="" Ext="/FIXED" Address="0xE" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_16_I2100_S10" Description="" Ext="/FIXED" Address="0xF" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_17_I2100_S11" Description="" Ext="/FIXED" Address="0x10" ArConfig="Copy" Direction="IN" Type="USINT" />
+    <Channel ID="_1ByteIn_18_I2100_S12" Description="" Ext="/FIXED" Address="0x11" ArConfig="Copy" Direction="IN" Type="USINT" />
+  </Module>
+  <Module ID="IF3.ST8" Hardware="epl_any" HardwareModuleName="FRABA_Posital_Absolute_Rotary_Encoder" ModuleID="20" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" ArConfig="copy" Direction="IN" Type="BOOL" />
+    <Channel ID="PositionValue_U32_I6004" Description="" Ext="/FIXED" Address="0x0" ArConfig="Copy" Direction="IN" Type="UDINT" />
+  </Module>
+  <Module ID="SS1" Hardware="X20IF1082" HardwareModuleName="X20IF1082" ModuleID="43">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" FromVersion="B2.95" Ext="/OK" Address="0" Direction="IN" Sig_St_Bool="1" Type="BOOL" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="B2.95" Ext="/HW" Address="0" Direction="IN" Type="UDINT" Sig_St_Udint="1" ChannelType="HWTree" AliasName="Serial_Number" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="B2.95" Ext="/HW" Address="1" Direction="IN" Type="UINT" Sig_St_Uint="1" ChannelType="HWTree" AliasName="Modno" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="B2.95" Ext="/HW" Address="2" Direction="IN" Type="UINT" Sig_St_Uint="1" ChannelType="HWTree" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="B2.95" Ext="/HW" Address="3" Direction="IN" Type="UINT" Sig_St_Uint="1" ChannelType="HWTree" />
+    <Channel ID="IF1.NodeSwitch" Description="Selected node switch value" FromVersion="B2.87" Ext="/INFO" Address="0x80000019" Direction="IN" Type="USINT" Sig_St_Byte="1" />
+    <Channel ID="IF1.LinkOk01" Description="Link state interface 1" FromVersion="V2.92" Ext="/INFO" Address="0x8000001A" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF1.LinkOk02" Description="Link state interface 2" FromVersion="V2.92" Ext="/INFO" Address="0x8000001A" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF1.NodeNumber" Description="Node number currently in use (255 = invalid)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF1.CycleOk" Description="Indication for proper cyclic operation (1 = operational)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF1.SyncOk" Description="Indication for a synchronized POWERLINK-system (1 = synchronized)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF1.TimeSeconds" Description="Absolute time extracted from current SoC-Frame (NetTime in POWERLINK V2) - Seconds" FromVersion="M2.90" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.TimeNanoseconds" Description="Absolute time extracted from current SoC-Frame (NetTime in POWERLINK V2) - Nanoseconds" FromVersion="M2.90" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.NettimeSoC" Description="Network time extracted from current SoC-Frame [µs] (RelativeTime in POWERLINK V2)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF1.NettimeOffset" Description="Network time offset to local system time [µs]" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF1.CycleCount" Description="Overall number of bus cycles" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.FailedCycleCount" Description="Number of failed bus cycles" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.CycleTimeViolationCount" Description="Number of cycle time violations" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.CycleIdleTime" Description="Unoccupied time during one POWERLINK cycle [µs]" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.CycleCongestionCount" Description="allways 0, available for legacy projects" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+  </Module>
+</ChannelConfiguration>

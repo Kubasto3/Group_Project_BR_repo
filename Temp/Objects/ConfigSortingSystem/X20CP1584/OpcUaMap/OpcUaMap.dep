@@ -1,0 +1,6 @@
+$(AS_PROJECT_PATH)/Logical/Program/Variables.var
+$(AS_PROJECT_PATH)/Physical/ConfigSortingSystem/X20CP1584/Cpu.sw
+$(AS_PROJECT_PATH)/Logical/Alarms/Variables.var
+$(AS_PROJECT_PATH)/Logical/Libraries/MpAlarmX/MpAlarmX.fun
+$(AS_PROJECT_PATH)/Logical/Libraries/MpAlarmX/MpAlarmX.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/MpBase/MpBase.typ
