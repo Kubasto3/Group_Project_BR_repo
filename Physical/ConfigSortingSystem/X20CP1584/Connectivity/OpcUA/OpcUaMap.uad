@@ -16,6 +16,8 @@
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
         <Variable Name="pendingAlarms" />
+        <Variable Name="IsSemiAutoMode" />
+        <Variable Name="IsManualMode" />
       </Task>
     </Module>
   </DefaultView>
