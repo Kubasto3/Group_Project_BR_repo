@@ -3,9 +3,9 @@
 }
 #ContentDiagnostics_WebViewerSDM {	@include elemLeft(20);
 }
-#ContentDiagnostics_WebViewerSDM {	@include elemWidth(820);
+#ContentDiagnostics_WebViewerSDM {	@include elemWidth(780);
 }
-#ContentDiagnostics_WebViewerSDM {	@include elemHeight(580);
+#ContentDiagnostics_WebViewerSDM {	@include elemHeight(540);
 }
 #ContentDiagnostics_WebViewerSDM {	z-index: 1;
 }
@@ -17,9 +17,9 @@
 		border-width: 0px 0px 0px 0px;
 	}
 }
-#ContentDiagnostics_LabelSMDLoading {	@include elemTop(300);
+#ContentDiagnostics_LabelSMDLoading {	@include elemTop(240);
 }
-#ContentDiagnostics_LabelSMDLoading {	@include elemLeft(240);
+#ContentDiagnostics_LabelSMDLoading {	@include elemLeft(173);
 }
 #ContentDiagnostics_LabelSMDLoading {	@include elemAutoWidth(380);
 }

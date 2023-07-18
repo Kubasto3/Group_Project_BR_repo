@@ -15,10 +15,13 @@
     <BindingsSet refId="-251799762" />
     <BindingsSet refId="1639759259" />
     <BindingsSet refId="717726808" />
+    <BindingsSet refId="-1471344535" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="1131569474" />
     <EventBindingsSet refId="-454701925" />
+    <EventBindingsSet refId="121914537" />
+    <EventBindingsSet refId="-1347222524" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="dialogMessageBoxLogin" />

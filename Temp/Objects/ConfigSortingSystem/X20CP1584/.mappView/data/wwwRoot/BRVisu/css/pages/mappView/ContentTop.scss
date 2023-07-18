@@ -3,11 +3,11 @@
 }
 #ContentTop_ImageLogo {	@include elemLeft(0);
 }
-#ContentTop_ImageLogo {	@include elemAutoWidth(130);
+#ContentTop_ImageLogo {	@include elemAutoWidth(246);
 }
-#ContentTop_ImageLogo {	@include elemAutoHeight(90);
+#ContentTop_ImageLogo {	@include elemAutoHeight(114);
 }
-#ContentTop_ImageLogo {	z-index: 2;
+#ContentTop_ImageLogo {	z-index: 1;
 }
 #ContentTop_ImageLogo {	border-style: solid;
 }
@@ -15,23 +15,23 @@
 }
 #ContentTop_ImageLogo {	border-color: rgba(0, 0, 0, 1);
 }
-#ContentTop_ImageLogin {	@include elemTop(5);
+#ContentTop_ImageLogin {	@include elemTop(4);
 }
-#ContentTop_ImageLogin {	@include elemLeft(1400);
+#ContentTop_ImageLogin {	@include elemLeft(1398);
 }
-#ContentTop_ImageLogin {	@include elemAutoWidth(80);
+#ContentTop_ImageLogin {	@include elemAutoWidth(70);
 }
-#ContentTop_ImageLogin {	@include elemAutoHeight(70);
+#ContentTop_ImageLogin {	@include elemAutoHeight(68);
 }
-#ContentTop_ImageLogin {	z-index: 1;
+#ContentTop_ImageLogin {	z-index: 0;
 }
-#ContentTop_DateTimeOutput1 {	@include elemTop(-20);
+#ContentTop_DateTimeOutput1 {	@include elemTop(8);
 }
-#ContentTop_DateTimeOutput1 {	@include elemLeft(135);
+#ContentTop_DateTimeOutput1 {	@include elemLeft(924);
 }
-#ContentTop_DateTimeOutput1 {	@include elemAutoWidth(420);
+#ContentTop_DateTimeOutput1 {	@include elemAutoWidth(463);
 }
-#ContentTop_DateTimeOutput1 {	@include elemAutoHeight(120);
+#ContentTop_DateTimeOutput1 {	@include elemAutoHeight(58);
 }
 #ContentTop_DateTimeOutput1 {	z-index: 3;
 }
@@ -43,27 +43,25 @@
 }
 #ContentTop_DateTimeOutput1 {	font-size: 25px;
 }
-#ContentTop_RectangleBackground {	@include elemTop(0);
+#ContentTop_RectangleBackground {	@include elemTop(75);
 }
-#ContentTop_RectangleBackground {	@include elemLeft(0);
+#ContentTop_RectangleBackground {	@include elemLeft(-5);
 }
-#ContentTop_RectangleBackground {	@include elemWidth(1480);
+#ContentTop_RectangleBackground {	@include elemWidth(1511);
 }
-#ContentTop_RectangleBackground {	@include elemHeight(80);
+#ContentTop_RectangleBackground {	@include elemHeight(16);
 }
-#ContentTop_RectangleBackground {	z-index: 0;
+#ContentTop_RectangleBackground {	z-index: 2;
 }
 #ContentTop_RectangleBackground {	border-width: 0px;
 }
-#ContentTop_RectangleBackground {	background-color: rgba(255, 255, 255, 1);
+#ContentTop_ImageAlarmRed {	@include elemTop(12);
 }
-#ContentTop_ImageAlarmRed {	@include elemTop(10);
+#ContentTop_ImageAlarmRed {	@include elemLeft(852);
 }
-#ContentTop_ImageAlarmRed {	@include elemLeft(580);
+#ContentTop_ImageAlarmRed {	@include elemAutoWidth(46);
 }
-#ContentTop_ImageAlarmRed {	@include elemAutoWidth(60);
-}
-#ContentTop_ImageAlarmRed {	@include elemAutoHeight(60);
+#ContentTop_ImageAlarmRed {	@include elemAutoHeight(54);
 }
 #ContentTop_ImageAlarmRed {	z-index: 4;
 }
@@ -71,13 +69,13 @@
 		fill: rgba(255, 0, 0, 1);
 	}
 }
-#ContentTop_ImageAlarmYellow {	@include elemTop(10);
+#ContentTop_ImageAlarmYellow {	@include elemTop(12);
 }
-#ContentTop_ImageAlarmYellow {	@include elemLeft(580);
+#ContentTop_ImageAlarmYellow {	@include elemLeft(852);
 }
-#ContentTop_ImageAlarmYellow {	@include elemAutoWidth(60);
+#ContentTop_ImageAlarmYellow {	@include elemAutoWidth(46);
 }
-#ContentTop_ImageAlarmYellow {	@include elemAutoHeight(60);
+#ContentTop_ImageAlarmYellow {	@include elemAutoHeight(48);
 }
 #ContentTop_ImageAlarmYellow {	z-index: 5;
 }

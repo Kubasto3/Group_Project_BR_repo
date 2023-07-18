@@ -21,6 +21,7 @@
     <EventBindingsSet refId="ContentTop_eventbinding" />
     <EventBindingsSet refId="ContentAlarms_eventbinding" />
     <EventBindingsSet refId="ContentManual_eventbinding" />
+    <EventBindingsSet refId="contentMessageBoxLogin_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="dialogMessageBoxLogin" />

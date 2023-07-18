@@ -3,9 +3,91 @@
 }
 #ContentManual_Label1 {	@include elemAutoHeight(30);
 }
-#ContentManual_Label1 {	@include elemTop(285);
+#ContentManual_Label1 {	@include elemTop(592);
 }
-#ContentManual_Label1 {	@include elemLeft(360);
+#ContentManual_Label1 {	@include elemLeft(1204);
 }
 #ContentManual_Label1 {	z-index: 0;
+}
+#ContentManual_GroupBoxManual {	@include elemTop(16);
+}
+#ContentManual_GroupBoxManual {	@include elemLeft(24);
+}
+#ContentManual_GroupBoxManual {	@include elemWidth(608);
+}
+#ContentManual_GroupBoxManual {	@include elemHeight(544);
+}
+#ContentManual_GroupBoxManual {	z-index: 1;
+}
+#ContentManual_GroupBoxManual {	border-width: 5px;
+}
+#ContentManual_GroupBoxManual {	> .header {
+		border-width: 5px;
+	}
+}
+#ContentManual_ToggleButtonActuatingPistonActivate {	@include elemTop(7);
+}
+#ContentManual_ToggleButtonActuatingPistonActivate {	@include elemLeft(111);
+}
+#ContentManual_ToggleButtonActuatingPistonActivate {	@include elemAutoWidth(389);
+}
+#ContentManual_ToggleButtonActuatingPistonActivate {	@include elemAutoHeight(73);
+}
+#ContentManual_ToggleButtonActuatingPistonActivate {	z-index: 0;
+}
+#ContentManual_ToggleButtonPushingPistonActivate {	@include elemTop(87);
+}
+#ContentManual_ToggleButtonPushingPistonActivate {	@include elemLeft(111);
+}
+#ContentManual_ToggleButtonPushingPistonActivate {	@include elemAutoWidth(389);
+}
+#ContentManual_ToggleButtonPushingPistonActivate {	@include elemAutoHeight(73);
+}
+#ContentManual_ToggleButtonPushingPistonActivate {	z-index: 1;
+}
+#ContentManual_ButtonMakePicture {	@include elemTop(406);
+}
+#ContentManual_ButtonMakePicture {	@include elemLeft(111);
+}
+#ContentManual_ButtonMakePicture {	@include elemAutoWidth(389);
+}
+#ContentManual_ButtonMakePicture {	@include elemAutoHeight(77);
+}
+#ContentManual_ButtonMakePicture {	z-index: 2;
+}
+#ContentManual_GroupBoxSemiAuto {	@include elemTop(16);
+}
+#ContentManual_GroupBoxSemiAuto {	@include elemLeft(648);
+}
+#ContentManual_GroupBoxSemiAuto {	@include elemWidth(608);
+}
+#ContentManual_GroupBoxSemiAuto {	@include elemHeight(544);
+}
+#ContentManual_GroupBoxSemiAuto {	z-index: 2;
+}
+#ContentManual_GroupBoxSemiAuto {	border-width: 5px;
+}
+#ContentManual_GroupBoxSemiAuto {	> .header {
+		border-width: 5px;
+	}
+}
+#ContentManual_ToggleButtonActivateManualMode {	@include elemTop(22);
+}
+#ContentManual_ToggleButtonActivateManualMode {	@include elemLeft(30);
+}
+#ContentManual_ToggleButtonActivateManualMode {	@include elemAutoWidth(24);
+}
+#ContentManual_ToggleButtonActivateManualMode {	@include elemAutoHeight(24);
+}
+#ContentManual_ToggleButtonActivateManualMode {	z-index: 3;
+}
+#ContentManual_ToggleButtonActivateSemiAutoMode {	@include elemTop(22);
+}
+#ContentManual_ToggleButtonActivateSemiAutoMode {	@include elemLeft(654);
+}
+#ContentManual_ToggleButtonActivateSemiAutoMode {	@include elemAutoWidth(24);
+}
+#ContentManual_ToggleButtonActivateSemiAutoMode {	@include elemAutoHeight(24);
+}
+#ContentManual_ToggleButtonActivateSemiAutoMode {	z-index: 4;
 }

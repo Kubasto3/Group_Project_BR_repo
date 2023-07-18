@@ -5,7 +5,7 @@
 }
 #ContentAlarms_AlarmList {	@include elemWidth(1240);
 }
-#ContentAlarms_AlarmList {	@include elemHeight(500);
+#ContentAlarms_AlarmList {	@include elemHeight(460);
 }
 #ContentAlarms_AlarmList {	z-index: 0;
 }
@@ -25,7 +25,7 @@
 }
 #ContentAlarms_AlarmListItemState {	z-index: 3;
 }
-#ContentAlarms_ButtonAcknowledgeOne {	@include elemTop(540);
+#ContentAlarms_ButtonAcknowledgeOne {	@include elemTop(500);
 }
 #ContentAlarms_ButtonAcknowledgeOne {	@include elemLeft(20);
 }
@@ -35,7 +35,7 @@
 }
 #ContentAlarms_ButtonAcknowledgeOne {	z-index: 1;
 }
-#ContentAlarms_ButtonAcknowledgeAll {	@include elemTop(540);
+#ContentAlarms_ButtonAcknowledgeAll {	@include elemTop(500);
 }
 #ContentAlarms_ButtonAcknowledgeAll {	@include elemLeft(440);
 }
@@ -45,7 +45,7 @@
 }
 #ContentAlarms_ButtonAcknowledgeAll {	z-index: 2;
 }
-#ContentAlarms_ButtonHistory {	@include elemTop(540);
+#ContentAlarms_ButtonHistory {	@include elemTop(500);
 }
 #ContentAlarms_ButtonHistory {	@include elemLeft(860);
 }
