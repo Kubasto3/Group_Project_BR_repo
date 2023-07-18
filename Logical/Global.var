@@ -8,4 +8,6 @@ VAR
 	gStop : BOOL;
 	gStart : BOOL;
 	gWeightMeasure : USINT;
+	gWeightDetected : BOOL;
+	gActuatorByte : UINT;
 END_VAR
