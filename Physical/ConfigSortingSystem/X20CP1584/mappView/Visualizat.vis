@@ -15,10 +15,12 @@
     <BindingsSet refId="ContentAlarmHistory_binding" />
     <BindingsSet refId="ContentAlarms_binding" />
     <BindingsSet refId="ContentTop_binding" />
+    <BindingsSet refId="ContentManual_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentTop_eventbinding" />
     <EventBindingsSet refId="ContentAlarms_eventbinding" />
+    <EventBindingsSet refId="ContentManual_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="dialogMessageBoxLogin" />
