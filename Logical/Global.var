@@ -1,4 +1,3 @@
-
 VAR
 	Coffee : CofeeType;
 	gMpRecipeXML_0 : MpRecipeXml;
@@ -6,9 +5,7 @@ VAR
 	gMpRecipeUI_0 : MpRecipeUI;
 	gUISetup : MpRecipeUISetupType;
 	gUIConnect : MpRecipeUIConnectType;
-END_VAR
-
-
-VAR CONSTANT
-
+	gStop : BOOL;
+	gStart : BOOL;
+	gWeightMeasure : USINT;
 END_VAR

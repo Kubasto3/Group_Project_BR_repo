@@ -1,37 +1,28 @@
 
 PROGRAM _INIT
 	
-	//Wysun; // testowa zmienna
 	
 END_PROGRAM
 
 PROGRAM _CYCLIC
-//	IF Wysun THEN  //TESTOWANIE
-//		BAIT := 2#0000_0000_0000_0101;
-//	ELSE
-//		BAIT := 2#0000_0000_0000_0000;
-//	END_IF;
 	
-	//Fragment kodu odpowiedzialny za inicjalizacjê taœmy
-	gAxis_1;
-	MotorBeltAxisBasic.MpLink := ADR(gAxis_1);
-	MotorBeltAxisBasic.Enable := TRUE;
-	MotorBeltAxisBasic.Parameters := ADR(MotorBeltParType);	
-	MotorBeltAxisBasic();
+	IF gStart AND NOT gStop THEN
+		
+		IF TRUE THEN  //TESTOWANIE
+			ActuatorByte := 2#0000_0000_0000_0101;
+		ELSE
+			ActuatorByte := 2#0000_0000_0000_0000;
+		END_IF;
 	
-
-	
-	Coffee.Water;
-	Coffee.Milk;
-	Coffee.Powder;
-	Coffee.Sugar;
-	Coffee.Temperature;
-	
-	gMpRecipeXML_0();
-	gMpRecipeRegPar_0();
-	
-	
-	 
+		//Fragment kodu odpowiedzialny za inicjalizacjê taœmy
+		gAxis_1;
+		MotorBeltAxisBasic.MpLink := ADR(gAxis_1);
+		MotorBeltAxisBasic.Enable := TRUE;
+		MotorBeltAxisBasic.Parameters := ADR(MotorBeltParType);	
+		MotorBeltAxisBasic();
+		
+		
+	END_IF;
 END_PROGRAM
 
 PROGRAM _EXIT

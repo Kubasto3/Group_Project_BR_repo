@@ -19,7 +19,15 @@ PROGRAM _CYCLIC
 	gMpRecipeUI_0.Enable := TRUE;
 	gMpRecipeUI_0.UISetup := gUISetup;
 	gMpRecipeUI_0.UIConnect := ADR(gUIConnect);
+		
+	Coffee.Water;
+	Coffee.Milk;
+	Coffee.Powder;
+	Coffee.Sugar;
+	Coffee.Temperature;
 	
+	gMpRecipeXML_0();
+	gMpRecipeRegPar_0();
 END_PROGRAM
 
 PROGRAM _EXIT

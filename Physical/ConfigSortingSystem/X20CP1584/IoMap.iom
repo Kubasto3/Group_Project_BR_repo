@@ -1,0 +1,3 @@
+VAR_CONFIG
+	::gWeightMeasure AT %IB."NIC_50-RE/PLS"._1ByteIn_04_I2100_S04;
+END_VAR
