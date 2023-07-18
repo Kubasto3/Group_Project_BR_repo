@@ -1,4 +1,4 @@
 VAR_CONFIG
 	::gInWeightMeasure AT %IB."NIC_50-RE/PLS"._1ByteIn_04_I2100_S04;
-	::gActuatorByte AT %QW."Numatics_G3".Out01_I3201Out;
+	::gActuatorByte AT %QW."Numatics_G3".Out02_I3202Out;
 END_VAR
