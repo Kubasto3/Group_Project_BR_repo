@@ -1,3 +1,12 @@
 VAR_CONFIG
 	::Program:BAIT AT %QW."Numatics_G3".Out01_I3201Out;
+	::Camera:PhotosTaken AT %IB."VSS112Q22.042P-000".CompletedAcquisitionCnt;
+	::Camera:ImageAcqActive AT %IX."VSS112Q22.042P-000".DigitalInput01;
+	::Camera:ImageAcq AT %QX."VSS112Q22.042P-000".ImageAcquisition;
+	::Camera:SET_FOCUS AT %QW."VSS112Q22.042P-000".SetFocus;
+	::Camera:EXPO_TIME AT %QD."VSS112Q22.042P-000".ExposureTime01;
+	::Camera:FLASH_COLOR AT %QB."VSS112Q22.042P-000".FlashColor01;
+	::Camera:FLASH_SEGMENT AT %QB."VSS112Q22.042P-000".FlashSegment01;
+	50 AT %QB."VSS112Q22.042P-000".MinScoreMatching;
+	1 AT %QB."VSS112Q22.042P-000".NumSearchMaxMatching;
 END_VAR

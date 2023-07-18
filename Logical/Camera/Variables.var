@@ -1,0 +1,11 @@
+VAR
+	ImageAcqReady : BOOL;
+	ImageAcqActive : BOOL;
+	ImageAcq : BOOL;
+	PhotosTaken : USINT;
+	SET_FOCUS : UINT := 15000;
+	NumberMatches : USINT;
+	EXPO_TIME : UDINT := 15000;
+	FLASH_COLOR : USINT := 1;
+	FLASH_SEGMENT : USINT := 0001;
+END_VAR
