@@ -14,6 +14,7 @@
   <BindingsSets>
     <BindingsSet refId="ContentAlarmHistory_binding" />
     <BindingsSet refId="ContentAlarms_binding" />
+    <BindingsSet refId="ContentTop_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentTop_eventbinding" />
@@ -32,15 +33,15 @@
     <Content refId="ContentServices" />
     <Content refId="ContentAlarms" />
     <Content refId="ContentCharts" />
-    <Content refId="ContentDiagnostics" />
     <Content refId="contentMessageBoxLogin" />
+    <Content refId="ContentDiagnostics" />
     <Content refId="ContentAlarmHistory" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
   <ExpressionsSets />
   <Configurations>
-	<Configuration key="zoom" value="true" />
+    <Configuration key="zoom" value="true" />
     <Configuration key="activityCount" value="false" />
     <Gestures>
       <!--<SystemGesture1 touchPoints="2" />
