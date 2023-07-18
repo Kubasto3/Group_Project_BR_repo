@@ -13,7 +13,7 @@ PROGRAM _CYCLIC
 		gActuatorByte := 2#0000_0000_0000_0000;
 		ManualStep := MANUAL_START;
 	END_IF;
-	
+	//lol
 	ManualDistance;
 	gMotorBeltParType.Distance := 500;
 	gMotorBeltParType.Velocity := 500;
