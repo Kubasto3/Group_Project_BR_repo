@@ -3,8 +3,9 @@ VAR
 	ManualStop : BOOL;
 	ManualStart : BOOL;
 	ManualDistance : INT;
-	ManualActuatorDozing : BOOL;
+	ManualActuatorDosing : BOOL;
 	ManualActuatorSorting : BOOL;
 	ManualActuatorBoth : BOOL;
 	BeltMove : BOOL;
+	ManualActuatorNone : BOOL;
 END_VAR
