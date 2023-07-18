@@ -33,8 +33,8 @@
     <Content refId="ContentServices" />
     <Content refId="ContentAlarms" />
     <Content refId="ContentCharts" />
-    <Content refId="ContentDiagnostics" />
     <Content refId="contentMessageBoxLogin" />
+    <Content refId="ContentDiagnostics" />
     <Content refId="ContentAlarmHistory" />
   </Contents>
   <SnippetsSets />
