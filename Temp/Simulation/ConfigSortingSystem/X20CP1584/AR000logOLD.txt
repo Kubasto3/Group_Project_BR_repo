@@ -1,0 +1,21 @@
+Tue Jul 18 09:10:03 2023
+COPYRIGHT (C) B&R Industrial Automation GmbH
+
+Tue Jul 18 09:10:03 2023
+No ARsim registration found!
+
+Tue Jul 18 09:10:03 2023
+InstanceName: 000003b6f2bec83f
+
+Tue Jul 18 09:10:03 2023
+WorkingDirectory: C:\Users\Szkolenie\Desktop\TK_Praktyki_2023\wizualizacja_teo\Temp\Simulation\ConfigSortingSystem\X20CP1584\
+
+Tue Jul 18 09:10:03 2023
+COMMAND_COLDSTART
+
+Tue Jul 18 09:10:05 2023
+Version: B4.93
+
+Tue Jul 18 09:32:03 2023
+COMMAND_TERMINATE
+

@@ -1,0 +1,4 @@
+VAR
+	gAlarmXCore : {REDUND_UNREPLICABLE} MpComIdentType; (*#1"C:\Users\Szkolenie\Desktop\TK_Praktyki_2023\wizualizacja_teo\Physical\ConfigSortingSystem\X20CP1584\mappServices\Config.mpalarmxcore" #2"1" #3"1"*)
+	gAlarmXHistory : {REDUND_UNREPLICABLE} MpComIdentType; (*#1"C:\Users\Szkolenie\Desktop\TK_Praktyki_2023\wizualizacja_teo\Physical\ConfigSortingSystem\X20CP1584\mappServices\Config_2.mpalarmxhistory" #2"1" #3"1"*)
+END_VAR

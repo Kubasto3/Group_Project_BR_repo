@@ -1,0 +1,11 @@
+@import "mixins.scss";
+#ContentParameters_Label1 {	@include elemAutoHeight(30);
+}
+#ContentParameters_Label1 {	@include elemTop(285);
+}
+#ContentParameters_Label1 {	@include elemLeft(360);
+}
+#ContentParameters_Label1 {	@include elemAutoWidth(220);
+}
+#ContentParameters_Label1 {	z-index: 0;
+}

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Content id="ContentTop" height="80" width="1480" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Content id="ContentTop" height="120" width="1480" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.Image" id="ImageLogo" top="0" left="0" width="172" height="78" zIndex="2" image="Media/SymbolLib/br_logo.jpg" borderStyle="solid" borderWidth="0px" borderColor="rgba(0, 0, 0, 1)" />
-    <Widget xsi:type="widgets.brease.Image" id="ImageLogin" top="4" left="1418" width="50" height="46" zIndex="1" image="Media/SymbolLib/User/User.svg" />
-    <Widget xsi:type="widgets.brease.DateTimeOutput" id="DateTimeOutput1" top="8" left="966" width="420" height="40" zIndex="3" backColor="rgba(255, 255, 255, 1)" textColor="rgba(0, 0, 0, 1)" fontSize="25px" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="RectangleBackground" top="52" left="102" width="1380" height="11" zIndex="0" borderWidth="0px" />
-    <Widget xsi:type="widgets.brease.Image" id="ImageAlarmRed" top="4" left="912" width="46" height="54" zIndex="4" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 0, 1)" />
-    <Widget xsi:type="widgets.brease.Image" id="ImageAlarmYellow" top="4" left="912" width="46" height="48" zIndex="5" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 255, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Image" id="ImageLogo" top="0" left="0" width="246" height="114" zIndex="1" image="Media/SymbolLib/br_logo_clean.jpg" borderStyle="solid" borderWidth="0px" borderColor="rgba(0, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Image" id="ImageLogin" top="4" left="1398" width="70" height="68" zIndex="0" image="Media/SymbolLib/User/User.svg" />
+    <Widget xsi:type="widgets.brease.DateTimeOutput" id="DateTimeOutput1" top="8" left="924" width="463" height="58" zIndex="3" backColor="rgba(255, 255, 255, 1)" textColor="rgba(0, 0, 0, 1)" fontSize="25px" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="RectangleBackground" top="75" left="-5" width="1511" height="16" zIndex="2" borderWidth="0px" />
+    <Widget xsi:type="widgets.brease.Image" id="ImageAlarmRed" top="12" left="852" width="46" height="54" zIndex="4" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Image" id="ImageAlarmYellow" top="12" left="852" width="46" height="48" zIndex="5" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 255, 0, 1)" />
   </Widgets>
 </Content>

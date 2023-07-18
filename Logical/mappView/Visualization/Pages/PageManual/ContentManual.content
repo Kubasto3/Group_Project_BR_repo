@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Content id="ContentManual" height="620" width="1280" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Content id="ContentManual" height="580" width="1280" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
     <Widget xsi:type="widgets.brease.Label" id="Label1" top="592" left="1204" zIndex="0" text="manual" enable="false" />
-    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxManual" top="16" left="24" width="608" height="584" zIndex="1" text="Manual mode" borderWidth="5px" enable="false">
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxManual" top="16" left="24" width="608" height="544" zIndex="1" text="Manual mode" borderWidth="5px" enable="false">
       <Widgets>
         <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonActuatingPistonActivate" top="7" left="111" width="389" height="73" zIndex="0" text="ACTUATING PISTON" />
         <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonPushingPistonActivate" top="87" left="111" width="389" height="73" zIndex="1" text="PUSHING PISTON" />
-        <Widget xsi:type="widgets.brease.Button" id="ButtonMakePicture" top="447" left="111" width="389" height="77" zIndex="2" text="MAKE PICTURE" />
+        <Widget xsi:type="widgets.brease.Button" id="ButtonMakePicture" top="406" left="111" width="389" height="77" zIndex="2" text="MAKE PICTURE" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxSemiAuto" top="16" left="648" width="608" height="584" zIndex="2" text="Semi-automatic mode" borderWidth="5px" enable="false">
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxSemiAuto" top="16" left="648" width="608" height="544" zIndex="2" text="Semi-automatic mode" borderWidth="5px" enable="false">
       <Widgets />
     </Widget>
     <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonActivateManualMode" top="22" left="30" width="24" height="24" zIndex="3" />
