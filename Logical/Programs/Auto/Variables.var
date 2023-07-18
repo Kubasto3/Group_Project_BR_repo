@@ -1,4 +1,0 @@
-VAR
-	MotorBeltAxisBasic : MpAxisBasic;
-	MotorBeltParType : MpAxisBasicParType;
-END_VAR

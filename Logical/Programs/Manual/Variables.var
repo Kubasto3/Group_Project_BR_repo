@@ -1,8 +1,10 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	ManualStep : ManualStepsEnum;
+	ManualStop : BOOL;
+	ManualStart : BOOL;
+	ManualDistance : INT;
+	ManualActuatorDozing : BOOL;
+	ManualActuatorSorting : BOOL;
+	ManualActuatorBoth : BOOL;
+	BeltMove : BOOL;
 END_VAR

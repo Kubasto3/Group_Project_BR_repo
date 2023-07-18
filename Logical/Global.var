@@ -10,4 +10,6 @@ VAR
 	gInWeightMeasure : USINT;
 	gInWeightDetected : BOOL;
 	gActuatorByte : UINT;
+	gMotorBeltParType : MpAxisBasicParType;
+	gMotorBeltAxisBasic : MpAxisBasic;
 END_VAR

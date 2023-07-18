@@ -8,7 +8,7 @@ PROGRAM _CYCLIC
 	
 	IF gStart AND NOT gStop THEN
 		
-		IF gWeightDetected THEN  //TESTOWANIE
+		IF gInWeightDetected THEN  //TESTOWANIE
 			gActuatorByte := 2#0000_0000_0000_0101;
 		ELSE
 			gActuatorByte := 2#0000_0000_0000_0000;
@@ -16,11 +16,7 @@ PROGRAM _CYCLIC
 	
 		//Fragment kodu odpowiedzialny za inicjalizacjê taœmy
 		
-		gAxis_1;
-		MotorBeltAxisBasic.MpLink := ADR(gAxis_1);
-		MotorBeltAxisBasic.Enable := TRUE;
-		MotorBeltAxisBasic.Parameters := ADR(MotorBeltParType);	
-		MotorBeltAxisBasic();
+		
 		
 	END_IF;
 END_PROGRAM
