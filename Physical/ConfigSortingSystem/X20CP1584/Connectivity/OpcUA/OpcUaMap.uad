@@ -16,6 +16,9 @@
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
         <Variable Name="pendingAlarms" />
+        <Variable Name="enableRedIcon" />
+        <Variable Name="enableYellowIcon" />
+        <Variable Name="test_alarm" />
         <Variable Name="IsSemiAutoMode" />
         <Variable Name="IsManualMode" />
       </Task>
