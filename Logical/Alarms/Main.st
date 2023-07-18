@@ -49,7 +49,6 @@ PROGRAM _CYCLIC
 		enableRedIcon := FALSE;
 	END_IF;
 	
-	
 END_PROGRAM
 
 PROGRAM _EXIT
