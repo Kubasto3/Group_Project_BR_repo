@@ -1,0 +1,1060 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version="4.12.4.107 SP"?>
+<Objects>
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Package.pkg"
+    LogicalPath=""
+    Type="Package.ParentUnknown"
+    LastWriteTime="133338043604064983" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Temp\Includes\AS_TempDecl\ConfigSortingSystem\GlobalComponents\MpVisionComponents.var"
+    LogicalPath="MpVisionComponents.var"
+    Type="File"
+    LastWriteTime="133340525397907740"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Temp\Includes\AS_TempDecl\ConfigSortingSystem\GlobalComponents\McElements.var"
+    LogicalPath="McElements.var"
+    Type="File"
+    LastWriteTime="133340525397637704"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Global.typ"
+    LogicalPath="Global.typ"
+    Type="File"
+    LastWriteTime="133341416068007860"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Global.var"
+    LogicalPath="Global.var"
+    Type="File"
+    LastWriteTime="133341401601837105"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\Package.pkg"
+    LogicalPath="Libraries"
+    Type="Package"
+    LastWriteTime="133338014749102891" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\operator\binary.lby"
+    LogicalPath="Libraries.operator"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\operator\operator.fun"
+    LogicalPath="Libraries.operator.operator.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\operator\operator.typ"
+    LogicalPath="Libraries.operator.operator.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\operator\operator.var"
+    LogicalPath="Libraries.operator.operator.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\runtime\binary.lby"
+    LogicalPath="Libraries.runtime"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\runtime\runtime.fun"
+    LogicalPath="Libraries.runtime.runtime.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\runtime\runtime.typ"
+    LogicalPath="Libraries.runtime.runtime.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\runtime\runtime.var"
+    LogicalPath="Libraries.runtime.runtime.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\astime\binary.lby"
+    LogicalPath="Libraries.astime"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\astime\astime.fun"
+    LogicalPath="Libraries.astime.astime.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\astime\astime.typ"
+    LogicalPath="Libraries.astime.astime.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\astime\astime.var"
+    LogicalPath="Libraries.astime.astime.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsIecCon\binary.lby"
+    LogicalPath="Libraries.AsIecCon"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsIecCon\AsIecCon.fun"
+    LogicalPath="Libraries.AsIecCon.AsIecCon.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsIecCon\AsIecCon.typ"
+    LogicalPath="Libraries.AsIecCon.AsIecCon.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsIecCon\AsIecCon.var"
+    LogicalPath="Libraries.AsIecCon.AsIecCon.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\MpAxis\binary.lby"
+    LogicalPath="Libraries.MpAxis"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\MpAxis\MpAxis.fun"
+    LogicalPath="Libraries.MpAxis.MpAxis.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\MpAxis\MpAxis.typ"
+    LogicalPath="Libraries.MpAxis.MpAxis.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\MpAxis\MpAxisError.typ"
+    LogicalPath="Libraries.MpAxis.MpAxisError.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McAxis\binary.lby"
+    LogicalPath="Libraries.McAxis"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McAxis\McAxis.typ"
+    LogicalPath="Libraries.McAxis.McAxis.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McAxis\McAxis.fun"
+    LogicalPath="Libraries.McAxis.McAxis.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McAxis\McAxis.var"
+    LogicalPath="Libraries.McAxis.McAxis.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McAxis\McAxisCfg.typ"
+    LogicalPath="Libraries.McAxis.McAxisCfg.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\MpBase\Binary.lby"
+    LogicalPath="Libraries.MpBase"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\MpBase\MpBase.var"
+    LogicalPath="Libraries.MpBase.MpBase.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\MpBase\MpBase.typ"
+    LogicalPath="Libraries.MpBase.MpBase.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\MpBase\MpBase.fun"
+    LogicalPath="Libraries.MpBase.MpBase.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\MpBase\Common_EventLog.tmx"
+    LogicalPath="Libraries.MpBase.Common_EventLog.tmx"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McAcpAx\binary.lby"
+    LogicalPath="Libraries.McAcpAx"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McAcpAx\McAcpAx.typ"
+    LogicalPath="Libraries.McAcpAx.McAcpAx.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McAcpAx\McAcpAx.fun"
+    LogicalPath="Libraries.McAcpAx.McAcpAx.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McAcpAx\McAcpAx.var"
+    LogicalPath="Libraries.McAcpAx.McAcpAx.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McAcpAx\McAcpAxCfg.typ"
+    LogicalPath="Libraries.McAcpAx.McAcpAxCfg.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\CoTrace\binary.lby"
+    LogicalPath="Libraries.CoTrace"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\CoTrace\CoTrace.fun"
+    LogicalPath="Libraries.CoTrace.CoTrace.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\CoTrace\CoTrace.typ"
+    LogicalPath="Libraries.CoTrace.CoTrace.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\CoTrace\CoTrace.var"
+    LogicalPath="Libraries.CoTrace.CoTrace.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsZip\binary.lby"
+    LogicalPath="Libraries.AsZip"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsZip\AsZip.fun"
+    LogicalPath="Libraries.AsZip.AsZip.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsZip\AsZip.typ"
+    LogicalPath="Libraries.AsZip.AsZip.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsZip\AsZip.var"
+    LogicalPath="Libraries.AsZip.AsZip.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\FileIO\binary.lby"
+    LogicalPath="Libraries.FileIO"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\FileIO\FileIO.fun"
+    LogicalPath="Libraries.FileIO.FileIO.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\FileIO\FileIO.typ"
+    LogicalPath="Libraries.FileIO.FileIO.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\FileIO\FileIO.var"
+    LogicalPath="Libraries.FileIO.FileIO.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McBase\binary.lby"
+    LogicalPath="Libraries.McBase"
+    Type="Library"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McBase\McBase.typ"
+    LogicalPath="Libraries.McBase.McBase.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McBase\McBase.fun"
+    LogicalPath="Libraries.McBase.McBase.fun"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McBase\McBase.var"
+    LogicalPath="Libraries.McBase.McBase.var"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\McBase\McBaseCfg.typ"
+    LogicalPath="Libraries.McBase.McBaseCfg.typ"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\ViBase\binary.lby"
+    LogicalPath="Libraries.ViBase"
+    Type="Library"
+    LastWriteTime="133338014746437834" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\ViBase\ViBase.fun"
+    LogicalPath="Libraries.ViBase.ViBase.fun"
+    Type="File"
+    LastWriteTime="133338014746367818"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\ViBase\ViBase.typ"
+    LogicalPath="Libraries.ViBase.ViBase.typ"
+    Type="File"
+    LastWriteTime="133338014746397817"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\ViBase\ViBase.var"
+    LogicalPath="Libraries.ViBase.ViBase.var"
+    Type="File"
+    LastWriteTime="133338014746427840"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsARCfg\binary.lby"
+    LogicalPath="Libraries.AsARCfg"
+    Type="Library"
+    LastWriteTime="133338014746977999" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsARCfg\AsARCfg.fun"
+    LogicalPath="Libraries.AsARCfg.AsARCfg.fun"
+    Type="File"
+    LastWriteTime="133338014746917878"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsARCfg\AsARCfg.typ"
+    LogicalPath="Libraries.AsARCfg.AsARCfg.typ"
+    Type="File"
+    LastWriteTime="133338014746947867"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsARCfg\AsARCfg.var"
+    LogicalPath="Libraries.AsARCfg.AsARCfg.var"
+    Type="File"
+    LastWriteTime="133338014746968007"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\powerlnk\binary.lby"
+    LogicalPath="Libraries.powerlnk"
+    Type="Library"
+    LastWriteTime="133338014747394385" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\powerlnk\powerlnk.fun"
+    LogicalPath="Libraries.powerlnk.powerlnk.fun"
+    Type="File"
+    LastWriteTime="133338014747338027"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\powerlnk\powerlnk.typ"
+    LogicalPath="Libraries.powerlnk.powerlnk.typ"
+    Type="File"
+    LastWriteTime="133338014747358037"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\powerlnk\powerlnk.var"
+    LogicalPath="Libraries.powerlnk.powerlnk.var"
+    Type="File"
+    LastWriteTime="133338014747384382"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsEPL\binary.lby"
+    LogicalPath="Libraries.AsEPL"
+    Type="Library"
+    LastWriteTime="133338014747784420" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsEPL\AsEPL.fun"
+    LogicalPath="Libraries.AsEPL.AsEPL.fun"
+    Type="File"
+    LastWriteTime="133338014747724407"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsEPL\AsEPL.typ"
+    LogicalPath="Libraries.AsEPL.AsEPL.typ"
+    Type="File"
+    LastWriteTime="133338014747754570"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsEPL\AsEPL.var"
+    LogicalPath="Libraries.AsEPL.AsEPL.var"
+    Type="File"
+    LastWriteTime="133338014747774416"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsIO\binary.lby"
+    LogicalPath="Libraries.AsIO"
+    Type="Library"
+    LastWriteTime="133338014748167954" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsIO\AsIO.fun"
+    LogicalPath="Libraries.AsIO.AsIO.fun"
+    Type="File"
+    LastWriteTime="133338014748110989"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsIO\AsIO.typ"
+    LogicalPath="Libraries.AsIO.AsIO.typ"
+    Type="File"
+    LastWriteTime="133338014748130980"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\AsIO\AsIO.var"
+    LogicalPath="Libraries.AsIO.AsIO.var"
+    Type="File"
+    LastWriteTime="133338014748157942"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\sys_lib\binary.lby"
+    LogicalPath="Libraries.sys_lib"
+    Type="Library"
+    LastWriteTime="133338014748566271" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\sys_lib\sys_lib.fun"
+    LogicalPath="Libraries.sys_lib.sys_lib.fun"
+    Type="File"
+    LastWriteTime="133338014748501665"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\sys_lib\sys_lib.typ"
+    LogicalPath="Libraries.sys_lib.sys_lib.typ"
+    Type="File"
+    LastWriteTime="133338014748529340"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\sys_lib\sys_lib.var"
+    LogicalPath="Libraries.sys_lib.sys_lib.var"
+    Type="File"
+    LastWriteTime="133338014748556269"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\DataObj\binary.lby"
+    LogicalPath="Libraries.DataObj"
+    Type="Library"
+    LastWriteTime="133338014748992868" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\DataObj\DataObj.fun"
+    LogicalPath="Libraries.DataObj.DataObj.fun"
+    Type="File"
+    LastWriteTime="133338014748936305"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\DataObj\DataObj.typ"
+    LogicalPath="Libraries.DataObj.DataObj.typ"
+    Type="File"
+    LastWriteTime="133338014748957741"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Libraries\DataObj\DataObj.var"
+    LogicalPath="Libraries.DataObj.DataObj.var"
+    Type="File"
+    LastWriteTime="133338014748982864"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Package.pkg"
+    LogicalPath="mappView"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Layouts\Package.pkg"
+    LogicalPath="mappView.Layouts"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Layouts\LayoutMain.layout"
+    LogicalPath="mappView.Layouts.LayoutMain.layout"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Widgets\Package.pkg"
+    LogicalPath="mappView.Widgets"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Resources\Package.pkg"
+    LogicalPath="mappView.Resources"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Resources\Texts\Package.pkg"
+    LogicalPath="mappView.Resources.Texts"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Resources\Snippets\Package.pkg"
+    LogicalPath="mappView.Resources.Snippets"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Resources\Themes\Package.pkg"
+    LogicalPath="mappView.Resources.Themes"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Resources\Media\Package.pkg"
+    LogicalPath="mappView.Resources.Media"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Package.pkg"
+    LogicalPath="mappView.Visualization"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\Package.pkg"
+    LogicalPath="mappView.Visualization.Pages"
+    Type="Package"
+    LastWriteTime="133340610275659799" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\AreaContents\Package.pkg"
+    LogicalPath="mappView.Visualization.Pages.AreaContents"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\AreaContents\ContentTop.content"
+    LogicalPath="mappView.Visualization.Pages.AreaContents.ContentTop.content"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\AreaContents\ContentLeft.content"
+    LogicalPath="mappView.Visualization.Pages.AreaContents.ContentLeft.content"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageAuto\Package.pkg"
+    LogicalPath="mappView.Visualization.Pages.PageAuto"
+    Type="Package"
+    LastWriteTime="133340610275649905" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageAuto\PageAuto.page"
+    LogicalPath="mappView.Visualization.Pages.PageAuto.PageAuto.page"
+    Type="File"
+    LastWriteTime="133340610275609793"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageAuto\ContentAuto.content"
+    LogicalPath="mappView.Visualization.Pages.PageAuto.ContentAuto.content"
+    Type="File"
+    LastWriteTime="133340610275640013"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageManual\Package.pkg"
+    LogicalPath="mappView.Visualization.Pages.PageManual"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageManual\PageManual.page"
+    LogicalPath="mappView.Visualization.Pages.PageManual.PageManual.page"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageManual\ContentManual.content"
+    LogicalPath="mappView.Visualization.Pages.PageManual.ContentManual.content"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageParameters\Package.pkg"
+    LogicalPath="mappView.Visualization.Pages.PageParameters"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageParameters\PageParameter.page"
+    LogicalPath="mappView.Visualization.Pages.PageParameters.PageParameter.page"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageParameters\ContentParameters.content"
+    LogicalPath="mappView.Visualization.Pages.PageParameters.ContentParameters.content"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageServices\Package.pkg"
+    LogicalPath="mappView.Visualization.Pages.PageServices"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageServices\PageServices.page"
+    LogicalPath="mappView.Visualization.Pages.PageServices.PageServices.page"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageServices\ContentServices.content"
+    LogicalPath="mappView.Visualization.Pages.PageServices.ContentServices.content"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageAlarms\Package.pkg"
+    LogicalPath="mappView.Visualization.Pages.PageAlarms"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageAlarms\PageAlarms.page"
+    LogicalPath="mappView.Visualization.Pages.PageAlarms.PageAlarms.page"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageAlarms\ContentAlarms.content"
+    LogicalPath="mappView.Visualization.Pages.PageAlarms.ContentAlarms.content"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageCharts\Package.pkg"
+    LogicalPath="mappView.Visualization.Pages.PageCharts"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageCharts\PageCharts.page"
+    LogicalPath="mappView.Visualization.Pages.PageCharts.PageCharts.page"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageCharts\ContentCharts.content"
+    LogicalPath="mappView.Visualization.Pages.PageCharts.ContentCharts.content"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageDiagnostics\Package.pkg"
+    LogicalPath="mappView.Visualization.Pages.PageDiagnostics"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageDiagnostics\PageDiagnostics.page"
+    LogicalPath="mappView.Visualization.Pages.PageDiagnostics.PageDiagnostics.page"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Pages\PageDiagnostics\ContentDiagnostics.content"
+    LogicalPath="mappView.Visualization.Pages.PageDiagnostics.ContentDiagnostics.content"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Variables\Package.pkg"
+    LogicalPath="mappView.Visualization.Variables"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Expressions\Package.pkg"
+    LogicalPath="mappView.Visualization.Expressions"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Layouts\Package.pkg"
+    LogicalPath="mappView.Visualization.Layouts"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Dialogs\Package.pkg"
+    LogicalPath="mappView.Visualization.Dialogs"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Dialogs\AreaContents\Package.pkg"
+    LogicalPath="mappView.Visualization.Dialogs.AreaContents"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Resources\Package.pkg"
+    LogicalPath="mappView.Visualization.Resources"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Resources\Texts\Package.pkg"
+    LogicalPath="mappView.Visualization.Resources.Texts"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\mappView\Visualization\Resources\Snippets\Package.pkg"
+    LogicalPath="mappView.Visualization.Resources.Snippets"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Program\IEC.prg"
+    LogicalPath="Program"
+    Type="Program"
+    LastWriteTime="133337948180000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Program\Main.st"
+    LogicalPath="Program.Main.st"
+    Type="File"
+    LastWriteTime="133337948180000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Program\Types.typ"
+    LogicalPath="Program.Types.typ"
+    Type="File"
+    LastWriteTime="133337948180000000"
+    Private="true" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Program\Variables.var"
+    LogicalPath="Program.Variables.var"
+    Type="File"
+    LastWriteTime="133340569002977993"
+    Private="true" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Camera\IEC.prg"
+    LogicalPath="Camera"
+    Type="Program"
+    LastWriteTime="133338012912611578" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Camera\Main.st"
+    LogicalPath="Camera.Main.st"
+    Type="File"
+    LastWriteTime="133341478115605854"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Camera\Types.typ"
+    LogicalPath="Camera.Types.typ"
+    Type="File"
+    LastWriteTime="133338012912571593"
+    Private="true" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Logical\Camera\Variables.var"
+    LogicalPath="Camera.Variables.var"
+    Type="File"
+    LastWriteTime="133341562916890348"
+    Private="true" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\Config.pkg"
+    LogicalPath="ConfigSortingSystem"
+    Type="Configuration.ParentUnknown"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\Hardware.hw"
+    LogicalPath="ConfigSortingSystem.Hardware.hw"
+    Type="File"
+    LastWriteTime="133338120066924796"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\Hardware.hwl"
+    LogicalPath="ConfigSortingSystem.Hardware.hwl"
+    Type="File"
+    LastWriteTime="133338120227395421"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\Cpu.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584"
+    Type="Cpu"
+    LastWriteTime="133341565657744885" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\Cpu.sw"
+    LogicalPath="ConfigSortingSystem.X20CP1584.Cpu.sw"
+    Type="File"
+    LastWriteTime="133338043604795073"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\Cpu.per"
+    LogicalPath="ConfigSortingSystem.X20CP1584.Cpu.per"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\IoMap.iom"
+    LogicalPath="ConfigSortingSystem.X20CP1584.IoMap.iom"
+    Type="File"
+    LastWriteTime="133341592058455386"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\PvMap.vvm"
+    LogicalPath="ConfigSortingSystem.X20CP1584.PvMap.vvm"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\Connectivity\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.Connectivity"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\Connectivity\OpcUA\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.Connectivity.OpcUA"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\Connectivity\OpcUA\OpcUaMap.uad"
+    LogicalPath="ConfigSortingSystem.X20CP1584.Connectivity.OpcUA.OpcUaMap.uad"
+    Type="File"
+    LastWriteTime="133337957707578331"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\Connectivity\OpcUaFx\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.Connectivity.OpcUaFx"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\TextSystem\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.TextSystem"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\UnitSystem\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.UnitSystem"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\UserRoleSystem\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.UserRoleSystem"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\UserRoleSystem\Role.role"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.UserRoleSystem.Role.role"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\UserRoleSystem\User.user"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.UserRoleSystem.User.user"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\CertificateStore\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.CertificateStore"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\CertificateStore\OwnCertificates\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.CertificateStore.OwnCertificates"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\CertificateStore\OwnCertificates\Certificates\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.CertificateStore.OwnCertificates.Certificates"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\CertificateStore\OwnCertificates\PrivateKeys\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.CertificateStore.OwnCertificates.PrivateKeys"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\CertificateStore\ThirdPartyCertificates\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.CertificateStore.ThirdPartyCertificates"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\CertificateStore\ThirdPartyCertificates\SoftwareCertificates\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.CertificateStore.ThirdPartyCertificates.SoftwareCertificates"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\CertificateStore\CertificateRevocationLists\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.CertificateStore.CertificateRevocationLists"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\CertificateStore\CertificateSigningRequests\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.CertificateStore.CertificateSigningRequests"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\TransportLayerSecurity\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.TransportLayerSecurity"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\Firewall\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.Firewall"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\AccessAndSecurity\Firewall\Rules.firewallRules"
+    LogicalPath="ConfigSortingSystem.X20CP1584.AccessAndSecurity.Firewall.Rules.firewallRules"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappControl\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappControl"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappMotion\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappMotion"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappMotion\Config_1.axis"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappMotion.Config_1.axis"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappServices\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappServices"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappSafety\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappSafety"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappSafety\SafeApplication\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappSafety.SafeApplication"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappSafety\SafeCommissioning\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappSafety.SafeCommissioning"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappView\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappView"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappView\Visualizat.vis"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappView.Visualizat.vis"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappView\Config.mappviewcfg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappView.Config.mappviewcfg"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappVision\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappVision"
+    Type="Package"
+    LastWriteTime="133341548632105994" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappVision\SettingsVi.vicfg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappVision.SettingsVi.vicfg"
+    Type="File"
+    LastWriteTime="133338097256159814"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappVision\viComp.visioncomponent"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappVision.viComp.visioncomponent"
+    Type="File"
+    LastWriteTime="133340677253452959"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappVision\viAppLogo.visionapplication"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappVision.viAppLogo.visionapplication"
+    Type="File"
+    LastWriteTime="133341548757580454"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappCockpit\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappCockpit"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\mappCockpit\Settings.mcocfg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.mappCockpit.Settings.mcocfg"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\ExternalHardware\Package.pkg"
+    LogicalPath="ConfigSortingSystem.X20CP1584.ExternalHardware"
+    Type="Package"
+    LastWriteTime="133337944730000000" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\ExternalHardware\DHZ58EAC.ext"
+    LogicalPath="ConfigSortingSystem.X20CP1584.ExternalHardware.DHZ58EAC.ext"
+    Type="File"
+    LastWriteTime="133337244022188744"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\ExternalHardware\ExternalHardwareDevices.xml"
+    LogicalPath="ConfigSortingSystem.X20CP1584.ExternalHardware.ExternalHardwareDevices.xml"
+    Type="File"
+    LastWriteTime="133337944730000000"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\ExternalHardware\HFMWWBJD.ext"
+    LogicalPath="ConfigSortingSystem.X20CP1584.ExternalHardware.HFMWWBJD.ext"
+    Type="File"
+    LastWriteTime="133337244037606728"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\ExternalHardware\1KRO69IV.ext"
+    LogicalPath="ConfigSortingSystem.X20CP1584.ExternalHardware.1KRO69IV.ext"
+    Type="File"
+    LastWriteTime="133337244042377171"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\X20CP1584\ExternalHardware\AZ6T0Y96.ext"
+    LogicalPath="ConfigSortingSystem.X20CP1584.ExternalHardware.AZ6T0Y96.ext"
+    Type="File"
+    LastWriteTime="133337244048569015"
+    Private="false" />
+  <Object
+    Path="C:\Users\ninab\Desktop\automation studio\SorterBR_backup\Physical\ConfigSortingSystem\Hardware.jpg"
+    LogicalPath="ConfigSortingSystem.Hardware.jpg"
+    Type="File"
+    LastWriteTime="133338120228075472"
+    Private="false" />
+</Objects>
