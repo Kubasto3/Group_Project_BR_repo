@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="ContentAlarms">
+    <EventBinding id="ContentAlarms.ButtonAcknowledgeOne.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="ContentAlarms_ButtonAcknowledgeOne" />
+      <EventHandler>
+        <Action>
+          <Target type="widgets.brease.AlarmList.Action" refId="ContentAlarms_AlarmList">
+            <Method type="widgets.brease.AlarmList.Action.Acknowledge" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="ContentAlarms">
+    <EventBinding id="EventBinding_1">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="ContentAlarms_ButtonAcknowledgeAll" />
+      <EventHandler>
+        <Action>
+          <Target type="widgets.brease.AlarmList.Action" refId="ContentAlarms_AlarmList">
+            <Method type="widgets.brease.AlarmList.Action.AcknowledgeAll" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="ContentAlarms">
+    <EventBinding id="ContentAlarms.ButtonHistory.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="ContentAlarms_ButtonHistory" />
+      <EventHandler>
+        <Action>
+          <Target type="clientSystem.Action">
+            <Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="dialogAlarmHistory" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

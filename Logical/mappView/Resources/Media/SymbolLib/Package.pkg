@@ -17,5 +17,6 @@
     <Object Type="Package">User</Object>
     <Object Type="File">br_logo.jpg</Object>
     <Object Type="File">logo_br_orange.png</Object>
+    <Object Type="File">br_logo_clean.jpg</Object>
   </Objects>
 </Package>
