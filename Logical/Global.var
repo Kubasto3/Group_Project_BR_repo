@@ -7,7 +7,7 @@ VAR
 	gUIConnect : MpRecipeUIConnectType;
 	gStop : BOOL;
 	gStart : BOOL;
-	gWeightMeasure : USINT;
-	gWeightDetected : BOOL;
+	gInWeightMeasure : USINT;
+	gInWeightDetected : BOOL;
 	gActuatorByte : UINT;
 END_VAR
