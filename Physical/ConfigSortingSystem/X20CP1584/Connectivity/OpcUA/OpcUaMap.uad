@@ -8,7 +8,7 @@
     <EngineeringUnitAliases />
   </Aliases>
   <DefaultView>
-    <Module Name="&lt;Default&gt;" />
+    <Module Name="&lt;Default&gt;">
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
         <Variable Name="pendingAlarms" />

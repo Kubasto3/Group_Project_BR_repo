@@ -7,7 +7,6 @@
     <Object Type="Package" Description="Global libraries">Libraries</Object>
     <Object Type="Package">mappView</Object>
     <Object Type="Package">Programs</Object>
-    <Object Type="Program" Language="IEC">Program</Object>
     <Object Type="Program" Language="IEC">Camera</Object>
     <Object Type="Program" Language="IEC">Alarms</Object>
   </Objects>
