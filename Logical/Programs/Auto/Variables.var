@@ -25,4 +25,3 @@ VAR
 	ItemWeightChoosen : USINT;
 	MotorMoveDone : BOOL;
 	MotorMoveAdditive : BOOL;
-END_VAR
