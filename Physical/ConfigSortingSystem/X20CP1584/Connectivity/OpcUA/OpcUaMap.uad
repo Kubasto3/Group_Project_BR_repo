@@ -8,11 +8,7 @@
     <EngineeringUnitAliases />
   </Aliases>
   <DefaultView>
-    <Module Name="&lt;Default&gt;">
-      <Task Name="Program">
-        <Variable Name="BAIT" />
-        <Variable Name="Wysun" />
-      </Task>
+    <Module Name="&lt;Default&gt;" />
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
         <Variable Name="pendingAlarms" />

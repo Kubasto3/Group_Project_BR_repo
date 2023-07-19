@@ -1,6 +1,7 @@
 VAR_CONFIG
-	::Program:BAIT AT %QW."Numatics_G3".Out01_I3201Out;
+	::gInWeightMeasure AT %IB."NIC_50-RE/PLS"._1ByteIn_04_I2100_S04;
 	::Camera:PhotosTaken AT %IB."VSS112Q22.042P-000".CompletedAcquisitionCnt;
+	::gActuatorByte AT %QW."Numatics_G3".Out01_I3201Out;
 	::Camera:ImageAcqActive AT %IX."VSS112Q22.042P-000".DigitalInput01;
 	::Camera:ImageAcq AT %QX."VSS112Q22.042P-000".ImageAcquisition;
 	::Camera:SET_FOCUS AT %QW."VSS112Q22.042P-000".SetFocus;

@@ -1,3 +1,16 @@
 VAR
 	gRecognisedModel : ModelEnum; (*%value showing recognised model 1- B&R, 2- AS, 0- not recognised*)
+	Coffee : CofeeType;
+	gMpRecipeXML_0 : MpRecipeXml;
+	gMpRecipeRegPar_0 : MpRecipeRegPar;
+	gMpRecipeUI_0 : MpRecipeUI;
+	gUISetup : MpRecipeUISetupType;
+	gUIConnect : MpRecipeUIConnectType;
+	gStop : BOOL;
+	gStart : BOOL;
+	gInWeightMeasure : USINT;
+	gWeightDetected : BOOL;
+	gActuatorByte : UINT;
+	gMotorBeltAxisBasic : MpAxisBasic;
+	gMotorBeltParType : MpAxisBasicParType;
 END_VAR

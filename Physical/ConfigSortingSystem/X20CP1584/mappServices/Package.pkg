@@ -4,5 +4,7 @@
   <Objects>
     <Object Type="File">Config.mpalarmxcore</Object>
     <Object Type="File">Config_2.mpalarmxhistory</Object>
+    <Object Type="File">gRecipeXML.mprecipexml</Object>
+  </Objects>
   </Objects>
 </Package>

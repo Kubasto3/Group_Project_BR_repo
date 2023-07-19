@@ -199,8 +199,8 @@
     <Parameter ID="TimerDevice" Value="X20CP1584.IF3" />
     <Parameter ID="TaskClassIdleTime" Value="2000" />
     <Group ID="FileDevice1" />
-    <Parameter ID="FileDeviceName1" Value="USER" />
-    <Parameter ID="FileDevicePath1" Value="USER_PATH" />
+    <Parameter ID="FileDeviceName1" Value="CF" />
+    <Parameter ID="FileDevicePath1" Value="C:\Users\Szkolenie\Desktop\Recipies" />
     <Parameter ID="ActivateOpcUa" Value="1" />
     <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
   </Module>
