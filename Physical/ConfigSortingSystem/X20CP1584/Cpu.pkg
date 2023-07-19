@@ -19,7 +19,7 @@
     <Object Type="Package">mappCockpit</Object>
     <Object Type="Package">ExternalHardware</Object>
   </Objects>
-  <Configuration ModuleId="X20CP1584">
+  <Configuration HasNcOperatingSystem="False">
     <AutomationRuntime Version="B4.93" />
     <Build GccVersion="4.1.2" />
     <DefaultTargetMemory Tasks="UserROM" />
@@ -27,5 +27,6 @@
     <Transfer AddToUserPart="False" AdditionalUserDir="" AllowDowngrade="False" AllowInitialTransfer="False" AllowPartitioning="False" ExecuteInitExitProgram="False" ForceInitialTransfer="False" IdentificationTypeValue="" IgnoreVersion="True" KeepNonVolatileMemory="False" PreserveVariableValues="True" ProjectConsistent="True" RebootDuringTransfer="False" SavedOfflineInstallationFolder="D:\" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" TargetIdentificationType="Always" TryToBootInRunMode="False" UserFilesIgnoreDifference="True" />
     <Vc FirmwareVersion="V4.72.6" />
     <OnlineConfiguration Name="X20CP1584" DeviceType="TCPIP" DeviceParameters="/IF=tcpip /LOPO=11159 /SA=1" ConnectionParameters="/COMT=2500 /RT=1000 /AM=* /SDT=5 /DAIP=192.168.0.100 /REPO=11159 /ANSL=1 /PT=11169" Description="" />
+    <Transfer SavedOfflineInstallationFolder="" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" />
   </Configuration>
 </Cpu>

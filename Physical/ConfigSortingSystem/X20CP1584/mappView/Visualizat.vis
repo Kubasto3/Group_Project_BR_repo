@@ -11,9 +11,21 @@
     <Page refId="PageDiagnostics" />
   </Pages>
   <Navigations />
-  <BindingsSets />
-  <EventBindingsSets />
-  <Dialogs />
+  <BindingsSets>
+    <BindingsSet refId="ContentAlarmHistory_binding" />
+    <BindingsSet refId="ContentAlarms_binding" />
+    <BindingsSet refId="ContentTop_binding" />
+    <BindingsSet refId="ContentManual_binding" />
+  </BindingsSets>
+  <EventBindingsSets>
+    <EventBindingsSet refId="ContentTop_eventbinding" />
+    <EventBindingsSet refId="ContentAlarms_eventbinding" />
+    <EventBindingsSet refId="ContentManual_eventbinding" />
+  </EventBindingsSets>
+  <Dialogs>
+    <Dialog refId="dialogMessageBoxLogin" />
+    <Dialog refId="dialogAlarmHistory" />
+  </Dialogs>
   <Contents>
     <Content refId="ContentTop" />
     <Content refId="ContentLeft" />
@@ -23,12 +35,15 @@
     <Content refId="ContentServices" />
     <Content refId="ContentAlarms" />
     <Content refId="ContentCharts" />
+    <Content refId="contentMessageBoxLogin" />
     <Content refId="ContentDiagnostics" />
+    <Content refId="ContentAlarmHistory" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
   <ExpressionsSets />
   <Configurations>
+    <Configuration key="zoom" value="true" />
     <Configuration key="activityCount" value="false" />
     <Gestures>
       <!--<SystemGesture1 touchPoints="2" />

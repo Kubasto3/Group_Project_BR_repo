@@ -29,12 +29,12 @@
     <Group ID="Timer" />
     <Group ID="Client">
       <Group ID="ContentCaching">
-        <Property ID="cachingSlots" Value="200" />
+        <Property ID="cachingSlots" Value="500" />
         <Property ID="preserveOldValues" Value="TRUE" />
       </Group>
       <Property ID="defaultVisu" Value="SorterPowerlink" />
       <Group ID="Widget">
-        <Selector ID="renderingPolicy" Value="1" />
+        <Selector ID="renderingPolicy" Value="2" />
         <Selector ID="securityPolicy" Value="1" />
       </Group>
     </Group>
