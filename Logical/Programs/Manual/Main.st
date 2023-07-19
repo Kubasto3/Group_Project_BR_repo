@@ -18,8 +18,8 @@ PROGRAM _CYCLIC
 		ManualStep := MANUAL_START;
 	END_IF;
 	//lol
-	
-	ManualDistance := gMotorBeltParType.Distance;
+	gMotorBeltParType.Distance := ManualDistance;
+	gMotorBeltParType.Velocity := ManualVelocity;
 	ManualVelocity := gMotorBeltParType.Velocity;
 	gMotorBeltParType.Acceleration := 2500;
 	gMotorBeltParType.Deceleration := 2500;
@@ -36,6 +36,8 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		MANUAL_WAIT:
+			//ManualDistance := gMotorBeltParType.Distance;
+			//ManualVelocity := gMotorBeltParType.Velocity;
 			IF ManualActuatorDosing THEN
 				ManualActuatorDosing := 0;
 				ManualStep := MANUAL_ACTUATOR_DOSING;
@@ -83,7 +85,7 @@ PROGRAM _CYCLIC
 			gMotorBeltAxisBasic.Power := 1;
 			gMotorBeltAxisBasic.Home := 1;
 			IF gMotorBeltAxisBasic.PowerOn THEN
-				//gMotorBeltAxisBasic.Home := 0;
+				gMotorBeltAxisBasic.Home := 0;
 				gMotorBeltAxisBasic.MoveAdditive := 1;
 				ManualStep := MANUAL_BELT_MOVE_ADDITIVE;	  
 			END_IF;
@@ -111,7 +113,7 @@ PROGRAM _CYCLIC
 			END_IF;
 		
 		MANUAL_BELT_MOVE_VELOCITY:
-			IF gMotorBeltAxisBasic.MoveDone THEN
+			IF gMotorBeltAxisBasic.InVelocity THEN
 				IF BeltMoveVelocityOff THEN
 					BeltMoveVelocityOff := 0;
 					gMotorBeltAxisBasic.MoveVelocity := 0;
