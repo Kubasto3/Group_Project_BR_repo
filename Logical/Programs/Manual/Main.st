@@ -44,9 +44,9 @@ PROGRAM _CYCLIC
 			ELSIF ManualActuatorNone THEN
 				ManualActuatorNone := 0;
 				ManualStep := MANUAL_ACTUATOR_NONE;
-			ELSIF BeltMove THEN
-				BeltMove := 0;
-				ManualStep := MANUAL_BELT_SET;
+			ELSIF BeltMoveAdditive THEN
+				BeltMoveAdditive := 0;
+				ManualStep := MANUAL_BELT_SET_ADDITIVE;
 			END_IF;
 			
 		MANUAL_ACTUATOR_DOSING:
@@ -68,15 +68,16 @@ PROGRAM _CYCLIC
 			gActuatorByte := 2#0000_0000_0000_0000;
 			ManualStep := MANUAL_WAIT;
 			
-		MANUAL_BELT_SET:
+		MANUAL_BELT_SET_ADDITIVE:
 			gMotorBeltAxisBasic.Power := 1;
-			gMotorBeltAxisBasic.Home :=1;
+			gMotorBeltAxisBasic.Home := 1;
 			IF gMotorBeltAxisBasic.PowerOn THEN
+				gMotorBeltAxisBasic.Home := 0;
 				gMotorBeltAxisBasic.MoveAdditive := 1;
-				ManualStep := MANUAL_BELT_MOVE;	  
+				ManualStep := MANUAL_BELT_MOVE_ADDITIVE;	  
 			END_IF;
 			
-		MANUAL_BELT_MOVE:
+		MANUAL_BELT_MOVE_ADDITIVE:
 //			IF gMotorBeltParType.Distance = 0 THEN
 //				gMotorBeltAxisBasic.Power := 0;
 //				//UWAGA WIZJONERZY messagebox, ze dystans nieprawidlowy
@@ -88,7 +89,20 @@ PROGRAM _CYCLIC
 				END_IF;
 			//END_IF;
 					
-				
+		MANUAL_BELT_SET_VELOCITY:
+			gMotorBeltAxisBasic.Power := 1;
+			gMotorBeltAxisBasic.Home := 1;
+			IF gMotorBeltAxisBasic.PowerOn THEN
+				gMotorBeltAxisBasic.Home := 0;
+				gMotorBeltAxisBasic.MoveVelocity := 1;
+				ManualStep := MANUAL_BELT_MOVE_ADDITIVE; //UWAGA	  
+			END_IF;
+		
+		MANUAL_BELT_MOVE_VELOCITY:
+			IF gMotorBeltAxisBasic.MoveDone THEN
+				gMotorBeltAxisBasic.MoveVelocity := 0;
+				ManualStep := MANUAL_WAIT;
+			END_IF;
 		  
 
 	END_CASE;

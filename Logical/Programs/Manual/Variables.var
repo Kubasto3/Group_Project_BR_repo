@@ -6,6 +6,8 @@ VAR
 	ManualActuatorDosing : BOOL;
 	ManualActuatorSorting : BOOL;
 	ManualActuatorBoth : BOOL;
-	BeltMove : BOOL;
+	BeltMoveAdditive : BOOL;
 	ManualActuatorNone : BOOL;
+	BeltVelocity : USINT;
+	BeltDistance : USINT;
 END_VAR
