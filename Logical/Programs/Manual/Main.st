@@ -4,13 +4,30 @@ PROGRAM _INIT
 	gMotorBeltAxisBasic.Power := 0;
 	gMotorBeltAxisBasic.Home := 0;
 	
+	ManualStart := 0;
+
+	gMotorBeltParType.Acceleration := 2500;
+	gMotorBeltParType.Deceleration := 2500;
+	
+	gMotorBeltAxisBasic.MpLink := ADR(gAxis_1);				
+	gMotorBeltAxisBasic.Enable := 1;
+	gMotorBeltAxisBasic.Parameters := ADR(gMotorBeltParType);
 	
 	ManualStep := MANUAL_START;
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
 
 	gAxis_1;
+	
+	gMotorBeltParType.Distance := ManualDistance;
+	gMotorBeltParType.Velocity := ManualVelocity;
+	
+	IF DirectionChange THEN
+		DirectionChange := 0;
+		ManualVelocity := ManualVelocity * (-1);
+	END_IF;
 	
 	IF ManualStop THEN
 		ManualStop := 0;
@@ -18,15 +35,6 @@ PROGRAM _CYCLIC
 		ManualStep := MANUAL_START;
 	END_IF;
 	//lol
-	gMotorBeltParType.Distance := ManualDistance;
-	gMotorBeltParType.Velocity := ManualVelocity;
-	ManualVelocity := gMotorBeltParType.Velocity;
-	gMotorBeltParType.Acceleration := 2500;
-	gMotorBeltParType.Deceleration := 2500;
-	
-	gMotorBeltAxisBasic.MpLink := ADR(gAxis_1);				
-	gMotorBeltAxisBasic.Enable := 1;
-	gMotorBeltAxisBasic.Parameters := ADR(gMotorBeltParType);
 	
 	CASE ManualStep OF
 		MANUAL_START:
@@ -54,6 +62,7 @@ PROGRAM _CYCLIC
 				gMotorBeltAxisBasic.Power := 0;
 				gMotorBeltAxisBasic.Home := 0;
 				BeltMoveAdditive := 0;
+				gMotorBeltAxisBasic.Power := 1;
 				ManualStep := MANUAL_BELT_SET_ADDITIVE;
 			ELSIF BeltMoveVelocityOn THEN
 				gMotorBeltAxisBasic.Power := 0;
@@ -82,7 +91,7 @@ PROGRAM _CYCLIC
 			ManualStep := MANUAL_WAIT;
 			
 		MANUAL_BELT_SET_ADDITIVE:
-			gMotorBeltAxisBasic.Power := 1;
+
 			gMotorBeltAxisBasic.Home := 1;
 			IF gMotorBeltAxisBasic.PowerOn THEN
 				gMotorBeltAxisBasic.Home := 0;
@@ -97,6 +106,8 @@ PROGRAM _CYCLIC
 			//				ManualStep := MANUAL_WAIT;
 			//			ELSE 
 			IF gMotorBeltAxisBasic.MoveDone THEN
+				//gMotorBeltAxisBasic.ErrorReset := 1;
+				//gMotorBeltAxisBasic.ErrorReset := 0;
 				gMotorBeltAxisBasic.Power := 0;
 				gMotorBeltAxisBasic.MoveAdditive := 0;
 				ManualStep := MANUAL_WAIT;
@@ -117,6 +128,7 @@ PROGRAM _CYCLIC
 				IF BeltMoveVelocityOff THEN
 					BeltMoveVelocityOff := 0;
 					gMotorBeltAxisBasic.MoveVelocity := 0;
+					gMotorBeltAxisBasic.Power := 0;
 					ManualStep := MANUAL_WAIT;
 				END_IF;
 			END_IF;

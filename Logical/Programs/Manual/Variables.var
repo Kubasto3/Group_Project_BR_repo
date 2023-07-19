@@ -1,7 +1,7 @@
 VAR
 	ManualStep : ManualStepsEnum;
-	ManualStop : BOOL;
-	ManualStart : BOOL;
+	ManualStop : BOOL := FALSE;
+	ManualStart : BOOL := FALSE;
 	ManualDistance : LREAL;
 	ManualActuatorDosing : BOOL;
 	ManualActuatorSorting : BOOL;
@@ -13,4 +13,5 @@ VAR
 	BeltMoveVelocityOn : BOOL;
 	BeltMoveVelocityOff : BOOL;
 	ManualVelocity : REAL;
+	DirectionChange : BOOL;
 END_VAR
