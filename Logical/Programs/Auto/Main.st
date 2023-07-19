@@ -35,7 +35,7 @@ PROGRAM _CYCLIC
 	gMotorBeltAxisBasic.ErrorReset	 := MotorResetError;
 	MotorInPosition 				 := gMotorBeltAxisBasic.InPosition;
 	ItemDetected					 := gWeightDetected;
-	ItemWeight 						 := gWeightMeasure;
+	ItemWeight 						 := gInWeightMeasure;
 
 	
 	
