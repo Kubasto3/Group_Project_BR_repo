@@ -7,7 +7,7 @@
         <Widget xsi:type="widgets.brease.Button" id="ButtonAutoStart" top="48" left="148" width="354" height="125" zIndex="0" text="START" fontSize="25px" />
         <Widget xsi:type="widgets.brease.Button" id="ButtonAutoStop" top="199" left="149" width="352" height="101" zIndex="1" text="STOP" cornerRadius="15px" fontSize="25px" />
         <Widget xsi:type="widgets.brease.Label" id="LabelMachineStarted" top="324" left="149" width="351" height="76" zIndex="2" text="Working..." textColor="rgba(0, 192, 0, 1)" textAlign="center" fontSize="20px" />
-        <Widget xsi:type="widgets.brease.Label" id="LabelMachineStopped" top="324" left="149" width="351" height="76" zIndex="3" text="Machine stopped" textColor="rgba(255, 0, 0, 1)" textAlign="center" fontSize="20px" />
+        <Widget xsi:type="widgets.brease.Label" id="LabelMachineStopped" top="324" left="150" width="351" height="76" zIndex="3" text="Machine stopped" textColor="rgba(255, 0, 0, 1)" textAlign="center" fontSize="20px" />
         <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxDetectedItem" top="450" left="150" width="350" height="40" zIndex="4" borderWidth="3px">
           <Widgets>
             <Widget xsi:type="widgets.brease.Label" id="LabelItemdetected" top="-1" left="-1" width="101" height="49" zIndex="0" text="Detected item:" textAlign="center" fontSize="15px" />

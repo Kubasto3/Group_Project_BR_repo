@@ -8,7 +8,13 @@
     <EngineeringUnitAliases />
   </Aliases>
   <DefaultView>
-    <Module Name="&lt;Default&gt;" />
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="gMotorBeltParType">
+          <Variable Name="Position" />
+          <Variable Name="Velocity" />
+        </Variable>
+      </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
         <Variable Name="pendingAlarms" />
@@ -17,6 +23,14 @@
         <Variable Name="test_alarm" />
         <Variable Name="IsSemiAutoMode" />
         <Variable Name="IsManualMode" />
+      </Task>
+      <Task Name="Auto">
+        <Variable Name="Start" />
+        <Variable Name="Stop" />
+        <Variable Name="State" />
+        <Variable Name="ItemDetected" />
+        <Variable Name="ItemWeightMeasured" />
+        <Variable Name="ItemWeight" />
       </Task>
     </Module>
   </DefaultView>
