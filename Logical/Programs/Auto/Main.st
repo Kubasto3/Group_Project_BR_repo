@@ -37,9 +37,6 @@ PROGRAM _CYCLIC
 	ItemDetected					 := gWeightDetected;
 	ItemWeight 						 := gInWeightMeasure;
 
-	
-	
-
 	//TYMCZASOWO BEZ HMI
 	SortChoice := WEIGHT; 
 	ItemWeightChoosen := 13;
