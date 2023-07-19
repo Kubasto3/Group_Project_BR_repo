@@ -1,0 +1,6 @@
+VAR
+	Wysun : BOOL;
+	MotorBeltAxisBasic : MpAxisBasic;
+	MotorBeltParType : MpAxisBasicParType;
+	BAIT : UINT;
+END_VAR
