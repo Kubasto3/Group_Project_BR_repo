@@ -8,8 +8,7 @@ PROGRAM _INIT
 	PhotosTaken;
 	NumberMatches;
 	RecognisedModel;
-	EnableMatch;
-	TestExecuteMatch;
+	MatchEnable;
 	
 END_PROGRAM
 
