@@ -175,7 +175,7 @@
     </tu>
     <tu tuid="Left_AUTO">
       <tuv xml:lang="pl">
-        <seg>Tryb automatyczny</seg>
+        <seg>Tryb auto</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Auto mode</seg>
