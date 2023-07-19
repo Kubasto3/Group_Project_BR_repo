@@ -7,14 +7,9 @@ VAR
 	gUIConnect : MpRecipeUIConnectType;
 	gStop : BOOL;
 	gStart : BOOL;
-	gWeightMeasure : USINT;
+	gInWeightMeasure : USINT;
 	gWeightDetected : BOOL;
 	gActuatorByte : UINT;
 	gMotorBeltAxisBasic : MpAxisBasic;
 	gMotorBeltParType : MpAxisBasicParType;
-	gMotorDist : UINT := 300;
-	gMotorAcc : UINT := 500;
-	gMotorDec : UINT := 500;
-	gMotorVel : UINT := 100;
-	gSortChoice : SortChoiceEnum;
 END_VAR

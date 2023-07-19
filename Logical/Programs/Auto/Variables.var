@@ -1,6 +1,4 @@
 VAR
-	MotorBeltAxisBasic : MpAxisBasic;
-	MotorBeltParType : MpAxisBasicParType;
 	ItemWeightMeasured : USINT;
 	State : ProgramStatesEnum;
 END_VAR
@@ -25,3 +23,7 @@ VAR
 	ItemWeightChoosen : USINT;
 	MotorMoveDone : BOOL;
 	MotorMoveAdditive : BOOL;
+	MotorAcc : UINT := 500;
+	MotorDec : UINT := 500;
+	MotorVel : UINT := 100;
+END_VAR

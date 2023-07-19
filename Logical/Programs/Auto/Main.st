@@ -2,11 +2,30 @@
 PROGRAM _INIT
 	ActuatorByte := 2#0000_0000_0000_0000;
 	MotorResetError := TRUE;
-	
+	gMotorBeltAxisBasic;
+	gMotorBeltParType;
 	gMotorBeltParType; //tylko do watcha
 END_PROGRAM
 
 PROGRAM _CYCLIC
+	
+	//ZROB COS Z TYM
+	gAxis_1;
+	gMotorBeltParType;
+	gMotorBeltAxisBasic.MpLink := ADR(gAxis_1);
+	gMotorBeltAxisBasic.Enable := TRUE;
+	gMotorBeltAxisBasic.Parameters := ADR(gMotorBeltParType);
+	//przypisywanie parametrów ruchu
+	//	gMotorBeltParType.Direction := FORWARD;
+	gMotorBeltParType.Acceleration := MotorAcc;
+	gMotorBeltParType.Deceleration := MotorDec;
+	gMotorBeltParType.Velocity := MotorVel;
+	gMotorBeltParType.Distance := MotorDist;
+	gMotorBeltAxisBasic();
+	//
+	
+	
+	
 	//przypisywanie zmiennych globalnych do localnych 
 	Start 							 := gStart;						
 	Stop							 := gStop;
@@ -16,12 +35,13 @@ PROGRAM _CYCLIC
 	gMotorBeltAxisBasic.ErrorReset	 := MotorResetError;
 	MotorInPosition 				 := gMotorBeltAxisBasic.InPosition;
 	ItemDetected					 := gWeightDetected;
-	ItemWeight 						 := gWeightMeasure;
-	gMotorDist						 := MotorDist;	
+	ItemWeight 						 := gInWeightMeasure;	
 
+	
+	
 
 	//TYMCZASOWO BEZ HMI
-	gSortChoice := WEIGHT; 
+	SortChoice := WEIGHT; 
 	ItemWeightChoosen := 13;
 	
 
@@ -44,6 +64,9 @@ PROGRAM _CYCLIC
 				State := INIT;
 			END_IF;
 			
+		STOP_AND_MANUAL:
+			//DOPISZ
+			
 		INIT:
 			ItemWeightMeasured := 0;
 			TimerTonActuatorIn := FALSE;
@@ -53,7 +76,7 @@ PROGRAM _CYCLIC
 			IF Stop THEN
 				State := STOP;
 			ELSIF Start THEN
-				Start := FALSE;
+				gStart := FALSE;
 				State := DETECTION;
 			END_IF;
 			

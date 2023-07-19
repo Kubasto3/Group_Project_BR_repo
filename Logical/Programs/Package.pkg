@@ -4,7 +4,7 @@
   <Objects>
     <Object Type="Program" Language="IEC">Auto</Object>
     <Object Type="Program" Language="IEC">Manual</Object>
-    <Object Type="Program" Language="IEC">VisionCtr</Object>
+    <Object Type="Program" Language="IEC">PustyProgram</Object>
     <Object Type="Program" Language="IEC">RecipesMgmnt</Object>
   </Objects>
 </Package>
