@@ -1,4 +1,28 @@
 VAR
 	MotorBeltAxisBasic : MpAxisBasic;
 	MotorBeltParType : MpAxisBasicParType;
+	ItemWeightMeasured : USINT;
+	State : ProgramStatesEnum;
+END_VAR
+VAR CONSTANT
+	TIME_TON_ACTUATOR : TIME := T#3S;
+END_VAR
+VAR
+	TimerTonActuator : TON;
+	SortChoice : SortChoiceEnum;
+	ActuatorByte : INT;
+	Start : BOOL;
+	Stop : BOOL;
+	MotorPower : BOOL;
+	MotorMoveAdd : BOOL;
+	MotorResetError : BOOL;
+	MotorInPosition : BOOL;
+	ItemDetected : BOOL;
+	ItemWeight : USINT;
+	MotorDist : UINT;
+	TimerTonActuatorIn : BOOL;
+	TimerTonActuatorOut : BOOL;
+	ItemWeightChoosen : USINT;
+	MotorMoveDone : BOOL;
+	MotorMoveAdditive : BOOL;
 END_VAR

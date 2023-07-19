@@ -7,4 +7,10 @@ TYPE
 		Temperature : REAL;
 		Milk : REAL;
 	END_STRUCT;
+	SortChoiceEnum : 
+		(
+		WEIGHT,
+		WEIGHT_AND_OPTIC,
+		OPTIC
+		);
 END_TYPE
