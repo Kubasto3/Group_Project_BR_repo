@@ -6,8 +6,8 @@
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
     <Task Name="Auto" Source="Programs.Auto.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="Camera" Source="Camera.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="Alarms" Source="Alarms.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Camera" Source="Programs.Camera.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Alarms" Source="Programs.Alarms.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Manual" Source="Programs.Manual.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="PustyProgr" Source="Programs.PustyProgram.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="ProgramRec" Source="Programs.RecipesMgmnt.prg" Memory="UserROM" Language="IEC" Debugging="true" />

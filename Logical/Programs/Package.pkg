@@ -6,5 +6,7 @@
     <Object Type="Program" Language="IEC">Manual</Object>
     <Object Type="Program" Language="IEC">PustyProgram</Object>
     <Object Type="Program" Language="IEC">RecipesMgmnt</Object>
+    <Object Type="Program" Language="IEC">Camera</Object>
+    <Object Type="Program" Language="IEC">Alarms</Object>
   </Objects>
 </Package>
