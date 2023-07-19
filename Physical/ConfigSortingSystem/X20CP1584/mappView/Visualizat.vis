@@ -16,11 +16,13 @@
     <BindingsSet refId="ContentAlarms_binding" />
     <BindingsSet refId="ContentTop_binding" />
     <BindingsSet refId="ContentManual_binding" />
+    <BindingsSet refId="ContentAuto_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentTop_eventbinding" />
     <EventBindingsSet refId="ContentAlarms_eventbinding" />
     <EventBindingsSet refId="ContentManual_eventbinding" />
+    <EventBindingsSet refId="ContentAuto_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="dialogMessageBoxLogin" />
@@ -42,10 +44,6 @@
   <SnippetsSets />
   <VariablesSets />
   <ExpressionsSets />
-  <StartTheme themeRefId="BuRTheme1" />
-  <Themes>
-    <Theme refId="BuRTheme1" />
-  </Themes>
   <Configurations>
     <Configuration key="zoom" value="true" />
     <Configuration key="activityCount" value="false" />
