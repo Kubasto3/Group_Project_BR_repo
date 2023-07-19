@@ -9,6 +9,11 @@
   </Aliases>
   <DefaultView>
     <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="gImageAcq" />
+        <Variable Name="gRecognisedModel" />
+        <Variable Name="gWeightDetected" />
+      </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
         <Variable Name="pendingAlarms" />
@@ -17,6 +22,9 @@
         <Variable Name="test_alarm" />
         <Variable Name="IsSemiAutoMode" />
         <Variable Name="IsManualMode" />
+      </Task>
+      <Task Name="Camera">
+        <Variable Name="NumberMatches" />
       </Task>
     </Module>
   </DefaultView>

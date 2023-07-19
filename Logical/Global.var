@@ -1,5 +1,5 @@
 VAR
-	gRecognisedModel : ModelEnum; (*%value showing recognised model 1- B&R, 2- AS, 0- not recognised*)
+	gRecognisedModel : ModelEnum; (*Value showing recognised model 1- B&R, 2- AS, 0- not recognised*)
 	Coffee : CofeeType;
 	gMpRecipeXML_0 : MpRecipeXml;
 	gMpRecipeRegPar_0 : MpRecipeRegPar;
@@ -13,4 +13,5 @@ VAR
 	gActuatorByte : UINT;
 	gMotorBeltAxisBasic : MpAxisBasic;
 	gMotorBeltParType : MpAxisBasicParType;
+	gImageAcq : BOOL; (*Enabling image acquisition therefore starting matching procedure*)
 END_VAR

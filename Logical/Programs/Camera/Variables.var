@@ -1,15 +1,12 @@
 VAR
-	ImageAcqReady : BOOL;
-	ImageAcqActive : BOOL;
-	ImageAcq : BOOL;
 	PhotosTaken : USINT;
 	SET_FOCUS : UINT := 15000;
-	MatchEnable : BOOL;
+	MatchEnable : BOOL := TRUE;
 	NUM_SEARCH_MAX : USINT := 1;
 	NumberMatches : USINT;
 	EXPO_TIME : UDINT := 15000;
+	FLASH_SEGMENT : USINT := 1;
 	FLASH_COLOR : USINT := 1;
-	FLASH_SEGMENT : USINT := 0001;
 	RecognisedModel : USINT;
 	MIN_SCORE : USINT := 50;
 	MAX_OVERLAP : USINT := 60;

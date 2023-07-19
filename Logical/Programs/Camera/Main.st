@@ -2,9 +2,6 @@
 PROGRAM _INIT
 	(* Insert code here *)
 	
-	ImageAcqReady;
-	ImageAcqActive;
-	ImageAcq;
 	PhotosTaken;
 	NumberMatches;
 	RecognisedModel;
@@ -16,6 +13,16 @@ PROGRAM _CYCLIC
 	(* Insert code here *)
 	 
 	gRecognisedModel := RecognisedModel;
+	
+	//calling variables used in I/O matching of camera to delete warnings
+	SET_FOCUS;
+	NUM_SEARCH_MAX;
+	EXPO_TIME;
+	MIN_SCORE;
+	MAX_OVERLAP;
+	FLASH_COLOR;
+	FLASH_SEGMENT;
+	gImageAcq;
 	
 END_PROGRAM
 
