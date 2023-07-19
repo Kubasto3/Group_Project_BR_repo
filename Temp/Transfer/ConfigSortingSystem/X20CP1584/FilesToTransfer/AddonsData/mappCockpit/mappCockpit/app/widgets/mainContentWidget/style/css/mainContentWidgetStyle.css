@@ -1,8 +1,0 @@
-.MainContentAreaClass {
-    grid-area: main;    /* See gridLayout.css */
-    background-color: var(--main-white);
-}
-
-.HideWidget {
-    display: none;
-}
