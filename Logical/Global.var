@@ -6,8 +6,6 @@ VAR
 	gMpRecipeUI_0 : MpRecipeUI;
 	gUISetup : MpRecipeUISetupType;
 	gUIConnect : MpRecipeUIConnectType;
-	gStop : BOOL;
-	gStart : BOOL;
 	gInWeightMeasure : USINT;
 	gWeightDetected : BOOL;
 	gActuatorByte : UINT;
