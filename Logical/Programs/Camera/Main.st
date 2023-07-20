@@ -23,6 +23,7 @@ PROGRAM _CYCLIC
 	FLASH_COLOR;
 	FLASH_SEGMENT;
 	gImageAcq;
+	MatchScore;
 	
 END_PROGRAM
 
