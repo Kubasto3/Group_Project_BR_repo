@@ -36,6 +36,12 @@ PROGRAM _CYCLIC
 	TimerTonActuator(IN := TimerTonActuatorIn, PT := TIME_TON_ACTUATOR); //zmien //dodaj moze drugi timer //WYZWALANIE TIMERA (moze inna zmienna)
 	TimerTonActuatorOut := TimerTonActuator.Q;
 	
+	//COUNTERS
+	CTU_QuantityLeft(CU := AddToLeft, RESET := CTU_Reset, PV := MaxLeftStorage);
+	CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset, PV := MaxRightStorage);
+	QuantityLeftStorage  := CTU_QuantityLeft.CV;
+	QuantityRightStorage := CTU_QuantityRight.CV;
+	
 	// ITEM DETECTION CONDITION 
 	ItemDetected := (ItemWeight > 1);
 	
@@ -90,14 +96,26 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		TAKE_PICT_CAMERA_AND_DROP:	
-			//KOD KAMERY ZROB 
+			gImageAcq := TRUE; //zrob zdj na zboczu narastajacym
+			
+			IF gRecognisedModel = 0 THEN //BR AS Unrecognised
+			
+			ELSIF gRecognisedModel = 1 THEN
+				
+			ELSIF gRecognisedModel = 2 THEN
+			
+			END_IF;
 			State := SORT_OPTIC;
 			//DROP DODAJ
 				
 		DROP:
 			ActuatorPushing := TRUE;
 			IF TimerTonActuatorOut THEN
-				State := SORT_WEIGHT;
+				IF gRecognisedModel = 0 THEN
+	  				
+				END_IF;
+				
+				
 			END_IF;
 				
 			// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, AND ABOVE ItemWeightChoosen INTO THE RIGHT	

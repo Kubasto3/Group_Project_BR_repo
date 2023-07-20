@@ -15,8 +15,10 @@ VAR
 	MotorMoveDone : BOOL;
 	MotorPower : BOOL := FALSE;
 	MotorResetError : BOOL := FALSE;
-	QuantityRightStorage : USINT := 0;
-	QuantityLeftStorage : USINT := 0;
+	MaxRightStorage : {REDUND_UNREPLICABLE} USINT := 10;
+	QuantityRightStorage : USINT;
+	QuantityLeftStorage : USINT;
+	MaxLeftStorage : {REDUND_UNREPLICABLE} USINT := 10;
 END_VAR
 VAR CONSTANT
 	RESET_ITEM_MEM_WEIGHT : USINT := 0;
@@ -40,4 +42,9 @@ END_VAR
 VAR
 	MOTOR_DIST_LEFT : {REDUND_UNREPLICABLE} UINT := 90;
 	MOTOR_DIST_RIGHT : {REDUND_UNREPLICABLE} UINT := 320;
+	AddToLeft : BOOL;
+	CTU_Reset : BOOL;
+	AddToRight : BOOL;
+	CTU_QuantityLeft : CTU;
+	CTU_QuantityRight : CTU;
 END_VAR
