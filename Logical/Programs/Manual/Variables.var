@@ -13,4 +13,7 @@ VAR
 	ManualVelocity : REAL := 50;
 	DirectionChange : BOOL;
 	StartButtonState : BOOL;
+	DirectionChangeVelocity : BOOL;
+	DirectionChangeDistance : BOOL;
+	gMode : USINT;
 END_VAR
