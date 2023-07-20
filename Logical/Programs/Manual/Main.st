@@ -25,6 +25,8 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 
+	gMotorBeltAxisBasic();
+	
 	gAxis_1;
 	
 	gMotorBeltParType.Distance := ManualDistance;
@@ -106,12 +108,12 @@ PROGRAM _CYCLIC
 
 			IF gMotorBeltAxisBasic.PowerOn THEN
 				gMotorBeltAxisBasic.Home := 0;
-				gMotorBeltAxisBasic.MoveAdditive := 1;
+				
 				ManualStep := MANUAL_BELT_MOVE_ADDITIVE;	  
 			END_IF;
 			
 		MANUAL_BELT_MOVE_ADDITIVE:
-
+			gMotorBeltAxisBasic.MoveAdditive := 1;
 			IF gMotorBeltAxisBasic.MoveDone THEN
 				gMotorBeltAxisBasic.ErrorReset := 1;
 				gMotorBeltAxisBasic.MoveAdditive := 0;
@@ -143,7 +145,7 @@ PROGRAM _CYCLIC
 			END_IF;
 	END_CASE;
 	
-	gMotorBeltAxisBasic();
+
 	
 END_PROGRAM
 
