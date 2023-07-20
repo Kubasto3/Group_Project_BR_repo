@@ -13,5 +13,5 @@ VAR
 	gActuatorByte : UINT;
 	gMotorBeltAxisBasic : MpAxisBasic;
 	gMotorBeltParType : MpAxisBasicParType;
-	gImageAcq : BOOL; (*Enabling image acquisition therefore starting matching procedure*)
+	gImageAcq : BOOL; (*Enabling image acquisition therefore starting matching procedure, rising edge*)
 END_VAR

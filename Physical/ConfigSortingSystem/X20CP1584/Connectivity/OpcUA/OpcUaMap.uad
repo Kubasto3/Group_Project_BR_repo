@@ -25,6 +25,7 @@
       </Task>
       <Task Name="Camera">
         <Variable Name="NumberMatches" />
+        <Variable Name="BufferEncodedImg" />
       </Task>
     </Module>
   </DefaultView>

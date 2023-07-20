@@ -3,6 +3,10 @@ VAR
 	SET_FOCUS : UINT := 15000;
 	MatchEnable : BOOL := TRUE;
 	NUM_SEARCH_MAX : USINT := 1;
+	BufferImageSize : UDINT := 1310720;
+	ExecuteGetImg : BOOL;
+	httpEncodeBase64_0 : httpEncodeBase64;
+	BufferImage : UDINT;
 	NumberMatches : USINT;
 	EXPO_TIME : UDINT := 15000;
 	ViBaseGetImage_0 : ViBaseGetImage;
@@ -12,4 +16,6 @@ VAR
 	RecognisedModel : USINT;
 	MIN_SCORE : USINT := 40;
 	MAX_OVERLAP : USINT := 60;
+	BufferEncodedImg : STRING[1966080];
+	EnableEncode : BOOL;
 END_VAR
