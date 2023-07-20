@@ -25,6 +25,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 
+	
 	gMotorBeltAxisBasic();
 	
 	gAxis_1;
@@ -58,6 +59,7 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		MANUAL_WAIT:
+			gMotorBeltAxisBasic.Power := 0;
 			IF ManualActuatorDosing THEN
 				ManualActuatorDosing := 0;
 				ManualStep := MANUAL_ACTUATOR_DOSING;
@@ -124,7 +126,6 @@ PROGRAM _CYCLIC
 			
 		MANUAL_BELT_MOVE_ADDITIVE1:
 			gMotorBeltAxisBasic.ErrorReset := 0;
-			//gMotorBeltAxisBasic.Power := 0;
 			ManualStep := MANUAL_WAIT;
 			
 		MANUAL_BELT_SET_VELOCITY:
