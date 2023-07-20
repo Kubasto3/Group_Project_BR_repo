@@ -50,6 +50,12 @@ PROGRAM _CYCLIC
 		ManualStep := MANUAL_START;
 	END_IF;
 	
+	IF gMode = 1 THEN
+		FlagManual := 1;
+	ELSE
+		FlagManual := 0;
+	END_IF;
+	
 	CASE ManualStep OF
 		MANUAL_START:
 			IF ManualStart AND (gMode = 1) THEN	

@@ -1,4 +1,5 @@
 VAR
+	FlagManual : BOOL;
 	ManualStep : ManualStepsEnum; (*Enum steps of Manual's state machine*)
 	ManualStop : BOOL := FALSE; (*Stopping all of the processes*)
 	ManualStart : BOOL := FALSE; (*Starting process - enables switching between steps*)
