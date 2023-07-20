@@ -15,46 +15,74 @@ PROGRAM _INIT
 	
 	ManualStep := MANUAL_START;
 	
-//	ManualVelocity := ABS(ManualVelocity);
-//	ManualDistance := (-1)*ABS(ManualDistance);
+	//	ManualVelocity := ABS(ManualVelocity);
+	//	ManualDistance := (-1)*ABS(ManualDistance);
 	
 END_PROGRAM
 
 PROGRAM _CYCLIC
-
+		
 	gAxis_1;
 	
 	gMotorBeltParType.Distance := ManualDistance;
 	gMotorBeltParType.Velocity := ManualVelocity;
 	
-//	IF DirectionChange THEN
-//		DirectionChange := 0;
-//		ManualVelocity := ManualVelocity * (-1);
-//		ManualDistance := ManualDistance * (-1);
-//	END_IF;
+	gMotorBeltAxisBasic.Home := 0;
+	gMotorBeltAxisBasic.Power := 0;
 	
-//	IF ManualVelocity >= 0 THEN
-//		ManualDistance := -ABS(ManualDistance);
-//	ELSIF ManualVelocity < 0 THEN
-//		ManualDistance := ABS(ManualDistance);
-//	END_IF;
+	ManualSetFocus;
+	ManualExposureTime;
+	IF DirectionChangeVelocity THEN
+		DirectionChangeVelocity := 0;
+		ManualVelocity := ManualVelocity * (-1);
+	END_IF;
+	
+	IF DirectionChangeDistance THEN
+		DirectionChangeDistance := 0;
+		ManualDistance := ManualDistance * (-1);
+	END_IF;
+	
+	//	IF ManualVelocity >= 0 THEN
+	//		IF ManualDistance >=0 THEN
+	//			ManualDistance := -ManualDistance;
+	//		ELSIF ManualDistance < 0 THEN
+	//			ManualDistance := ManualDistance;
+	//		END_IF;
+	//	ELSIF ManualVelocity < 0 THEN
+	//		IF ManualDistance >=0 THEN
+	//			ManualDistance := ManualDistance;
+	//		ELSIF ManualDistance < 0 THEN
+	//			ManualDistance := -ManualDistance;
+	//		END_IF;
+	//	END_IF;
 	
 	IF ManualStop THEN
 		ManualStop := 0;
 		StartButtonState := 1;	//ZMIENNA DO STANU PRZYCISKU START - ZEBY DALO SIE WLACZYC START TYLKO RAZ
 		gActuatorByte := 2#0000_0000_0000_0000;
-		ManualStep := MANUAL_START;
+		IF gMode = 1 THEN
+			ManualStep := MANUAL_START;
+		END_IF;
 	END_IF;
 	
+	//	IF MovePositive THEN
+	//		gMotorBeltParType.Direction := mcDIR_POSITIVE; 
+	//	ELSE
+	//		gMotorBeltParType.Direction := mcDIR_NEGATIVE;
+	//	END_IF;
+	
 	CASE ManualStep OF
+			
 		MANUAL_START:
-			IF ManualStart THEN	
+			IF ManualStart AND (gMode = 1) THEN	//AND NOT AUTO
 				ManualStart := 0;
 				StartButtonState := 0;	//ZMIENNA DO STANU PRZYCISKU START - ZEBY DALO SIE WLACZYC START TYLKO RAZ
 				ManualStep := MANUAL_WAIT;
 			END_IF;
+			ManualStart := 0;
 			
 		MANUAL_WAIT:
+			ManualStart := 0;
 			IF ManualActuatorDosing THEN
 				ManualActuatorDosing := 0;
 				ManualStep := MANUAL_ACTUATOR_DOSING;
@@ -100,7 +128,9 @@ PROGRAM _CYCLIC
 			ManualStep := MANUAL_WAIT;
 			
 		MANUAL_BELT_SET_ADDITIVE:
+			gMotorBeltAxisBasic.Power := 1;
 			gMotorBeltAxisBasic.Home := 1;
+			ManualVelocity := ABS(ManualVelocity); //by moc wywolac komende MoveAdditive predkosc nie moza byc ujemna
 			IF gMotorBeltAxisBasic.PowerOn THEN
 				gMotorBeltAxisBasic.Home := 0;
 				gMotorBeltAxisBasic.MoveAdditive := 1;
@@ -141,6 +171,8 @@ PROGRAM _CYCLIC
 	END_CASE;
 	
 	gMotorBeltAxisBasic();
+	
+	
 	
 END_PROGRAM
 

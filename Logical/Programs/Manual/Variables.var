@@ -2,7 +2,7 @@ VAR
 	ManualStep : ManualStepsEnum;
 	ManualStop : BOOL := FALSE;
 	ManualStart : BOOL := FALSE;
-	ManualDistance : LREAL := 500;
+	ManualDistance : LREAL;
 	ManualActuatorDosing : BOOL;
 	ManualActuatorSorting : BOOL;
 	ManualActuatorBoth : BOOL;
@@ -10,7 +10,12 @@ VAR
 	ManualActuatorNone : BOOL;
 	BeltMoveVelocityOn : BOOL;
 	BeltMoveVelocityOff : BOOL;
-	ManualVelocity : REAL := 50;
+	ManualVelocity : REAL;
 	DirectionChange : BOOL;
 	StartButtonState : BOOL;
+	MovePositive : BOOL;
+	ManualSetFocus : UINT;
+	ManualExposureTime : UDINT;
+	DirectionChangeDistance : BOOL;
+	DirectionChangeVelocity : BOOL;
 END_VAR
