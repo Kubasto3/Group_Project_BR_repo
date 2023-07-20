@@ -31,19 +31,23 @@
   <Contents>
     <Content refId="ContentTop" />
     <Content refId="ContentLeft" />
-    <Content refId="ContentAuto" />
     <Content refId="ContentManual" />
     <Content refId="ContentParameters" />
-    <Content refId="ContentServices" />
     <Content refId="ContentAlarms" />
     <Content refId="ContentCharts" />
     <Content refId="contentMessageBoxLogin" />
     <Content refId="ContentDiagnostics" />
     <Content refId="ContentAlarmHistory" />
+    <Content refId="ContentAuto" />
+    <Content refId="ContentServices" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
   <ExpressionsSets />
+  <StartTheme themeRefId="BuRTheme1" />
+  <Themes>
+    <Theme refId="BuRTheme1" />
+  </Themes>
   <Configurations>
     <Configuration key="zoom" value="true" />
     <Configuration key="activityCount" value="false" />
