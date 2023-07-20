@@ -11,4 +11,5 @@ VAR
 	gActuatorByte : UINT;
 	gMotorBeltAxisBasic : MpAxisBasic;
 	gMotorBeltParType : MpAxisBasicParType;
+	gMode : USINT := 0;
 END_VAR
