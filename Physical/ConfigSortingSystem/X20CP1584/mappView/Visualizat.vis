@@ -9,6 +9,7 @@
     <Page refId="PageAlarms" />
     <Page refId="PageCharts" />
     <Page refId="PageDiagnostics" />
+    <Page refId="PageCamera" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -17,12 +18,14 @@
     <BindingsSet refId="ContentTop_binding" />
     <BindingsSet refId="ContentManual_binding" />
     <BindingsSet refId="ContentAuto_binding" />
+    <BindingsSet refId="ContentCamera_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentTop_eventbinding" />
     <EventBindingsSet refId="ContentAlarms_eventbinding" />
     <EventBindingsSet refId="ContentManual_eventbinding" />
     <EventBindingsSet refId="ContentAuto_eventbinding" />
+    <EventBindingsSet refId="ContentCamera_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="dialogMessageBoxLogin" />
@@ -40,6 +43,7 @@
     <Content refId="contentMessageBoxLogin" />
     <Content refId="ContentDiagnostics" />
     <Content refId="ContentAlarmHistory" />
+    <Content refId="ContentCamera" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
