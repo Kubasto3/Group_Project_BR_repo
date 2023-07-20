@@ -1,122 +1,111 @@
-//JESZCZE NIE DZIA£A
+// ALREADY WORKING, ONLY SOME CHANGES REQUIRED
 PROGRAM _INIT
-	ActuatorByte := 2#0000_0000_0000_0000;
-	MotorResetError := TRUE;
-	gMotorBeltAxisBasic;
+	// NEED ONLY FOR WATCH
+	gAxis_1;
 	gMotorBeltParType;
-	gMotorBeltParType; //tylko do watcha
+	gMotorBeltAxisBasic;
 END_PROGRAM
 
 PROGRAM _CYCLIC
 	
-	//ZROB COS Z TYM
-	gAxis_1;
-	gMotorBeltParType;
-	gMotorBeltAxisBasic.MpLink := ADR(gAxis_1);
+		// MOTOR MANAGEMENT
 	gMotorBeltAxisBasic.Enable := TRUE;
+	gMotorBeltAxisBasic.MpLink := ADR(gAxis_1);
 	gMotorBeltAxisBasic.Parameters := ADR(gMotorBeltParType);
-	//przypisywanie parametrów ruchu
-	//	gMotorBeltParType.Direction := FORWARD;
-	gMotorBeltParType.Acceleration := MotorAcc;
-	gMotorBeltParType.Deceleration := MotorDec;
+	MotorMoveDone := gMotorBeltAxisBasic.MoveDone;
+	gMotorBeltAxisBasic.Power := MotorPower;
+	// ASSIGNING MOTION PARAMETERS
+	gMotorBeltParType.Acceleration := MotorAcc; 
+	gMotorBeltParType.Deceleration := MotorDec; 
 	gMotorBeltParType.Velocity := MotorVel;
 	gMotorBeltParType.Distance := MotorDist;
+	
 	gMotorBeltAxisBasic();
-	//
 	
-	
-	
-	//przypisywanie zmiennych globalnych do localnych 
-	Start 							 := gStart;						
-	Stop							 := gStop;
-	ActuatorByte 					 := gActuatorByte;
+	// ASSIGNING GLOBAL VARIABLES TO LOCAL VARIABLES
+	gActuatorByte					 := ActuatorByte;
 	gMotorBeltAxisBasic.Power 		 := MotorPower;
-	gMotorBeltAxisBasic.MoveAdditive := MotorMoveAdd;
+	gMotorBeltAxisBasic.MoveAdditive := MotorMoveAdditive;
 	gMotorBeltAxisBasic.ErrorReset	 := MotorResetError;
+	// ASSIGNING LOCAL VARIABLES TO GLOBAL VARIABLES
 	MotorInPosition 				 := gMotorBeltAxisBasic.InPosition;
 	ItemDetected					 := gWeightDetected;
 	ItemWeight 						 := gInWeightMeasure;
 
-	
-	
-
-	//TYMCZASOWO BEZ HMI
-	SortChoice := WEIGHT; 
-	ItemWeightChoosen := 13;
-	
-
-	//TIMERY
+	// TIMERS
 	TimerTonActuator(IN := TimerTonActuatorIn, PT := TIME_TON_ACTUATOR); //zmien //dodaj moze drugi timer //WYZWALANIE TIMERA (moze inna zmienna)
-	TimerTonActuatorOut := TimerTonActuator.Q;			 
+	TimerTonActuatorOut := TimerTonActuator.Q;
 	
-	
-	//WARUNEK WYKRYCIA OBIEKTU
+	// ITEM DETECTION CONDITION 
 	ItemDetected := (ItemWeight > 1);
 	
-	//PROGRAM
+	// ONLY FOR NOW
+	SortChoice := WEIGHT; 
+	
+	// PROGRAM
+	IF Stop OR gMode = 1 THEN
+		State := STOP;
+	END_IF;
+	
 	CASE State OF
 		STOP:
+			Stop := FALSE;
+			IF gMode = 0 THEN
+				MotorPower := FALSE;
+				MotorMoveAdditive := FALSE;
+			END_IF;
 			TimerTonActuatorIn := FALSE;
-			MotorPower := FALSE;
-			MotorMoveAdd := FALSE;
-			MotorResetError := TRUE;
-			IF NOT Stop THEN
+			ActuatorSorting := FALSE;
+			ActuatorPushing := FALSE;
+			ItemWeightMeasured := RESET_ITEM_MEM_WEIGHT;
+			IF Start THEN
 				State := INIT;
 			END_IF;
 			
-		STOP_AND_MANUAL:
-			//DOPISZ
-			
 		INIT:
-			ItemWeightMeasured := 0;
+			ItemWeightMeasured := RESET_ITEM_MEM_WEIGHT;
 			TimerTonActuatorIn := FALSE;
-			ActuatorByte := 2#0000_0000_0000_0000;
-			MotorResetError := FALSE;
+			ActuatorSorting := FALSE;
+			ActuatorPushing := FALSE;
 			MotorPower := TRUE;
-			IF Stop THEN
-				State := STOP;
-			ELSIF Start THEN
-				gStart := FALSE;
+			MotorMoveAdditive := FALSE;
+			IF Start THEN
+				Start := FALSE;
 				State := DETECTION;
 			END_IF;
 			
 		DETECTION:
-			IF Stop THEN
-				State := STOP;
-			ELSIF ItemDetected THEN
+			IF ItemDetected THEN
 				ItemWeightMeasured := ItemWeight;
-				State := DROP;
-			END_IF;
-			
-		DROP:
-			TimerTonActuatorIn := TRUE;
-			ActuatorByte := 2#0000_0000_0000_0100;
-			IF Stop THEN
-				State := STOP;
-			ELSIF TimerTonActuatorOut THEN
-				ActuatorByte := 2#0000_0000_0000_0000;
-				TimerTonActuatorIn := FALSE;
 				State := CATEGORIZATION;
 			END_IF;
-			
+				
 		CATEGORIZATION: 
-			IF Stop THEN
-				State := STOP;
-			ELSIF SortChoice = WEIGHT THEN
-				State := SORT_WEIGHT;
+			IF SortChoice = WEIGHT THEN
+				State := DROP;
 			ELSIF SortChoice = WEIGHT_AND_OPTIC THEN
-				State := SORT_WEIGHT_AND_OPTIC;
+				State := TAKE_PICT_CAMERA_AND_DROP;
 			ELSIF SortChoice = OPTIC THEN
-				State := SORT_OPTIC;
+				State := TAKE_PICT_CAMERA_AND_DROP;
 			END_IF;
 			
-		SORT_WEIGHT: //od 0 do ItemWeightChoosen wpadaja do lewego, a powyzej do prawego - DO EWENTUALNEJ MODYFIKACJI
-			IF Stop THEN
-				State := STOP;
-			ELSIF ItemWeightMeasured > 1 AND ItemWeightMeasured < ItemWeightChoosen THEN 
-				State := SORT_STORGE_LEFT;
+		TAKE_PICT_CAMERA_AND_DROP:	
+			//KOD KAMERY ZROB 
+			State := SORT_OPTIC;
+			//DROP DODAJ
+				
+		DROP:
+			ActuatorPushing := TRUE;
+			IF TimerTonActuatorOut THEN
+				State := SORT_WEIGHT;
+			END_IF;
+				
+			// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, AND ABOVE ItemWeightChoosen INTO THE RIGHT	
+		SORT_WEIGHT: 
+			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < ItemWeightChoosen THEN
+				State := GO_STORAGE_LEFT;
 			ELSIF ItemWeightMeasured >= ItemWeightChoosen THEN 
-				State := SORT_STORGE_RIGHT;
+				State := GO_STORAGE_RIGHT;
 			END_IF;
 			
 		SORT_WEIGHT_AND_OPTIC:
@@ -125,40 +114,58 @@ PROGRAM _CYCLIC
 		SORT_OPTIC:
 			//DOPISZ
 			
-		SORT_STORGE_LEFT:
-			IF Stop THEN
-				State := STOP;
-			ELSE
-				MotorDist := 100;
-				MotorMoveAdd := TRUE;
-				IF MotorInPosition AND MotorMoveDone THEN //rozdziel na pare kroków
-					MotorMoveAdd := FALSE;
-					IF TimerTonActuatorOut THEN
-						ActuatorByte := 2#0000_0000_0000_0001;
-						TimerTonActuatorIn := FALSE;
-						State := INIT;
-					END_IF;
-				END_IF;
+		GO_STORAGE_LEFT:
+			MotorDist := MOTOR_DIST_LEFT;
+			MotorMoveAdditive := TRUE;
+			IF MotorInPosition AND MotorMoveDone THEN
+				State := SORT_STORAGE_LEFT;
+			END_IF;
+
+		GO_STORAGE_RIGHT:
+			MotorDist := MOTOR_DIST_RIGHT;
+			MotorMoveAdditive := TRUE;
+			IF MotorInPosition AND MotorMoveDone THEN
+				State := SORT_STORAGE_RIGHT;				
 			END_IF;
 			
-		SORT_STORGE_RIGHT:
-			IF Stop THEN
-				State := STOP;
-			ELSE
-				MotorDist := 300; //zmien na CONST
-				MotorMoveAdditive := TRUE;
-				IF MotorInPosition AND MotorMoveDone THEN
-					
-					MotorMoveAdd := FALSE;
-					TimerTonActuatorIn:= TRUE;
-					IF TimerTonActuatorOut THEN
-						TimerTonActuatorIn:= FALSE;
-						State := INIT;
-					END_IF;
-				END_IF;
+		SORT_STORAGE_LEFT:
+			MotorMoveAdditive := FALSE;
+			ActuatorSorting := TRUE;
+			IF TimerTonActuatorOut THEN
+				State := INIT;
 			END_IF;
-		
+
+		SORT_STORAGE_RIGHT:
+			MotorMoveAdditive := FALSE;
+			State := INIT;
+
 	END_CASE;
+
+	
+	// TIMER INPUT TRIGGER TO DELAY ACTUATORS
+	IF ActuatorPushing OR ActuatorSorting THEN
+		TimerTonActuatorIn := TRUE;
+	ELSE
+		TimerTonActuatorIn := FALSE;
+	END_IF;
+	
+	// OBSLUGA BYTE SI£OWNIKÓW Z WAITEM
+	IF ActuatorPushing THEN
+		ActuatorByte := ACTUATOR_BYTE_PUSH;
+		IF TimerTonActuatorOut THEN
+			ActuatorPushing := FALSE;
+		END_IF;
+	ELSIF ActuatorSorting THEN
+		ActuatorByte := ACTUATOR_BYTE_SORT;
+		IF TimerTonActuatorOut THEN
+			ActuatorSorting := FALSE;
+		END_IF;
+	ELSE
+		ActuatorByte := ACTUATOR_BYTE_NOT_ACTIV;
+	END_IF;
+	
+
+	
 END_PROGRAM
 
 PROGRAM _EXIT
