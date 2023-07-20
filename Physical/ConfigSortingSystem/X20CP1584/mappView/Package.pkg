@@ -16,5 +16,6 @@
     <Object Type="File">CameraVis.vis</Object>
     <Object Type="File">ContentCamera.binding</Object>
     <Object Type="File">ContentCamera.eventbinding</Object>
+    <Object Type="File">ContentCharts.binding</Object>
   </Objects>
 </Package>
