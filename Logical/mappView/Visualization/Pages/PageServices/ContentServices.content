@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="ContentServices" height="580" width="1280" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.Label" id="Label1" top="542" left="1177" zIndex="0" text="Services" visible="false" />
-    <Widget xsi:type="widgets.brease.LanguageSelector" id="LanguageSelector1" top="303" left="756" zIndex="1" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="200" left="180" zIndex="0" text="Services" />
   </Widgets>
 </Content>
