@@ -23,7 +23,7 @@
     </EventBinding>
     <EventBinding id="EventBinding_2">
       <Source xsi:type="opcUa.Event" refId="::Auto:State" event="ValueChanged" />
-      <EventHandler condition="newValue = 0 OR 1">
+      <EventHandler condition="newValue = 0 OR newValue = 1">
         <Sequence>
           <Step order="0">
             <Action>
