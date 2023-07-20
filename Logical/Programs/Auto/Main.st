@@ -2,38 +2,43 @@
 PROGRAM _INIT
 	// NEED ONLY FOR WATCH
 	gAxis_1;
-//	gMotorBeltParType;
+	gMotorBeltParType;
 	gMotorBeltAxisBasic;
 END_PROGRAM
-//
+
 PROGRAM _CYCLIC
-		// MOTOR MANAGEMENT
+
+	// MOTOR MANAGEMENT
+	gMotorBeltAxisBasic.Enable := TRUE;
 	gMotorBeltAxisBasic.MpLink := ADR(gAxis_1);
+	gMotorBeltAxisBasic.Parameters := ADR(gMotorBeltParType);
 	MotorMoveDone := gMotorBeltAxisBasic.MoveDone;
 	gMotorBeltAxisBasic.Power := MotorPower;
 	// ASSIGNING MOTION PARAMETERS
 	gMotorBeltParType.Acceleration := MotorAcc; 
 	gMotorBeltParType.Deceleration := MotorDec; 
-//	gAxis_1;
+	gMotorBeltParType.Velocity := MotorVel;
+	gMotorBeltParType.Distance := MotorDist;
+	
 	gMotorBeltAxisBasic();
-//	gMotorBeltAxisBasic.MpLink := ADR(gAxis_1);
+	
 	// ASSIGNING GLOBAL VARIABLES TO LOCAL VARIABLES
 	gActuatorByte					 := ActuatorByte;
-//	gMotorBeltParType.Acceleration := MotorAcc;
+	gMotorBeltAxisBasic.Power 		 := MotorPower;
 	gMotorBeltAxisBasic.MoveAdditive := MotorMoveAdditive;
-//	gMotorBeltParType.Velocity := MotorVel;
+	gMotorBeltAxisBasic.ErrorReset	 := MotorResetError;
 	// ASSIGNING LOCAL VARIABLES TO GLOBAL VARIABLES
-//	gMotorBeltAxisBasic();
-//	//
-//	
-//	
+	MotorInPosition 				 := gMotorBeltAxisBasic.InPosition;
+	ItemDetected					 := gWeightDetected;
+	ItemWeight 						 := gInWeightMeasure;
+
 	// TIMERS
-//	ItemDetected					 := gWeightDetected;
+	TimerTonActuator(IN := TimerTonActuatorIn, PT := TIME_TON_ACTUATOR); //zmien //dodaj moze drugi timer //WYZWALANIE TIMERA (moze inna zmienna)
 	TimerTonActuatorOut := TimerTonActuator.Q;
-//
+	
 	// ITEM DETECTION CONDITION 
-//
-//	//TYMCZASOWO BEZ HMI
+	ItemDetected := (ItemWeight > 1);
+	
 	// ONLY FOR NOW
 	SortChoice := WEIGHT; 
 	
@@ -42,8 +47,8 @@ PROGRAM _CYCLIC
 		State := STOP;
 	END_IF;
 	
-//	
-//	//WARUNEK WYKRYCIA OBIEKTU
+	CASE State OF
+		STOP:
 			Stop := FALSE;
 			IF gMode = 0 THEN
 				MotorPower := FALSE;
@@ -54,33 +59,33 @@ PROGRAM _CYCLIC
 			ActuatorPushing := FALSE;
 			ItemWeightMeasured := RESET_ITEM_MEM_WEIGHT;
 			IF Start THEN
-//				State := INIT;
-//			END_IF;
-//			
-//		INIT:
+				State := INIT;
+			END_IF;
+			
+		INIT:
 			ItemWeightMeasured := RESET_ITEM_MEM_WEIGHT;
-//			TimerTonActuatorIn := FALSE;
+			TimerTonActuatorIn := FALSE;
 			ActuatorSorting := FALSE;
 			ActuatorPushing := FALSE;
-//			MotorPower := TRUE;
+			MotorPower := TRUE;
 			MotorMoveAdditive := FALSE;
 			IF Start THEN
 				Start := FALSE;
-//				State := DETECTION;
-//			END_IF;
-//			
-//		DETECTION:
+				State := DETECTION;
+			END_IF;
+			
+		DETECTION:
 			IF ItemDetected THEN
-//				ItemWeightMeasured := ItemWeight;
-//				State := CATEGORIZATION;
-//			END_IF;
+				ItemWeightMeasured := ItemWeight;
+				State := CATEGORIZATION;
+			END_IF;
 				
-//		CATEGORIZATION: 
+		CATEGORIZATION: 
 			IF SortChoice = WEIGHT THEN
 				State := DROP;
-//			ELSIF SortChoice = WEIGHT_AND_OPTIC THEN
+			ELSIF SortChoice = WEIGHT_AND_OPTIC THEN
 				State := TAKE_PICT_CAMERA_AND_DROP;
-//			ELSIF SortChoice = OPTIC THEN
+			ELSIF SortChoice = OPTIC THEN
 				State := TAKE_PICT_CAMERA_AND_DROP;
 			END_IF;
 			
@@ -93,28 +98,28 @@ PROGRAM _CYCLIC
 			ActuatorPushing := TRUE;
 			IF TimerTonActuatorOut THEN
 				State := SORT_WEIGHT;
-//		SORT_WEIGHT_AND_OPTIC:
+			END_IF;
 				
 			// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, AND ABOVE ItemWeightChoosen INTO THE RIGHT	
 		SORT_WEIGHT: 
 			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < ItemWeightChoosen THEN
 				State := GO_STORAGE_LEFT;
-//			IF Stop THEN
+			ELSIF ItemWeightMeasured >= ItemWeightChoosen THEN 
 				State := GO_STORAGE_RIGHT;
-//			ELSE
-//				MotorDist := 100;
-//				MotorMoveAdd := TRUE;
-//				IF MotorInPosition AND MotorMoveDone THEN //rozdziel na pare kroków
-//					MotorMoveAdd := FALSE;
-//					IF TimerTonActuatorOut THEN
-//						ActuatorByte := 2#0000_0000_0000_0001;
-//						TimerTonActuatorIn := FALSE;
+			END_IF;
+			
+		SORT_WEIGHT_AND_OPTIC:
+			//DOPISZ
+			
+		SORT_OPTIC:
+			//DOPISZ
+			
 		GO_STORAGE_LEFT:
 			MotorDist := MOTOR_DIST_LEFT;
 			MotorMoveAdditive := TRUE;
 			IF MotorInPosition AND MotorMoveDone THEN
 				State := SORT_STORAGE_LEFT;
-//					TimerTonActuatorIn:= TRUE;
+			END_IF;
 
 		GO_STORAGE_RIGHT:
 			MotorDist := MOTOR_DIST_RIGHT;
@@ -162,9 +167,9 @@ PROGRAM _CYCLIC
 
 	
 END_PROGRAM
-//
+
 PROGRAM _EXIT
-//
-//	 
+
+	 
 END_PROGRAM
-//
+
