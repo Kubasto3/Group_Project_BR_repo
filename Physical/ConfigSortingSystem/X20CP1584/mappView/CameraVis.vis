@@ -7,9 +7,11 @@
   <Navigations />
   <BindingsSets>
     <BindingsSet refId="ContentCamera_binding" />
+    <BindingsSet refId="ContentAuto_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentCamera_eventbinding" />
+    <EventBindingsSet refId="ContentAuto_eventbinding" />
   </EventBindingsSets>
   <Dialogs />
   <Contents>
