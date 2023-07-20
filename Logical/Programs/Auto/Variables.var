@@ -15,10 +15,8 @@ VAR
 	MotorMoveDone : BOOL;
 	MotorPower : BOOL := FALSE;
 	MotorResetError : BOOL := FALSE;
-	MaxRightStorage : {REDUND_UNREPLICABLE} USINT := 10;
-	QuantityRightStorage : USINT;
-	QuantityLeftStorage : USINT;
-	MaxLeftStorage : {REDUND_UNREPLICABLE} USINT := 10;
+	QuantityRightStorage : UINT;
+	QuantityLeftStorage : UINT;
 END_VAR
 VAR CONSTANT
 	RESET_ITEM_MEM_WEIGHT : USINT := 0;
@@ -47,4 +45,11 @@ VAR
 	AddToRight : BOOL;
 	CTU_QuantityLeft : CTU;
 	CTU_QuantityRight : CTU;
+	StringState : STRING[80];
+	StringRecognisedModel : STRING[80];
+	TimerCameraPicDone : BOOL;
+	TimerTonCamera : TON;
+END_VAR
+VAR CONSTANT
+	TIME_TON_CAMERA : TIME := T#4S;
 END_VAR
