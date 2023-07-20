@@ -1,0 +1,51 @@
+VAR
+	Approval : USINT;
+	ActuatorByte : INT := 2#0000000000000000;
+	ActuatorPushing : BOOL := FALSE;
+	ActuatorSorting : BOOL := FALSE;
+	ItemDetected : BOOL := FALSE;
+	ItemWeight : USINT;
+	ItemWeightChoosen : USINT := 12;
+	ItemWeightMeasured : USINT;
+	MotorAcc : UINT := 700;
+	CurrentStep : STRING[80];
+	MotorDec : UINT := 700;
+	MotorDist : UINT := 10;
+	MotorInPosition : BOOL;
+	MotorMoveAdditive : BOOL := FALSE;
+	MotorMoveDone : BOOL;
+	MotorPower : BOOL := FALSE;
+	MotorResetError : BOOL := FALSE;
+	MaxRightStorage : {REDUND_UNREPLICABLE} USINT := 10;
+	QuantityRightStorage : USINT;
+	QuantityLeftStorage : USINT;
+	MaxLeftStorage : {REDUND_UNREPLICABLE} USINT := 10;
+END_VAR
+VAR CONSTANT
+	RESET_ITEM_MEM_WEIGHT : USINT := 0;
+END_VAR
+VAR
+	MotorVel : {REDUND_UNREPLICABLE} UINT := 300;
+	SortChoice : SortChoiceEnum := WEIGHT;
+	Start : BOOL := FALSE;
+	State : ProgramStatesEnum := INIT;
+	Stop : BOOL := FALSE;
+	TimerTonActuator : TON;
+	TimerTonActuatorIn : BOOL := FALSE;
+	TimerTonActuatorOut : BOOL;
+END_VAR
+VAR CONSTANT
+	TIME_TON_ACTUATOR : TIME := T#500MS;
+	ACTUATOR_BYTE_PUSH : INT := 2#0000000000000100;
+	ACTUATOR_BYTE_SORT : INT := 2#0000000000000001;
+	ACTUATOR_BYTE_NOT_ACTIV : USINT := 2#0000000000000000;
+END_VAR
+VAR
+	MOTOR_DIST_LEFT : {REDUND_UNREPLICABLE} UINT := 90;
+	MOTOR_DIST_RIGHT : {REDUND_UNREPLICABLE} UINT := 320;
+	AddToLeft : BOOL;
+	CTU_Reset : BOOL;
+	AddToRight : BOOL;
+	CTU_QuantityLeft : CTU;
+	CTU_QuantityRight : CTU;
+END_VAR

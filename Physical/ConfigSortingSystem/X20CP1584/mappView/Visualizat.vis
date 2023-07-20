@@ -9,7 +9,6 @@
     <Page refId="PageAlarms" />
     <Page refId="PageCharts" />
     <Page refId="PageDiagnostics" />
-    <Page refId="PageCamera" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -43,15 +42,10 @@
     <Content refId="contentMessageBoxLogin" />
     <Content refId="ContentDiagnostics" />
     <Content refId="ContentAlarmHistory" />
-    <Content refId="ContentCamera" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
   <ExpressionsSets />
-  <StartTheme themeRefId="BuRTheme1" />
-  <Themes>
-    <Theme refId="BuRTheme1" />
-  </Themes>
   <Configurations>
     <Configuration key="zoom" value="true" />
     <Configuration key="activityCount" value="false" />

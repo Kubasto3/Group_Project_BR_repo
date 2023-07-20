@@ -1,19 +1,18 @@
 VAR
-	ManualStep : ManualStepsEnum;
-	ManualStop : BOOL := FALSE;
-	ManualStart : BOOL := FALSE;
-	ManualDistance : LREAL := 500;
-	ManualActuatorDosing : BOOL;
-	ManualActuatorSorting : BOOL;
-	ManualActuatorBoth : BOOL;
-	BeltMoveAdditive : BOOL;
-	ManualActuatorNone : BOOL;
-	BeltMoveVelocityOn : BOOL;
-	BeltMoveVelocityOff : BOOL;
-	ManualVelocity : REAL := 50;
-	DirectionChange : BOOL;
-	StartButtonState : BOOL;
-	DirectionChangeVelocity : BOOL;
-	DirectionChangeDistance : BOOL;
-	gMode : USINT;
+	ManualStep : ManualStepsEnum; (*Enum steps of Manual's state machine*)
+	ManualStop : BOOL := FALSE; (*Stopping all of the processes*)
+	ManualStart : BOOL := FALSE; (*Starting process - enables switching between steps*)
+	ManualDistance : LREAL := 500; (*Setting distance of the belt move [mm]*)
+	ManualActuatorDosing : BOOL; (*Enabling dosing actuator*)
+	ManualActuatorSorting : BOOL; (*Enabling sorting actuator*)
+	ManualActuatorBoth : BOOL; (*Enabling both actuators*)
+	BeltMoveAdditive : BOOL; (*Activating additive move*)
+	ManualActuatorNone : BOOL; (*Disabling both actuators*)
+	BeltMoveVelocityOn : BOOL; (*Activating velocity move*)
+	BeltMoveVelocityOff : BOOL; (*Disactivating velocity move*)
+	ManualVelocity : REAL := 50; (*Value of velocity [mm/s]*)
+	DirectionChange : BOOL; (*Switching direction*)
+	StartButtonState : BOOL; (*State of Manual Start button*)
+	DirectionChangeVelocity : BOOL; (*Switching the direction of velocity value / multiplying by -1*)
+	DirectionChangeDistance : BOOL; (*Switching the direction of distance value / multiplying by -1*)
 END_VAR
