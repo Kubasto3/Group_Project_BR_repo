@@ -81,21 +81,25 @@ PROGRAM _CYCLIC
 				ManualStep := MANUAL_BELT_SET_VELOCITY;
 			END_IF;
 			
+		//actuating actuator responsibile for dosing an element
 		MANUAL_ACTUATOR_DOSING:
 			gActuatorByte := 2#0000_0000_0000_0000;
 			gActuatorByte := 2#0000_0000_0000_0100;
 			ManualStep := MANUAL_WAIT;
-			
+		
+		//actuating actuator responsibile for sorting an element
 		MANUAL_ACTUATOR_SORTING:
 			gActuatorByte := 2#0000_0000_0000_0000;
 			gActuatorByte := 2#0000_0000_0000_0001;	
 			ManualStep := MANUAL_WAIT;
-			
+		
+		//actuating both actuators 
 		MANUAL_ACTUATOR_BOTH:
 			gActuatorByte := 2#0000_0000_0000_0000;
 			gActuatorByte := 2#0000_0000_0000_0101;
 			ManualStep := MANUAL_WAIT;
 			
+		//disactuating both actuators 
 		MANUAL_ACTUATOR_NONE:
 			gActuatorByte := 2#0000_0000_0000_0000;
 			ManualStep := MANUAL_WAIT;
@@ -127,7 +131,6 @@ PROGRAM _CYCLIC
 			gMotorBeltAxisBasic.Power := 0;
 			gMotorBeltAxisBasic.Power := 1;
 			IF gMotorBeltAxisBasic.PowerOn THEN
-				//gMotorBeltAxisBasic.Home := 0;
 				gMotorBeltAxisBasic.MoveVelocity := 1;
 				ManualStep := MANUAL_BELT_MOVE_VELOCITY;	  
 			END_IF;
@@ -137,7 +140,6 @@ PROGRAM _CYCLIC
 				IF BeltMoveVelocityOff THEN
 					BeltMoveVelocityOff := 0;
 					gMotorBeltAxisBasic.MoveVelocity := 0;
-					//gMotorBeltAxisBasic.Power := 0;
 					ManualStep := MANUAL_WAIT;
 				END_IF;
 			END_IF;
