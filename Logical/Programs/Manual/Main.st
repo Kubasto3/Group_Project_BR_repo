@@ -101,6 +101,7 @@ PROGRAM _CYCLIC
 			ManualStep := MANUAL_WAIT;
 			
 		MANUAL_BELT_SET_ADDITIVE:
+			ManualVelocity := ABS(ManualVelocity);
 			gMotorBeltAxisBasic.Power := 0;
 			gMotorBeltAxisBasic.Power := 1;
 			IF gMotorBeltAxisBasic.PowerOn THEN
