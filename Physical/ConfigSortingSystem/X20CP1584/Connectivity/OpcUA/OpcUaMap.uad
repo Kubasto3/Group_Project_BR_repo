@@ -11,11 +11,9 @@
     <Module Name="&lt;Default&gt;">
       <GlobalVariables Name="Global Variables">
         <Variable Name="gMotorBeltParType">
-        <Variable Name="Position" />
-        <Variable Name="Velocity" />
-        <Variable Name="gImageAcq" />
-        <Variable Name="gRecognisedModel" />
-        <Variable Name="gWeightDetected" />
+          <Variable Name="Position" />
+          <Variable Name="Velocity" />
+        </Variable>
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
@@ -33,9 +31,6 @@
         <Variable Name="ItemDetected" />
         <Variable Name="ItemWeightMeasured" />
         <Variable Name="ItemWeight" />
-      <Task Name="Camera">
-        <Variable Name="NumberMatches" />
-        <Variable Name="BufferEncodedImg" />
       </Task>
     </Module>
   </DefaultView>
