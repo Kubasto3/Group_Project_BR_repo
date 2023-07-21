@@ -18,8 +18,6 @@ PROGRAM _INIT
 	gMotorBeltAxisBasic.Home := 1;
 	gMotorBeltAxisBasic.Power := 0;
 	
-//	ManualVelocity := ABS(ManualVelocity);
-//	ManualDistance := (-1)*ABS(ManualDistance);
 	
 END_PROGRAM
 
@@ -28,6 +26,10 @@ PROGRAM _CYCLIC
 	gMotorBeltAxisBasic();
 	
 	gAxis_1;
+	
+	gExposureTime;
+	gSetFocus;
+	
 	
 	gMotorBeltParType.Distance := ManualDistance;
 	gMotorBeltParType.Velocity := ManualVelocity;
@@ -41,6 +43,31 @@ PROGRAM _CYCLIC
 		DirectionChangeDistance := 0;
 		ManualDistance := (-1)*ManualDistance;
 	END_IF;
+	
+	IF gActuatorByte = 2#0000_0000_0000_0101 THEN
+		FlagActBoth := 1;
+		FlagActDosing := 1;
+		FlagActNone := 0;
+		FlagActSorting := 1;
+	ELSIF gActuatorByte = 2#0000_0000_0000_0000 THEN
+		FlagActBoth := 0;
+		FlagActDosing := 0;
+		FlagActNone := 0;
+		FlagActSorting := 0;
+	ELSIF gActuatorByte = 2#0000_0000_0000_0001 THEN
+		FlagActBoth := 0;
+		FlagActDosing := 0;
+		FlagActNone := 0;
+		FlagActSorting := 1;
+	ELSIF gActuatorByte = 2#0000_0000_0000_0100 THEN
+		FlagActBoth := 0;
+		FlagActDosing := 1;
+		FlagActNone := 0;
+		FlagActSorting := 0;
+	END_IF;
+	
+		
+		
 	
 	IF ManualStop THEN
 		ManualStop := 0;
@@ -75,31 +102,30 @@ PROGRAM _CYCLIC
 				BeltMoveAdditive := 0;
 				ManualStep := MANUAL_BELT_SET_ADDITIVE;
 			ELSIF BeltMoveVelocityOn THEN
-				
 				gMotorBeltAxisBasic.Home := 0;
 				BeltMoveVelocityOn := 0;
 				ManualStep := MANUAL_BELT_SET_VELOCITY;
 			END_IF;
 			
-		//actuating actuator responsibile for dosing an element
+			//actuating actuator responsibile for dosing an element
 		MANUAL_ACTUATOR_DOSING:
 			gActuatorByte := 2#0000_0000_0000_0000;
 			gActuatorByte := 2#0000_0000_0000_0100;
 			ManualStep := MANUAL_WAIT;
 		
-		//actuating actuator responsibile for sorting an element
+			//actuating actuator responsibile for sorting an element
 		MANUAL_ACTUATOR_SORTING:
 			gActuatorByte := 2#0000_0000_0000_0000;
 			gActuatorByte := 2#0000_0000_0000_0001;	
 			ManualStep := MANUAL_WAIT;
 		
-		//actuating both actuators 
+			//actuating both actuators 
 		MANUAL_ACTUATOR_BOTH:
 			gActuatorByte := 2#0000_0000_0000_0000;
 			gActuatorByte := 2#0000_0000_0000_0101;
 			ManualStep := MANUAL_WAIT;
 			
-		//disactuating both actuators 
+			//disactuating both actuators 
 		MANUAL_ACTUATOR_NONE:
 			gActuatorByte := 2#0000_0000_0000_0000;
 			ManualStep := MANUAL_WAIT;
