@@ -15,65 +15,70 @@ PROGRAM _CYCLIC
 	gMotorBeltAxisBasic.Parameters 	:= ADR(gMotorBeltParType);
 	MotorMoveDone 					:= gMotorBeltAxisBasic.MoveDone;
 	gMotorBeltAxisBasic.Power 		:= MotorPower;
+	gMotorBeltAxisBasic.Home 		:= MotorHome;
 	// ASSIGNING MOTION PARAMETERS
 	gMotorBeltParType.Acceleration 	:= MotorAcc; 
 	gMotorBeltParType.Deceleration 	:= MotorDec; 
 	gMotorBeltParType.Velocity 		:= MotorVel;
-	gMotorBeltParType.Distance 		:= MotorDist;
+	gMotorBeltParType.Position 		:= MotorReqPosition;
 	
 	gMotorBeltAxisBasic();
 	
 	// ASSIGNING GLOBAL VARIABLES TO LOCAL VARIABLES
 	gActuatorByte					 := ActuatorByte;
 	gMotorBeltAxisBasic.Power 		 := MotorPower;
-	gMotorBeltAxisBasic.MoveAdditive := MotorMoveAdditive;
+	gMotorBeltAxisBasic.MoveAbsolute := MotorMoveAbsolute;
 	gMotorBeltAxisBasic.ErrorReset	 := MotorResetError;
 	// ASSIGNING LOCAL VARIABLES TO GLOBAL VARIABLES
 	MotorInPosition 				 := gMotorBeltAxisBasic.InPosition;
 	ItemDetected					 := gWeightDetected;
 	ItemWeight 						 := gInWeightMeasure;
 
+	// ITEM DETECTION CONDITION 
+	ItemDetected := (ItemWeight > 1);
+	
 	// TIMERS
 	// actuator
 	TimerTonActuator(IN := TimerTonActuatorIn, PT := TIME_TON_ACTUATOR);
-	TimerTonActuatorOut := TimerTonActuator.Q;
+	TimerActuatorOut := TimerTonActuator.Q;
 	// camera
 	TimerTonCamera(IN := gImageAcq , PT := TIME_TON_CAMERA);
 	TimerCameraPicDone := TimerTonCamera.Q;
+	// delay after detection
+	TimerTonDetect.IN := ItemDetected;
+	TimerTonDetect.PT := TIME_TON_DETECT;
+	TimerAfterDetect := TimerTonDetect.Q;
+	TimerTonDetect();
+
 	
 	// COUNTERS
-	CTU_QuantityLeft(CU := AddToLeft, RESET := CTU_Reset, PV := gMaxLeftStorage);
-	CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset, PV := gMaxRightStorage);
+	CTU_QuantityLeft(CU := AddToLeft, RESET := CTU_Reset_Left, PV := gMaxLeftStorage);
+	CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset_Right, PV := gMaxRightStorage);
 	QuantityLeftStorage  := CTU_QuantityLeft.CV;
 	QuantityRightStorage := CTU_QuantityRight.CV;
 	
 	//COUNTERS ALARMS (MOZE PRZERZUC DO ALARMÓW)
 	IF QuantityLeftStorage >= gMaxLeftStorage THEN
-		//WYWO£AJ ERROR 
+		ErrorMaxL;
 	END_IF;
 	
 	IF QuantityRightStorage >= gMaxRightStorage THEN
-		//WYWO£AJ ERROR
+		ErrorMaxR;
 	END_IF;
 	
-	// ITEM DETECTION CONDITION 
-	ItemDetected := (ItemWeight > 1);
-	
-	// ONLY FOR NOW
-	SortChoice := WEIGHT; 
-	
-	// PROGRAM
+	// PROGRAM MANUAL TURNED ON
 	IF Stop OR gMode = 1 THEN
+		Stop := FALSE;
 		State := STOP;
 	END_IF;
-	
+	// PROGRAM AUTO
 	CASE State OF
 		STOP:
 			StringState := 'Stop';
-			Stop := FALSE;
 			IF gMode = 0 THEN
 				MotorPower := FALSE;
-				MotorMoveAdditive := FALSE;
+				MotorMoveAbsolute := FALSE;
+				MotorHome := FALSE;
 			END_IF;
 			TimerTonActuatorIn := FALSE;
 			ActuatorSorting := FALSE;
@@ -91,16 +96,17 @@ PROGRAM _CYCLIC
 			TimerTonActuatorIn 	:= FALSE;
 			ActuatorSorting 	:= FALSE;
 			ActuatorPushing 	:= FALSE;
+			MotorMoveAbsolute 	:= FALSE;
 			MotorPower 			:= TRUE;
-			MotorMoveAdditive 	:= FALSE;
-			IF Start THEN
-				Start := FALSE;
+			MotorHome 			:= TRUE;
+			IF ItemDetected THEN
 				State := DETECTION;
 			END_IF;
 			
 		DETECTION:
-			StringState := 'Wykrywanie detalu';
-			IF ItemDetected THEN
+			MotorHome 			:= FALSE;
+			StringState := 'Wykrycie detalu';
+			IF TimerAfterDetect THEN
 				ItemWeightMeasured := ItemWeight;
 				State := CATEGORIZATION;
 			END_IF;
@@ -109,43 +115,30 @@ PROGRAM _CYCLIC
 			StringState := 'Kategoryzacja detalu';
 			IF SortChoice = WEIGHT THEN
 				State := DROP;
-			ELSIF SortChoice = WEIGHT_AND_OPTIC THEN
-				State := TAKE_PICT_CAMERA_AND_DROP;
 			ELSIF SortChoice = OPTIC THEN
-				State := TAKE_PICT_CAMERA_AND_DROP;
+				State := TAKE_PICT_CAMERA;
 			END_IF;
 			
-		TAKE_PICT_CAMERA_AND_DROP:
+		TAKE_PICT_CAMERA:
 			StringState := 'Robienie zdjêcia i rozpoznawanie';
 			gImageAcq 	:= TRUE; //zrob zdj na zboczu narastajacym
 			IF TimerCameraPicDone THEN
-				IF gRecognisedModel = 0 THEN //BR AS Unrecognised
-					gImageAcq 	:= FALSE;
-					StringRecognisedModel := 'B&R';
-					State := SORT_OPTIC;
-				ELSIF gRecognisedModel = 1 THEN
-					gImageAcq 	:= FALSE;
-					StringRecognisedModel := 'AS';
-					State := SORT_OPTIC;
-				ELSIF gRecognisedModel = 2 THEN
-					gImageAcq 	:= FALSE;
-					StringRecognisedModel := 'Unrecognised';
-					State := SORT_OPTIC;
-				END_IF;
+				gImageAcq := FALSE;
+				State := DROP;
 			END_IF;
-			
-			
-			//DROP DODAJ
 				
 		DROP:
 			StringState := 'Dozowanie detalu';
-			gImageAcq := FALSE;
 			ActuatorPushing := TRUE;
-			IF TimerTonActuatorOut THEN
+			IF TimerActuatorOut THEN
 				ActuatorPushing := FALSE;
-				State := SORT_WEIGHT;
+				IF SortChoice = OPTIC THEN
+					State := SORT_OPTIC;
+				ELSIF SortChoice = WEIGHT THEN
+					State := SORT_WEIGHT;
+				END_IF;
 			END_IF;
-				
+			
 			// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, AND ABOVE ItemWeightChoosen INTO THE RIGHT	
 		SORT_WEIGHT: 
 			StringState := 'Sortowanie wagowe';
@@ -155,45 +148,56 @@ PROGRAM _CYCLIC
 				State := GO_STORAGE_RIGHT;
 			END_IF;
 			
-		SORT_WEIGHT_AND_OPTIC:
-			//RESETUJ ZMIANY B&R I AS
-			StringState := 'Sortowanie wagowe i optyczne';
-			//DOPISZ
-			
 		SORT_OPTIC:
 			StringState := 'Sortowanie optyczne';
-			//DOPISZ
+			IF gRecognisedModel = 0 THEN 
+				gImageAcq 			  := FALSE;
+				StringRecognisedModel := 'Unrecognised';
+				State 				  := UNRECOGNISED_PIC;
+			ELSIF gRecognisedModel = 1 THEN
+				gImageAcq 			  := FALSE;
+				StringRecognisedModel := 'B&R';
+				State 				  := GO_STORAGE_LEFT;
+				
+			ELSIF gRecognisedModel = 2 THEN
+				gImageAcq 			  := FALSE;
+				StringRecognisedModel := 'AS';
+				State 			 	  := GO_STORAGE_RIGHT;
+			END_IF;
 			
 		GO_STORAGE_LEFT:
 			StringState := 'Transport detalu do lewego zbiornika';
-			MotorDist := MOTOR_DIST_LEFT;
-			MotorMoveAdditive := TRUE;
+			MotorReqPosition := MOTOR_DIST_LEFT;
+			MotorMoveAbsolute := TRUE;
 			IF MotorInPosition AND MotorMoveDone THEN
 				State := SORT_STORAGE_LEFT;
 			END_IF;
 
 		GO_STORAGE_RIGHT:
 			StringState := 'Transport detalu do prawego zbiornika';
-			MotorDist := MOTOR_DIST_RIGHT;
-			MotorMoveAdditive := TRUE;
+			MotorReqPosition := MOTOR_DIST_RIGHT;
+			MotorMoveAbsolute := TRUE;
 			IF MotorInPosition AND MotorMoveDone THEN
 				State := SORT_STORAGE_RIGHT;				
 			END_IF;
 			
 		SORT_STORAGE_LEFT:
-			StringState := 'Zepchniecie z taœmy do zbiornika lewego';
-			
-			MotorMoveAdditive := FALSE;
+			StringState := 'Zepchniecie detalu z taœmy do zbiornika lewego';
+			MotorMoveAbsolute := FALSE;
 			ActuatorSorting := TRUE;
 			AddToLeft := TRUE;
-			IF TimerTonActuatorOut THEN
+			IF TimerActuatorOut THEN
 				State := INIT;
 			END_IF;
 
 		SORT_STORAGE_RIGHT:
 			AddToRight := TRUE;
-			MotorMoveAdditive := FALSE;
+			MotorMoveAbsolute := FALSE;
 			State := INIT;
+		
+		UNRECOGNISED_PIC:
+			StringState := 'Nie rozpoznano zdjêcia';
+			State := STOP;
 
 	END_CASE;
 
@@ -208,24 +212,29 @@ PROGRAM _CYCLIC
 	// OPERATION OF BYTE ACTUATORS WITH TIMER
 	IF ActuatorPushing THEN
 		ActuatorByte := ACTUATOR_BYTE_PUSH;	
-		IF TimerTonActuatorOut THEN
+		IF TimerActuatorOut THEN
 			ActuatorPushing := FALSE;
 		END_IF;
 	ELSIF ActuatorSorting THEN
 		ActuatorByte := ACTUATOR_BYTE_SORT;
-		IF TimerTonActuatorOut THEN
+		IF TimerActuatorOut THEN
 			ActuatorSorting := FALSE;
 		END_IF;
 	ELSE
 		ActuatorByte := ACTUATOR_BYTE_NOT_ACTIV;
 	END_IF;
 	
-
+	ActuatorNotSorting := NOT ActuatorSorting;
+	ActuatorNotPushing 	:= NOT ActuatorPushing;
 	
-END_PROGRAM
+	IF Start THEN
+		Start := FALSE;
+	END_IF;
+	
+				END_PROGRAM
 
 PROGRAM _EXIT
 
 	 
-END_PROGRAM
+				END_PROGRAM
 

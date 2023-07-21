@@ -7,11 +7,11 @@ VAR
 	ItemWeightChoosen : USINT := 12;
 	ItemWeightMeasured : USINT;
 	MotorAcc : UINT := 700;
-	CurrentStep : STRING[80];
 	MotorDec : UINT := 700;
+	MotorHome : BOOL;
 	MotorDist : UINT := 10;
 	MotorInPosition : BOOL;
-	MotorMoveAdditive : BOOL := FALSE;
+	MotorMoveAbsolute : BOOL := FALSE;
 	MotorMoveDone : BOOL;
 	MotorPower : BOOL := FALSE;
 	MotorResetError : BOOL := FALSE;
@@ -29,7 +29,7 @@ VAR
 	Stop : BOOL := FALSE;
 	TimerTonActuator : TON;
 	TimerTonActuatorIn : BOOL := FALSE;
-	TimerTonActuatorOut : BOOL;
+	TimerActuatorOut : BOOL;
 END_VAR
 VAR CONSTANT
 	TIME_TON_ACTUATOR : TIME := T#500MS;
@@ -41,7 +41,6 @@ VAR
 	MOTOR_DIST_LEFT : {REDUND_UNREPLICABLE} UINT := 90;
 	MOTOR_DIST_RIGHT : {REDUND_UNREPLICABLE} UINT := 320;
 	AddToLeft : BOOL;
-	CTU_Reset : BOOL;
 	AddToRight : BOOL;
 	CTU_QuantityLeft : CTU;
 	CTU_QuantityRight : CTU;
@@ -52,4 +51,16 @@ VAR
 END_VAR
 VAR CONSTANT
 	TIME_TON_CAMERA : TIME := T#4S;
+END_VAR
+VAR
+	CTU_Reset_Left : BOOL;
+	CTU_Reset_Right : BOOL;
+	TimerTonDetect : TON;
+	TIME_TON_DETECT : TIME := T#2S;
+	TimerAfterDetect : BOOL;
+	ActuatorNotSorting : BOOL;
+	ActuatorNotPushing : BOOL;
+	MotorReqPosition : UINT := 0;
+	ErrorMaxL : BOOL;
+	ErrorMaxR : BOOL;
 END_VAR
