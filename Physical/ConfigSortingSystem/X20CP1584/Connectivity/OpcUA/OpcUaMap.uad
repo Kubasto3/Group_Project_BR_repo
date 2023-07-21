@@ -37,7 +37,6 @@
         <Variable Name="ItemDetected" />
         <Variable Name="ItemWeightMeasured" />
         <Variable Name="ItemWeight" />
-        <Variable Name="CurrentStep" />
         <Variable Name="QuantityLeftStorage" />
         <Variable Name="QuantityRightStorage" />
         <Variable Name="ActuatorPushing" />
