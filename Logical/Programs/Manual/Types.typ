@@ -1,5 +1,9 @@
 
 TYPE
+	AxisParam : 	STRUCT 
+		ManualDistance : LREAL := 500; (*Setting distance of the belt move [mm]*)
+		ManualVelocity : REAL := 50; (*Value of velocity [mm/s]*)
+	END_STRUCT;
 	ManualStepsEnum : 
 		(
 		MANUAL_START := 10,
