@@ -1,5 +1,150 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EventBindingSet id="ContentManual_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Bindings>
-</Bindings>
+    <EventBinding id="ContentManual.ButtonMoveDistance.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonMoveDistance" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::Manual:BeltMoveAdditive">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentManual.ButtonManualMode.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonManualMode" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMode">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentManual.ButtonSemiAuto.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonSemiAuto" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMode">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="2" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentManual.ButtonStopMovement.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonStopMovement" event="Click" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::Manual:BeltMoveVelocityOff">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::Manual:ManualStop">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentManual.ButtonMoveVelocity.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonMoveVelocity" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::Manual:BeltMoveVelocityOn">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentManual.ButtonChangeDirectionAdditive.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonChangeDirectionAdditive" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::Manual:DirectionChangeDistance">
+            <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentManual.ButtonChangeDirectionVelocity.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonChangeDirectionVelocity" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::Manual:DirectionChangeVelocity">
+            <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentManual.ButtonMoveLeft.MouseDown">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonMoveLeft" event="MouseDown" />
+      <Operand datatype="BOOL" name="moveActive">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:gMotorBeltAxisBasic.MoveActive">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="moveActive = 1">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="Conveyor belt is in motion. Stop it's movement before using jog control." header="ERROR" icon="Error" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="moveActive = 0">
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMotorBeltAxisBasic.JogNegative">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_4">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonMoveLeft" event="MouseUp" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMotorBeltAxisBasic.JogNegative">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentManual.ButtonMoveRight.MouseDown">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonMoveRight" event="MouseDown" />
+      <Operand datatype="BOOL" name="moveActive">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:gMotorBeltAxisBasic.MoveActive">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="moveActive = 1">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="Conveyor belt is in motion. Stop it's movement before using jog control." header="ERROR" icon="Error" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="moveActive = 0">
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMotorBeltAxisBasic.JogPositive">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_5">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonMoveRight" event="MouseUp" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMotorBeltAxisBasic.JogPositive">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
 </EventBindingSet>

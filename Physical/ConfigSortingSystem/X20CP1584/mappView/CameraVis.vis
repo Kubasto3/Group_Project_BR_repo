@@ -10,6 +10,7 @@
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentCamera_eventbinding" />
+    <EventBindingsSet refId="ContentLeft_eventbinding" />
   </EventBindingsSets>
   <Dialogs />
   <Contents>

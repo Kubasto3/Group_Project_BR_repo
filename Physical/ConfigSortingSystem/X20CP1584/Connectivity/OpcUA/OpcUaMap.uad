@@ -10,12 +10,16 @@
   <DefaultView>
     <Module Name="&lt;Default&gt;">
       <GlobalVariables Name="Global Variables">
-        <Variable Name="gMotorBeltParType">
-          <Variable Name="Position" />
-          <Variable Name="Velocity" />
-        </Variable>
         <Variable Name="gImageAcq" />
         <Variable Name="gRecognisedModel" />
+        <Variable Name="gMode" />
+        <Variable Name="gMotorBeltAxisBasic">
+          <Variable Name="Position" />
+          <Variable Name="Velocity" />
+          <Variable Name="JogPositive" />
+          <Variable Name="JogNegative" />
+          <Variable Name="MoveActive" />
+        </Variable>
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
@@ -33,10 +37,27 @@
         <Variable Name="ItemDetected" />
         <Variable Name="ItemWeightMeasured" />
         <Variable Name="ItemWeight" />
+        <Variable Name="CurrentStep" />
+        <Variable Name="QuantityLeftStorage" />
+        <Variable Name="QuantityRightStorage" />
+        <Variable Name="ActuatorPushing" />
+        <Variable Name="ActuatorSorting" />
       </Task>
       <Task Name="Camera">
         <Variable Name="BufferEncodedImg" />
         <Variable Name="NumberMatches" />
+      </Task>
+      <Task Name="Manual">
+        <Variable Name="BeltMoveAdditive" />
+        <Variable Name="BeltMoveVelocityOff" />
+        <Variable Name="BeltMoveVelocityOn" />
+        <Variable Name="ManualActuatorDosing" />
+        <Variable Name="ManualActuatorSorting" />
+        <Variable Name="ManualDistance" />
+        <Variable Name="ManualVelocity" />
+        <Variable Name="ManualStop" />
+        <Variable Name="DirectionChangeDistance" />
+        <Variable Name="DirectionChangeVelocity" />
       </Task>
     </Module>
   </DefaultView>
