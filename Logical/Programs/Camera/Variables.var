@@ -14,8 +14,14 @@ VAR
 	MatchScore : USINT;
 	FLASH_COLOR : USINT := 1;
 	RecognisedModel : USINT;
-	MIN_SCORE : USINT := 40;
-	MAX_OVERLAP : USINT := 60;
+	MIN_SCORE : USINT := 50;
+	StartWarning : BOOL;
+	i : USINT;
+	TIME_TON_WARNING : TIME := T#2000ms;
+	TONWarning2 : TON;
+	TONWarning1 : TON;
+	MAX_OVERLAP : USINT := 0;
 	BufferEncodedImg : STRING[1966080];
 	EnableEncode : BOOL;
+	StatusLEDWarning : USINT;
 END_VAR

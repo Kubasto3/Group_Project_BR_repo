@@ -1,5 +1,5 @@
 VAR
-	gRecognisedModel : ModelEnum := Unrecognised; (*Value showing recognised model 1- B&R, 2- AS, 0- not recognised*)
+	gRecognisedModel : ModelEnum := Unrecognised; (*Value showing recognised model 3- B&R, 2- AS, 0- not recognised*)
 	Coffee : CofeeType;
 	gMpRecipeXML_0 : MpRecipeXml;
 	gMpRecipeRegPar_0 : MpRecipeRegPar;

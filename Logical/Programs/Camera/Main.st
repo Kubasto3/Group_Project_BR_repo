@@ -37,6 +37,30 @@ PROGRAM _CYCLIC
 	
 	strcat(BufferEncodedImg, '$' />') ;*)
 	
+	TONWarning1.IN := StartWarning;
+	TONWarning1.PT := TIME_TON_WARNING;
+	
+	TONWarning2.IN := TONWarning1.Q;
+	TONWarning2.PT := TIME_TON_WARNING;
+	
+	TONWarning1();
+	TONWarning2();
+	
+	IF TONWarning1.Q THEN 
+		StatusLEDWarning := 4;
+		StartWarning := FALSE;
+	END_IF
+	
+	IF TONWarning2.Q THEN
+		StatusLEDWarning := 1;
+		i := i + 1;
+		StartWarning := TRUE;
+	END_IF
+	
+	IF i=4 THEN 
+		StartWarning := FALSE;
+	END_IF
+	
 END_PROGRAM
 
 PROGRAM _EXIT
