@@ -1,5 +1,5 @@
 VAR
-	gRecognisedModel : ModelEnum; (*Value showing recognised model 1- B&R, 2- AS, 0- not recognised*)
+	gRecognisedModel : ModelEnum := Unrecognised; (*Value showing recognised model 1- B&R, 2- AS, 0- not recognised*)
 	Coffee : CofeeType;
 	gMpRecipeXML_0 : MpRecipeXml;
 	gMpRecipeRegPar_0 : MpRecipeRegPar;
@@ -12,6 +12,9 @@ VAR
 	gMotorBeltAxisBasic : MpAxisBasic;
 	gMotorBeltParType : MpAxisBasicParType;
 	gMode : USINT := 0;
-	gImageAcq : BOOL; (*Enabling image acquisition therefore starting matching procedure, rising edge*)
+	gMaxLeftStorage : USINT := 6;
+	gMaxRightStorage : USINT := 6;
+	gImageAcq : BOOL := FALSE; (*Enabling image acquisition therefore starting matching procedure, rising edge*)
+	gSetFocus : USINT;
+	gExposureTime : UDINT;
 END_VAR
-
