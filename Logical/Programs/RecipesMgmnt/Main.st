@@ -26,6 +26,14 @@ PROGRAM _CYCLIC
 	Coffee.Sugar;
 	Coffee.Temperature;
 	
+//	Parametry sortowania powinno dac sie zapisac oraz wczytac przy uzyciu systemu receptur 
+//	MpRecipe. Na stronie parametrów powinna wiec istniec mozliwosc przegladania listy dostepnych receptur, 
+//	wczytania receptury z listy, zapisania nowej receptury oraz modyfikacji parametrów dowolnej z zapisanych 
+//	receptur. Powinno byc takze mozliwe wyswietlenie parametrów danej receptury bez wczytywania jej oraz 
+//	calkowite usuniecie receptury widocznej na liscie. Zarówno na stronie parametrów jak i na stronie pracy automatycznej (oraz przy pracy pólautomatycznej) powinna byc wyswietlona obecnie wczytana receptura, 
+//	chyba ze uzywane sa aktualnie niezapisane DO receptury, recznie ustawione, parametry sortowania.
+
+	
 	gMpRecipeXML_0();
 	gMpRecipeRegPar_0();
 END_PROGRAM
