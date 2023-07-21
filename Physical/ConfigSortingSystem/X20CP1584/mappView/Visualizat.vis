@@ -26,6 +26,7 @@
     <EventBindingsSet refId="ContentManual_eventbinding" />
     <EventBindingsSet refId="ContentAuto_eventbinding" />
     <EventBindingsSet refId="ContentCamera_eventbinding" />
+    <EventBindingsSet refId="ContentLeft_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="dialogMessageBoxLogin" />

@@ -13,12 +13,28 @@
         <seg>Alarm:</seg>
       </tuv>
     </tu>
+    <tu tuid="Alarm_ButtonNext">
+      <tuv xml:lang="pl">
+        <seg>Następna</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Next</seg>
+      </tuv>
+    </tu>
     <tu tuid="Alarm_Descrpition">
       <tuv xml:lang="pl">
         <seg>Opis:</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Description:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="AlarmButtonPrevious">
+      <tuv xml:lang="pl">
+        <seg>Poprzednia</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Previous</seg>
       </tuv>
     </tu>
     <tu tuid="Alarms_Acknowledge">
@@ -66,7 +82,7 @@
         <seg>Tłok rozpoczynający:</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Actuating piston:</seg>
+        <seg>Dispensing piston:</seg>
       </tuv>
     </tu>
     <tu tuid="Auto_ButtonRESET">
@@ -159,10 +175,18 @@
     </tu>
     <tu tuid="Auto_PushingPiston">
       <tuv xml:lang="pl">
-        <seg>Tłok spychający:</seg>
+        <seg>Tłok sortujący:</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Pushing piston:</seg>
+        <seg>Sorting piston:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Diagnostics_WaitLabel">
+      <tuv xml:lang="pl">
+        <seg>Prosimy poczekać na załadowanie strony...</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Please wait for System Diagnostics Manager to fully load...</seg>
       </tuv>
     </tu>
     <tu tuid="Left_ALARMS">
@@ -221,55 +245,20 @@
         <seg>Services</seg>
       </tuv>
     </tu>
-    <tu tuid="Samples.HELLO_WORLD">
+    <tu tuid="Login_ChangedUser">
+      <tuv xml:lang="pl">
+        <seg>Użytkownik zmieniony na:</seg>
+      </tuv>
       <tuv xml:lang="en">
-        <seg>Hello world!</seg>
-      </tuv>
-      <tuv xml:lang="de">
-        <seg>Servus Welt!</seg>
-      </tuv>
-      <tuv xml:lang="fr">
-        <seg>Bonjour tout le monde!</seg>
+        <seg>User changed to:</seg>
       </tuv>
     </tu>
-    <tu tuid="Alarm_ButtonNext">
+    <tu tuid="Login_Failed">
       <tuv xml:lang="pl">
-        <seg>Następna</seg>
+        <seg>Błąd podczas logowania się!</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Next</seg>
-      </tuv>
-    </tu>
-    <tu tuid="AlarmButtonPrevious">
-      <tuv xml:lang="pl">
-        <seg>Poprzednia</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Previous</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Diagnostics_WaitLabel">
-      <tuv xml:lang="pl">
-        <seg>Prosimy poczekać na załadowanie strony...</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Please wait for System Diagnostics Manager to fully load...</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Login_Username">
-      <tuv xml:lang="pl">
-        <seg>Nazwa:</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Username:</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Login_Password">
-      <tuv xml:lang="pl">
-        <seg>Hasło:</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Password:</seg>
+        <seg>Login  Failed!</seg>
       </tuv>
     </tu>
     <tu tuid="Login_Login">
@@ -288,6 +277,14 @@
         <seg>Logout</seg>
       </tuv>
     </tu>
+    <tu tuid="Login_Password">
+      <tuv xml:lang="pl">
+        <seg>Hasło:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Password:</seg>
+      </tuv>
+    </tu>
     <tu tuid="Login_Success">
       <tuv xml:lang="pl">
         <seg>Logowanie powiodło się!</seg>
@@ -296,20 +293,23 @@
         <seg>Login successful!</seg>
       </tuv>
     </tu>
-    <tu tuid="Login_Failed">
+    <tu tuid="Login_Username">
       <tuv xml:lang="pl">
-        <seg>Błąd podczas logowania się!</seg>
+        <seg>Nazwa:</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Login  Failed!</seg>
+        <seg>Username:</seg>
       </tuv>
     </tu>
-    <tu tuid="Login_ChangedUser">
-      <tuv xml:lang="pl">
-        <seg>Użytkownik zmieniony na:</seg>
-      </tuv>
+    <tu tuid="Samples.HELLO_WORLD">
       <tuv xml:lang="en">
-        <seg>User changed to:</seg>
+        <seg>Hello world!</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
       </tuv>
     </tu>
   </body>

@@ -3,7 +3,19 @@
   <Bindings>
     <EventBinding id="ContentAuto.ButtonAutoStart.Click">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentAuto" widgetRefId="ButtonAutoStart" event="Click" />
-      <EventHandler>
+      <Operand datatype="ANY_INT" name="item_weight">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::Auto:ItemWeight">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="item_weight = 0">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="No object detected in starting area. Place an object before starting." header="No object in starting area!" icon="Exclamation" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="item_weight &gt; 0">
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::Auto:Start">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
@@ -21,7 +33,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_2">
+    <EventBinding id="EventBinding_2" comment="When machine stops">
       <Source xsi:type="opcUa.Event" refId="::Auto:State" event="ValueChanged" />
       <EventHandler condition="newValue = 0 OR newValue = 1">
         <Sequence>
@@ -42,7 +54,7 @@
         </Sequence>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_3">
+    <EventBinding id="EventBinding_3" comment="When machine starts running">
       <Source xsi:type="opcUa.Event" refId="::Auto:State" event="ValueChanged" />
       <EventHandler condition="newValue &gt; 1">
         <Sequence>
