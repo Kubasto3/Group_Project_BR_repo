@@ -37,7 +37,6 @@
         <Variable Name="ItemDetected" />
         <Variable Name="ItemWeightMeasured" />
         <Variable Name="ItemWeight" />
-        <Variable Name="CurrentStep" />
         <Variable Name="QuantityLeftStorage" />
         <Variable Name="QuantityRightStorage" />
         <Variable Name="ActuatorPushing" />
@@ -58,6 +57,17 @@
         <Variable Name="ManualStop" />
         <Variable Name="DirectionChangeDistance" />
         <Variable Name="DirectionChangeVelocity" />
+      </Task>
+      <Task Name="Program">
+        <Variable Name="ActuatorPushing" />
+        <Variable Name="ActuatorSorting" />
+        <Variable Name="ItemDetected" />
+        <Variable Name="ItemWeight" />
+        <Variable Name="ItemWeightMeasured" />
+        <Variable Name="Start" />
+        <Variable Name="State" />
+        <Variable Name="Stop" />
+        <Variable Name="Approval" />
       </Task>
     </Module>
   </DefaultView>
