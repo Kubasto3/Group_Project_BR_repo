@@ -7,5 +7,6 @@
     <Object Type="Program" Language="IEC">RecipesMgmnt</Object>
     <Object Type="Program" Language="IEC">Camera</Object>
     <Object Type="Program" Language="IEC">Alarms</Object>
+    <Object Type="Program" Language="IEC">Program</Object>
   </Objects>
 </Package>
