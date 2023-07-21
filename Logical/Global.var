@@ -7,7 +7,9 @@ VAR
 	gUISetup : MpRecipeUISetupType;
 	gUIConnect : MpRecipeUIConnectType;
 	gInWeightMeasure : USINT;
-	gWeightDetected : BOOL;
+	gPicNotRecognised : BOOL := FALSE;
+	gStopBlink : BOOL;
+	gWeightDetected : BOOL := FALSE;
 	gActuatorByte : UINT;
 	gMotorBeltAxisBasic : MpAxisBasic;
 	gMotorBeltParType : MpAxisBasicParType;
@@ -17,4 +19,5 @@ VAR
 	gImageAcq : BOOL := FALSE; (*Enabling image acquisition therefore starting matching procedure, rising edge*)
 	gSetFocus : USINT;
 	gExposureTime : UDINT;
+	gStateCameraLED : StateCamLED;
 END_VAR

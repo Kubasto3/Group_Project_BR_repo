@@ -1,4 +1,8 @@
+VAR CONSTANT
+	TIMER_TIME_BLINK : TIME := T#500ms;
+END_VAR
 VAR
+	TimerTonCameraLED : TON;
 	PhotosTaken : USINT;
 	SET_FOCUS : UINT := 15000;
 	MatchEnable : BOOL := TRUE;
@@ -18,4 +22,5 @@ VAR
 	MAX_OVERLAP : USINT := 60;
 	BufferEncodedImg : STRING[1966080];
 	EnableEncode : BOOL;
+	CameraLED : USINT := 0;
 END_VAR

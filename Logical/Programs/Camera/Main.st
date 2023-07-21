@@ -1,17 +1,57 @@
 
 PROGRAM _INIT
-	(* Insert code here *)
-	
 	PhotosTaken;
 	NumberMatches;
 	RecognisedModel;
 	MatchEnable;
-	
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	(* Insert code here *)
-	 
+	
+	//---CAMERA LED---
+	//0 - PLC State
+	//1 - Nothing
+	//2 - Green
+	//3 - Red
+	//4 - Blue
+	IF NOT gStopBlink THEN
+		IF gPicNotRecognised THEN
+			gStateCameraLED := PICTURE_UNRECOGNISED;
+		ELSIF gWeightDetected THEN
+			gStateCameraLED := WARNING_ACTUATOR_PUSHING;
+		ELSE
+			gStateCameraLED := NONE;
+		END_IF;
+	END_IF;	
+	
+	
+	CASE gStateCameraLED OF
+		WARNING_ACTUATOR_PUSHING:
+			TimerTonCameraLED.IN := TRUE;
+			IF TimerTonCameraLED.Q THEN
+				TimerTonCameraLED.IN := FALSE;
+				CameraLED := 1;
+			ELSE
+				CameraLED := 3; //RED
+			END_IF;
+		  
+		PICTURE_UNRECOGNISED:
+			TimerTonCameraLED.IN := TRUE;
+			IF TimerTonCameraLED.Q THEN
+				TimerTonCameraLED.IN := FALSE;
+				CameraLED := 1;
+			ELSE
+				CameraLED := 4; //BLUE
+			END_IF;
+			
+		NONE:
+			CameraLED := 0;
+			
+	END_CASE;
+	
+	TimerTonCameraLED.PT := TIMER_TIME_BLINK;
+	TimerTonCameraLED();
+	
 	gRecognisedModel := RecognisedModel;
 	
 	//calling variables used in I/O matching of camera to delete warnings

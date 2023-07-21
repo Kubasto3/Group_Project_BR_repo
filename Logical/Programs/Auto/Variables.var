@@ -25,7 +25,7 @@ VAR
 	MotorVel : {REDUND_UNREPLICABLE} UINT := 300;
 	SortChoice : SortChoiceEnum := WEIGHT;
 	Start : BOOL := FALSE;
-	State : ProgramStatesEnum := INIT;
+	State : ProgramStatesEnum := STOP;
 	Stop : BOOL := FALSE;
 	TimerTonActuator : TON;
 	TimerTonActuatorIn : BOOL := FALSE;
