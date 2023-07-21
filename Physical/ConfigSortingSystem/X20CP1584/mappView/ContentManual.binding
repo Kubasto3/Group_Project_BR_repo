@@ -1,5 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BindingsSet id="ContentManual_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:ManualActuatorDosing" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleButtonDispensingPiston" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:ManualActuatorSorting" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleButtonSortingPiston" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:ManualActuatorDosing" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectangleBoxPistonActuatorGreen" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:ManualActuatorDosing" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectanglePistonRodActuatorGreen" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:ManualActuatorDosing" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectanglePistonActuatorGreen" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:ManualActuatorSorting" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectangleBoxPistonPushingGreen" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:ManualActuatorSorting" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectanglePistonPushingGreen" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:ManualActuatorSorting" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectanglePistonRodPushingGreen" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:ManualDistance" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="NumericInputDistance" attribute="node" />
+</Binding>
 </Bindings>
 </BindingsSet>

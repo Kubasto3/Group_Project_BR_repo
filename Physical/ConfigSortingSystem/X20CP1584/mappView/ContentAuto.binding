@@ -5,13 +5,52 @@
 <Source xsi:type="opcUa" refId="::Auto:ItemWeightMeasured" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputDetectedWeight" attribute="node" />
 </Binding>
+
+
+
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gMotorBeltParType.Position" attribute="node" />
-<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputDetectedConveyorPosition" attribute="node" />
+<Source xsi:type="opcUa" refId="::Auto:QuantityLeftStorage" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputLeftChamber" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gMotorBeltParType.Velocity" attribute="node" />
-<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputDetectedConveyorSpeed" attribute="node" />
+<Source xsi:type="opcUa" refId="::Auto:QuantityRightStorage" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputRightChamber" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:ActuatorPushing" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleBoxPistonActuatorGreen" attribute="visible" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:ActuatorPushing" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectanglePistonRodActuatorGreen" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:ActuatorPushing" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectanglePistonActuatorGreen" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:ActuatorSorting" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleBoxPistonPushingGreen" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:ActuatorSorting" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectanglePistonPushingGreen" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:ActuatorSorting" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectanglePistonRodPushingGreen" attribute="visible" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gMotorBeltAxisBasic.Velocity" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputDetectedConveyorSpeed" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gMotorBeltAxisBasic.Position" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputDetectedConveyorPosition" attribute="node" />
 </Binding>
 </Bindings>
 </BindingsSet>
