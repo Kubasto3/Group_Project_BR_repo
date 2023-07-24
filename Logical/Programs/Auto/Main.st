@@ -81,7 +81,6 @@ PROGRAM _CYCLIC
 			MotorPos := 0;
 			MotorVel := 0;
 			StringState := 'Stop';
-			gStopBlink := TRUE;
 			IF gMode = 0 THEN
 				MotorPower 		  := FALSE;
 				MotorMoveAbsolute := FALSE;
@@ -95,9 +94,9 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		INIT:
+			gStopBlink := TRUE;
 			StringState 		:= 'Inicjalizacja';
 			ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
-			gStopBlink 			:= FALSE;
 			AddToRight 			:= FALSE;
 			AddToLeft 			:= FALSE;
 			TimerTonActuatorIn 	:= FALSE;
@@ -108,6 +107,7 @@ PROGRAM _CYCLIC
 			MotorHome 			:= TRUE;
 			gPicNotRecognised	:= FALSE; //pozniej musi zniknac, reset z poziomu alarmow lepszy
 			IF ItemDetected THEN
+				gStopBlink		:= FALSE;
 				State := DETECTION;
 			END_IF;
 			

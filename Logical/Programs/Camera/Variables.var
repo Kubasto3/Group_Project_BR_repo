@@ -4,6 +4,8 @@ VAR
 	BufferImageSize : UDINT := 1310720;
 	CameraLED : USINT := 0;
 	CameraLED_2 : USINT := 0;
+	CameraLED_OPC : USINT := 0;
+	CTU_HowManyBlink : CTU;
 	EnableEncode : BOOL;
 	ExecuteGetImg : BOOL;
 	EXPO_TIME : {REDUND_UNREPLICABLE} UDINT := 15000;
@@ -25,6 +27,7 @@ VAR
 	MIN_SCORE : {REDUND_UNREPLICABLE} USINT := 40;
 	NumberMatches : USINT;
 	NUM_SEARCH_MAX : {REDUND_UNREPLICABLE} USINT := 1;
+	OneMoreBlink : BOOL;
 	PhotosTaken : USINT;
 	RecognisedModel : USINT;
 	SET_FOCUS : {REDUND_UNREPLICABLE} UINT := 15000;

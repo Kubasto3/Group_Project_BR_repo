@@ -28,20 +28,19 @@ PROGRAM _CYCLIC
 	END_IF;
 	
 	
-	IF NOT gStopBlink THEN
+	IF gStopBlink THEN
+		CameraLED_OPC   := LED_PLC_STATUS;
+	ELSE
 		TimerTonCameraLED.IN := TRUE;
-		CameraLED := LED_RED;
+		CameraLED_OPC := CameraLED;
 		IF TimerTonCameraLED.Q THEN
 			TimerTonCameraLED_2.IN := TRUE;
-			CameraLED := LED_BLUE; 
+			CameraLED_OPC := CameraLED_2; 
 			IF TimerTonCameraLED_2.Q THEN
 				TimerTonCameraLED.IN := FALSE; 				//1 TIMER
 				TimerTonCameraLED_2.IN := FALSE;			//2 TIMER
 			END_IF;
 		END_IF;
-	ELSE
-		CameraLED  := LED_PLC_STATUS;
-		CameraLED_2 := LED_PLC_STATUS;
 	END_IF;
 	
 	
@@ -97,6 +96,7 @@ PROGRAM _CYCLIC
 	TimerTonCameraLED_2.PT := TIMER_TIME_BLINK;
 	TimerTonCameraLED_2();
 	
+	CTU_HowManyBlink(CU := OneMoreBlink, PV := 4);
 	
 	
 	gRecognisedModel := RecognisedModel;

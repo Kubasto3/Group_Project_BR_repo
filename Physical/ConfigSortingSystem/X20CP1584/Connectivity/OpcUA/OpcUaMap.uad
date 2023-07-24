@@ -50,13 +50,14 @@
         <Variable Name="ActuatorNotSorting" />
         <Variable Name="CTU_Reset_Left" />
         <Variable Name="CTU_Reset_Right" />
-        <Variable Name="ErrorMaxL" />
-        <Variable Name="ErrorMaxR" />
         <Variable Name="SortChoice" />
+        <Variable Name="MotorVel" />
+        <Variable Name="MotorPos" />
       </Task>
       <Task Name="Camera">
         <Variable Name="BufferEncodedImg" />
         <Variable Name="NumberMatches" />
+        <Variable Name="CameraLED_OPC" />
       </Task>
       <Task Name="Manual">
         <Variable Name="BeltMoveAdditive" />

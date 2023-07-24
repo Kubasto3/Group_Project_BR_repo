@@ -9,7 +9,7 @@ VAR
 	gUIConnect : MpRecipeUIConnectType;
 	gInWeightMeasure : USINT;
 	gPicNotRecognised : BOOL := FALSE;
-	gStopBlink : BOOL;
+	gStopBlink : BOOL := TRUE;
 	gWeightDetected : BOOL := FALSE;
 	gActuatorByte : UINT;
 	gMotorBeltAxisBasic : MpAxisBasic;
