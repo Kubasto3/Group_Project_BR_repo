@@ -1,5 +1,6 @@
 VAR
 	ActuatorByte : INT := 2#0000000000000000;
+	SortLeftMin : BOOL := FALSE; (*Mniejsze detale sortowane s¹ na lewo gdy 1, a wieksze na prawo gdy 1.*)
 	ActuatorPushing : BOOL := FALSE;
 	ActuatorSorting : BOOL := FALSE;
 	ItemDetected : BOOL := FALSE;

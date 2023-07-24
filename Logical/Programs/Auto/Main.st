@@ -151,9 +151,17 @@ PROGRAM _CYCLIC
 		SORT_WEIGHT: 
 			StringState := 'Sortowanie wagowe';
 			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < ItemWeightChoosen THEN
-				State := GO_STORAGE_LEFT;
+				IF SortLeftMin THEN
+					State := GO_STORAGE_LEFT;
+				ELSE
+					State := GO_STORAGE_RIGHT;
+				END_IF;
 			ELSIF ItemWeightMeasured >= ItemWeightChoosen THEN 
-				State := GO_STORAGE_RIGHT;
+				IF SortLeftMin THEN
+					State := GO_STORAGE_RIGHT;
+				ELSE
+					State := GO_STORAGE_LEFT;
+				END_IF;
 			END_IF;
 			
 		SORT_OPTIC:
