@@ -9,18 +9,20 @@ PROGRAM _CYCLIC
 	gMpRecipeXML_0.MpLink := 		ADR(gRecipeXml);
 	gMpRecipeXML_0.Enable := 		TRUE;
 	gMpRecipeXML_0.DeviceName :=	ADR('CF'); 
-	gMpRecipeXML_0.FileName := 		ADR('Kuba');
+	gMpRecipeXML_0.FileName := 		ADR('TestoweParametry'); //zmienic sciezke
 	
 	gMpRecipeRegPar_0.MpLink := 	ADR(gRecipeXml);
 	gMpRecipeRegPar_0.Enable :=		TRUE;
-	gMpRecipeRegPar_0.PVName := 	ADR('Coffee');
+	gMpRecipeRegPar_0.PVName := 	ADR('gSorting');
 	
 	gMpRecipeUI_0.MpLink :=			ADR(gRecipeXml);
 	gMpRecipeUI_0.Enable := 		TRUE;
 	gMpRecipeUI_0.UISetup := 		gUISetup;
 	gMpRecipeUI_0.UIConnect := 		ADR(gUIConnect);
 	
-	
+	gSorting.gItemWeightChoosen;
+	gSorting.gRecognisedModel; //CO TU DAC???
+	gSorting.gSortLeftMin;
 	
 	Coffee.Water;
 	Coffee.Milk;
