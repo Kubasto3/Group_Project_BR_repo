@@ -54,11 +54,7 @@
         <Variable Name="MotorVel" />
         <Variable Name="MotorPos" />
       </Task>
-      <Task Name="Camera">
-        <Variable Name="BufferEncodedImg" />
-        <Variable Name="NumberMatches" />
-        <Variable Name="CameraLED_OPC" />
-      </Task>
+      <Task Name="Camera" />
       <Task Name="Manual">
         <Variable Name="BeltMoveAdditive" />
         <Variable Name="BeltMoveVelocityOff" />
