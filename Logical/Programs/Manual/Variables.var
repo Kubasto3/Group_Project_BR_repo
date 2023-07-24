@@ -20,4 +20,7 @@ VAR
 	FlagActSorting : BOOL; (*Flag for sorting actuator active *)
 	FlagActDosing : BOOL; (*Flag for dosing actuator active*)
 	MC_BR_JogVelocity_0 : MC_BR_JogVelocity;
+	FlagManual : BOOL;
+	ExposureTime : UDINT;
+	SetFocus : USINT;
 END_VAR

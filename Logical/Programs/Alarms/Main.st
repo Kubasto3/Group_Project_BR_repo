@@ -45,6 +45,7 @@ PROGRAM _CYCLIC
 	END_IF;
 	
 	IF (MpAlarmXCore_0.ActiveAlarms > 0) THEN
+		gAlarmExist := TRUE;
 		IF (NOT(isAcknowledged)) THEN
 			//blinking
 			IF (redIconTimer.IN = FALSE) THEN
@@ -59,6 +60,7 @@ PROGRAM _CYCLIC
 			enableRedIcon := TRUE;
 		END_IF;
 	ELSE
+		gAlarmExist := FALSE;
 		enableRedIcon := FALSE;
 	END_IF;
 	

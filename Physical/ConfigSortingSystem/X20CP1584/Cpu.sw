@@ -10,6 +10,7 @@
     <Task Name="Alarms" Source="Programs.Alarms.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Manual" Source="Programs.Manual.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="ProgramRec" Source="Programs.RecipesMgmnt.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Program" Source="Programs.Program.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />

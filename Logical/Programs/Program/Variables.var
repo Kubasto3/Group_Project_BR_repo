@@ -1,7 +1,6 @@
 VAR
+	Approval : BOOL;
 	ActuatorByte : INT := 2#0000000000000000;
-	SortLeftBR : BOOL := FALSE; (*Gdy ustawiona na 1 sortuje BR na lewo, a AS na prawo*)
-	SortLeftMin : BOOL := FALSE; (*Mniejsze detale sortowane s¹ na lewo gdy 1, a wieksze na prawo gdy 1.*)
 	ActuatorPushing : BOOL := FALSE;
 	ActuatorSorting : BOOL := FALSE;
 	ItemDetected : BOOL := FALSE;
@@ -27,7 +26,7 @@ VAR
 	MotorVel : {REDUND_UNREPLICABLE} UINT := 300;
 	SortChoice : SortChoiceEnum := WEIGHT;
 	Start : BOOL := FALSE;
-	State : ProgramStatesEnum := STOP;
+	State : ProgramStatesEnum := INIT;
 	Stop : BOOL := FALSE;
 	TimerTonActuator : TON;
 	TimerTonActuatorIn : BOOL := FALSE;

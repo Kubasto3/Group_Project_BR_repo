@@ -77,6 +77,17 @@
         <Variable Name="FlagActDosing" />
         <Variable Name="FlagActSorting" />
       </Task>
+      <Task Name="Program">
+        <Variable Name="ActuatorPushing" />
+        <Variable Name="ActuatorSorting" />
+        <Variable Name="ItemDetected" />
+        <Variable Name="ItemWeight" />
+        <Variable Name="ItemWeightMeasured" />
+        <Variable Name="Start" />
+        <Variable Name="State" />
+        <Variable Name="Stop" />
+        <Variable Name="Approval" />
+      </Task>
     </Module>
   </DefaultView>
 </OpcUaSource>

@@ -9,7 +9,7 @@ PROGRAM _CYCLIC
 	gMpRecipeXML_0.MpLink := 		ADR(gRecipeXml);
 	gMpRecipeXML_0.Enable := 		TRUE;
 	gMpRecipeXML_0.DeviceName :=	ADR('CF'); 
-	gMpRecipeXML_0.FileName := 		ADR('MyFile2');
+	gMpRecipeXML_0.FileName := 		ADR('Kuba');
 	
 	gMpRecipeRegPar_0.MpLink := 	ADR(gRecipeXml);
 	gMpRecipeRegPar_0.Enable :=		TRUE;
@@ -19,7 +19,7 @@ PROGRAM _CYCLIC
 	gMpRecipeUI_0.Enable := 		TRUE;
 	gMpRecipeUI_0.UISetup := 		gUISetup;
 	gMpRecipeUI_0.UIConnect := 		ADR(gUIConnect);
-		
+	
 	Coffee.Water;
 	Coffee.Milk;
 	Coffee.Powder;
