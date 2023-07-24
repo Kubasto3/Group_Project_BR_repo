@@ -50,8 +50,6 @@
         <Variable Name="ActuatorNotSorting" />
         <Variable Name="CTU_Reset_Left" />
         <Variable Name="CTU_Reset_Right" />
-        <Variable Name="ErrorMaxL" />
-        <Variable Name="ErrorMaxR" />
         <Variable Name="SortChoice" />
       </Task>
       <Task Name="Camera">
@@ -76,16 +74,24 @@
         <Variable Name="FlagActDosing" />
         <Variable Name="FlagActSorting" />
       </Task>
-      <Task Name="Program">
+      <Task Name="SemiAuto">
+        <Variable Name="ActuatorNotPushing" />
+        <Variable Name="ActuatorNotSorting" />
         <Variable Name="ActuatorPushing" />
         <Variable Name="ActuatorSorting" />
+        <Variable Name="CTU_Reset_Left" />
+        <Variable Name="CTU_Reset_Right" />
         <Variable Name="ItemDetected" />
         <Variable Name="ItemWeight" />
         <Variable Name="ItemWeightMeasured" />
+        <Variable Name="QuantityLeftStorage" />
+        <Variable Name="QuantityRightStorage" />
+        <Variable Name="SortChoice" />
         <Variable Name="Start" />
         <Variable Name="State" />
         <Variable Name="Stop" />
-        <Variable Name="Approval" />
+        <Variable Name="StringRecognisedModel" />
+        <Variable Name="StringState" />
       </Task>
     </Module>
   </DefaultView>

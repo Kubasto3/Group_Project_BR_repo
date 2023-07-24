@@ -38,7 +38,7 @@ PROGRAM _CYCLIC
 	SetFocus;
 	
 	
-
+	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
 	
 	IF DirectionChangeVelocity THEN
 		DirectionChangeVelocity := 0;
@@ -52,30 +52,23 @@ PROGRAM _CYCLIC
 	
 	IF gMode = 1 THEN
 		FlagManual := 1;
+		FlagNotManual := 0;
 		gMotorBeltParType.Distance := ManualDistance;
 		gMotorBeltParType.Velocity := ManualVelocity;
 	ELSE
+		FlagNotManual := 1;
 		FlagManual := 0;
 	END_IF;
 		
 	
 	IF ManualStop THEN
 		ManualStop := 0;
-		StartButtonState := 1;	//ZMIENNA DO STANU PRZYCISKU START - ZEBY DALO SIE WLACZYC START TYLKO RAZ
 		gActuatorByte := 2#0000_0000_0000_0000;
 		gMotorBeltAxisBasic.Power := 0;
-		//		ManualStep := MANUAL_START;
 	END_IF;
 	
 	IF (gMode = 1) THEN
 		CASE ManualStep OF
-			//		MANUAL_START:
-			//			IF ManualStart AND (gMode = 1) THEN	
-			//				ManualStart := 0;
-			//				StartButtonState := 0;	//ZMIENNA DO STANU PRZYCISKU START - ZEBY DALO SIE WLACZYC START TYLKO RAZ
-			//				ManualStep := MANUAL_WAIT;
-			//			END_IF;
-			//			
 			MANUAL_WAIT:
 			
 				IF BeltMoveAdditive THEN
