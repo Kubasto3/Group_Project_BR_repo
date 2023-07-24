@@ -24,4 +24,5 @@ VAR
 	gAlarmExist : BOOL;
 	gSortChoice : SortChoiceEnum := WEIGHT;
 	gSortChoiceView : BOOL;
+	gSorting : SortingType;
 END_VAR
