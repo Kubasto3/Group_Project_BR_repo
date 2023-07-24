@@ -1,26 +1,39 @@
+VAR
+	BufferEncodedImg : STRING[1966080];
+	BufferImage : UDINT;
+	BufferImageSize : UDINT := 1310720;
+	CameraLED : USINT := 0;
+	CameraLED_2 : USINT := 0;
+	EnableEncode : BOOL;
+	ExecuteGetImg : BOOL;
+	EXPO_TIME : {REDUND_UNREPLICABLE} UDINT := 15000;
+	FLASH_COLOR : {REDUND_UNREPLICABLE} USINT := 1;
+	FLASH_SEGMENT : {REDUND_UNREPLICABLE} USINT := 1;
+	httpEncodeBase64_0 : httpEncodeBase64;
+END_VAR
+VAR CONSTANT
+	LED_BLUE : USINT := 4;
+	LED_GREEN : USINT := 2;
+	LED_NOTHING : USINT := 1;
+	LED_PLC_STATUS : USINT := 0;
+	LED_RED : USINT := 3;
+END_VAR
+VAR
+	MatchEnable : BOOL := TRUE;
+	MatchScore : USINT;
+	MAX_OVERLAP : {REDUND_UNREPLICABLE} USINT := 60;
+	MIN_SCORE : {REDUND_UNREPLICABLE} USINT := 40;
+	NumberMatches : USINT;
+	NUM_SEARCH_MAX : {REDUND_UNREPLICABLE} USINT := 1;
+	PhotosTaken : USINT;
+	RecognisedModel : USINT;
+	SET_FOCUS : {REDUND_UNREPLICABLE} UINT := 15000;
+	TimerTonCameraLED : TON;
+	TimerTonCameraLED_2 : TON;
+END_VAR
 VAR CONSTANT
 	TIMER_TIME_BLINK : TIME := T#500ms;
 END_VAR
 VAR
-	TimerTonCameraLED : TON;
-	PhotosTaken : USINT;
-	SET_FOCUS : UINT := 15000;
-	MatchEnable : BOOL := TRUE;
-	NUM_SEARCH_MAX : USINT := 1;
-	BufferImageSize : UDINT := 1310720;
-	ExecuteGetImg : BOOL;
-	httpEncodeBase64_0 : httpEncodeBase64;
-	BufferImage : UDINT;
-	NumberMatches : USINT;
-	EXPO_TIME : UDINT := 15000;
 	ViBaseGetImage_0 : ViBaseGetImage;
-	FLASH_SEGMENT : USINT := 1;
-	MatchScore : USINT;
-	FLASH_COLOR : USINT := 1;
-	RecognisedModel : USINT;
-	MIN_SCORE : USINT := 40;
-	MAX_OVERLAP : USINT := 60;
-	BufferEncodedImg : STRING[1966080];
-	EnableEncode : BOOL;
-	CameraLED : USINT := 0;
 END_VAR

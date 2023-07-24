@@ -1,3 +1,4 @@
+(*Insert your comment here.*)
 VAR
 	gRecognisedModel : ModelEnum := Unrecognised; (*Value showing recognised model 1- B&R, 2- AS, 0- not recognised*)
 	Coffee : CofeeType;
@@ -20,5 +21,5 @@ VAR
 	gSetFocus : USINT;
 	gExposureTime : UDINT;
 	gAutoRecipe : USINT;
-	gStateCameraLED : StateCamLED;
+	gAlarmExist : BOOL;
 END_VAR

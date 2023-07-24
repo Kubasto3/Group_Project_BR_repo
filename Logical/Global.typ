@@ -1,11 +1,5 @@
 
 TYPE
-	StateCamLED : 
-		(
-		WARNING_ACTUATOR_PUSHING,
-		PICTURE_UNRECOGNISED,
-		NONE
-		);
 	ModelEnum : 
 		(
 		BR := 1, (*%ID of B&R logo model*)
