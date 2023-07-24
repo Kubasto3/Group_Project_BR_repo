@@ -1,24 +1,24 @@
 
 PROGRAM _INIT
-	gMotorBeltAxisBasic.Enable := 0;
-	gMotorBeltAxisBasic.Power := 0;
-	gMotorBeltAxisBasic.Home := 0;
-	
-	ManualStart := 0;
-
-	gMotorBeltParType.Acceleration := 2500;
-	gMotorBeltParType.Deceleration := 2500;
-	
-	gMotorBeltAxisBasic.MpLink := ADR(gAxis_1);				
-	gMotorBeltAxisBasic.Enable := 1;
-	gMotorBeltAxisBasic.Parameters := ADR(gMotorBeltParType);
-	
-	ManualStep := MANUAL_START;
-	
-	gMotorBeltAxisBasic.Home := 1;
-	gMotorBeltAxisBasic.Power := 0;
-	
-	
+//	gMotorBeltAxisBasic.Enable := 0;
+//	gMotorBeltAxisBasic.Power := 0;
+//	gMotorBeltAxisBasic.Home := 0;
+//	
+//	ManualStart := 0;
+//
+//	gMotorBeltParType.Acceleration := 2500;
+//	gMotorBeltParType.Deceleration := 2500;
+//	
+//	gMotorBeltAxisBasic.MpLink := ADR(gAxis_1);				
+//	gMotorBeltAxisBasic.Enable := 1;
+//	gMotorBeltAxisBasic.Parameters := ADR(gMotorBeltParType);
+//	
+//	ManualStep := MANUAL_START;
+//	
+//	gMotorBeltAxisBasic.Home := 1;
+//	gMotorBeltAxisBasic.Power := 0;
+//	
+//	
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -27,8 +27,8 @@ PROGRAM _CYCLIC
 	
 	gAxis_1;
 	
-	gExposureTime;
-	gSetFocus;
+	ExposureTime;
+	SetFocus;
 	
 	
 	gMotorBeltParType.Distance := ManualDistance;
@@ -66,7 +66,11 @@ PROGRAM _CYCLIC
 		FlagActSorting := 0;
 	END_IF;
 	
-		
+	IF gMode = 1 THEN
+		FlagManual := 1;
+	ELSE
+		FlagManual := 0;
+	END_IF;
 		
 	
 	IF ManualStop THEN

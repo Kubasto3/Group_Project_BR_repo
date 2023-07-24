@@ -19,5 +19,6 @@ VAR
 	gImageAcq : BOOL := FALSE; (*Enabling image acquisition therefore starting matching procedure, rising edge*)
 	gSetFocus : USINT;
 	gExposureTime : UDINT;
+	gAutoRecipe : USINT;
 	gStateCameraLED : StateCamLED;
 END_VAR

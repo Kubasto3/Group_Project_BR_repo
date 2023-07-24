@@ -19,4 +19,7 @@ VAR
 	FlagActNone : BOOL; (*Flag for none of active actuators*)
 	FlagActSorting : BOOL; (*Flag for sorting actuator active *)
 	FlagActDosing : BOOL; (*Flag for dosing actuator active*)
+	FlagManual : BOOL;
+	ExposureTime : UDINT;
+	SetFocus : USINT;
 END_VAR
