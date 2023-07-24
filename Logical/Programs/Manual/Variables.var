@@ -2,7 +2,7 @@ VAR
 	ManualStep : ManualStepsEnum; (*Enum steps of Manual's state machine*)
 	ManualStop : BOOL := FALSE; (*Stopping all of the processes*)
 	ManualStart : BOOL := FALSE; (*Starting process - enables switching between steps*)
-	ManualDistance : LREAL := 500; (*Setting distance of the belt move [mm]*)
+	ManualDistance : LREAL := 300; (*Setting distance of the belt move [mm]*)
 	ManualActuatorDosing : BOOL; (*Enabling dosing actuator*)
 	ManualActuatorSorting : BOOL; (*Enabling sorting actuator*)
 	ManualActuatorBoth : BOOL; (*Enabling both actuators*)
@@ -19,4 +19,5 @@ VAR
 	FlagActNone : BOOL; (*Flag for none of active actuators*)
 	FlagActSorting : BOOL; (*Flag for sorting actuator active *)
 	FlagActDosing : BOOL; (*Flag for dosing actuator active*)
+	MC_BR_JogVelocity_0 : MC_BR_JogVelocity;
 END_VAR

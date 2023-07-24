@@ -14,10 +14,23 @@ PROGRAM _CYCLIC
 	MpAlarmXHistory_0.MpLink := ADR(gAlarmXHistory);
 	MpAlarmXHistory_0();
 	
+	MpUserXConfig_0.Enable := TRUE;
+	MpUserXConfig_0.Configuration := ADR(MpUserXConfigType_0);
+	MpUserXConfig_0();
+	
+	
 	redIconTimer.PT := T#500ms;
 	redIconTimer();
 	
-	isAcknowledged := MpAlarmXCheckState(gAlarmXCore, 'test_alarm', mpALARMX_STATE_ACKNOWLEDGED);
+	//isAcknowledged := MpAlarmXCheckState(gAlarmXCore, 'test_alarm', mpALARMX_STATE_ACKNOWLEDGED);
+	IF (MpAlarmXCheckState(gAlarmXCore, 'Unrecognized object', mpALARMX_STATE_ACKNOWLEDGED) AND
+		MpAlarmXCheckState(gAlarmXCore, 'Left box is full', mpALARMX_STATE_ACKNOWLEDGED) AND
+		MpAlarmXCheckState(gAlarmXCore, 'Right box is full', mpALARMX_STATE_ACKNOWLEDGED)) THEN
+		isAcknowledged := TRUE;
+	ELSE
+		isAcknowledged := FALSE;
+	END_IF;
+
 
 	IF (MpAlarmXCore_0.PendingAlarms > 0) THEN
 		pendingAlarms := TRUE;

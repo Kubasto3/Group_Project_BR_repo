@@ -23,6 +23,13 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 
+	MC_BR_JogVelocity_0.Axis := ADR(gAxis_1);
+	MC_BR_JogVelocity_0.Enable := TRUE;
+	MC_BR_JogVelocity_0.Velocity := ABS(ManualVelocity);
+	MC_BR_JogVelocity_0.Acceleration := 700;
+	MC_BR_JogVelocity_0.Deceleration := 700;
+	MC_BR_JogVelocity_0();
+	
 	gMotorBeltAxisBasic();
 	
 	gAxis_1;

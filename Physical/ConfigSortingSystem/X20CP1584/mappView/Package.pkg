@@ -17,5 +17,10 @@
     <Object Type="File">ContentCamera.binding</Object>
     <Object Type="File">ContentCamera.eventbinding</Object>
     <Object Type="File">ContentLeft.eventbinding</Object>
+    <Object Type="File">ContentCharts.binding</Object>
+    <Object Type="File">ContentServices.eventbinding</Object>
+    <Object Type="File">ContentParameters.binding</Object>
+    <Object Type="File">ContentParameters.eventbinding</Object>
+    <Object Type="File">contentMessageBoxLogin.eventbinding</Object>
   </Objects>
 </Package>

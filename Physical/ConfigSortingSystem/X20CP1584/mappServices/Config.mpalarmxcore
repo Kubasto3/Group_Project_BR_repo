@@ -8,8 +8,9 @@
         <Property ID="Message" Value="Attempt to classify object has failed" />
         <Selector ID="Behavior" Value="DiscreteValueMonitoring">
           <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::Auto:State" />
             <Group ID="TriggerValues">
-              <Property ID="[0]" Value="1" />
+              <Property ID="[0]" Value="14" />
             </Group>
           </Group>
         </Selector>
@@ -20,6 +21,30 @@
         <Selector ID="Behavior" Value="DiscreteValueMonitoring">
           <Group ID="Monitoring">
             <Property ID="MonitoredPV" Value="::Alarms:test_alarm" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="1" />
+            </Group>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="Left box is full" />
+        <Property ID="Message" Value="Left box reached maximum ammount of objects in it" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::Auto:ErrorMaxL" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="1" />
+            </Group>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="Right box is full" />
+        <Property ID="Message" Value="Right box reached maximum ammount of objects in it" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::Auto:ErrorMaxR" />
             <Group ID="TriggerValues">
               <Property ID="[0]" Value="1" />
             </Group>

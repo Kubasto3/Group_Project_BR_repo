@@ -2,12 +2,14 @@ VAR
 	test_alarm : BOOL;
 	MpAlarmXCore_0 : MpAlarmXCore;
 	pendingAlarms : BOOL;
-  enableRedIcon : BOOL;
+	enableRedIcon : BOOL;
 	enableYellowIcon : BOOL;
 	redIconTimer : TON;
 	timerCycle : BOOL;
 	MpAlarmXHistory_0 : MpAlarmXHistory;
+	MpUserXConfigType_0 : MpUserXConfigType;
+	MpUserXConfig_0 : MpUserXConfig;
 	isAcknowledged : BOOL;
-  IsSemiAutoMode : BOOL;
+	IsSemiAutoMode : BOOL;
 	IsManualMode : BOOL;
 END_VAR

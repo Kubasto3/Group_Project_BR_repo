@@ -16,16 +16,16 @@
     <Widget xsi:type="widgets.brease.Rectangle" id="RectanglePistonRodActuatorGreen" top="126" left="391" width="45" height="16" zIndex="11" backColor="rgba(0, 0, 0, 1)" />
     <Widget xsi:type="widgets.brease.Image" id="Image1" top="200" left="900" width="350" height="350" zIndex="13" />
     <Widget xsi:type="widgets.brease.Button" id="ButtonMakePhoto" top="120" left="900" width="340" height="50" zIndex="14" text="Make photograph" />
-    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonDispensingPiston" top="120" left="20" width="180" zIndex="15" text="Dispensing piston" />
-    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonSortingPiston" top="200" left="20" width="180" zIndex="16" text="Sorting piston" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputDistance" top="260" left="260" width="180" height="40" zIndex="17" maxValue="300" minValue="-300" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
-    <Widget xsi:type="widgets.brease.Button" id="ButtonMoveDistance" top="260" left="20" width="180" height="40" zIndex="18" text="Move distance" />
-    <Widget xsi:type="widgets.brease.Button" id="ButtonStopMovement" top="400" left="20" width="420" height="140" zIndex="19" text="Stop movement" />
-    <Widget xsi:type="widgets.brease.Button" id="ButtonMoveRight" top="400" left="680" width="180" height="140" zIndex="20" text="Move right" />
-    <Widget xsi:type="widgets.brease.Button" id="ButtonMoveLeft" top="400" left="480" width="180" height="140" zIndex="21" text="Move left" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputVelocity" top="320" left="260" width="180" height="40" zIndex="22" maxValue="300" minValue="-300" unit="{'metric':'C16','imperial':'IU','imperial-us':'IU'}" unitAlign="right" />
-    <Widget xsi:type="widgets.brease.Button" id="ButtonMoveVelocity" top="320" left="20" width="180" height="40" zIndex="23" text="Move velocity" />
-    <Widget xsi:type="widgets.brease.Button" id="ButtonChangeDirectionAdditive" top="260" left="480" width="180" height="40" zIndex="24" text="Change direction" />
-    <Widget xsi:type="widgets.brease.Button" id="ButtonChangeDirectionVelocity" top="320" left="480" width="180" height="40" zIndex="25" text="Change direction" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputDistance" top="260" left="260" width="180" height="40" zIndex="15" maxValue="300" minValue="-300" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" unitAlign="right" textAlign="left" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonMoveDistance" top="260" left="20" width="180" height="40" zIndex="16" text="Move distance" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonStopMovement" top="400" left="20" width="420" height="140" zIndex="17" text="Stop movement" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonMoveRight" top="400" left="680" width="180" height="140" zIndex="18" text="Move right" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonMoveLeft" top="400" left="480" width="180" height="140" zIndex="19" text="Move left" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputVelocity" top="320" left="260" width="180" height="40" zIndex="20" maxValue="300" minValue="-300" unit="{'metric':'C16','imperial':'IU','imperial-us':'IU'}" unitAlign="right" textAlign="left" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonMoveVelocity" top="320" left="20" width="180" height="40" zIndex="21" text="Move velocity" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonChangeDirectionAdditive" top="260" left="480" width="180" height="40" zIndex="22" text="Change direction" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonChangeDirectionVelocity" top="320" left="480" width="180" height="40" zIndex="23" text="Change direction" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonDispensingPiston" top="120" left="20" width="180" zIndex="24" text="Dispensing piston" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonSortingPiston" top="200" left="20" width="180" zIndex="25" text="Sorting piston" />
   </Widgets>
 </Content>

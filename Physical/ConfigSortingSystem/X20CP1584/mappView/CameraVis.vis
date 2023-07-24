@@ -7,10 +7,15 @@
   <Navigations />
   <BindingsSets>
     <BindingsSet refId="ContentCamera_binding" />
+    <BindingsSet refId="ContentCharts_binding" />
+    <BindingsSet refId="ContentParameters_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentCamera_eventbinding" />
     <EventBindingsSet refId="ContentLeft_eventbinding" />
+    <EventBindingsSet refId="ContentServices_eventbinding" />
+    <EventBindingsSet refId="ContentParameters_eventbinding" />
+    <EventBindingsSet refId="contentMessageBoxLogin_eventbinding" />
   </EventBindingsSets>
   <Dialogs />
   <Contents>
