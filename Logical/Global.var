@@ -22,4 +22,6 @@ VAR
 	gExposureTime : UDINT;
 	gAutoRecipe : USINT;
 	gAlarmExist : BOOL;
+	gSortChoice : SortChoiceEnum := WEIGHT;
+	gSortChoiceView : BOOL;
 END_VAR

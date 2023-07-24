@@ -20,4 +20,9 @@ TYPE
 	END_STRUCT;
 	AxisType : 	STRUCT 
 	END_STRUCT;
+	SortChoiceEnum : 
+		(
+		WEIGHT,
+		OPTIC
+		);
 END_TYPE

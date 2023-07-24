@@ -71,7 +71,7 @@ PROGRAM _CYCLIC
 	END_IF; 
 	
 	// STOP OR MANUAL TURNED ON
-	IF Stop OR gMode = 1 THEN
+	IF Stop OR NOT gMode = 0 OR gAlarmExist THEN
 		Stop := FALSE;
 		State := STOP;
 	END_IF;
@@ -94,7 +94,7 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		INIT:
-			gStopBlink := TRUE;
+			
 			StringState 		:= 'Inicjalizacja';
 			ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
 			AddToRight 			:= FALSE;
@@ -107,7 +107,6 @@ PROGRAM _CYCLIC
 			MotorHome 			:= TRUE;
 			gPicNotRecognised	:= FALSE; //pozniej musi zniknac, reset z poziomu alarmow lepszy
 			IF ItemDetected THEN
-				gStopBlink		:= FALSE;
 				State := DETECTION;
 			END_IF;
 			
@@ -121,14 +120,14 @@ PROGRAM _CYCLIC
 				
 		CATEGORIZATION: 
 			StringState := 'Kategoryzacja detalu';
-			IF SortChoice = WEIGHT THEN
+			IF gSortChoice = WEIGHT THEN
 				State := DROP;
-			ELSIF SortChoice = OPTIC THEN
+			ELSIF gSortChoice = OPTIC THEN
 				State := TAKE_PICT_CAMERA;
 			END_IF;
 			
 		TAKE_PICT_CAMERA:
-			StringState := 'Robienie zdjêcia i rozpoznawanie';
+			StringState := 'Robienie zdjecia';
 			gImageAcq 	:= TRUE;
 			IF TimerCameraPicDone THEN
 				IF gRecognisedModel = 0 THEN 						//0
@@ -145,11 +144,11 @@ PROGRAM _CYCLIC
 			ActuatorPushing := TRUE;
 			IF TimerActuatorOut THEN
 				ActuatorPushing := FALSE;
-				IF SortChoice = OPTIC THEN
-					SortChoiceView := TRUE;
+				IF gSortChoice = OPTIC THEN
+					gSortChoiceView := TRUE;
 					State := SORT_OPTIC;
-				ELSIF SortChoice = WEIGHT THEN
-					SortChoiceView := FALSE;
+				ELSIF gSortChoice = WEIGHT THEN
+					gSortChoiceView := FALSE;
 					State := SORT_WEIGHT;
 				END_IF;
 			END_IF;
@@ -225,8 +224,10 @@ PROGRAM _CYCLIC
 		
 		UNRECOGNISED_PIC:
 			StringState := 'Nie rozpoznano zdjêcia';
-			gPicNotRecognised := TRUE;
-			State := STOP;
+			gPicNotRecognised := TRUE; //nie ustawia jej
+			IF gPicNotRecognised THEN
+				State := STOP;
+			END_IF;
 
 	END_CASE;
 

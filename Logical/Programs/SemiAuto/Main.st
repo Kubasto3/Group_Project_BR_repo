@@ -8,7 +8,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	//CODE WORKS ONLY WHEN MANUAL MODE IS OFF
-	IF  gMode = 3 THEN
+	IF  gMode = 2 THEN
 		// MOTOR MANAGEMENT
 		gMotorBeltAxisBasic.Enable 		:= TRUE;
 		gMotorBeltAxisBasic.MpLink 		:= ADR(gAxis_1);
@@ -71,7 +71,7 @@ PROGRAM _CYCLIC
 	END_IF; 
 	
 	// STOP OR MANUAL TURNED ON
-	IF Stop OR gMode = 1 THEN
+	IF Stop OR gMode = 1 OR gMode = 0 THEN
 		Stop := FALSE;
 		State := STOP;
 	END_IF;
@@ -81,8 +81,8 @@ PROGRAM _CYCLIC
 			MotorPos := 0;
 			MotorVel := 0;
 			StringState := 'Stop';
-			gStopBlink := TRUE;
-			IF gMode = 3 THEN
+			IF gMode = 2 THEN
+				gStopBlink := TRUE;
 				MotorPower 		  := FALSE;
 				MotorMoveAbsolute := FALSE;
 				MotorHome 		  := FALSE;
@@ -122,9 +122,9 @@ PROGRAM _CYCLIC
 				
 		CATEGORIZATION: 
 			StringState := 'Kategoryzacja detalu';
-			IF SortChoice = WEIGHT THEN
+			IF gSortChoice = WEIGHT THEN
 				State := DROP;
-			ELSIF SortChoice = OPTIC THEN
+			ELSIF gSortChoice = OPTIC THEN
 				State := TAKE_PICT_CAMERA;
 			END_IF;
 			
@@ -146,11 +146,11 @@ PROGRAM _CYCLIC
 			ActuatorPushing := TRUE;
 			IF TimerActuatorOut THEN
 				ActuatorPushing := FALSE;
-				IF SortChoice = OPTIC THEN
-					SortChoiceView := TRUE;
+				IF gSortChoice = OPTIC THEN
+					gSortChoiceView := TRUE;
 					State := SORT_OPTIC;
-				ELSIF SortChoice = WEIGHT THEN
-					SortChoiceView := FALSE;
+				ELSIF gSortChoice = WEIGHT THEN
+					gSortChoiceView := FALSE;
 					State := SORT_WEIGHT;
 				END_IF;
 			END_IF;
@@ -159,25 +159,20 @@ PROGRAM _CYCLIC
 		SORT_WEIGHT: 
 			StringState := 'Sortowanie wagowe';
 			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < ItemWeightChoosen AND Approval THEN
-				Approval := 0;
-				IF SortLeftMin AND Approval THEN
+				IF SortLeftMin THEN
+					Approval := 0;
 					State := GO_STORAGE_LEFT;
 				ELSE
-					IF Approval = 1 THEN
-						Approval := 0;
-						State := GO_STORAGE_RIGHT;	  
-					END_IF;
+					Approval := 0;
+					State := GO_STORAGE_RIGHT;	  
 				END_IF;
 			ELSIF (ItemWeightMeasured >= ItemWeightChoosen) AND Approval THEN 
-				Approval := 0;
-				IF SortLeftMin AND Approval THEN
+				IF SortLeftMin THEN
 					Approval := 0;
 					State := GO_STORAGE_RIGHT;
-				ELSE
-					IF Approval = 1 THEN
-						Approval := 0;
-						State := GO_STORAGE_LEFT;	  
-					END_IF;
+				ELSE 
+					Approval := 0;
+					State := GO_STORAGE_LEFT;	  
 				END_IF;
 			END_IF;
 			
@@ -205,7 +200,7 @@ PROGRAM _CYCLIC
 				ELSE
 					IF Approval THEN
 						Approval := 0;
-					State := GO_STORAGE_LEFT;
+						State := GO_STORAGE_LEFT;
 					END_IF;
 				END_IF;
 			END_IF;
