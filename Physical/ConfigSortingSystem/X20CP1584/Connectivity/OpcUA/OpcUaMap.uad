@@ -76,6 +76,7 @@
         <Variable Name="ManualStep" />
         <Variable Name="FlagActDosing" />
         <Variable Name="FlagActSorting" />
+        <Variable Name="FlagManual" />
       </Task>
       <Task Name="Program">
         <Variable Name="ActuatorPushing" />
