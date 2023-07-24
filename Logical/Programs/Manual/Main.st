@@ -31,8 +31,7 @@ PROGRAM _CYCLIC
 	SetFocus;
 	
 	
-	gMotorBeltParType.Distance := ManualDistance;
-	gMotorBeltParType.Velocity := ManualVelocity;
+
 	
 	IF DirectionChangeVelocity THEN
 		DirectionChangeVelocity := 0;
@@ -68,6 +67,8 @@ PROGRAM _CYCLIC
 	
 	IF gMode = 1 THEN
 		FlagManual := 1;
+		gMotorBeltParType.Distance := ManualDistance;
+		gMotorBeltParType.Velocity := ManualVelocity;
 	ELSE
 		FlagManual := 0;
 	END_IF;
