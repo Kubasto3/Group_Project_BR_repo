@@ -16,10 +16,22 @@ PROGRAM _CYCLIC
 		MotorMoveDone 					:= gMotorBeltAxisBasic.MoveDone;
 		gMotorBeltAxisBasic.Power 		:= MotorPower;
 		gMotorBeltAxisBasic.Home 		:= MotorHome;
+		
+		IF gMotorBeltAxisBasic.Velocity > 15 THEN
+			MotorVel := gMotorBeltAxisBasic.Velocity;
+		ELSE
+			MotorVel := 0;
+		END_IF;
+		IF gMotorBeltAxisBasic.Position > 5 THEN
+			MotorPos := gMotorBeltAxisBasic.Position;
+		ELSE
+			MotorPos := 0;
+		END_IF;
+		
 		// ASSIGNING MOTION PARAMETERS
-		gMotorBeltParType.Acceleration 	:= MotorAcc; 
-		gMotorBeltParType.Deceleration 	:= MotorDec; 
-		gMotorBeltParType.Velocity 		:= MotorVel;
+		gMotorBeltParType.Acceleration 	:= MotorReqAcc; 
+		gMotorBeltParType.Deceleration 	:= MotorReqDec; 
+		gMotorBeltParType.Velocity 		:= MotorReqVel;
 		gMotorBeltParType.Position 		:= MotorReqPosition;
 		
 		gMotorBeltAxisBasic();
@@ -55,15 +67,7 @@ PROGRAM _CYCLIC
 		CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset_Right, PV := gMaxRightStorage);
 		QuantityLeftStorage  := CTU_QuantityLeft.CV;
 		QuantityRightStorage := CTU_QuantityRight.CV;
-	
-		//COUNTERS ALARMS (MOZE PRZERZUC DO ALARMÓW)
-		IF QuantityLeftStorage >= gMaxLeftStorage THEN
-			ErrorMaxL;
-		END_IF;
-	
-		IF QuantityRightStorage >= gMaxRightStorage THEN
-			ErrorMaxR ;
-		END_IF;
+		
 	END_IF; 
 	
 	// STOP OR MANUAL TURNED ON
@@ -74,6 +78,8 @@ PROGRAM _CYCLIC
 	// PROGRAM AUTO
 	CASE State OF
 		STOP:
+			MotorPos := 0;
+			MotorVel := 0;
 			StringState := 'Stop';
 			gStopBlink := TRUE;
 			IF gMode = 0 THEN
@@ -140,8 +146,10 @@ PROGRAM _CYCLIC
 			IF TimerActuatorOut THEN
 				ActuatorPushing := FALSE;
 				IF SortChoice = OPTIC THEN
+					SortChoiceView := TRUE;
 					State := SORT_OPTIC;
 				ELSIF SortChoice = WEIGHT THEN
+					SortChoiceView := FALSE;
 					State := SORT_WEIGHT;
 				END_IF;
 			END_IF;
