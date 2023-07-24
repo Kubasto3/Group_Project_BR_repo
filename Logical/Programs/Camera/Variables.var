@@ -1,18 +1,20 @@
 VAR
 	BufferEncodedImg : STRING[1966080];
+	StartEncode : BOOL;
 	BufferImage : UDINT;
-	BufferImageSize : UDINT := 1310720;
+	PhotosTaken : USINT;
+	SET_FOCUS : UINT := 15000;
+	MatchEnable : BOOL := TRUE;
+	NUM_SEARCH_MAX : USINT := 1;
 	CameraLED : USINT := 0;
 	CameraLED_2 : USINT := 0;
 	CameraLED_OPC : USINT := 0;
 	CTU_HowManyBlink : CTU;
 	EnableEncode : BOOL;
-	ExecuteGetImg : BOOL;
 	EXPO_TIME : {REDUND_UNREPLICABLE} UDINT := 15000;
 	FLASH_COLOR : {REDUND_UNREPLICABLE} USINT := 1;
 	FLASH_SEGMENT : {REDUND_UNREPLICABLE} USINT := 1;
 	httpEncodeBase64_0 : httpEncodeBase64;
-END_VAR
 VAR CONSTANT
 	LED_BLUE : USINT := 4;
 	LED_GREEN : USINT := 2;
@@ -30,13 +32,15 @@ VAR
 	OneMoreBlink : BOOL;
 	PhotosTaken : USINT;
 	RecognisedModel : USINT;
-	SET_FOCUS : {REDUND_UNREPLICABLE} UINT := 15000;
-	TimerTonCameraLED : TON;
-	TimerTonCameraLED_2 : TON;
-END_VAR
-VAR CONSTANT
-	TIMER_TIME_BLINK : TIME := T#500ms;
-END_VAR
-VAR
-	ViBaseGetImage_0 : ViBaseGetImage;
+	MIN_SCORE : USINT := 44;
+	MAX_OVERLAP : USINT := 0;
+	VIBASE_GETIMG_QUALITY : USINT := 5;
+	ExecuteGetImg : BOOL;
+	ViBaseBuffer : ARRAY[0..1500000] OF USINT;
+	Base64Buffer : STRING[2500000];
+	Base64srcLen : UDINT;
+	ViBaseGetImgGood : BOOL;
+	URL : STRING[2600000];
+	ImgProcessingActive : BOOL;
+	ImageProcess : USINT;
 END_VAR

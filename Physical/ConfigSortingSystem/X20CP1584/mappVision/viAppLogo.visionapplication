@@ -463,230 +463,6 @@
         </Group>
       </Group>
       <Group ID="ViewModelData[27]">
-        <Property ID="ObjectID" Value="VP.VP.AlignmentMatch.VF.MatchingLogo.Alignment" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[28]">
-        <Property ID="ObjectID" Value="VP.VP.OffsetROIXMatch.VF.MatchingLogo.OffsetROIX" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[29]">
-        <Property ID="ObjectID" Value="VP.VP.OffsetROIYMatch.VF.MatchingLogo.OffsetROIY" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[30]">
-        <Property ID="ObjectID" Value="VP.VP.OffsetROIOrientationMatch.VF.MatchingLogo.OffsetROIOrientation" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[31]">
-        <Property ID="ObjectID" Value="VP.VP.OffsetROIRotCenterXMatch.VF.MatchingLogo.OffsetROIRotCenterX" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[32]">
-        <Property ID="ObjectID" Value="VP.VP.OffsetROIRotCenterYMatch.VF.MatchingLogo.OffsetROIRotCenterY" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[33]">
-        <Property ID="ObjectID" Value="VF.MatchingLogo.NumResults.VP.VP.NumResultsMatch" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[34]">
-        <Property ID="ObjectID" Value="VF.MatchingLogo.FunctionProcessingTime.VP.VP.FunctionProcessingTimeMatch" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[35]">
-        <Property ID="ObjectID" Value="VF.MatchingLogo.ModelNumber.VP.VP.ModelNumberMatch" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[36]">
-        <Property ID="ObjectID" Value="VF.MatchingLogo.Score.VP.VP.ScoreMatch" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[37]">
-        <Property ID="ObjectID" Value="VF.MatchingLogo.Scale.VP.VP.ScaleMatch" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[38]">
-        <Property ID="ObjectID" Value="VF.MatchingLogo.PositionX.VP.VP.PositionXMatch" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[39]">
-        <Property ID="ObjectID" Value="VF.MatchingLogo.PositionY.VP.VP.PositionYMatch" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[40]">
-        <Property ID="ObjectID" Value="VF.MatchingLogo.Orientation.VP.VP.OrientationMatch" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[41]">
-        <Property ID="ObjectID" Value="VF.MatchingLogo.RotCenterX.VP.VP.RotCenterXMatch" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[42]">
-        <Property ID="ObjectID" Value="VF.MatchingLogo.RotCenterY.VP.VP.RotCenterYMatch" />
-        <Property ID="ClassId" Value="Wire" />
-        <Group ID="Positioning">
-          <Group ID="Point[1]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-          <Group ID="Point[2]">
-            <Property ID="X" Value="0" />
-            <Property ID="Y" Value="0" />
-          </Group>
-        </Group>
-      </Group>
-      <Group ID="ViewModelData[43]">
         <Property ID="ObjectID" Value="VP.VP.MinScoreMatch.VF.MatchingLogo.MinScore" />
         <Property ID="ClassId" Value="Wire" />
         <Group ID="Positioning">
@@ -700,8 +476,232 @@
           </Group>
         </Group>
       </Group>
-      <Group ID="ViewModelData[44]">
+      <Group ID="ViewModelData[28]">
         <Property ID="ObjectID" Value="VP.VP.MaxOverlapMatch.VF.MatchingLogo.MaxOverlap" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[29]">
+        <Property ID="ObjectID" Value="VP.VP.AlignmentMatch.VF.MatchingLogo.Alignment" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[30]">
+        <Property ID="ObjectID" Value="VP.VP.OffsetROIXMatch.VF.MatchingLogo.OffsetROIX" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[31]">
+        <Property ID="ObjectID" Value="VP.VP.OffsetROIYMatch.VF.MatchingLogo.OffsetROIY" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[32]">
+        <Property ID="ObjectID" Value="VP.VP.OffsetROIOrientationMatch.VF.MatchingLogo.OffsetROIOrientation" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[33]">
+        <Property ID="ObjectID" Value="VP.VP.OffsetROIRotCenterXMatch.VF.MatchingLogo.OffsetROIRotCenterX" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[34]">
+        <Property ID="ObjectID" Value="VP.VP.OffsetROIRotCenterYMatch.VF.MatchingLogo.OffsetROIRotCenterY" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[35]">
+        <Property ID="ObjectID" Value="VF.MatchingLogo.NumResults.VP.VP.NumResultsMatch" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[36]">
+        <Property ID="ObjectID" Value="VF.MatchingLogo.FunctionProcessingTime.VP.VP.FunctionProcessingTimeMatch" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[37]">
+        <Property ID="ObjectID" Value="VF.MatchingLogo.ModelNumber.VP.VP.ModelNumberMatch" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[38]">
+        <Property ID="ObjectID" Value="VF.MatchingLogo.Score.VP.VP.ScoreMatch" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[39]">
+        <Property ID="ObjectID" Value="VF.MatchingLogo.Scale.VP.VP.ScaleMatch" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[40]">
+        <Property ID="ObjectID" Value="VF.MatchingLogo.PositionX.VP.VP.PositionXMatch" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[41]">
+        <Property ID="ObjectID" Value="VF.MatchingLogo.PositionY.VP.VP.PositionYMatch" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[42]">
+        <Property ID="ObjectID" Value="VF.MatchingLogo.Orientation.VP.VP.OrientationMatch" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[43]">
+        <Property ID="ObjectID" Value="VF.MatchingLogo.RotCenterX.VP.VP.RotCenterXMatch" />
+        <Property ID="ClassId" Value="Wire" />
+        <Group ID="Positioning">
+          <Group ID="Point[1]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+          <Group ID="Point[2]">
+            <Property ID="X" Value="0" />
+            <Property ID="Y" Value="0" />
+          </Group>
+        </Group>
+      </Group>
+      <Group ID="ViewModelData[44]">
+        <Property ID="ObjectID" Value="VF.MatchingLogo.RotCenterY.VP.VP.RotCenterYMatch" />
         <Property ID="ClassId" Value="Wire" />
         <Group ID="Positioning">
           <Group ID="Point[1]">

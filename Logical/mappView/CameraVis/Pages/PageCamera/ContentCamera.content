@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="ContentCamera" height="580" width="1280" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonImageAcq" top="240" left="530" width="220" zIndex="0" text="Image Acquisition" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonImageAcq" top="140" left="880" width="220" zIndex="0" text="Image Acquisition" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="NumberMatchesOutput" top="230" left="1040" zIndex="1" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="ModelNumberOutput" top="310" left="1040" zIndex="2" />
     <Widget xsi:type="widgets.brease.Label" id="LabelNoMatches" top="230" left="870" width="150" zIndex="3" text="Number of matches" />
     <Widget xsi:type="widgets.brease.Label" id="LabelNoModel" top="310" left="880" width="120" zIndex="4" text="Model number" />
-    <Widget xsi:type="widgets.brease.Paper" id="PaperImage" top="-820" left="0" width="1280" height="1024" zIndex="5" />
+    <Widget xsi:type="widgets.brease.Paper" id="PaperImage" top="0" left="0" width="1280" height="1024" zIndex="5" svgContent="opcUa()::Camera:URL" />
   </Widgets>
 </Content>
