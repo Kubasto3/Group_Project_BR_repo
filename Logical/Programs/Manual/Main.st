@@ -27,8 +27,8 @@ PROGRAM _CYCLIC
 	
 	gAxis_1;
 	
-	gExposureTime;
-	gSetFocus;
+	ExposureTime;
+	SetFocus;
 	
 	
 	gMotorBeltParType.Distance := ManualDistance;
