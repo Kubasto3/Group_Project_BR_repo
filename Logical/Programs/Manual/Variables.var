@@ -25,4 +25,8 @@ VAR
 	SetFocus : USINT;
 	ManualStepAct : ManualStepsActEnum;
 	ManualActuatorWait : BOOL;
+	FlagActBothOff : BOOL;
+	FlagActDosingOff : BOOL;
+	FlagActNoneOff : BOOL;
+	FlagActSortingOff : BOOL;
 END_VAR
