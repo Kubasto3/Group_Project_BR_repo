@@ -23,4 +23,6 @@ VAR
 	FlagManual : BOOL;
 	ExposureTime : UDINT;
 	SetFocus : USINT;
+	ManualStepAct : ManualStepsActEnum;
+	ManualActuatorWait : BOOL;
 END_VAR

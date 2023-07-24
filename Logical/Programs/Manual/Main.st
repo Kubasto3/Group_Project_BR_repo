@@ -50,28 +50,6 @@ PROGRAM _CYCLIC
 		ManualDistance := (-1)*ManualDistance;
 	END_IF;
 	
-	IF gActuatorByte = 2#0000_0000_0000_0101 THEN
-		FlagActBoth := 1;
-		FlagActDosing := 1;
-		FlagActNone := 0;
-		FlagActSorting := 1;
-	ELSIF gActuatorByte = 2#0000_0000_0000_0000 THEN
-		FlagActBoth := 0;
-		FlagActDosing := 0;
-		FlagActNone := 0;
-		FlagActSorting := 0;
-	ELSIF gActuatorByte = 2#0000_0000_0000_0001 THEN
-		FlagActBoth := 0;
-		FlagActDosing := 0;
-		FlagActNone := 0;
-		FlagActSorting := 1;
-	ELSIF gActuatorByte = 2#0000_0000_0000_0100 THEN
-		FlagActBoth := 0;
-		FlagActDosing := 1;
-		FlagActNone := 0;
-		FlagActSorting := 0;
-	END_IF;
-	
 	IF gMode = 1 THEN
 		FlagManual := 1;
 		gMotorBeltParType.Distance := ManualDistance;
@@ -97,19 +75,8 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		MANUAL_WAIT:
-			IF ManualActuatorDosing THEN
-				ManualActuatorDosing := 0;
-				ManualStep := MANUAL_ACTUATOR_DOSING;
-			ELSIF ManualActuatorSorting THEN
-				ManualActuatorSorting := 0;
-				ManualStep := MANUAL_ACTUATOR_SORTING;
-			ELSIF ManualActuatorBoth THEN
-				ManualActuatorBoth := 0;
-				ManualStep := MANUAL_ACTUATOR_BOTH;
-			ELSIF ManualActuatorNone THEN
-				ManualActuatorNone := 0;
-				ManualStep := MANUAL_ACTUATOR_NONE;
-			ELSIF BeltMoveAdditive THEN
+			
+			IF BeltMoveAdditive THEN
 				gMotorBeltAxisBasic.Home := 0;
 				BeltMoveAdditive := 0;
 				ManualStep := MANUAL_BELT_SET_ADDITIVE;
@@ -120,27 +87,7 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 			//actuating actuator responsibile for dosing an element
-		MANUAL_ACTUATOR_DOSING:
-			gActuatorByte := 2#0000_0000_0000_0000;
-			gActuatorByte := 2#0000_0000_0000_0100;
-			ManualStep := MANUAL_WAIT;
-		
-			//actuating actuator responsibile for sorting an element
-		MANUAL_ACTUATOR_SORTING:
-			gActuatorByte := 2#0000_0000_0000_0000;
-			gActuatorByte := 2#0000_0000_0000_0001;	
-			ManualStep := MANUAL_WAIT;
-		
-			//actuating both actuators 
-		MANUAL_ACTUATOR_BOTH:
-			gActuatorByte := 2#0000_0000_0000_0000;
-			gActuatorByte := 2#0000_0000_0000_0101;
-			ManualStep := MANUAL_WAIT;
-			
-			//disactuating both actuators 
-		MANUAL_ACTUATOR_NONE:
-			gActuatorByte := 2#0000_0000_0000_0000;
-			ManualStep := MANUAL_WAIT;
+
 			
 		MANUAL_BELT_SET_ADDITIVE:
 			ManualVelocity := ABS(ManualVelocity);
@@ -183,7 +130,62 @@ PROGRAM _CYCLIC
 			END_IF;
 	END_CASE;
 	
-
+	CASE ManualStepAct OF
+		MANUAL_ACTUATOR_WAIT:
+			IF ManualActuatorDosing THEN
+				ManualActuatorDosing := 0;
+				ManualStepAct := MANUAL_ACTUATOR_DOSING;
+			ELSIF ManualActuatorSorting THEN
+				ManualActuatorSorting := 0;
+				ManualStepAct := MANUAL_ACTUATOR_SORTING;
+			ELSIF ManualActuatorBoth THEN
+				ManualActuatorBoth := 0;
+				ManualStepAct := MANUAL_ACTUATOR_BOTH;
+			ELSIF ManualActuatorNone THEN
+				ManualActuatorNone := 0;
+				ManualStepAct := MANUAL_ACTUATOR_NONE;
+			END_IF;
+			
+		MANUAL_ACTUATOR_DOSING:
+			FlagActBoth := 0;
+			FlagActDosing := 1;
+			FlagActNone := 0;
+			FlagActSorting := 0;
+			gActuatorByte := 2#0000_0000_0000_0000;
+			gActuatorByte := 2#0000_0000_0000_0100;
+			ManualStepAct := MANUAL_ACTUATOR_WAIT;
+		
+			//actuating actuator responsibile for sorting an element
+		MANUAL_ACTUATOR_SORTING:
+			FlagActBoth := 0;
+			FlagActDosing := 0;
+			FlagActNone := 0;
+			FlagActSorting := 1;
+			gActuatorByte := 2#0000_0000_0000_0000;
+			gActuatorByte := 2#0000_0000_0000_0001;	
+			ManualStepAct := MANUAL_ACTUATOR_WAIT;
+		
+			//actuating both actuators 
+		MANUAL_ACTUATOR_BOTH:
+			FlagActBoth := 1;
+			FlagActDosing := 1;
+			FlagActNone := 0;
+			FlagActSorting := 1;
+			gActuatorByte := 2#0000_0000_0000_0000;
+			gActuatorByte := 2#0000_0000_0000_0101;
+			ManualStepAct := MANUAL_ACTUATOR_WAIT;
+			
+			//disactuating both actuators 
+		MANUAL_ACTUATOR_NONE:
+			FlagActBoth := 0;
+			FlagActDosing := 0;
+			FlagActNone := 1;
+			FlagActSorting := 0;
+			gActuatorByte := 2#0000_0000_0000_0000;
+			ManualStepAct := MANUAL_ACTUATOR_WAIT;
+		
+	END_CASE;
+	
 	
 END_PROGRAM
 
