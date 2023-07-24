@@ -69,7 +69,6 @@
         <Variable Name="ManualStop" />
         <Variable Name="DirectionChangeDistance" />
         <Variable Name="DirectionChangeVelocity" />
-        <Variable Name="ManualStart" />
         <Variable Name="StartButtonState" />
         <Variable Name="ManualActuatorBoth" />
         <Variable Name="ManualActuatorNone" />
