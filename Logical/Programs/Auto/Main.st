@@ -62,7 +62,7 @@ PROGRAM _CYCLIC
 		END_IF;
 	
 		IF QuantityRightStorage >= gMaxRightStorage THEN
-			ErrorMaxR;
+			ErrorMaxR ;
 		END_IF;
 	END_IF; 
 	
@@ -84,7 +84,6 @@ PROGRAM _CYCLIC
 			TimerTonActuatorIn 	  := FALSE;
 			ActuatorSorting 	  := FALSE;
 			ActuatorPushing  	  := FALSE;
-			ItemWeightMeasured 	  := RESET_ITEM_MEM_WEIGHT;
 			IF Start THEN
 				State := INIT;
 			END_IF;
@@ -147,7 +146,7 @@ PROGRAM _CYCLIC
 				END_IF;
 			END_IF;
 			
-		// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, EQUAL AND ABOVE ItemWeightChoosen INTO THE RIGHT	
+			// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, EQUAL AND ABOVE ItemWeightChoosen INTO THE RIGHT	
 		SORT_WEIGHT: 
 			StringState := 'Sortowanie wagowe';
 			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < ItemWeightChoosen THEN
