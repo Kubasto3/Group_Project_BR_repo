@@ -22,6 +22,8 @@ PROGRAM _CYCLIC
 		ELSE
 			gStateCameraLED := NONE;
 		END_IF;
+	ELSE
+		gStateCameraLED := NONE;
 	END_IF;	
 	
 	

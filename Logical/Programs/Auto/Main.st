@@ -131,7 +131,7 @@ PROGRAM _CYCLIC
 					StringRecognisedModel := 'Unrecognised';
 					State 				  := UNRECOGNISED_PIC;
 				ELSE 
-					State 				  := SORT_OPTIC;
+					State 				  := DROP;
 				END_IF;
 			END_IF;
 				
@@ -166,15 +166,23 @@ PROGRAM _CYCLIC
 			
 		SORT_OPTIC:
 			StringState := 'Sortowanie optyczne';
-			IF gRecognisedModel = 1 THEN						//1
+			IF gRecognisedModel = 1 THEN	
 				gImageAcq 			  := FALSE;
-				StringRecognisedModel := 'B&R';
-				State 				  := GO_STORAGE_LEFT;
-				
+				StringRecognisedModel := 'B&R';					//1
+				IF SortLeftBR THEN
+					State := GO_STORAGE_LEFT;
+				ELSE
+					State := GO_STORAGE_RIGHT;
+				END_IF;
+			
 			ELSIF gRecognisedModel = 2 THEN						//2
 				gImageAcq 			  := FALSE;
 				StringRecognisedModel := 'AS';
-				State 			 	  := GO_STORAGE_RIGHT;
+				IF SortLeftBR THEN
+					State := GO_STORAGE_RIGHT;
+				ELSE
+					State := GO_STORAGE_LEFT;
+				END_IF;
 			END_IF;
 			
 			
