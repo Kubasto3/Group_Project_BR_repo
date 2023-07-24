@@ -43,8 +43,10 @@
         <Variable Name="ActuatorSorting" />
       </Task>
       <Task Name="Camera">
-        <Variable Name="BufferEncodedImg" />
         <Variable Name="NumberMatches" />
+        <Variable Name="Base64Buffer" />
+        <Variable Name="URL" />
+        <Variable Name="ViBaseBuffer" />
       </Task>
       <Task Name="Manual">
         <Variable Name="BeltMoveAdditive" />

@@ -1,12 +1,10 @@
 VAR
+	StartEncode : BOOL;
 	PhotosTaken : USINT;
 	SET_FOCUS : UINT := 15000;
 	MatchEnable : BOOL := TRUE;
 	NUM_SEARCH_MAX : USINT := 1;
-	BufferImageSize : UDINT := 1310720;
-	ExecuteGetImg : BOOL;
 	httpEncodeBase64_0 : httpEncodeBase64;
-	BufferImage : UDINT;
 	NumberMatches : USINT;
 	EXPO_TIME : UDINT := 15000;
 	ViBaseGetImage_0 : ViBaseGetImage;
@@ -14,9 +12,15 @@ VAR
 	MatchScore : USINT;
 	FLASH_COLOR : USINT := 1;
 	RecognisedModel : USINT;
-	MIN_SCORE : USINT := 47;
-	StartWarning : BOOL;
+	MIN_SCORE : USINT := 44;
 	MAX_OVERLAP : USINT := 0;
-	BufferEncodedImg : STRING[1966080];
-	EnableEncode : BOOL;
+	VIBASE_GETIMG_QUALITY : USINT := 5;
+	ExecuteGetImg : BOOL;
+	ViBaseBuffer : ARRAY[0..1500000] OF USINT;
+	Base64Buffer : STRING[2500000];
+	Base64srcLen : UDINT;
+	ViBaseGetImgGood : BOOL;
+	URL : STRING[2600000];
+	ImgProcessingActive : BOOL;
+	ImageProcess : USINT;
 END_VAR

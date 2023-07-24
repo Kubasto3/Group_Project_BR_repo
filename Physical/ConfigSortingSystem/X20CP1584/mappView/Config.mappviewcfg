@@ -6,7 +6,7 @@
       <Selector ID="WebServerProtocol" Value="1">
         <Property ID="WebServerPort" Value="81" />
       </Selector>
-      <Property ID="MaxClientConnections" Value="1" />
+      <Property ID="MaxClientConnections" Value="5" />
       <Property ID="MaxBRClientConnections" Value="0" />
       <Selector ID="AuthenticationMode" Value="AuthenticationModeRbac" />
       <Group ID="TcpProxyConf">
@@ -34,7 +34,7 @@
       </Group>
       <Property ID="defaultVisu" Value="SorterPowerlink" />
       <Group ID="Widget">
-        <Selector ID="renderingPolicy" Value="2" />
+        <Selector ID="renderingPolicy" Value="1" />
         <Selector ID="securityPolicy" Value="1" />
       </Group>
     </Group>
