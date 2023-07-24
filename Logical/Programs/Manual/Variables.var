@@ -26,4 +26,6 @@ VAR
 	FlagActDosingOff : BOOL;
 	FlagActNoneOff : BOOL;
 	FlagActSortingOff : BOOL;
+	FlagNotManual : BOOL;
+	NotMoveActive : BOOL;
 END_VAR
