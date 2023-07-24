@@ -9,10 +9,7 @@
 
 
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Manual:StartButtonState" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonManualMode" attribute="enable" />
-</Binding>
+
 
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Manual:FlagActDosing" attribute="value" />
@@ -47,6 +44,10 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Manual:ManualVelocity" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="NumericInputVelocity" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:FlagManual" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="GroupBoxManualMode" attribute="visible" />
 </Binding>
 </Bindings>
 </BindingsSet>

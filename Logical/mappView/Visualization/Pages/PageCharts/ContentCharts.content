@@ -4,7 +4,7 @@
     <Widget xsi:type="widgets.brease.Label" id="Label1" top="285" left="360" zIndex="0" text="Charts" visible="false" />
     <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxConvPosChart" top="0" left="0" width="640" height="580" zIndex="1" text="$IAT/Main/Auto_CurrConvPos">
       <Widgets>
-        <Widget xsi:type="widgets.brease.OnlineChartHDA" id="OnlineChartHDA1" top="0" left="0" width="640" height="580" zIndex="0">
+        <Widget xsi:type="widgets.brease.OnlineChartHDA" id="OnlineChartHDA1" top="0" left="0" width="640" height="580" zIndex="0" updateBufferTime="1000" updateChartTime="1000">
           <Properties>
             <yAxis>
               <Element id="yAxis1" />
@@ -24,7 +24,7 @@
     </Widget>
     <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxConvSpeedChart" top="0" left="640" width="640" height="580" zIndex="2" text="$IAT/Main/Auto_CurrConvSpeed">
       <Widgets>
-        <Widget xsi:type="widgets.brease.OnlineChartHDA" id="OnlineChartHDA2" top="0" left="0" width="640" height="580" zIndex="0">
+        <Widget xsi:type="widgets.brease.OnlineChartHDA" id="OnlineChartHDA2" top="0" left="0" width="640" height="580" zIndex="0" updateBufferTime="1000" updateChartTime="1000">
           <Properties>
             <yAxis>
               <Element id="yAxis1" />

@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="File">LayoutMain.layout</Object>
     <Object Type="File">LayoutAlarmHistory.layout</Object>
+    <Object Type="File">LayoutMessageBoxLogin.layout</Object>
   </Objects>
 </Package>
