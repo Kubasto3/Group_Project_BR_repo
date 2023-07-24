@@ -1,7 +1,6 @@
 VAR
 	ManualStep : ManualStepsEnum; (*Enum steps of Manual's state machine*)
 	ManualStop : BOOL := FALSE; (*Stopping all of the processes*)
-	ManualStart : BOOL := FALSE; (*Starting process - enables switching between steps*)
 	ManualDistance : LREAL := 300; (*Setting distance of the belt move [mm]*)
 	ManualActuatorDosing : BOOL; (*Enabling dosing actuator*)
 	ManualActuatorSorting : BOOL; (*Enabling sorting actuator*)
@@ -11,7 +10,6 @@ VAR
 	BeltMoveVelocityOn : BOOL; (*Activating velocity move*)
 	BeltMoveVelocityOff : BOOL; (*Disactivating velocity move*)
 	ManualVelocity : REAL := 50; (*Value of velocity [mm/s]*)
-	DirectionChange : BOOL; (*Switching direction*)
 	StartButtonState : BOOL; (*State of Manual Start button*)
 	DirectionChangeVelocity : BOOL; (*Switching the direction of velocity value / multiplying by -1*)
 	DirectionChangeDistance : BOOL; (*Switching the direction of distance value / multiplying by -1*)
@@ -23,4 +21,9 @@ VAR
 	FlagManual : BOOL;
 	ExposureTime : UDINT;
 	SetFocus : USINT;
+	ManualStepAct : ManualStepsActEnum;
+	FlagActBothOff : BOOL;
+	FlagActDosingOff : BOOL;
+	FlagActNoneOff : BOOL;
+	FlagActSortingOff : BOOL;
 END_VAR
