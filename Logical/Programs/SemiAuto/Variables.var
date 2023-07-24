@@ -30,6 +30,7 @@ END_VAR
 VAR
 	QuantityRightStorage : UINT;
 	QuantityLeftStorage : UINT;
+	Approval : BOOL;
 	MOTOR_DIST_RIGHT : {REDUND_UNREPLICABLE} UINT := 320;
 	MOTOR_DIST_LEFT : {REDUND_UNREPLICABLE} UINT := 90;
 	MotorResetError : BOOL := FALSE;

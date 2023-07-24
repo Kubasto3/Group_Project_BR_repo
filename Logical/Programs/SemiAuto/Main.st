@@ -82,7 +82,7 @@ PROGRAM _CYCLIC
 			MotorVel := 0;
 			StringState := 'Stop';
 			gStopBlink := TRUE;
-			IF gMode = 0 THEN
+			IF gMode = 3 THEN
 				MotorPower 		  := FALSE;
 				MotorMoveAbsolute := FALSE;
 				MotorHome 		  := FALSE;
@@ -107,14 +107,15 @@ PROGRAM _CYCLIC
 			MotorPower 			:= TRUE;
 			MotorHome 			:= TRUE;
 			gPicNotRecognised	:= FALSE; //pozniej musi zniknac, reset z poziomu alarmow lepszy
-			IF ItemDetected THEN
+			IF ItemDetected AND Approval THEN
 				State := DETECTION;
 			END_IF;
 			
 		DETECTION:
 			MotorHome 	:= FALSE;
 			StringState := 'Wykrycie detalu';
-			IF TimerAfterDetect THEN
+			IF TimerAfterDetect AND Approval THEN
+				Approval := 0;
 				ItemWeightMeasured := ItemWeight;
 				State := CATEGORIZATION;
 			END_IF;
@@ -157,17 +158,26 @@ PROGRAM _CYCLIC
 			// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, EQUAL AND ABOVE ItemWeightChoosen INTO THE RIGHT	
 		SORT_WEIGHT: 
 			StringState := 'Sortowanie wagowe';
-			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < ItemWeightChoosen THEN
-				IF SortLeftMin THEN
+			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < ItemWeightChoosen AND Approval THEN
+				Approval := 0;
+				IF SortLeftMin AND Approval THEN
 					State := GO_STORAGE_LEFT;
 				ELSE
-					State := GO_STORAGE_RIGHT;
+					IF Approval = 1 THEN
+						Approval := 0;
+						State := GO_STORAGE_RIGHT;	  
+					END_IF;
 				END_IF;
-			ELSIF ItemWeightMeasured >= ItemWeightChoosen THEN 
-				IF SortLeftMin THEN
+			ELSIF (ItemWeightMeasured >= ItemWeightChoosen) AND Approval THEN 
+				Approval := 0;
+				IF SortLeftMin AND Approval THEN
+					Approval := 0;
 					State := GO_STORAGE_RIGHT;
 				ELSE
-					State := GO_STORAGE_LEFT;
+					IF Approval = 1 THEN
+						Approval := 0;
+						State := GO_STORAGE_LEFT;	  
+					END_IF;
 				END_IF;
 			END_IF;
 			
@@ -176,19 +186,27 @@ PROGRAM _CYCLIC
 			IF gRecognisedModel = 1 THEN	
 				gImageAcq 			  := FALSE;
 				StringRecognisedModel := 'B&R';					//1
-				IF SortLeftBR THEN
+				IF SortLeftBR AND Approval THEN
+					Approval := 0;
 					State := GO_STORAGE_LEFT;
 				ELSE
-					State := GO_STORAGE_RIGHT;
+					IF Approval THEN
+						Approval := 0;
+						State := GO_STORAGE_RIGHT;
+					END_IF;
 				END_IF;
 			
 			ELSIF gRecognisedModel = 2 THEN						//2
 				gImageAcq 			  := FALSE;
 				StringRecognisedModel := 'AS';
-				IF SortLeftBR THEN
+				IF SortLeftBR AND Approval THEN
+					Approval := 0;
 					State := GO_STORAGE_RIGHT;
 				ELSE
+					IF Approval THEN
+						Approval := 0;
 					State := GO_STORAGE_LEFT;
+					END_IF;
 				END_IF;
 			END_IF;
 			
@@ -197,7 +215,8 @@ PROGRAM _CYCLIC
 			StringState := 'Transport detalu do lewego zbiornika';
 			MotorReqPosition := MOTOR_DIST_LEFT;
 			MotorMoveAbsolute := TRUE;
-			IF MotorInPosition AND MotorMoveDone THEN
+			IF MotorInPosition AND MotorMoveDone AND Approval THEN
+				Approval := 0;
 				State := SORT_STORAGE_LEFT;
 			END_IF;
 
@@ -205,7 +224,8 @@ PROGRAM _CYCLIC
 			StringState := 'Transport detalu do prawego zbiornika';
 			MotorReqPosition := MOTOR_DIST_RIGHT;
 			MotorMoveAbsolute := TRUE;
-			IF MotorInPosition AND MotorMoveDone THEN
+			IF MotorInPosition AND MotorMoveDone AND Approval THEN
+				Approval := 0;
 				State := SORT_STORAGE_RIGHT;				
 			END_IF;
 			
