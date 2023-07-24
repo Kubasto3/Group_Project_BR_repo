@@ -13,4 +13,7 @@ TYPE
 		Temperature : REAL;
 		Milk : REAL;
 	END_STRUCT;
+	SortingType : 	STRUCT 
+		gRecognisedModel : USINT;
+	END_STRUCT;
 END_TYPE
