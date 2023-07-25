@@ -1,4 +1,4 @@
-
+ 
 PROGRAM _INIT
 //	gMotorBeltAxisBasic.Enable := 0;
 //	gMotorBeltAxisBasic.Power := 0;

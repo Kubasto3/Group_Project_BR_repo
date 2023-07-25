@@ -85,7 +85,7 @@ PROGRAM _CYCLIC
 	
 	
 	// STOP OR MANUAL TURNED ON
-	IF Stop OR NOT gMode = 0 THEN //uwagaw trzeba to zmienic alarm
+	IF Stop OR gMode <> 0 THEN //uwagaw trzeba to zmienic alarm
 		Stop := FALSE;
 		State := STOP;
 	END_IF;
@@ -100,9 +100,8 @@ PROGRAM _CYCLIC
 				MotorPower 		  := FALSE;
 				MotorMoveAbsolute := FALSE;
 				MotorHome 		  := FALSE;
-			END_IF;
-			
-			gMotorBeltAxisBasic.ErrorReset := FALSE;
+				MotorResetError   := FALSE;
+			END_IF;		
 			MotorPos := 0;
 			MotorVel := 0;
 			StringState := 'Stop';
@@ -247,8 +246,11 @@ PROGRAM _CYCLIC
 			State := STOP;
 			
 		ERROR:
-			gMotorBeltAxisBasic.ErrorReset := TRUE;
+			MotorResetError := TRUE;
+			gErrorState := TRUE;
 			IF NOT gAlarmHardware AND gAlarmHardAck THEN
+				gAlarmHardAck := FALSE;
+				gErrorState := FALSE;
 				State := STOP;
 			END_IF;
 	END_CASE;

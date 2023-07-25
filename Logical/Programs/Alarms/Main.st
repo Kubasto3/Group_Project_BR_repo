@@ -22,8 +22,9 @@ PROGRAM _CYCLIC
 	redIconTimer.PT := T#500ms;
 	redIconTimer();
 	
+	ModuleOkServo := NOT gMotorBeltAxisBasic.Error;
 	//hardware alarm
-	IF gMotorBeltAxisBasic.Error OR ModuleOkActuators OR NOT ModuleOkCamera OR NOT ModuleOkEncoder OR NOT ModuleOkInverter OR NOT ModuleOkPLC_PLK OR NOT ModuleOkPneu_X67BC OR NOT ModuleOkScale OR NOT ModuleOkServo THEN
+	IF NOT ModuleOkServo OR NOT ModuleOkActuators OR NOT ModuleOkCamera OR NOT ModuleOkEncoder OR NOT ModuleOkInverter OR NOT ModuleOkPLC_PLK OR NOT ModuleOkPneu_X67BC OR NOT ModuleOkScale OR NOT ModuleOkServo THEN
 		gAlarmHardware := TRUE;
 	ELSE 
 		gAlarmHardware := FALSE;

@@ -25,8 +25,8 @@ PROGRAM _CYCLIC
 	//3 - Red
 	//4 - Blue
 	
-	IF NOT gMode = 1 THEN
-		IF gAlarmHardware THEN
+	IF gMode <> 1 THEN
+		IF gAlarmHardware AND NOT gAlarmHardAck THEN
 			gStopBlink := FALSE;
 			TimerTonCameraLED.PT := TIMER_TIME_BLINK_100MS;
 			TimerTonCameraLED_2.PT := TIMER_TIME_BLINK_100MS;
@@ -44,7 +44,7 @@ PROGRAM _CYCLIC
 			TimerTonCameraLED_2.PT := TIMER_TIME_BLINK_500MS;
 			CameraLED 	:= LED_BLUE;
 			CameraLED_2 := LED_NOTHING;
-		ELSIF gWeightDetected AND NOT gStopState THEN
+		ELSIF gWeightDetected AND NOT gStopState AND NOT gErrorState THEN
 			TimerTonCameraLED.PT := TIMER_TIME_BLINK_500MS;
 			TimerTonCameraLED_2.PT := TIMER_TIME_BLINK_500MS;
 			gStopBlink := FALSE;
