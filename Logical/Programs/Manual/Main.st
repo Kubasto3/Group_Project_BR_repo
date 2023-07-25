@@ -19,16 +19,17 @@ PROGRAM _INIT
 //	gMotorBeltAxisBasic.Power := 0;
 //	
 //	
+
 END_PROGRAM
 
 PROGRAM _CYCLIC
 
-	MC_BR_JogVelocity_0.Axis := ADR(gAxis_1);
-	MC_BR_JogVelocity_0.Enable := TRUE;
-	MC_BR_JogVelocity_0.Velocity := ABS(ManualVelocity);
-	MC_BR_JogVelocity_0.Acceleration := 700;
-	MC_BR_JogVelocity_0.Deceleration := 700;
-	MC_BR_JogVelocity_0();
+//	MC_BR_JogVelocity_0.Axis := ADR(gAxis_1);
+//	MC_BR_JogVelocity_0.Enable := TRUE;
+//	MC_BR_JogVelocity_0.Velocity := ABS(ManualVelocity);
+//	MC_BR_JogVelocity_0.Acceleration := 700;
+//	MC_BR_JogVelocity_0.Deceleration := 700;
+//	MC_BR_JogVelocity_0();
 	
 	gMotorBeltAxisBasic();
 	
@@ -36,6 +37,14 @@ PROGRAM _CYCLIC
 	
 	ExposureTime;
 	SetFocus;
+	
+	IF (FlagActDosing = FALSE AND FlagActDosingOff = FALSE) THEN
+		FlagActDosingOff := TRUE;
+	END_IF;
+	IF (FlagActSorting = FALSE AND FlagActSortingOff = FALSE) THEN
+		FlagActSortingOff := TRUE;
+	END_IF;
+	
 	
 	
 	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
@@ -65,6 +74,7 @@ PROGRAM _CYCLIC
 		ManualStop := 0;
 		gActuatorByte := 2#0000_0000_0000_0000;
 		gMotorBeltAxisBasic.Power := 0;
+		
 	END_IF;
 	
 	IF (gMode = 1) THEN
