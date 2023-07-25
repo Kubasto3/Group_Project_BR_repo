@@ -1,4 +1,5 @@
 VAR
+	SemiAutoModeSelected : BOOL;
 	TIME_TON_DETECT : TIME := T#2S;
 END_VAR
 VAR CONSTANT

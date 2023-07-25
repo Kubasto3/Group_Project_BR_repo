@@ -16,6 +16,7 @@ PROGRAM _CYCLIC
 		MotorMoveDone 					:= gMotorBeltAxisBasic.MoveDone;
 		gMotorBeltAxisBasic.Power 		:= MotorPower;
 		gMotorBeltAxisBasic.Home 		:= MotorHome;
+		SemiAutoModeSelected			:= TRUE;
 		
 		IF gMotorBeltAxisBasic.Velocity > 15 THEN
 			MotorVel := gMotorBeltAxisBasic.Velocity;
@@ -67,6 +68,9 @@ PROGRAM _CYCLIC
 		CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset_Right, PV := gMaxRightStorage);
 		QuantityLeftStorage  := CTU_QuantityLeft.CV;
 		QuantityRightStorage := CTU_QuantityRight.CV;
+		
+	ELSE
+		SemiAutoModeSelected := FALSE;
 		
 	END_IF; 
 	

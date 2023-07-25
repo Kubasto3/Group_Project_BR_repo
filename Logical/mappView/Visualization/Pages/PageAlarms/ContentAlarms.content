@@ -5,8 +5,8 @@
       <Widgets>
         <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItemTimestamp" width="260" zIndex="0" columnType="timestamp" text="$IAT/Main/Alarms_Date" />
         <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItemName" width="300" zIndex="1" columnType="name" text="$IAT/Main/Alarm_alarm" />
-        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItemMessage" width="570" zIndex="2" text="$IAT/Main/Alarm_Descrpition" />
-        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItemState" width="148" zIndex="3" columnType="state" text="$IAT/Main/Alarms_State" />
+        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItemMessage" width="520" zIndex="2" text="$IAT/Main/Alarm_Descrpition" />
+        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItemState" width="160" zIndex="3" columnType="state" text="$IAT/Main/Alarms_State" />
       </Widgets>
     </Widget>
     <Widget xsi:type="widgets.brease.Button" id="ButtonAcknowledgeOne" top="500" left="20" width="400" height="60" zIndex="1" text="$IAT/Main/Alarms_Acknowledge" />
