@@ -170,7 +170,7 @@
         <seg>LICZBA PRZEDMIOTÓW W KOMORACH</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>THE NUMBER OF ITEMS IN THE CHAMBERS:</seg>
+        <seg>THE NUMBER OF ITEMS IN CHAMBERS:</seg>
       </tuv>
     </tu>
     <tu tuid="Auto_PushingPiston">
@@ -247,10 +247,10 @@
     </tu>
     <tu tuid="Login_ChangedUser">
       <tuv xml:lang="pl">
-        <seg>Użytkownik zmieniony na:</seg>
+        <seg>Użytkownik zmieniony na: </seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>User changed to:</seg>
+        <seg>User changed to: </seg>
       </tuv>
     </tu>
     <tu tuid="Login_Failed">
@@ -279,10 +279,10 @@
     </tu>
     <tu tuid="Login_Password">
       <tuv xml:lang="pl">
-        <seg>Hasło:</seg>
+        <seg>Hasło: </seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Password:</seg>
+        <seg>Password: </seg>
       </tuv>
     </tu>
     <tu tuid="Login_Success">
@@ -295,10 +295,10 @@
     </tu>
     <tu tuid="Login_Username">
       <tuv xml:lang="pl">
-        <seg>Nazwa:</seg>
+        <seg>Nazwa: </seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Username:</seg>
+        <seg>Username: </seg>
       </tuv>
     </tu>
     <tu tuid="Samples.HELLO_WORLD">
@@ -310,6 +310,126 @@
       </tuv>
       <tuv xml:lang="fr">
         <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Top_ActiveUser">
+      <tuv xml:lang="pl">
+        <seg>Aktywny użytkownik: </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Active user: </seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_SemiAutoMode">
+      <tuv xml:lang="pl">
+        <seg>Pół-automat</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Semi-auto mode</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_ButtonManualMode">
+      <tuv xml:lang="pl">
+        <seg>Tryb ręczny</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Manual mode</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameters_SelectSortTypes">
+      <tuv xml:lang="pl">
+        <seg>Wybierz typ sortowania:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Select sort types:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameters_Weight">
+      <tuv xml:lang="pl">
+        <seg>Wagowe</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Weight</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameters_Optic">
+      <tuv xml:lang="pl">
+        <seg>Optyczne</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Optic</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameters_OpticsAndWeight">
+      <tuv xml:lang="pl">
+        <seg>Wagowe i optyczne</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Weight and optic</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Services_SelectLanguage">
+      <tuv xml:lang="pl">
+        <seg>Wybierz język:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Select language:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Services_SelectMeasurement">
+      <tuv xml:lang="pl">
+        <seg>Wybierz system miar:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Select measurement type:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Services_UserMngt">
+      <tuv xml:lang="pl">
+        <seg>Zarządzanie użytkownikami:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User menagment:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Services_ButtonAddUser">
+      <tuv xml:lang="pl">
+        <seg>Dodaj </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Add user</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Service_ButtonEditUser">
+      <tuv xml:lang="pl">
+        <seg>Edytuj </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Edit user</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Services_ButtonDeleteUser">
+      <tuv xml:lang="pl">
+        <seg>Usuń</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Delete user</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Services_Role">
+      <tuv xml:lang="pl">
+        <seg>Rola:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Role:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Services_Username">
+      <tuv xml:lang="pl">
+        <seg>Nazwa:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Username:</seg>
       </tuv>
     </tu>
   </body>

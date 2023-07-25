@@ -4,8 +4,31 @@
   <Aliases>
     <ACLAliases />
     <EURangeViolationAliases />
-    <EURangesAliases />
-    <EngineeringUnitAliases />
+    <EURangesAliases>
+      <EURanges Id="1">
+        <EURange>
+          <Low ValueProvider="Const">-300</Low>
+          <High ValueProvider="Const">300</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="2">
+        <EURange>
+          <Low ValueProvider="Const">-500</Low>
+          <High ValueProvider="Const">500</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="3">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">100</High>
+        </EURange>
+      </EURanges>
+    </EURangesAliases>
+    <EngineeringUnitAliases>
+      <EngineeringUnit Id="1" UnitId="5066068" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre" Symbol="mm" />
+      <EngineeringUnit Id="2" UnitId="4403510" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre per second" Symbol="mm/s" />
+      <EngineeringUnit Id="3" UnitId="4674125" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="gram" Symbol="g" />
+    </EngineeringUnitAliases>
   </Aliases>
   <DefaultView>
     <Module Name="&lt;Default&gt;">
@@ -14,14 +37,22 @@
         <Variable Name="gRecognisedModel" />
         <Variable Name="gMode" />
         <Variable Name="gMotorBeltAxisBasic">
-          <Variable Name="Position" Historizing="True" />
-          <Variable Name="Velocity" Historizing="True" />
+          <Variable Name="Position" Historizing="True" EngineeringUnitId="1" />
+          <Variable Name="Velocity" Historizing="True" EngineeringUnitId="2" />
           <Variable Name="JogPositive" />
           <Variable Name="JogNegative" />
           <Variable Name="MoveActive" />
+          <Variable Name="MoveVelocity" />
         </Variable>
         <Variable Name="gMpRecipeXML_0">
           <Variable Name="Save" />
+        </Variable>
+        <Variable Name="gSortChoiceView" />
+        <Variable Name="gSortChoice" />
+        <Variable Name="gSorting">
+          <Variable Name="gItemWeightChoosen" EURangesId="3" EngineeringUnitId="3" />
+          <Variable Name="gSortLeftBR" />
+          <Variable Name="gSortLeftMin" />
         </Variable>
       </GlobalVariables>
       <Task Name="Alarms">
@@ -38,7 +69,7 @@
         <Variable Name="Stop" />
         <Variable Name="State" />
         <Variable Name="ItemDetected" />
-        <Variable Name="ItemWeightMeasured" />
+        <Variable Name="ItemWeightMeasured" EngineeringUnitId="3" />
         <Variable Name="ItemWeight" />
         <Variable Name="QuantityLeftStorage" />
         <Variable Name="QuantityRightStorage" />
@@ -50,8 +81,8 @@
         <Variable Name="ActuatorNotSorting" />
         <Variable Name="CTU_Reset_Left" />
         <Variable Name="CTU_Reset_Right" />
-        <Variable Name="MotorVel" />
-        <Variable Name="MotorPos" />
+        <Variable Name="MotorVel" EngineeringUnitId="2" />
+        <Variable Name="MotorPos" EngineeringUnitId="1" />
         <Variable Name="Rectangle1_Left_Visibility" />
         <Variable Name="Rectangle1_Right_Visibility" />
         <Variable Name="Rectangle2_Left_Visibility" />
@@ -60,6 +91,7 @@
         <Variable Name="Rectangle3_Right_Visibility" />
         <Variable Name="Rectangle4_Left_Visibility" />
         <Variable Name="Rectangle4_Right_Visibility" />
+        <Variable Name="IsEnglishSelected" />
       </Task>
       <Task Name="Camera" />
       <Task Name="Manual">
@@ -68,8 +100,8 @@
         <Variable Name="BeltMoveVelocityOn" />
         <Variable Name="ManualActuatorDosing" />
         <Variable Name="ManualActuatorSorting" />
-        <Variable Name="ManualDistance" />
-        <Variable Name="ManualVelocity" />
+        <Variable Name="ManualDistance" EURangesId="1" EngineeringUnitId="1" />
+        <Variable Name="ManualVelocity" EURangesId="2" EngineeringUnitId="2" />
         <Variable Name="ManualStop" />
         <Variable Name="DirectionChangeDistance" />
         <Variable Name="DirectionChangeVelocity" />
@@ -84,6 +116,7 @@
         <Variable Name="FlagActSortingOff" />
         <Variable Name="FlagNotManual" />
         <Variable Name="ManualStepAct" />
+        <Variable Name="NotMoveActive" />
       </Task>
       <Task Name="SemiAuto">
         <Variable Name="ActuatorNotPushing" />
@@ -94,7 +127,7 @@
         <Variable Name="CTU_Reset_Right" />
         <Variable Name="ItemDetected" />
         <Variable Name="ItemWeight" />
-        <Variable Name="ItemWeightMeasured" />
+        <Variable Name="ItemWeightMeasured" EngineeringUnitId="3" />
         <Variable Name="QuantityLeftStorage" />
         <Variable Name="QuantityRightStorage" />
         <Variable Name="SortChoice" />
@@ -103,6 +136,11 @@
         <Variable Name="Stop" />
         <Variable Name="StringRecognisedModel" />
         <Variable Name="StringState" />
+        <Variable Name="Approval" />
+        <Variable Name="SemiAutoModeSelected" />
+        <Variable Name="MotorPos" EngineeringUnitId="1" />
+        <Variable Name="MotorVel" EngineeringUnitId="2" />
+        <Variable Name="SortChoiceView" />
       </Task>
     </Module>
   </DefaultView>

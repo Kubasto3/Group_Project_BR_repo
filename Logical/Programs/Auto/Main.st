@@ -260,64 +260,49 @@ PROGRAM _CYCLIC
 	IF Start THEN
 		Start := FALSE;
 	END_IF;
-	
-	//Kod do wizualizacji ilosci klockow ~~J
-	
-	IF QuantityLeftStorage = 1 THEN 
-		Rectangle1_Left_Visibility := 1;
-		Rectangle2_Left_Visibility := 1;
-		Rectangle3_Left_Visibility := 1;
-		Rectangle4_Left_Visibility := 1;
-	ELSIF QuantityLeftStorage = 2 THEN
-		Rectangle1_Left_Visibility := 1;
-		Rectangle2_Left_Visibility := 1;
-		Rectangle3_Left_Visibility := 1;
-		Rectangle4_Left_Visibility := 1;
-	ELSIF QuantityLeftStorage = 3 THEN
-		Rectangle1_Left_Visibility := 1;
-		Rectangle2_Left_Visibility := 1;
-		Rectangle3_Left_Visibility := 1;
-		Rectangle4_Left_Visibility := 1;
-	ELSIF QuantityLeftStorage >= 4 THEN
-		Rectangle1_Left_Visibility := 1;
-		Rectangle2_Left_Visibility := 1;
-		Rectangle3_Left_Visibility := 1;
-		Rectangle4_Left_Visibility := 1;
-	ELSE
-		Rectangle1_Left_Visibility := 0;
-		Rectangle2_Left_Visibility := 0;
-		Rectangle3_Left_Visibility := 0;
-		Rectangle4_Left_Visibility := 0;
-	END_IF
-	
-	IF QuantityRightStorage = 1 THEN 
-		Rectangle1_Right_Visibility := 1;
-		Rectangle2_Right_Visibility := 0;
-		Rectangle3_Right_Visibility := 0;
-		Rectangle4_Right_Visibility := 0;
-	ELSIF QuantityRightStorage = 2 THEN
-		Rectangle1_Right_Visibility := 1;
-		Rectangle2_Right_Visibility := 1;
-		Rectangle3_Right_Visibility := 0;
-		Rectangle4_Right_Visibility := 0;
-	ELSIF QuantityRightStorage = 3 THEN
-		Rectangle1_Right_Visibility := 1;
-		Rectangle2_Right_Visibility := 1;
-		Rectangle3_Right_Visibility := 1;
-		Rectangle4_Right_Visibility := 0;
-	ELSIF QuantityRightStorage >= 4 THEN
-		Rectangle1_Right_Visibility := 1;
-		Rectangle2_Right_Visibility := 1;
-		Rectangle3_Right_Visibility := 1;
-		Rectangle4_Right_Visibility := 1;
-	ELSE
-		Rectangle1_Right_Visibility := 0;
-		Rectangle2_Right_Visibility := 0;
-		Rectangle3_Right_Visibility := 0;
-		Rectangle4_Right_Visibility := 0;
-	END_IF
 		
 	
+	
+	//Added by Jakub; Responsibler for changing machine state between English and Polish
+	IF IsEnglishSelected = TRUE THEN
+		IF StringState = 'Inicjalizacja' THEN
+			StringState := 'Initialization';
+			
+		ELSIF StringState = 'Wykrycie detalu' THEN
+			StringState := 'Item detection';
+			
+		ELSIF StringState = 'Kategoryzacja detalu' THEN
+			StringState := 'Item categorization';
+			
+		ELSIF StringState = 'Robienie zdjecia' THEN
+			StringState := 'Taking a picture';
+			
+		ELSIF StringState = 'Dozowanie detalu' THEN
+			StringState := 'Item dosing';
+			
+		ELSIF StringState = 'Sortowanie wagowe' THEN
+			StringState := 'Sorting by weight';
+			
+		ELSIF StringState = 'Sortowanie optyczne' THEN
+			StringState := 'Optical sorting';
+			
+		ELSIF StringState = 'Transport detalu do lewego zbiornika' THEN
+			StringState := 'Item transport to the left tank';
+			
+		ELSIF StringState = 'Transport detalu do prawego zbiornika' THEN
+			StringState := 'Item transport to the right tank';
+			
+		ELSIF StringState = 'Zepchniecie detalu z taœmy do zbiornika lewego' THEN
+			StringState := 'Pushing the item from the belt to the left tank';
+			
+		ELSIF StringState = 'Nie rozpoznano zdjêcia' THEN
+			StringState := 'Photo not recognized';
+			
+		ELSIF StringState = 'Stop' THEN
+			StringState := 'Stop';
+		END_IF
+	END_IF
+		
 END_PROGRAM
 
 PROGRAM _EXIT
