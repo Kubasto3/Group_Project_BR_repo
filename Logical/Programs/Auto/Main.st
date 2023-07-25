@@ -17,6 +17,7 @@ PROGRAM _CYCLIC
 		gMotorBeltAxisBasic.Power 		:= MotorPower;
 		gMotorBeltAxisBasic.Home 		:= MotorHome;
 		
+		// IN STATE STOP VALUES DOESN'T FLUCTUATE
 		IF gMotorBeltAxisBasic.Velocity > 15 THEN
 			MotorVel := gMotorBeltAxisBasic.Velocity;
 		ELSE
@@ -67,11 +68,11 @@ PROGRAM _CYCLIC
 		CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset_Right, PV := gMaxRightStorage);
 		QuantityLeftStorage  := CTU_QuantityLeft.CV;
 		QuantityRightStorage := CTU_QuantityRight.CV;
-		
 	END_IF; 
 	
+	
 	// STOP OR MANUAL TURNED ON
-	IF Stop OR NOT gMode = 0 OR gAlarmExist THEN
+	IF Stop OR NOT gMode = 0 OR gAlarmExist THEN //uwagaw trzeba to zmienic alarm
 		Stop := FALSE;
 		State := STOP;
 	END_IF;
@@ -94,7 +95,6 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		INIT:
-			
 			StringState 		:= 'Inicjalizacja';
 			ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
 			AddToRight 			:= FALSE;
@@ -228,6 +228,9 @@ PROGRAM _CYCLIC
 			IF gPicNotRecognised THEN
 				State := STOP;
 			END_IF;
+		
+		ERROR:
+		//DODATJ TUTAJ WEJSCIE W KROK->STOP->ERROR A POTEM ERROR
 
 	END_CASE;
 
