@@ -20,9 +20,24 @@
           <Variable Name="JogNegative" />
           <Variable Name="MoveActive" />
         </Variable>
-        <Variable Name="gMpRecipeXML_0">
+        <Variable Name="gMpRecipeXML_0" RecursiveEnable="1">
           <Variable Name="Save" />
         </Variable>
+        <Variable Name="gMpRecipeUI_0" RecursiveEnable="1" />
+        <Variable Name="gUIConnect">
+          <Variable Name="Status" />
+          <Variable Name="Recipe" />
+          <Variable Name="New" />
+          <Variable Name="MessageBox" />
+          <Variable Name="DefaultLayerStatus" />
+        </Variable>
+        <Variable Name="gUISetup">
+          <Variable Name="RecipeListSize" />
+          <Variable Name="RecipeListScrollWindow" />
+          <Variable Name="Confirmation" />
+          <Variable Name="AutoLoadHeader" />
+        </Variable>
+        <Variable Name="gRecipeXml" />
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
@@ -104,6 +119,7 @@
         <Variable Name="StringRecognisedModel" />
         <Variable Name="StringState" />
       </Task>
+      <Task Name="ProgramRec" />
     </Module>
   </DefaultView>
 </OpcUaSource>

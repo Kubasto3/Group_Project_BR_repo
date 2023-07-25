@@ -71,4 +71,5 @@ VAR
 	ActuatorNotSorting : BOOL;
 	ActuatorNotPushing : BOOL;
 	ActuatorByte : INT := 2#0000000000000000;
+	Boolik : BOOL;
 END_VAR

@@ -8,12 +8,12 @@ PROGRAM _CYCLIC
 	
 	gMpRecipeXML_0.MpLink := 		ADR(gRecipeXml);
 	gMpRecipeXML_0.Enable := 		TRUE;
-	gMpRecipeXML_0.DeviceName :=	ADR('CF'); 
+	gMpRecipeXML_0.DeviceName :=	ADR('SzymonZapis'); 
 	gMpRecipeXML_0.FileName := 		ADR('TestoweParametry'); //zmienic sciezke
 	
 	gMpRecipeRegPar_0.MpLink := 	ADR(gRecipeXml);
 	gMpRecipeRegPar_0.Enable :=		TRUE;
-	gMpRecipeRegPar_0.PVName := 	ADR('gSorting');
+	gMpRecipeRegPar_0.PVName := 	ADR('Coffee');
 	
 	gMpRecipeUI_0.MpLink :=			ADR(gRecipeXml);
 	gMpRecipeUI_0.Enable := 		TRUE;
@@ -40,6 +40,7 @@ PROGRAM _CYCLIC
 	
 	gMpRecipeXML_0();
 	gMpRecipeRegPar_0();
+	gMpRecipeUI_0();
 END_PROGRAM
 
 PROGRAM _EXIT

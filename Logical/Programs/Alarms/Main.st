@@ -22,6 +22,13 @@ PROGRAM _CYCLIC
 	redIconTimer.PT := T#500ms;
 	redIconTimer();
 	
+	//hardware alarm
+	IF gMotorBeltAxisBasic.Error OR ModuleOkActuators OR NOT ModuleOkCamera OR NOT ModuleOkEncoder OR NOT ModuleOkInverter OR NOT ModuleOkPLC_PLK OR NOT ModuleOkPneu_X67BC OR NOT ModuleOkScale OR NOT ModuleOkServo THEN
+		gAlarmHardware := TRUE;
+	ELSE 
+		gAlarmHardware := FALSE;
+	END_IF;
+	
 	//isAcknowledged := MpAlarmXCheckState(gAlarmXCore, 'test_alarm', mpALARMX_STATE_ACKNOWLEDGED);
 	IF (MpAlarmXCheckState(gAlarmXCore, 'Unrecognized object', mpALARMX_STATE_ACKNOWLEDGED) AND
 		MpAlarmXCheckState(gAlarmXCore, 'Left box is full', mpALARMX_STATE_ACKNOWLEDGED) AND

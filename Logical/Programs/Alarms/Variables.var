@@ -1,15 +1,23 @@
 VAR
-	test_alarm : BOOL;
-	MpAlarmXCore_0 : MpAlarmXCore;
-	pendingAlarms : BOOL;
-	enableRedIcon : BOOL;
-	enableYellowIcon : BOOL;
-	redIconTimer : TON;
 	timerCycle : BOOL;
-	MpAlarmXHistory_0 : MpAlarmXHistory;
-	MpUserXConfigType_0 : MpUserXConfigType;
+	test_alarm : BOOL;
+	redIconTimer : TON;
+	pendingAlarms : BOOL;
 	MpUserXConfig_0 : MpUserXConfig;
-	isAcknowledged : BOOL;
+	MpUserXConfigType_0 : MpUserXConfigType;
+	MpAlarmXHistory_0 : MpAlarmXHistory;
+	MpAlarmXCore_0 : MpAlarmXCore;
+	ModuleOkServo : BOOL;
+	ModuleOkScale : BOOL;
+	ModuleOkPneu_X67BC : BOOL;
+	ModuleOkPLC_PLK : BOOL;
+	ModuleOkInverter : BOOL;
+	ModuleOkEncoder : BOOL;
+	ModuleOkCamera : BOOL;
+	ModuleOkActuators : BOOL;
 	IsSemiAutoMode : BOOL;
 	IsManualMode : BOOL;
+	isAcknowledged : BOOL;
+	enableYellowIcon : BOOL;
+	enableRedIcon : BOOL;
 END_VAR

@@ -7,8 +7,16 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	//CODE WORKS ONLY WHEN MANUAL MODE IS OFF
+	//CODE WORKS ONLY WHEN MANUAL MODE IS OFF	
+	
 	IF  gMode = 0 THEN
+		//ALARM
+		IF gAlarmHardware THEN
+			IF NOT (State = ERROR) THEN
+				State := ERROR;
+			END_IF;
+		END_IF;
+		
 		// MOTOR MANAGEMENT
 		gMotorBeltAxisBasic.Enable 		:= TRUE;
 		gMotorBeltAxisBasic.MpLink 		:= ADR(gAxis_1);
@@ -42,10 +50,15 @@ PROGRAM _CYCLIC
 		gMotorBeltAxisBasic.Power 		 := MotorPower;
 		gMotorBeltAxisBasic.MoveAbsolute := MotorMoveAbsolute;
 		gMotorBeltAxisBasic.ErrorReset	 := MotorResetError;
+		gStopState 						 := (State = 0);
+		
 		// ASSIGNING LOCAL VARIABLES TO GLOBAL VARIABLES
 		MotorInPosition 				 := gMotorBeltAxisBasic.InPosition;
 		ItemWeight 						 := gInWeightMeasure;							 
 
+		
+		
+		
 		// ITEM DETECTION CONDITION 
 		ItemDetected := (ItemWeight > 1);
 		gWeightDetected := ItemDetected;
@@ -72,21 +85,27 @@ PROGRAM _CYCLIC
 	
 	
 	// STOP OR MANUAL TURNED ON
-	IF Stop OR NOT gMode = 0 OR gAlarmExist THEN //uwagaw trzeba to zmienic alarm
+	IF Stop OR NOT gMode = 0 THEN //uwagaw trzeba to zmienic alarm
 		Stop := FALSE;
 		State := STOP;
 	END_IF;
 	// PROGRAM AUTO
 	CASE State OF
 		STOP:
-			MotorPos := 0;
-			MotorVel := 0;
-			StringState := 'Stop';
+			IF gAlarmHardware THEN
+	  			State := ERROR;
+			END_IF;
+			
 			IF gMode = 0 THEN
 				MotorPower 		  := FALSE;
 				MotorMoveAbsolute := FALSE;
 				MotorHome 		  := FALSE;
 			END_IF;
+			
+			gMotorBeltAxisBasic.ErrorReset := FALSE;
+			MotorPos := 0;
+			MotorVel := 0;
+			StringState := 'Stop';
 			TimerTonActuatorIn 	  := FALSE;
 			ActuatorSorting 	  := FALSE;
 			ActuatorPushing  	  := FALSE;
@@ -202,7 +221,7 @@ PROGRAM _CYCLIC
 
 		GO_STORAGE_RIGHT:
 			StringState := 'Transport detalu do prawego zbiornika';
-			MotorReqPosition := MOTOR_DIST_RIGHT;
+			MotorReqPosition  := MOTOR_DIST_RIGHT;
 			MotorMoveAbsolute := TRUE;
 			IF MotorInPosition AND MotorMoveDone THEN
 				State := SORT_STORAGE_RIGHT;				
@@ -211,8 +230,8 @@ PROGRAM _CYCLIC
 		SORT_STORAGE_LEFT:
 			StringState := 'Zepchniecie detalu z taœmy do zbiornika lewego';
 			MotorMoveAbsolute := FALSE;
-			ActuatorSorting := TRUE;
-			AddToLeft := TRUE;
+			ActuatorSorting   := TRUE;
+			AddToLeft 		  := TRUE;
 			IF TimerActuatorOut THEN
 				State := INIT;
 			END_IF;
@@ -224,14 +243,14 @@ PROGRAM _CYCLIC
 		
 		UNRECOGNISED_PIC:
 			StringState := 'Nie rozpoznano zdjêcia';
-			gPicNotRecognised := TRUE; //nie ustawia jej
-			IF gPicNotRecognised THEN
+			gPicNotRecognised := TRUE; 
+			State := STOP;
+			
+		ERROR:
+			gMotorBeltAxisBasic.ErrorReset := TRUE;
+			IF NOT gAlarmHardware AND gAlarmHardAck THEN
 				State := STOP;
 			END_IF;
-		
-		ERROR:
-		//DODATJ TUTAJ WEJSCIE W KROK->STOP->ERROR A POTEM ERROR
-
 	END_CASE;
 
 	
