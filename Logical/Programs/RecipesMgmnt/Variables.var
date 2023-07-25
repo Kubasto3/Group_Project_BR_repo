@@ -1,8 +1,4 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	Save : BOOL;
+	FileName : STRING[80];
 END_VAR

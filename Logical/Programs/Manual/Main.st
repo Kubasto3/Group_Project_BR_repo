@@ -67,6 +67,10 @@ PROGRAM _CYCLIC
 		gMotorBeltAxisBasic.Power := 0;
 	END_IF;
 	
+	IF expression THEN
+		
+	END_IF;
+	
 	IF (gMode = 1) THEN
 		CASE ManualStep OF
 			MANUAL_WAIT:

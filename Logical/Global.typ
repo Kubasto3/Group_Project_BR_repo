@@ -17,6 +17,7 @@ TYPE
 		gRecognisedModel : ModelEnum;
 		gItemWeightChoosen : USINT := 12;
 		gSortLeftMin : BOOL := FALSE; (*Mniejsze detale sortowane s¹ na lewo gdy 1, a wieksze na prawo gdy 1.*)
+		gSortLeftBR : BOOL;
 	END_STRUCT;
 	SortChoiceEnum : 
 		(
