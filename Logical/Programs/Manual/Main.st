@@ -65,6 +65,8 @@ PROGRAM _CYCLIC
 		ManualStop := 0;
 		gActuatorByte := 2#0000_0000_0000_0000;
 		gMotorBeltAxisBasic.Power := 0;
+		ManualStep := MANUAL_WAIT;
+		ManualStepAct := MANUAL_ACTUATOR_WAIT;
 	END_IF;
 	
 	IF expression THEN
