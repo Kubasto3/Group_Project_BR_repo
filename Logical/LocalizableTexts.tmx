@@ -170,7 +170,7 @@
         <seg>LICZBA PRZEDMIOTÓW W KOMORACH</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>THE NUMBER OF ITEMS IN THE CHAMBERS:</seg>
+        <seg>THE NUMBER OF ITEMS IN CHAMBERS:</seg>
       </tuv>
     </tu>
     <tu tuid="Auto_PushingPiston">

@@ -52,6 +52,7 @@
         <Variable Name="CTU_Reset_Right" />
         <Variable Name="MotorVel" />
         <Variable Name="MotorPos" />
+        <Variable Name="IsEnglishSelected" />
       </Task>
       <Task Name="Camera" />
       <Task Name="Manual">

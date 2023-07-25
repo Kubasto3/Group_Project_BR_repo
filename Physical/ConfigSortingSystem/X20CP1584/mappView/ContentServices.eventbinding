@@ -31,5 +31,27 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="LanguageSelector">
+      <Source xsi:type="widgets.brease.LanguageSelector.Event" contentRefId="ContentServices" widgetRefId="LanguageSelector1" event="SelectedIndexChanged" />
+      <Operand datatype="ANY_INT" name="Index">
+        <ReadTarget xsi:type="widgets.brease.LanguageSelector.ReadAction" contentRefId="ContentServices" widgetRefId="LanguageSelector1">
+          <Method xsi:type="widgets.brease.LanguageSelector.Action.GetSelectedIndex" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="Index = 0">
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::Auto:IsEnglishSelected">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="Index = 1">
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::Auto:IsEnglishSelected">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>
