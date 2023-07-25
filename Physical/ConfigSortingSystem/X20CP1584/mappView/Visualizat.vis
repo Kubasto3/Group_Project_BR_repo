@@ -17,7 +17,6 @@
     <BindingsSet refId="ContentAlarms_binding" />
     <BindingsSet refId="ContentTop_binding" />
     <BindingsSet refId="ContentManual_binding" />
-    <BindingsSet refId="ContentAuto_binding" />
     <BindingsSet refId="ContentCamera_binding" />
     <BindingsSet refId="ContentCharts_binding" />
     <BindingsSet refId="ContentParameters_binding" />
