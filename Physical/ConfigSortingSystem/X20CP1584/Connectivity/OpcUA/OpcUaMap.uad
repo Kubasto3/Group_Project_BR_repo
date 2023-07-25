@@ -53,6 +53,14 @@
         <Variable Name="SortChoice" />
         <Variable Name="MotorVel" />
         <Variable Name="MotorPos" />
+        <Variable Name="Rectangle1_Left_Visibility" />
+        <Variable Name="Rectangle1_Right_Visibility" />
+        <Variable Name="Rectangle2_Left_Visibility" />
+        <Variable Name="Rectangle2_Right_Visibility" />
+        <Variable Name="Rectangle3_Left_Visibility" />
+        <Variable Name="Rectangle3_Right_Visibility" />
+        <Variable Name="Rectangle4_Left_Visibility" />
+        <Variable Name="Rectangle4_Right_Visibility" />
         <Variable Name="SortChoiceView" />
       </Task>
       <Task Name="Camera" />

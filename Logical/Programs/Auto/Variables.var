@@ -1,4 +1,12 @@
 VAR
+	Rectangle4_Right_Visibility : USINT;
+	Rectangle3_Right_Visibility : USINT;
+	Rectangle2_Right_Visibility : USINT;
+	Rectangle1_Right_Visibility : USINT;
+	Rectangle4_Left_Visibility : USINT;
+	Rectangle3_Left_Visibility : USINT;
+	Rectangle2_Left_Visibility : USINT;
+	Rectangle1_Left_Visibility : USINT;
 	TIME_TON_DETECT : TIME := T#2S;
 END_VAR
 VAR CONSTANT

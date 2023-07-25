@@ -260,6 +260,63 @@ PROGRAM _CYCLIC
 		Start := FALSE;
 	END_IF;
 	
+	//Kod do wizualizacji ilosci klockow ~~J
+	
+	IF QuantityLeftStorage = 1 THEN 
+		Rectangle1_Left_Visibility := 1;
+		Rectangle2_Left_Visibility := 1;
+		Rectangle3_Left_Visibility := 1;
+		Rectangle4_Left_Visibility := 1;
+	ELSIF QuantityLeftStorage = 2 THEN
+		Rectangle1_Left_Visibility := 1;
+		Rectangle2_Left_Visibility := 1;
+		Rectangle3_Left_Visibility := 1;
+		Rectangle4_Left_Visibility := 1;
+	ELSIF QuantityLeftStorage = 3 THEN
+		Rectangle1_Left_Visibility := 1;
+		Rectangle2_Left_Visibility := 1;
+		Rectangle3_Left_Visibility := 1;
+		Rectangle4_Left_Visibility := 1;
+	ELSIF QuantityLeftStorage >= 4 THEN
+		Rectangle1_Left_Visibility := 1;
+		Rectangle2_Left_Visibility := 1;
+		Rectangle3_Left_Visibility := 1;
+		Rectangle4_Left_Visibility := 1;
+	ELSE
+		Rectangle1_Left_Visibility := 0;
+		Rectangle2_Left_Visibility := 0;
+		Rectangle3_Left_Visibility := 0;
+		Rectangle4_Left_Visibility := 0;
+	END_IF
+	
+	IF QuantityRightStorage = 1 THEN 
+		Rectangle1_Right_Visibility := 1;
+		Rectangle2_Right_Visibility := 0;
+		Rectangle3_Right_Visibility := 0;
+		Rectangle4_Right_Visibility := 0;
+	ELSIF QuantityRightStorage = 2 THEN
+		Rectangle1_Right_Visibility := 1;
+		Rectangle2_Right_Visibility := 1;
+		Rectangle3_Right_Visibility := 0;
+		Rectangle4_Right_Visibility := 0;
+	ELSIF QuantityRightStorage = 3 THEN
+		Rectangle1_Right_Visibility := 1;
+		Rectangle2_Right_Visibility := 1;
+		Rectangle3_Right_Visibility := 1;
+		Rectangle4_Right_Visibility := 0;
+	ELSIF QuantityRightStorage >= 4 THEN
+		Rectangle1_Right_Visibility := 1;
+		Rectangle2_Right_Visibility := 1;
+		Rectangle3_Right_Visibility := 1;
+		Rectangle4_Right_Visibility := 1;
+	ELSE
+		Rectangle1_Right_Visibility := 0;
+		Rectangle2_Right_Visibility := 0;
+		Rectangle3_Right_Visibility := 0;
+		Rectangle4_Right_Visibility := 0;
+	END_IF
+		
+	
 END_PROGRAM
 
 PROGRAM _EXIT

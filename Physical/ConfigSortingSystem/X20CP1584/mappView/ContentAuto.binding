@@ -76,6 +76,37 @@
 <Source xsi:type="opcUa" refId="::Auto:ActuatorNotSorting" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleBoxPistonPushingRed" attribute="visible" />
 </Binding>
-
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:Rectangle1_Left_Visibility" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleL1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:Rectangle2_Left_Visibility" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleL2" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:Rectangle3_Left_Visibility" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleL3" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:Rectangle4_Left_Visibility" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleL4" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:Rectangle1_Right_Visibility" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleR1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:Rectangle2_Right_Visibility" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleR2" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:Rectangle3_Right_Visibility" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleR3" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:Rectangle4_Right_Visibility" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleR4" attribute="visible" />
+</Binding>
 </Bindings>
 </BindingsSet>
