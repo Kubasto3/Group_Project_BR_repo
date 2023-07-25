@@ -63,7 +63,7 @@ PROGRAM _CYCLIC
 		gAlarmExist := FALSE;
 		enableRedIcon := FALSE;
 	END_IF;
-	
+		
 END_PROGRAM
 
 PROGRAM _EXIT

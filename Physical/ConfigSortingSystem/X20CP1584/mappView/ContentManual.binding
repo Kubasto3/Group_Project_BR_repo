@@ -49,5 +49,25 @@
 <Source xsi:type="opcUa" refId="::Manual:FlagManual" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="GroupBoxManualMode" attribute="visible" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:FlagNotManual" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonManualMode" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:FlagActDosingOff" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectanglePistonAcutoatorRed" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:FlagActDosingOff" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectangleBoxPistonActuatorRed" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:FlagActSortingOff" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectanglePistonPushingRed" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:FlagActSortingOff" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectangleBoxPistonPushingRed" attribute="visible" />
+</Binding>
 </Bindings>
 </BindingsSet>
