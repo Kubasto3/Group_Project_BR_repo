@@ -76,5 +76,6 @@
 <Source xsi:type="opcUa" refId="::Auto:ActuatorNotSorting" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleBoxPistonPushingRed" attribute="visible" />
 </Binding>
+
 </Bindings>
 </BindingsSet>

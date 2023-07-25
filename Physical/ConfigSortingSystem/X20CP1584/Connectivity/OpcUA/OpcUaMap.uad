@@ -53,6 +53,7 @@
         <Variable Name="SortChoice" />
         <Variable Name="MotorVel" />
         <Variable Name="MotorPos" />
+        <Variable Name="SortChoiceView" />
       </Task>
       <Task Name="Camera" />
       <Task Name="Manual">
@@ -73,6 +74,9 @@
         <Variable Name="FlagActDosing" />
         <Variable Name="FlagActSorting" />
         <Variable Name="FlagManual" />
+        <Variable Name="FlagActDosingOff" />
+        <Variable Name="FlagActSortingOff" />
+        <Variable Name="FlagNotManual" />
       </Task>
       <Task Name="SemiAuto">
         <Variable Name="ActuatorNotPushing" />

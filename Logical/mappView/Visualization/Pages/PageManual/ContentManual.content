@@ -21,7 +21,7 @@
         <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputDistance" top="179" left="235" width="180" height="40" zIndex="10" maxValue="300" minValue="-300" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" unitAlign="right" textAlign="left" />
         <Widget xsi:type="widgets.brease.Button" id="ButtonMoveRight" top="319" left="655" width="180" height="140" zIndex="9" text="Move right" />
         <Widget xsi:type="widgets.brease.Button" id="ButtonMoveLeft" top="319" left="455" width="180" height="140" zIndex="8" text="Move left" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputVelocity" top="239" left="235" width="180" height="40" zIndex="4" maxValue="300" minValue="-300" unit="{'metric':'C16','imperial':'IU','imperial-us':'IU'}" unitAlign="right" textAlign="left" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="NumericInputVelocity" top="239" left="235" width="180" height="40" zIndex="4" maxValue="500" minValue="-500" unit="{'metric':'C16','imperial':'IU','imperial-us':'IU'}" unitAlign="right" textAlign="left" />
         <Widget xsi:type="widgets.brease.Button" id="ButtonChangeDirectionAdditive" top="179" left="455" width="180" height="40" zIndex="3" text="Change direction" />
         <Widget xsi:type="widgets.brease.Button" id="ButtonChangeDirectionVelocity" top="239" left="455" width="180" height="40" zIndex="2" text="Change direction" />
         <Widget xsi:type="widgets.brease.Rectangle" id="RectangleBoxPistonActuatorRed" top="39" left="239" width="30" height="30" zIndex="19" backColor="rgba(255, 0, 0, 1)" />
