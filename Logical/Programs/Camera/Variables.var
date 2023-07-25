@@ -1,4 +1,7 @@
 VAR
+	ATON1 : TON;
+	ATON2 : TON;
+	ATON3 : TON;
 	Base64Buffer : STRING[2500000];
 	Base64srcLen : UDINT;
 	BufferEncodedImg : STRING[1966080];
@@ -33,9 +36,15 @@ VAR
 	NumberMatches : USINT;
 	NUM_SEARCH_MAX : USINT := 1;
 	OneMoreBlink : BOOL;
+END_VAR
+VAR CONSTANT
+	TIME_LAMP_TEST : TIME := T#500MS;
+END_VAR
+VAR
 	PhotosTaken : USINT;
 	RecognisedModel : USINT;
 	SET_FOCUS : UINT := 15000;
+	sStep : USINT := 1;
 	StartEncode : BOOL;
 	TimerTonCameraLED : TON;
 	TimerTonCameraLED_2 : TON;
