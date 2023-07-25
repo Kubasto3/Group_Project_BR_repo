@@ -1,7 +1,6 @@
 
 PROGRAM _INIT
 	(* Insert code here *)
-	
 	PhotosTaken;
 	NumberMatches;
 	RecognisedModel;

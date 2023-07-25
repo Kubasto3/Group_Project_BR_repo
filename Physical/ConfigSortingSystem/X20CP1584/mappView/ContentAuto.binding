@@ -21,7 +21,6 @@
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleBoxPistonActuatorGreen" attribute="visible" />
 </Binding>
 
-
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Auto:ActuatorPushing" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectanglePistonRodActuatorGreen" attribute="visible" />
@@ -101,6 +100,8 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Auto:Rectangle4_Right_Visibility" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleR4" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Auto:MotorPos" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputDetectedConveyorPosition" attribute="value" />
 </Binding>

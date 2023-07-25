@@ -60,7 +60,6 @@
         <Variable Name="Rectangle3_Right_Visibility" />
         <Variable Name="Rectangle4_Left_Visibility" />
         <Variable Name="Rectangle4_Right_Visibility" />
-        <Variable Name="SortChoiceView" />
       </Task>
       <Task Name="Camera" />
       <Task Name="Manual">
@@ -84,6 +83,7 @@
         <Variable Name="FlagActDosingOff" />
         <Variable Name="FlagActSortingOff" />
         <Variable Name="FlagNotManual" />
+        <Variable Name="ManualStepAct" />
       </Task>
       <Task Name="SemiAuto">
         <Variable Name="ActuatorNotPushing" />
