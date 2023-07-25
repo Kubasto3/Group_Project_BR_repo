@@ -83,14 +83,6 @@
         <Variable Name="CTU_Reset_Right" />
         <Variable Name="MotorVel" EngineeringUnitId="2" />
         <Variable Name="MotorPos" EngineeringUnitId="1" />
-        <Variable Name="Rectangle1_Left_Visibility" />
-        <Variable Name="Rectangle1_Right_Visibility" />
-        <Variable Name="Rectangle2_Left_Visibility" />
-        <Variable Name="Rectangle2_Right_Visibility" />
-        <Variable Name="Rectangle3_Left_Visibility" />
-        <Variable Name="Rectangle3_Right_Visibility" />
-        <Variable Name="Rectangle4_Left_Visibility" />
-        <Variable Name="Rectangle4_Right_Visibility" />
         <Variable Name="IsEnglishSelected" />
       </Task>
       <Task Name="Camera" />

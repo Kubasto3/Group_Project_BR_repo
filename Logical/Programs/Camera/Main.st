@@ -75,7 +75,7 @@ PROGRAM _CYCLIC
 //					TimerTonCameraLED2.IN := FALSE;			//2 TIMER
 //				END_IF;
 //			END_IF;
-//		  
+	//		  
 //		PICTURE_UNRECOGNISED:
 //			TimerTonCameraLED.IN := TRUE;
 //			CameraLED := LED_NOTHING;

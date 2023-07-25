@@ -25,7 +25,7 @@
         <Widget xsi:type="widgets.brease.Label" id="LabelConveyorPosition" top="125" left="103" width="179" zIndex="4" text="$IAT/Main/Auto_CurrConvPos" />
         <Widget xsi:type="widgets.brease.Label" id="LabelConveyorSpeed" top="175" left="103" width="179" zIndex="5" text="$IAT/Main/Auto_CurrConvSpeed" />
         <Widget xsi:type="widgets.brease.Label" id="LabelMachineStep" top="24" left="102" width="201" height="29" zIndex="6" text="$IAT/Main/Auto_CurrentMachineStep" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputCurrentStep" top="24" left="280" width="250" height="46" zIndex="7" wordWrap="true" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputCurrentStep" top="24" left="280" width="250" height="46" zIndex="7" multiLine="true" wordWrap="true" textAlign="center" />
         <Widget xsi:type="widgets.brease.Label" id="LabelPistonActuatorStatus" top="230" left="102" width="151" zIndex="8" text="$IAT/Main/Auto_ActuatingPiston" />
         <Widget xsi:type="widgets.brease.Label" id="LabelPistonPushingStatus" top="278" left="102" width="126" zIndex="9" text="$IAT/Main/Auto_PushingPiston" />
         <Widget xsi:type="widgets.brease.Rectangle" id="RectangleBoxPistonActuatorRed" top="226" left="300" width="35" height="30" zIndex="13" backColor="rgba(255, 0, 0, 1)" />

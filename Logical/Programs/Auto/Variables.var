@@ -56,7 +56,7 @@ VAR
 	MotorMoveAbsolute : BOOL := FALSE;
 	MotorInPosition : BOOL;
 	MotorHome : BOOL;
-	CTU_Reset_Left : BOOL;
+	CTU_Reset_Left : BOOL := FALSE;
 	IsEnglishSelected : BOOL;
 	TimerActuatorOut : BOOL;
 	TimerAfterDetect : BOOL;
