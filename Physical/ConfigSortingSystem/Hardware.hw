@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version=4.12.4.107 FileVersion="4.9"?>
+<?AutomationStudio Version=4.12.3.127 FileVersion="4.9"?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
   <Module Name="0AC808.9" Type="0AC808.9" Version="1.0.0.0">
     <Connection Connector="ETH1" TargetModule="X20CP1584" TargetConnector="IF3">
@@ -201,7 +201,10 @@
     <Parameter ID="TaskClassIdleTime" Value="2000" />
     <Group ID="FileDevice1" />
     <Parameter ID="FileDeviceName1" Value="CF" />
-    <Parameter ID="FileDevicePath1" Value="C:\Users\Szkolenie\Desktop\Recipies" />
+    <Parameter ID="FileDevicePath1" Value="C:\Users\barto\OneDrive\Pulpit\NoweReceptury" />
+    <Group ID="FileDevice2" />
+    <Parameter ID="FileDeviceName2" Value="TegesSmeges" />
+    <Parameter ID="FileDevicePath2" Value="C:\Users\barto\OneDrive\Pulpit\Folder na receptury" />
     <Parameter ID="TimeZone" Value="160" />
     <Parameter ID="ActivateDaylightSavingTime" Value="1" />
     <Parameter ID="ActivateOpcUa" Value="1" />

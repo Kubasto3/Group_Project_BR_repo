@@ -18,10 +18,4 @@ TYPE
 		DROP,
 		UNRECOGNISED_PIC
 		);
-	SortChoiceEnum : 
-		(
-		WEIGHT,
-		WEIGHT_AND_OPTIC,
-		OPTIC
-		);
 END_TYPE

@@ -50,7 +50,6 @@
         <Variable Name="ActuatorNotSorting" />
         <Variable Name="CTU_Reset_Left" />
         <Variable Name="CTU_Reset_Right" />
-        <Variable Name="SortChoice" />
         <Variable Name="MotorVel" />
         <Variable Name="MotorPos" />
         <Variable Name="Rectangle1_Left_Visibility" />

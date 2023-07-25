@@ -27,15 +27,20 @@ PROGRAM _CYCLIC
 	//4 - Blue
 	
 		
-	IF gPicNotRecognised THEN
+	IF gAlarmExist THEN
+		gStopBlink := FALSE;
+		CameraLED 	:= LED_RED;
+		CameraLED_2 := LED_NOTHING;
+	ELSIF gPicNotRecognised THEN
+		gStopBlink := FALSE;
 		CameraLED 	:= LED_BLUE;
 		CameraLED_2 := LED_NOTHING;
 	ELSIF gWeightDetected THEN
+		gStopBlink := FALSE;
 		CameraLED 	:= LED_RED;
 		CameraLED_2 := LED_BLUE;
-	ELSIF gAlarmExist THEN
-		CameraLED 	:= LED_RED;
-		CameraLED_2 := LED_NOTHING;
+	ELSE
+		gStopBlink := TRUE;
 	END_IF;
 	
 	

@@ -18,6 +18,9 @@ TYPE
 		gItemWeightChoosen : USINT := 12;
 		gSortLeftMin : BOOL := FALSE; (*Mniejsze detale sortowane s¹ na lewo gdy 1, a wieksze na prawo gdy 1.*)
 	END_STRUCT;
-	AxisType : 	STRUCT 
-	END_STRUCT;
+	SortChoiceEnum : 
+		(
+		WEIGHT,
+		OPTIC
+		);
 END_TYPE
