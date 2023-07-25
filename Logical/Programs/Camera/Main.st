@@ -5,6 +5,7 @@ PROGRAM _INIT
 	NumberMatches;
 	RecognisedModel;
 	MatchEnable;
+	
 	//init variables for displaying taken photo in HMI visualization
 	ViBaseGetImage_0.MpLink := ADR(gCamera);
 	ViBaseGetImage_0.Type := viBASE_IMAGE_TYPE_BMP;
@@ -113,8 +114,12 @@ PROGRAM _CYCLIC
 	
 	CTU_HowManyBlink(CU := OneMoreBlink, PV := 4);
 	
-	
-	gRecognisedModel := RecognisedModel;
+	//setting variable for recognised model with acknowledgement of 2 different types of B&R logos
+	IF (RecognisedModel=1) OR (RecognisedModel=3) THEN
+		gRecognisedModel := 1;
+	ELSE
+		gRecognisedModel := RecognisedModel;
+	END_IF
 	
 	//calling variables used in I/O matching of camera to delete warnings
 	SET_FOCUS;
