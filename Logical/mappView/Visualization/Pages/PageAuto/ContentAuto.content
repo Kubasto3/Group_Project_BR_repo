@@ -8,7 +8,7 @@
         <Widget xsi:type="widgets.brease.Button" id="ButtonAutoStop" top="140" left="180" width="290" height="51" zIndex="1" text="$IAT/Main/Auto_ButtonStop" imageColor="rgba(0, 0, 0, 1)" cornerRadius="15px" textColor="rgba(255, 0, 0, 1)" fontSize="25px" />
         <Widget xsi:type="widgets.brease.Label" id="LabelMachineStarted" top="190" left="149" width="351" height="76" zIndex="2" text="$IAT/Main/Auto_MachineWorking" textColor="rgba(0, 192, 0, 1)" textAlign="center" fontSize="20px" visible="false" />
         <Widget xsi:type="widgets.brease.Label" id="LabelMachineStopped" top="190" left="150" width="351" height="76" zIndex="3" text="$IAT/Main/Auto_MachineStopped" textColor="rgba(255, 0, 0, 1)" textAlign="center" fontSize="20px" visible="false" />
-        <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxDetectedItem" top="450" left="150" width="350" height="40" zIndex="4" borderWidth="3px">
+        <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxDetectedItem" top="450" left="150" width="350" height="40" zIndex="4" borderWidth="3px" visible="false">
           <Widgets>
             <Widget xsi:type="widgets.brease.Label" id="LabelItemdetected" top="-1" left="-1" width="159" height="41" zIndex="0" text="$IAT/Main/Auto_DetectedItem" textAlign="left" fontSize="15px" />
             <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputDetectedItem" top="-2" left="180" width="161" height="43" zIndex="1" textAlign="right" />
