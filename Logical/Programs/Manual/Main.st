@@ -160,6 +160,12 @@ PROGRAM _CYCLIC
 		FlagActSortingOff := TRUE;
 	END_IF;
 	
+	IF gMotorBeltAxisBasic.PowerOn THEN
+		AxisPowerOff := 1;
+	ELSE
+		AxisPowerOff := 0;
+	END_IF;
+	
 	IF gMode = 1 THEN
 		FlagManual := 1;
 		FlagNotManual := 0;
