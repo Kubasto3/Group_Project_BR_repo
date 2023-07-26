@@ -1,35 +1,10 @@
  
 PROGRAM _INIT
-//	gMotorBeltAxisBasic.Enable := 0;
-//	gMotorBeltAxisBasic.Power := 0;
-//	gMotorBeltAxisBasic.Home := 0;
-//	
-//	ManualStart := 0;
-//
-//	gMotorBeltParType.Acceleration := 2500;
-//	gMotorBeltParType.Deceleration := 2500;
-//	
-//	gMotorBeltAxisBasic.MpLink := ADR(gAxis_1);				
-//	gMotorBeltAxisBasic.Enable := 1;
-//	gMotorBeltAxisBasic.Parameters := ADR(gMotorBeltParType);
-//	
-//	ManualStep := MANUAL_START;
-//	
-//	gMotorBeltAxisBasic.Home := 1;
-//	gMotorBeltAxisBasic.Power := 0;
-//	
-//	
+
 
 END_PROGRAM
 
 PROGRAM _CYCLIC
-
-//	MC_BR_JogVelocity_0.Axis := ADR(gAxis_1);
-//	MC_BR_JogVelocity_0.Enable := TRUE;
-//	MC_BR_JogVelocity_0.Velocity := ABS(ManualVelocity);
-//	MC_BR_JogVelocity_0.Acceleration := 700;
-//	MC_BR_JogVelocity_0.Deceleration := 700;
-//	MC_BR_JogVelocity_0();
 	
 	gMotorBeltAxisBasic();
 	
@@ -44,8 +19,6 @@ PROGRAM _CYCLIC
 	IF (FlagActSorting = FALSE AND FlagActSortingOff = FALSE) THEN
 		FlagActSortingOff := TRUE;
 	END_IF;
-	
-	
 	
 	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
 	
@@ -62,6 +35,8 @@ PROGRAM _CYCLIC
 	IF gMode = 1 THEN
 		FlagManual := 1;
 		FlagNotManual := 0;
+		gMotorBeltAxisBasic.Home := 0;
+		gMotorBeltAxisBasic.Power := 0;
 		gMotorBeltParType.Distance := ManualDistance;
 		gMotorBeltParType.Velocity := ManualVelocity;
 	ELSE
@@ -73,7 +48,8 @@ PROGRAM _CYCLIC
 	IF ManualStop THEN
 		ManualStop := 0;
 		gActuatorByte := 2#0000_0000_0000_0000;
-		gMotorBeltAxisBasic.Power := 0;
+		gMotorBeltAxisBasic.MoveVelocity := 0;
+		gMotorBeltAxisBasic.MoveAdditive := 0;
 		ManualStep := MANUAL_WAIT;
 		ManualStepAct := MANUAL_ACTUATOR_WAIT;
 	END_IF;
@@ -85,7 +61,6 @@ PROGRAM _CYCLIC
 	IF (gMode = 1) THEN
 		CASE ManualStep OF
 			MANUAL_WAIT:
-			
 				IF BeltMoveAdditive THEN
 					gMotorBeltAxisBasic.Home := 0;
 					BeltMoveAdditive := 0;

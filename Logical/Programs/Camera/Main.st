@@ -106,7 +106,8 @@ PROGRAM _CYCLIC
 			END_IF;
 	END_CASE;
 	
-
+//---------------------------------------------------------//
+	
 	TimerTonCameraLED();
 	TimerTonCameraLED_2();
 		
