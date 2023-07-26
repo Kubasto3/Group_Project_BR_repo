@@ -613,5 +613,15 @@
         </Sequence>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="ContentManual.ButtonPowerOn.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonPowerOn" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::Manual:AxisPowerOn">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

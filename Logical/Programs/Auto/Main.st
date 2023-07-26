@@ -1,4 +1,4 @@
-// ALREADY WORKING, ONLY SOME CHANGES REQUIRED
+// ALREADY WORKING
 PROGRAM _INIT
 	// NEED ONLY FOR WATCH
 	gAxis_1;
@@ -10,8 +10,6 @@ PROGRAM _CYCLIC
 	//CODE WORKS ONLY WHEN MANUAL MODE IS OFF	
 	
 	IF  gMode = 0 THEN
-
-		
 		// MOTOR MANAGEMENT
 		gMotorBeltAxisBasic.Enable 		:= TRUE;
 		gMotorBeltAxisBasic.MpLink 		:= ADR(gAxis_1);
@@ -53,7 +51,6 @@ PROGRAM _CYCLIC
 
 		
 		
-		
 		// ITEM DETECTION CONDITION 
 		ItemDetected := (ItemWeight > 1);
 		gWeightDetected := ItemDetected;
@@ -77,7 +74,7 @@ PROGRAM _CYCLIC
 		QuantityLeftStorage  := CTU_QuantityLeft.CV;
 		QuantityRightStorage := CTU_QuantityRight.CV;
 	END_IF; 
-	
+
 	
 	// ALARM OR STOP OR MANUAL TURNED ON
 	IF	gAlarmHardware THEN	//ALARM
@@ -139,9 +136,9 @@ PROGRAM _CYCLIC
 				
 		CATEGORIZATION: 
 			StringState := 'Kategoryzacja detalu';
-			IF gSortChoice = WEIGHT THEN
+			IF gSorting.SortChoice = WEIGHT THEN
 				State := DROP;
-			ELSIF gSortChoice = OPTIC THEN
+			ELSIF gSorting.SortChoice = OPTIC THEN
 				State := TAKE_PICT_CAMERA;
 			END_IF;
 			
@@ -149,7 +146,7 @@ PROGRAM _CYCLIC
 			StringState := 'Robienie zdjecia';
 			gImageAcq 	:= TRUE;
 			IF TimerCameraPicDone THEN
-				IF gRecognisedModel = 0 THEN 						//0
+				IF gSorting.RecognisedModel = 0 THEN 						//0
 					gImageAcq 			  := FALSE;
 					StringRecognisedModel := 'Unrecognised';
 					State 				  := UNRECOGNISED_PIC;
@@ -282,6 +279,13 @@ PROGRAM _CYCLIC
 		END_IF;
 	ELSE
 		ActuatorByte := ACTUATOR_BYTE_NOT_ACTIV;
+	END_IF;
+	
+	// HMI GUYS WANTED SOME VARIABLES
+	IF gSorting.SortChoice = OPTIC THEN
+		gSortChoiceView := TRUE;
+	ELSIF gSorting.SortChoice = WEIGHT THEN
+		gSortChoiceView := FALSE;
 	END_IF;
 	
 	ActuatorNotSorting := NOT ActuatorSorting;

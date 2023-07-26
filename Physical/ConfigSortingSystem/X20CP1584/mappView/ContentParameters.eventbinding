@@ -5,7 +5,7 @@
       <Source xsi:type="widgets.brease.RadioButton.Event" contentRefId="ContentParameters" widgetRefId="RadioButtonSortWeight" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSortChoice">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSorting.SortChoice">
             <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
           </Target>
         </Action>
@@ -15,7 +15,7 @@
       <Source xsi:type="widgets.brease.RadioButton.Event" contentRefId="ContentParameters" widgetRefId="RadioButtonSortOptic" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSortChoice">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSorting.SortChoice">
             <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
           </Target>
         </Action>
@@ -25,7 +25,7 @@
       <Source xsi:type="widgets.brease.RadioButton.Event" contentRefId="ContentParameters" widgetRefId="RadioButtonOpticSortLeft" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSorting.gSortLeftBR">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:Sorting.gSortLeftBR">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
@@ -35,7 +35,7 @@
       <Source xsi:type="widgets.brease.RadioButton.Event" contentRefId="ContentParameters" widgetRefId="RadioButtonOpticSortRight" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSorting.gSortLeftBR">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:Sorting.gSortLeftBR">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
           </Target>
         </Action>
@@ -45,7 +45,7 @@
       <Source xsi:type="widgets.brease.RadioButton.Event" contentRefId="ContentParameters" widgetRefId="RadioButtonWeightSortLeft" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSorting.gSortLeftMin">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSorting.SortLeftMin">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
@@ -55,7 +55,7 @@
       <Source xsi:type="widgets.brease.RadioButton.Event" contentRefId="ContentParameters" widgetRefId="RadioButtonWeightSortRight" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSorting.gSortLeftMin">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSorting.SortLeftMin">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
           </Target>
         </Action>

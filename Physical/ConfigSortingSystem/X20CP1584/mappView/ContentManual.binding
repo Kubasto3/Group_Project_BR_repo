@@ -143,10 +143,7 @@
 <Source xsi:type="opcUa" refId="::SemiAuto:ActuatorSorting" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="RectanglePistonPushingGreen1" attribute="visible" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::SemiAuto:SortChoiceView" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="GroupBoxDetectedItem" attribute="visible" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::SemiAuto:StringRecognisedModel" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="TextOutputDetectedItem" attribute="value" />
@@ -160,8 +157,24 @@
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="NumericOutputLeftChamber" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gMotorBeltAxisBasic.Power" attribute="value" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gMotorBeltAxisBasic.PowerOn" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="EllipsePowerDiodeOn" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:FlagArrowRight" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ImageArrowRight" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:FlagArrowLeft" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ImageArrowLeft" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gMotorBeltAxisBasic.PowerOn" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonStopMovement" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSortChoiceView" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="GroupBoxDetectedItem" attribute="visible" />
 </Binding>
 </Bindings>
 </BindingsSet>

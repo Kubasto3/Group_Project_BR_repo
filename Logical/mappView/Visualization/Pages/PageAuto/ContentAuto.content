@@ -4,8 +4,8 @@
     <Widget xsi:type="widgets.brease.Label" id="Label1" top="585" left="1201" zIndex="0" text="auto" visible="false" />
     <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxAutoControl" top="25" left="25" width="650" height="535" zIndex="1" borderWidth="5px">
       <Widgets>
-        <Widget xsi:type="widgets.brease.Button" id="ButtonAutoStart" top="48" left="148" width="355" height="73" zIndex="2" text="$IAT/Main/Auto_ButtonStart" textColor="rgba(0, 128, 0, 1)" fontSize="25px" />
-        <Widget xsi:type="widgets.brease.Button" id="ButtonAutoStop" top="140" left="180" width="290" height="51" zIndex="3" text="$IAT/Main/Auto_ButtonStop" imageColor="rgba(0, 0, 0, 1)" cornerRadius="15px" textColor="rgba(255, 0, 0, 1)" fontSize="25px" />
+        <Widget xsi:type="widgets.brease.Button" id="ButtonAutoStart" top="48" left="148" width="355" height="73" zIndex="2" text="$IAT/Main/Auto_ButtonStart" textColor="rgba(0, 128, 0, 1)" fontSize="25px" permissionOperate="['Administrator', 'Operator', 'Service']" />
+        <Widget xsi:type="widgets.brease.Button" id="ButtonAutoStop" top="140" left="180" width="290" height="51" zIndex="3" text="$IAT/Main/Auto_ButtonStop" imageColor="rgba(0, 0, 0, 1)" cornerRadius="15px" textColor="rgba(255, 0, 0, 1)" fontSize="25px" permissionOperate="['Administrator', 'Operator', 'Service']" />
         <Widget xsi:type="widgets.brease.Label" id="LabelMachineStarted" top="190" left="150" width="351" height="76" zIndex="0" text="$IAT/Main/Auto_MachineWorking" textColor="rgba(0, 192, 0, 1)" textAlign="center" fontSize="20px" visible="false" />
         <Widget xsi:type="widgets.brease.Label" id="LabelMachineStopped" top="190" left="150" width="351" height="76" zIndex="1" text="$IAT/Main/Auto_MachineStopped" textColor="rgba(255, 0, 0, 1)" textAlign="center" fontSize="20px" visible="false" />
         <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxDetectedItem" top="450" left="150" width="350" height="40" zIndex="4" borderWidth="3px" visible="false">
@@ -25,7 +25,7 @@
         <Widget xsi:type="widgets.brease.Label" id="LabelConveyorPosition" top="125" left="103" width="179" zIndex="4" text="$IAT/Main/Auto_CurrConvPos" />
         <Widget xsi:type="widgets.brease.Label" id="LabelConveyorSpeed" top="175" left="103" width="179" zIndex="5" text="$IAT/Main/Auto_CurrConvSpeed" />
         <Widget xsi:type="widgets.brease.Label" id="LabelMachineStep" top="24" left="102" width="201" height="29" zIndex="6" text="$IAT/Main/Auto_CurrentMachineStep" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputCurrentStep" top="24" left="280" width="250" height="46" zIndex="7" wordWrap="true" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputCurrentStep" top="4" left="279" width="250" height="70" zIndex="7" multiLine="true" wordWrap="true" textAlign="center" />
         <Widget xsi:type="widgets.brease.Label" id="LabelPistonActuatorStatus" top="230" left="102" width="151" zIndex="8" text="$IAT/Main/Auto_ActuatingPiston" />
         <Widget xsi:type="widgets.brease.Label" id="LabelPistonPushingStatus" top="278" left="102" width="126" zIndex="9" text="$IAT/Main/Auto_PushingPiston" />
         <Widget xsi:type="widgets.brease.Rectangle" id="RectangleBoxPistonActuatorRed" top="226" left="300" width="35" height="30" zIndex="13" backColor="rgba(255, 0, 0, 1)" />
@@ -42,8 +42,8 @@
     </Widget>
     <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxCounter" top="375" left="700" width="550" height="185" zIndex="3" borderWidth="5px">
       <Widgets>
-        <Widget xsi:type="widgets.brease.Button" id="ButtonResetRightChamber" top="130" left="340" width="159" zIndex="0" text="$IAT/Main/Auto_ButtonRESET" />
-        <Widget xsi:type="widgets.brease.Button" id="ButtonResetLeftChamber" top="130" left="49" width="151" zIndex="1" text="$IAT/Main/Auto_ButtonRESET" />
+        <Widget xsi:type="widgets.brease.Button" id="ButtonResetRightChamber" top="130" left="340" width="159" zIndex="0" text="$IAT/Main/Auto_ButtonRESET" permissionOperate="['Administrator', 'Operator', 'Service']" />
+        <Widget xsi:type="widgets.brease.Button" id="ButtonResetLeftChamber" top="130" left="49" width="151" zIndex="1" text="$IAT/Main/Auto_ButtonRESET" permissionOperate="['Administrator', 'Operator', 'Service']" />
         <Widget xsi:type="widgets.brease.Label" id="LabelChamberCaunter" top="4" left="79" width="401" zIndex="2" text="$IAT/Main/Auto_NUMBEROF" textAlign="center top" />
         <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxLeftChamber" top="60" left="55" width="150" height="60" zIndex="3">
           <Widgets />

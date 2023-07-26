@@ -44,6 +44,7 @@
           <Variable Name="MoveActive" />
           <Variable Name="MoveVelocity" />
           <Variable Name="Power" />
+          <Variable Name="PowerOn" />
         </Variable>
         <Variable Name="gMpRecipeXML_0" RecursiveEnable="1">
           <Variable Name="Save" />
@@ -52,7 +53,7 @@
         <Variable Name="gSortChoice" />
         <Variable Name="gSorting">
           <Variable Name="RecognisedModel" />
-          <Variable Name="ItemWeightChoosen" />
+          <Variable Name="ItemWeightChoosen" EURangesId="3" EngineeringUnitId="3" />
           <Variable Name="SortLeftMin" />
           <Variable Name="SortLeftBR" />
           <Variable Name="SortChoice" />
@@ -72,7 +73,6 @@
           <Variable Name="AutoLoadHeader" />
         </Variable>
         <Variable Name="gRecipeXml" />
-        <Variable Name="gItemWeightChoosen" />
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
@@ -128,6 +128,9 @@
         <Variable Name="FlagNotManual" />
         <Variable Name="ManualStepAct" />
         <Variable Name="NotMoveActive" />
+        <Variable Name="FlagArrowLeft" />
+        <Variable Name="FlagArrowRight" />
+        <Variable Name="AxisPowerOn" />
       </Task>
       <Task Name="SemiAuto">
         <Variable Name="ActuatorNotPushing" />

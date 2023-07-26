@@ -503,10 +503,10 @@
     </tu>
     <tu tuid="Manual_StopMovement">
       <tuv xml:lang="pl">
-        <seg>Zatrzymaj ruch</seg>
+        <seg>Stop</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Stop movement</seg>
+        <seg>Stop</seg>
       </tuv>
     </tu>
     <tu tuid="Manual_MoveLeft">
@@ -530,7 +530,7 @@
         <seg>Zrób zjęcie</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Make photograph</seg>
+        <seg>Take photograph</seg>
       </tuv>
     </tu>
     <tu tuid="Manual_Approve">
