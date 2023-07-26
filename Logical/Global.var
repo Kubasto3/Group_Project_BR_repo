@@ -1,32 +1,33 @@
 (*Insert your comment here.*)
 VAR
-	gErrorState : BOOL := FALSE;
-	gAlarmHardAck : BOOL := FALSE;
-	gRecognisedModel : ModelEnum := Unrecognised; (*Value showing recognised model 1- B&R, 2- AS, 0- not recognised*)
 	Coffee : CofeeType;
-	gMpRecipeXML_0 : MpRecipeXml;
-	gMpRecipeRegPar_0 : MpRecipeRegPar;
-	gMpRecipeUI_0 : MpRecipeUI;
-	gUISetup : MpRecipeUISetupType;
-	gUIConnect : MpRecipeUIConnectType;
-	gInWeightMeasure : USINT;
-	gPicNotRecognised : BOOL := FALSE;
-	gStopBlink : BOOL := TRUE;
-	gWeightDetected : BOOL := FALSE;
 	gActuatorByte : UINT;
-	gMotorBeltAxisBasic : MpAxisBasic;
-	gMotorBeltParType : MpAxisBasicParType;
-	gMode : USINT := 0;
-	gMaxLeftStorage : USINT := 4;
-	gMaxRightStorage : USINT := 4;
-	gImageAcq : BOOL := FALSE; (*Enabling image acquisition therefore starting matching procedure, rising edge*)
-	gSetFocus : USINT;
-	gExposureTime : UDINT;
+	gAlarmExist : BOOL := FALSE;
+	gAlarmHardAck : BOOL := FALSE;
 	gAlarmHardware : BOOL := FALSE;
 	gAutoRecipe : USINT;
-	gAlarmExist : BOOL := FALSE;
+	gErrorState : BOOL := FALSE;
+	gExposureTime : UDINT;
+	gImageAcq : BOOL := FALSE; (*Enabling image acquisition therefore starting matching procedure, rising edge*)
+	gInWeightMeasure : USINT;
+	gItemWeightChoosen : USINT := 10;
+	gMaxLeftStorage : USINT := 4;
+	gMaxRightStorage : USINT := 4;
+	gMode : USINT := 0;
+	gMotorBeltAxisBasic : MpAxisBasic;
+	gMotorBeltParType : MpAxisBasicParType;
+	gMpRecipeRegPar_0 : MpRecipeRegPar;
+	gMpRecipeUI_0 : MpRecipeUI;
+	gMpRecipeXML_0 : MpRecipeXml;
+	gPicNotRecognised : BOOL := FALSE;
+	gRecognisedModel : ModelEnum := Unrecognised; (*Value showing recognised model 1- B&R, 2- AS, 0- not recognised*)
+	gSetFocus : USINT;
 	gSortChoice : SortChoiceEnum := WEIGHT;
-	gStopState : BOOL := TRUE;
 	gSortChoiceView : BOOL;
 	gSorting : SortingType;
+	gStopBlink : BOOL := TRUE;
+	gStopState : BOOL := TRUE;
+	gUIConnect : MpRecipeUIConnectType;
+	gUISetup : MpRecipeUISetupType;
+	gWeightDetected : BOOL := FALSE;
 END_VAR

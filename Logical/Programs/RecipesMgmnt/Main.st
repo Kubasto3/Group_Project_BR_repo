@@ -21,9 +21,10 @@ PROGRAM _CYCLIC
 	gMpRecipeUI_0.UISetup := 		gUISetup;
 	gMpRecipeUI_0.UIConnect := 		ADR(gUIConnect);
 	
-	gSorting.gItemWeightChoosen;
-	gSorting.gRecognisedModel; //CO TU DAC???
-	gSorting.gSortLeftMin;
+	gSorting.ItemWeightChoosen;
+	gSorting.RecognisedModel; //CO TU DAC???
+	gSorting.SortLeftMin;
+	gSorting.SortChoice;
 	
 	
 	
