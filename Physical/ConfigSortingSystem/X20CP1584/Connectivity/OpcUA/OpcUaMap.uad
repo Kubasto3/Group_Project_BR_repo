@@ -61,7 +61,11 @@
         <Variable Name="Rectangle4_Left_Visibility" />
         <Variable Name="Rectangle4_Right_Visibility" />
       </Task>
-      <Task Name="Camera" />
+      <Task Name="Camera">
+        <Variable Name="URL" />
+        <Variable Name="Base64Buffer" />
+        <Variable Name="ViBaseBuffer" />
+      </Task>
       <Task Name="Manual">
         <Variable Name="BeltMoveAdditive" />
         <Variable Name="BeltMoveVelocityOff" />

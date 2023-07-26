@@ -6,6 +6,6 @@
     <Widget xsi:type="widgets.brease.NumericOutput" id="ModelNumberOutput" top="310" left="1040" zIndex="2" />
     <Widget xsi:type="widgets.brease.Label" id="LabelNoMatches" top="230" left="870" width="150" zIndex="3" text="Number of matches" />
     <Widget xsi:type="widgets.brease.Label" id="LabelNoModel" top="310" left="880" width="120" zIndex="4" text="Model number" />
-    <Widget xsi:type="widgets.brease.Paper" id="PaperImage" top="0" left="0" width="1280" height="1024" zIndex="5" svgContent="opcUa()::Camera:URL" />
+    <Widget xsi:type="widgets.brease.Paper" id="PaperImage" top="30" left="80" width="640" height="512" zIndex="5" />
   </Widgets>
 </Content>
