@@ -28,7 +28,7 @@ PROGRAM _CYCLIC
 	END_IF;
 	
 	
-	//-------------SOME---FLAGS--------------//
+	//---------AXIS---VARIABLES---ASSIGMENT----------//
 	
 	IF gMode = 1 THEN
 		gMotorBeltParType.Distance := ManualDistance;
@@ -148,7 +148,7 @@ PROGRAM _CYCLIC
 		//------------END---OF---STATE---MACHINE---ACTUATORS---------------//
 		IF AxisPowerOn THEN
 			AxisPowerOn := 0;
-			gMotorBeltAxisBasic.Power :=1;
+			gMotorBeltAxisBasic.Power :=1;	//Axis power off is enabling by the button that is binded with stop step
 		END_IF;
 	END_IF;
 	
