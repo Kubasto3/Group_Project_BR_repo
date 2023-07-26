@@ -46,7 +46,6 @@ VAR
 	MotorInPosition : BOOL;
 	MotorHome : BOOL;
 	ItemWeightMeasured : USINT;
-	ItemWeightChoosen : USINT := 12;
 	ItemWeight : USINT;
 	ItemDetected : BOOL := FALSE;
 	CTU_Reset_Right : BOOL;

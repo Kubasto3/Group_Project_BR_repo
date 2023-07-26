@@ -69,6 +69,7 @@
           <Variable Name="AutoLoadHeader" />
         </Variable>
         <Variable Name="gRecipeXml" />
+        <Variable Name="gItemWeightChoosen" />
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />

@@ -5,7 +5,6 @@ END_VAR
 VAR
 	ItemWeightMeasured : USINT;
 	ItemWeight : USINT;
-	ItemWeightChoosen : USINT := 12;
 	QuantityLeftStorage : UINT;
 	MotorReqAcc : UINT := 700;
 	MotorReqDec : UINT := 700;

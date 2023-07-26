@@ -124,6 +124,10 @@ PROGRAM _CYCLIC
 			MotorPower 			:= TRUE;
 			MotorHome 			:= TRUE;
 			gPicNotRecognised	:= FALSE; //pozniej musi zniknac, reset z poziomu alarmow lepszy
+			State 				:= START;
+			
+		START: 
+			StringState 		:= 'Gotowy do startu';
 			IF ItemDetected THEN
 				State := DETECTION;
 			END_IF;
@@ -171,16 +175,16 @@ PROGRAM _CYCLIC
 				END_IF;
 			END_IF;
 			
-			// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, EQUAL AND ABOVE ItemWeightChoosen INTO THE RIGHT	
+			// ABOVE 1 TO gItemWeightChoosen ITEM FALL INTO THE LEFT, EQUAL AND ABOVE gItemWeightChoosen INTO THE RIGHT	
 		SORT_WEIGHT: 
 			StringState := 'Sortowanie wagowe';
-			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < ItemWeightChoosen THEN
+			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < gItemWeightChoosen THEN
 				IF SortLeftMin THEN
 					State := GO_STORAGE_LEFT;
 				ELSE
 					State := GO_STORAGE_RIGHT;
 				END_IF;
-			ELSIF ItemWeightMeasured >= ItemWeightChoosen THEN 
+			ELSIF ItemWeightMeasured >= gItemWeightChoosen THEN 
 				IF SortLeftMin THEN
 					State := GO_STORAGE_RIGHT;
 				ELSE
@@ -247,16 +251,17 @@ PROGRAM _CYCLIC
 			
 		ERROR:
 			StringState := 'Wystapil blad';
-			MotorResetError := TRUE;
 			gErrorState := TRUE;
+			MotorResetError := TRUE;
 			IF gAlarmHardAck THEN
 				MotorResetError := FALSE;
+				IF NOT gAlarmHardware THEN
+					gAlarmHardAck := FALSE;
+					gErrorState := FALSE;
+					State := STOP;
+				END_IF;
 			END_IF;
-			IF NOT gAlarmHardware AND gAlarmHardAck THEN
-				gAlarmHardAck := FALSE;
-				gErrorState := FALSE;
-				State := STOP;
-			END_IF;
+			
 	END_CASE;
 
 	
@@ -294,6 +299,9 @@ PROGRAM _CYCLIC
 		IF StringState = 'Inicjalizacja' THEN
 			StringState := 'Initialization';
 			
+		ELSIF StringState = 'Gotowy do startu' THEN
+			StringState := 'Ready';
+		
 		ELSIF StringState = 'Wykrycie detalu' THEN
 			StringState := 'Item detection';
 			

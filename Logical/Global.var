@@ -1,5 +1,6 @@
 (*Insert your comment here.*)
 VAR
+	gItemWeightChoosen : USINT := 10;
 	gErrorState : BOOL := FALSE;
 	gAlarmHardAck : BOOL := FALSE;
 	gRecognisedModel : ModelEnum := Unrecognised; (*Value showing recognised model 1- B&R, 2- AS, 0- not recognised*)
