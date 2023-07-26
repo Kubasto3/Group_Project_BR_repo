@@ -161,11 +161,13 @@
     <Connection Connector="PLK1" TargetModule="0AC808.9" TargetConnector="ETH3" NodeNumber="2">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
+    <Parameter ID="Supervision" Value="off" />
   </Module>
   <Module Name="NORD_SK_TU3-POL_SK54xE_Inverter" Type="FBE.0xED_NORD_TU3_POL_SK54xE_Inverter" Version="1.0" OrderNumber="NORD SK TU3-POL SK54xE Inverter">
     <Connection Connector="PLK1" TargetModule="0AC808.9" TargetConnector="ETH4" NodeNumber="3">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
+    <Parameter ID="Supervision" Value="off" />
   </Module>
   <Module Name="Numatics_G3" Type="FBE.NUMATICS-G3" Version="1.0" OrderNumber="Numatics G3">
     <Connection Connector="PLK1" TargetModule="0AC808.9" TargetConnector="ETH5" NodeNumber="6">
@@ -177,6 +179,7 @@
     <Connection Connector="PLK1" TargetModule="0AC808.9" TargetConnector="ETH8" NodeNumber="1">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
+    <Parameter ID="Supervision" Value="off" />
     <Parameter ID="VisionConfig" Value="gCamera" />
   </Module>
   <Module Name="X20CP1584" Type="X20CP1584" Version="1.10.0.0">
@@ -195,6 +198,7 @@
       <Parameter ID="ActivateANSL" Value="1" />
     </Connector>
     <Parameter ID="ConfigurationID" Value="Group_Project_BR_ConfigSortingSystem" />
+    <Parameter ID="Simulation" Value="1" />
     <Parameter ID="TimerDeviceType" Value="EPLX2X" />
     <Parameter ID="TimerDevice" Value="X20CP1584.IF3" />
     <Parameter ID="TaskClassIdleTime" Value="2000" />
