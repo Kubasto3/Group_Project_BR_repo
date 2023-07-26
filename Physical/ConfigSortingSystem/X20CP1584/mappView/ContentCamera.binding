@@ -12,6 +12,7 @@
 </Binding>
 
 
+
 <Binding mode="oneWay">
 <Source xsi:type="opcUa" refId="::Camera:URL" attribute="value" samplingRate="slow" />
 <Target xsi:type="brease" contentRefId="ContentCamera" widgetRefId="PaperImage" attribute="svgContent" />
