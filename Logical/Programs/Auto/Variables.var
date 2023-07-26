@@ -57,7 +57,7 @@ VAR
 	MotorInPosition : BOOL;
 	MotorHome : BOOL;
 	CTU_Reset_Left : BOOL := FALSE;
-	IsEnglishSelected : BOOL;
+	IsEnglishSelected : BOOL := TRUE;
 	TimerActuatorOut : BOOL;
 	TimerAfterDetect : BOOL;
 	MotorResetError : BOOL := FALSE;

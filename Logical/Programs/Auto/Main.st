@@ -93,7 +93,7 @@ PROGRAM _CYCLIC
 	CASE State OF
 		STOP:
 			IF gAlarmHardware THEN
-	  			State := ERROR;
+				State := ERROR;
 			END_IF;
 			
 			IF gMode = 0 THEN
@@ -227,7 +227,7 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		SORT_STORAGE_LEFT:
-			StringState := 'Zepchniecie detalu z taœmy do zbiornika lewego';
+			StringState := 'Zepchniecie detalu z tasmy do zbiornika lewego';
 			MotorMoveAbsolute := FALSE;
 			ActuatorSorting   := TRUE;
 			AddToLeft 		  := TRUE;
@@ -241,13 +241,17 @@ PROGRAM _CYCLIC
 			State := INIT;
 		
 		UNRECOGNISED_PIC:
-			StringState := 'Nie rozpoznano zdjêcia';
+			StringState := 'Nie rozpoznano zdjecia';
 			gPicNotRecognised := TRUE; 
 			State := STOP;
 			
 		ERROR:
+			StringState := 'Wystapil blad';
 			MotorResetError := TRUE;
 			gErrorState := TRUE;
+			IF gAlarmHardAck THEN
+				MotorResetError := FALSE;
+			END_IF;
 			IF NOT gAlarmHardware AND gAlarmHardAck THEN
 				gAlarmHardAck := FALSE;
 				gErrorState := FALSE;
@@ -284,11 +288,9 @@ PROGRAM _CYCLIC
 	IF Start THEN
 		Start := FALSE;
 	END_IF;
-		
-	
 	
 	//Added by Jakub; Responsibler for changing machine state between English and Polish
-	IF IsEnglishSelected = TRUE THEN
+	IF IsEnglishSelected THEN
 		IF StringState = 'Inicjalizacja' THEN
 			StringState := 'Initialization';
 			
@@ -316,17 +318,20 @@ PROGRAM _CYCLIC
 		ELSIF StringState = 'Transport detalu do prawego zbiornika' THEN
 			StringState := 'Item transport to the right tank';
 			
-		ELSIF StringState = 'Zepchniecie detalu z taœmy do zbiornika lewego' THEN
+		ELSIF StringState = 'Zepchniecie detalu z tasmy do zbiornika lewego' THEN
 			StringState := 'Pushing the item from the belt to the left tank';
 			
-		ELSIF StringState = 'Nie rozpoznano zdjêcia' THEN
+		ELSIF StringState = 'Nie rozpoznano zdjecia' THEN
 			StringState := 'Photo not recognized';
 			
 		ELSIF StringState = 'Stop' THEN
 			StringState := 'Stop';
-		END_IF
-	END_IF
-		
+			
+		ELSIF StringState = 'Wystapil blad' THEN
+			StringState := 'Error';
+		END_IF;
+	END_IF;
+	
 END_PROGRAM
 
 PROGRAM _EXIT
