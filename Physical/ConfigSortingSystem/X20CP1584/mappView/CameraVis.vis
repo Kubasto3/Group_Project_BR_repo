@@ -21,6 +21,7 @@
   <Dialogs />
   <Contents>
     <Content refId="ContentCamera" />
+    <Content refId="ContentParameters" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />

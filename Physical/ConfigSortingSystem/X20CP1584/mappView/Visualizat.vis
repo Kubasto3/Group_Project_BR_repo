@@ -49,6 +49,7 @@
     <Content refId="ContentDiagnostics" />
     <Content refId="ContentAlarmHistory" />
     <Content refId="ContentCamera" />
+    <Content refId="ContentParameters" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />

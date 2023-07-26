@@ -35,12 +35,5 @@
         </Widget>
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.Table" id="Table1" top="94" left="484" width="298" zIndex="2">
-      <Widgets>
-        <Widget xsi:type="widgets.brease.TableItem" id="TableItem1" zIndex="0" text="TableItem1" />
-        <Widget xsi:type="widgets.brease.TableItem" id="TableItem2" zIndex="1" text="TableItem2" />
-        <Widget xsi:type="widgets.brease.TableItem" id="TableItem3" zIndex="2" text="TableItem3" />
-      </Widgets>
-    </Widget>
-  </Widgets>
+	</Widgets>
 </Content>

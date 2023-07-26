@@ -45,25 +45,14 @@ VAR
 	ExecuteGetImg : BOOL;
 	EnableEncode : BOOL;
 	CameraLED_OPC : USINT := 0;
-	CameraLED_2 : USINT := 0;
-	CameraLED : USINT := 0;
-	BufferImage : UDINT;
-	BufferEncodedImg : STRING[1966080];
 END_VAR
 VAR CONSTANT
 	TIME_LAMP_TEST : TIME := T#500MS;
 END_VAR
 VAR
-	Base64srcLen : UDINT;
-	Base64Buffer : STRING[2500000];
 	sStep : USINT := 1;
 	TimerTonCameraLED : TON;
 	TimerTonCameraLED_2 : TON;
 	TimerTonCameraLED_3 : TON;
 END_VAR
-VAR CONSTANT
-	TIMER_TIME_BLINK : TIME := T#500MS;
-END_VAR
-VAR
-	ViBaseGetImage_0 : ViBaseGetImage;
-END_VAR
+
