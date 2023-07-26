@@ -10,9 +10,10 @@ PROGRAM _CYCLIC
 	
 	gAxis_1;
 	
-	ExposureTime;
-	SetFocus;
+	gExposureTime;
+	gSetFocus;
 
+	
 	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
 	
 	
