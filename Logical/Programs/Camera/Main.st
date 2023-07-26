@@ -14,32 +14,47 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
+
 	
-	//---CAMERA LED---
-	//0 - PLC State
-	//1 - Nothing
-	//2 - Green
-	//3 - Red
-	//4 - Blue
-	
-		
-	IF gAlarmExist THEN
-		gStopBlink := FALSE;
-		CameraLED 	:= LED_RED;
-		CameraLED_2 := LED_NOTHING;
-	ELSIF gPicNotRecognised THEN
-		gStopBlink := FALSE;
-		CameraLED 	:= LED_BLUE;
-		CameraLED_2 := LED_NOTHING;
-	ELSIF gWeightDetected THEN
-		gStopBlink := FALSE;
-		CameraLED 	:= LED_RED;
-		CameraLED_2 := LED_BLUE;
+//-------------CAMERA LED--Blinking-Auto-And-Semiauto-----------//
+//0 - PLC State
+//1 - Nothing
+//2 - Green
+//3 - Red
+//4 - Blue
+
+	IF gMode <> 1 THEN
+		IF gAlarmHardware AND NOT gAlarmHardAck THEN
+			gStopBlink := FALSE;
+			TimerTonCameraLED.PT := TIMER_TIME_BLINK_100MS;
+			TimerTonCameraLED_2.PT := TIMER_TIME_BLINK_100MS;
+			CameraLED 	:= LED_RED;
+			CameraLED_2 := LED_NOTHING;
+		ELSIF gAlarmExist THEN
+			gStopBlink := FALSE;
+			TimerTonCameraLED.PT := TIMER_TIME_BLINK_500MS;
+			TimerTonCameraLED_2.PT := TIMER_TIME_BLINK_500MS;
+			CameraLED 	:= LED_RED;
+			CameraLED_2 := LED_NOTHING;	
+		ELSIF gPicNotRecognised THEN
+			gStopBlink := FALSE;
+			TimerTonCameraLED.PT := TIMER_TIME_BLINK_500MS;
+			TimerTonCameraLED_2.PT := TIMER_TIME_BLINK_500MS;
+			CameraLED 	:= LED_BLUE;
+			CameraLED_2 := LED_NOTHING;
+		ELSIF gWeightDetected AND NOT gStopState AND NOT gErrorState THEN
+			TimerTonCameraLED.PT := TIMER_TIME_BLINK_500MS;
+			TimerTonCameraLED_2.PT := TIMER_TIME_BLINK_500MS;
+			gStopBlink := FALSE;
+			CameraLED 	:= LED_RED;
+			CameraLED_2 := LED_BLUE;
+		ELSE
+			gStopBlink := TRUE;
+		END_IF;
 	ELSE
 		gStopBlink := TRUE;
 	END_IF;
-	
-	
+
 	IF gStopBlink THEN
 		CameraLED_OPC   := LED_PLC_STATUS;
 	ELSE
@@ -54,62 +69,57 @@ PROGRAM _CYCLIC
 			END_IF;
 		END_IF;
 	END_IF;
-	
-	
-//
-//	
-//	
-//	CASE gStateCameraLED OF
-//		WARNING_ACTUATOR_PUSHING:
-//			TimerTonCameraLED.IN := TRUE;
-//			CameraLED := LED_RED;
-//			IF TimerTonCameraLED.Q THEN
-//				TimerTonCameraLED2.IN := TRUE;
-//				CameraLED := LED_BLUE; 
-//				IF TimerTonCameraLED2.Q THEN
-//					TimerTonCameraLED.IN := FALSE; 			//1 TIMER
-//					TimerTonCameraLED2.IN := FALSE;			//2 TIMER
-//				END_IF;
-//			END_IF;
-//		  
-//		PICTURE_UNRECOGNISED:
-//			TimerTonCameraLED.IN := TRUE;
-//			CameraLED := LED_NOTHING;
-//			IF TimerTonCameraLED.Q THEN
-//				TimerTonCameraLED2.IN := TRUE;
-//				CameraLED := LED_BLUE; 
-//				IF TimerTonCameraLED2.Q THEN
-//					TimerTonCameraLED.IN := FALSE; 			//1 TIMER
-//					TimerTonCameraLED2.IN := FALSE;			//2 TIMER
-//				END_IF;
-//			END_IF;
-//			
-//		ALARM:
-//			TimerTonCameraLED.IN := TRUE;
-//			CameraLED := LED_RED;
-//			IF TimerTonCameraLED.Q THEN
-//				TimerTonCameraLED2.IN := TRUE;
-//				CameraLED := LED_NOTHING; 
-//				IF TimerTonCameraLED2.Q THEN
-//					TimerTonCameraLED.IN := FALSE; 			//1 TIMER
-//					TimerTonCameraLED2.IN := FALSE;			//2 TIMER
-//				END_IF;
-//			END_IF;
-//			
-//		NONE:
-//			TimerTonCameraLED.IN := FALSE;
-//			CameraLED := LED_NOTHING;
-//			
-//	END_CASE;
-	
-	TimerTonCameraLED.PT := TIMER_TIME_BLINK;
+
+
+
+	//-----------------TEST--CAMERA-----------------------//
+
+	ATON1();
+	ATON2();
+	ATON3();
+	IF gMode = 1 THEN
+		CASE sStep OF
+			1:	
+				ATON1.PT := TIME_LAMP_TEST;
+				ATON2.PT := TIME_LAMP_TEST;
+				ATON3.PT := TIME_LAMP_TEST;
+		
+				ATON1.IN := FALSE;
+				IF (gMode = 1) AND ManualLampTest THEN
+					CameraLED_OPC := 1;
+					ManualLampTest := 0;
+					ATON1.IN := TRUE;
+					ATON2.IN := FALSE;
+					sStep := 2;
+				END_IF;
+		
+			2:
+				CameraLED_OPC := 2;
+				IF ATON1.Q THEN
+					ATON2.IN := TRUE;
+					ATON3.IN := FALSE;
+					sStep := 3;
+				END_IF;
+		
+			3:
+				CameraLED_OPC := 3;
+				IF ATON2.Q THEN
+					sStep := 4;
+				END_IF;
+		
+			4:
+				CameraLED_OPC := 4;
+				ATON3.IN := TRUE;
+				ATON2.IN := FALSE;
+				IF ATON3.Q THEN
+					sStep := 1;
+				END_IF;
+		END_CASE;
+	END_IF;
+
 	TimerTonCameraLED();
-	
-	TimerTonCameraLED_2.PT := TIMER_TIME_BLINK;
 	TimerTonCameraLED_2();
-	
-	CTU_HowManyBlink(CU := OneMoreBlink, PV := 4);
-	
+
 	//setting variable for recognised model with acknowledgement of 2 different types of B&R logos
 	IF (RecognisedModel=1) OR (RecognisedModel=3) THEN
 		gRecognisedModel := 1;

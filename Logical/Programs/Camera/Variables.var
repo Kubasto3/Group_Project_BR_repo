@@ -49,3 +49,15 @@ VAR
 	ViBaseGetImage_0 : ViBaseGetImage;
 	httpDecodeBase64_0 : httpDecodeBase64;
 END_VAR
+VAR CONSTANT
+	TIMER_TIME_BLINK_100MS : TIME := T#100MS;
+	TIMER_TIME_BLINK_500MS : TIME := T#500MS;
+	TIME_LAMP_TEST : TIME := T#500MS;
+END_VAR
+VAR
+	sStep : INT;
+	ManualLampTest : BOOL;
+	ATON1 : TON;
+	ATON2 : TON;
+	ATON3 : TON;
+END_VAR
