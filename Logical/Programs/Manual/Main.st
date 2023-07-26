@@ -10,9 +10,10 @@ PROGRAM _CYCLIC
 	
 	gAxis_1;
 	
-	ExposureTime;
-	SetFocus;
+	gExposureTime;
+	gSetFocus;
 
+	
 	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
 	
 	
@@ -158,6 +159,12 @@ PROGRAM _CYCLIC
 	END_IF;
 	IF (FlagActSorting = FALSE AND FlagActSortingOff = FALSE) THEN
 		FlagActSortingOff := TRUE;
+	END_IF;
+	
+	IF gMotorBeltAxisBasic.PowerOn THEN
+		AxisPowerOff := 1;
+	ELSE
+		AxisPowerOff := 0;
 	END_IF;
 	
 	IF gMode = 1 THEN
