@@ -22,6 +22,9 @@ PROGRAM _CYCLIC
 	
 	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
 	
+	
+//--------------DIRECTION---CHANGES--------------//
+	
 	IF DirectionChangeVelocity THEN
 		DirectionChangeVelocity := 0;
 		ManualVelocity := (-1)*ManualVelocity;
@@ -32,6 +35,8 @@ PROGRAM _CYCLIC
 		ManualDistance := (-1)*ManualDistance;
 	END_IF;
 	
+	
+//-------------DIRECTION---CHANGES--------------//
 	IF gMode = 1 THEN
 		FlagManual := 1;
 		FlagNotManual := 0;
@@ -43,6 +48,7 @@ PROGRAM _CYCLIC
 	END_IF;
 		
 	
+//-----------------MANUAL---STOP-----------------//
 	IF ManualStop THEN
 		ManualStop := 0;
 		gActuatorByte := 2#0000_0000_0000_0000;
@@ -53,13 +59,12 @@ PROGRAM _CYCLIC
 		ManualStep := MANUAL_WAIT;
 		ManualStepAct := MANUAL_ACTUATOR_WAIT;
 	END_IF;
+
 	
-	IF expression THEN
-		
-	END_IF;
-	
+//----------------------STATE---MACHINE---AXIS------------------------//
 	IF (gMode = 1) THEN
 		CASE ManualStep OF
+			
 			MANUAL_WAIT:
 				IF BeltMoveAdditive THEN
 					gMotorBeltAxisBasic.Home := 0;
@@ -70,10 +75,7 @@ PROGRAM _CYCLIC
 					BeltMoveVelocityOn := 0;
 					ManualStep := MANUAL_BELT_SET_VELOCITY;
 				END_IF;
-			
-				//actuating actuator responsibile for dosing an element
 
-			
 			MANUAL_BELT_SET_ADDITIVE:
 				ManualVelocity := ABS(ManualVelocity);
 				gMotorBeltAxisBasic.Power := 0;
@@ -94,7 +96,6 @@ PROGRAM _CYCLIC
 			
 			MANUAL_BELT_MOVE_ADDITIVE1:
 				gMotorBeltAxisBasic.ErrorReset := 0;
-				//gMotorBeltAxisBasic.Power := 0;
 				ManualStep := MANUAL_WAIT;
 			
 			MANUAL_BELT_SET_VELOCITY:
@@ -114,7 +115,8 @@ PROGRAM _CYCLIC
 					END_IF;
 				END_IF;
 		END_CASE;
-	
+		
+	//-------------------STATE---MACHINE---ACTUATORS---------------------//
 		CASE ManualStepAct OF
 			MANUAL_ACTUATOR_WAIT:
 				IF ManualActuatorDosing THEN
@@ -186,6 +188,11 @@ PROGRAM _CYCLIC
 				ManualStepAct := MANUAL_ACTUATOR_WAIT;
 		
 		END_CASE;
+		
+//		IF ManualStepAct =  THEN
+//			
+//		END_IF;
+		
 	END_IF;
 	
 	
