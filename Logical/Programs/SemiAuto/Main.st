@@ -281,6 +281,49 @@ PROGRAM _CYCLIC
 		Start := FALSE;
 	END_IF;
 	
+	//Added by Jakub; Responsibler for changing machine state between English and Polish
+	IF IsEnglishSelected THEN
+		IF StringState = 'Inicjalizacja' THEN
+			StringState := 'Initialization';
+			
+		ELSIF StringState = 'Wykrycie detalu' THEN
+			StringState := 'Item detection';
+			
+		ELSIF StringState = 'Kategoryzacja detalu' THEN
+			StringState := 'Item categorization';
+			
+		ELSIF StringState = 'Robienie zdjecia' THEN
+			StringState := 'Taking a picture';
+			
+		ELSIF StringState = 'Dozowanie detalu' THEN
+			StringState := 'Item dosing';
+			
+		ELSIF StringState = 'Sortowanie wagowe' THEN
+			StringState := 'Sorting by weight';
+			
+		ELSIF StringState = 'Sortowanie optyczne' THEN
+			StringState := 'Optical sorting';
+			
+		ELSIF StringState = 'Transport detalu do lewego zbiornika' THEN
+			StringState := 'Item transport to the left tank';
+			
+		ELSIF StringState = 'Transport detalu do prawego zbiornika' THEN
+			StringState := 'Item transport to the right tank';
+			
+		ELSIF StringState = 'Zepchniecie detalu z tasmy do zbiornika lewego' THEN
+			StringState := 'Pushing the item from the belt to the left tank';
+			
+		ELSIF StringState = 'Nie rozpoznano zdjecia' THEN
+			StringState := 'Photo not recognized';
+			
+		ELSIF StringState = 'Stop' THEN
+			StringState := 'Stop';
+			
+		ELSIF StringState = 'Wystapil blad' THEN
+			StringState := 'Error';
+		END_IF;
+	END_IF;
+	
 END_PROGRAM
 
 PROGRAM _EXIT

@@ -369,5 +369,249 @@
         </Sequence>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="EventBinding_9">
+      <Source xsi:type="opcUa.Event" refId="::SemiAuto:QuantityLeftStorage" event="ValueChanged" />
+      <Operand datatype="ANY_INT" name="LeftStorage">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::Auto:QuantityLeftStorage">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="LeftStorage = 1">
+        <Action>
+          <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL1">
+            <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="LeftStorage = 2">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL2">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL1">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="LeftStorage = 3">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL3">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL1">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL2">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="LeftStorage = 4">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL4">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL1">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL2">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL3">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="LeftStorage = 0">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL1">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL2">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL3">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL4">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_10">
+      <Source xsi:type="opcUa.Event" refId="::SemiAuto:QuantityRightStorage" event="ValueChanged" />
+      <Operand datatype="ANY_INT" name="RightStorage">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::SemiAuto:QuantityRightStorage">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="RightStorage = 1">
+        <Action>
+          <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR1">
+            <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="RightStorage = 2">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR2">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR1">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="RightStorage = 3">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR3">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR1">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR2">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="RightStorage = 4">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR4">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR1">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR2">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR3">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="RightStorage = 0">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR1">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR2">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR3">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR4">
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

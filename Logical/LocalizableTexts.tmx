@@ -301,17 +301,6 @@
         <seg>Username: </seg>
       </tuv>
     </tu>
-    <tu tuid="Samples.HELLO_WORLD">
-      <tuv xml:lang="en">
-        <seg>Hello world!</seg>
-      </tuv>
-      <tuv xml:lang="de">
-        <seg>Servus Welt!</seg>
-      </tuv>
-      <tuv xml:lang="fr">
-        <seg>Bonjour tout le monde!</seg>
-      </tuv>
-    </tu>
     <tu tuid="Top_ActiveUser">
       <tuv xml:lang="pl">
         <seg>Aktywny użytkownik: </seg>
@@ -430,6 +419,126 @@
       </tuv>
       <tuv xml:lang="en">
         <seg>Username:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameters_LogoPlacement">
+      <tuv xml:lang="pl">
+        <seg>Położenie loga B&amp;R:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>B&amp;R logo place:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameters_WeightPlace">
+      <tuv xml:lang="pl">
+        <seg>Położenie lżejszego klocak:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Lower weight place:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameters_LeftBox">
+      <tuv xml:lang="pl">
+        <seg>Lewe pudełko</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Left box:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameters_RightBox">
+      <tuv xml:lang="pl">
+        <seg>Prawe pudełko</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Right box:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Parameters_SelectWeight">
+      <tuv xml:lang="pl">
+        <seg>Wybierz wagę graniczną:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Select border weight:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_DispensingPiston">
+      <tuv xml:lang="pl">
+        <seg>Tłok wypychający:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Dispensing piston</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_SortingPiston">
+      <tuv xml:lang="pl">
+        <seg>Tłok sortujący:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Sorting piston</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_MoveDistance">
+      <tuv xml:lang="pl">
+        <seg>Ruch o odległość</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Move distance</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_MoveVelocity">
+      <tuv xml:lang="pl">
+        <seg>Ruch prędkością</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Move velocity</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_ChangeDirection">
+      <tuv xml:lang="pl">
+        <seg>Zmień kierunek</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Change direction</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_StopMovement">
+      <tuv xml:lang="pl">
+        <seg>Zatrzymaj ruch</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stop movement</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_MoveLeft">
+      <tuv xml:lang="pl">
+        <seg>Ruch w lewo</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Move left</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_MoveRight">
+      <tuv xml:lang="pl">
+        <seg>Ruch w prawo</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Move right</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_MakePhoto">
+      <tuv xml:lang="pl">
+        <seg>Zrób zjęcie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Make photograph</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual_Approve">
+      <tuv xml:lang="pl">
+        <seg>Zatwierdź</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Approve</seg>
       </tuv>
     </tu>
   </body>

@@ -37,8 +37,8 @@
         <Variable Name="gRecognisedModel" />
         <Variable Name="gMode" />
         <Variable Name="gMotorBeltAxisBasic">
-          <Variable Name="Position" Historizing="True" EngineeringUnitId="1" />
-          <Variable Name="Velocity" Historizing="True" EngineeringUnitId="2" />
+          <Variable Name="Position" Historizing="True" HistoryBufferSize="200" HistorySamplingInterval="Timer2" EngineeringUnitId="1" />
+          <Variable Name="Velocity" Historizing="True" HistoryBufferSize="200" HistorySamplingInterval="Timer2" EngineeringUnitId="2" />
           <Variable Name="JogPositive" />
           <Variable Name="JogNegative" />
           <Variable Name="MoveActive" />
@@ -149,6 +149,7 @@
         <Variable Name="MotorPos" EngineeringUnitId="1" />
         <Variable Name="MotorVel" EngineeringUnitId="2" />
         <Variable Name="SortChoiceView" />
+        <Variable Name="IsEnglishSelected" />
       </Task>
       <Task Name="ProgramRec" />
     </Module>
