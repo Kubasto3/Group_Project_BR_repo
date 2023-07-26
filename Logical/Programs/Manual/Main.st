@@ -12,19 +12,11 @@ PROGRAM _CYCLIC
 	
 	ExposureTime;
 	SetFocus;
-	
-	IF (FlagActDosing = FALSE AND FlagActDosingOff = FALSE) THEN
-		FlagActDosingOff := TRUE;
-	END_IF;
-	IF (FlagActSorting = FALSE AND FlagActSortingOff = FALSE) THEN
-		FlagActSortingOff := TRUE;
-	END_IF;
-	
+
 	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
 	
 	
-//--------------DIRECTION---CHANGES--------------//
-	
+	//--------------DIRECTION---CHANGES--------------//
 	IF DirectionChangeVelocity THEN
 		DirectionChangeVelocity := 0;
 		ManualVelocity := (-1)*ManualVelocity;
@@ -36,19 +28,14 @@ PROGRAM _CYCLIC
 	END_IF;
 	
 	
-//-------------DIRECTION---CHANGES--------------//
+	//-------------SOME---FLAGS--------------//
+	
 	IF gMode = 1 THEN
-		FlagManual := 1;
-		FlagNotManual := 0;
 		gMotorBeltParType.Distance := ManualDistance;
 		gMotorBeltParType.Velocity := ManualVelocity;
-	ELSE
-		FlagNotManual := 1;
-		FlagManual := 0;
 	END_IF;
-		
 	
-//-----------------MANUAL---STOP-----------------//
+	//-----------------MANUAL---STOP-----------------//
 	IF ManualStop THEN
 		ManualStop := 0;
 		gActuatorByte := 2#0000_0000_0000_0000;
@@ -61,8 +48,10 @@ PROGRAM _CYCLIC
 	END_IF;
 
 	
-//----------------------STATE---MACHINE---AXIS------------------------//
+	//----------------------MANUAL---MODE---CHECK---CONDITION----------------------//
 	IF (gMode = 1) THEN
+		
+		//----------------------STATE---MACHINE---AXIS------------------------//
 		CASE ManualStep OF
 			
 			MANUAL_WAIT:
@@ -116,7 +105,7 @@ PROGRAM _CYCLIC
 				END_IF;
 		END_CASE;
 		
-	//-------------------STATE---MACHINE---ACTUATORS---------------------//
+		//-------------------STATE---MACHINE---ACTUATORS---------------------//
 		CASE ManualStepAct OF
 			MANUAL_ACTUATOR_WAIT:
 				IF ManualActuatorDosing THEN
@@ -134,68 +123,101 @@ PROGRAM _CYCLIC
 				END_IF;
 			
 			MANUAL_ACTUATOR_DOSING:
-				FlagActBoth := 0;
-				FlagActBothOff := NOT(FlagActBoth);
-				FlagActDosing := 1;
-				FlagActDosingOff := NOT(FlagActDosing);
-				FlagActNone := 0;
-				FlagActNoneOff := NOT(FlagActNone);
-				FlagActSorting := 0;
-				FlagActSortingOff := NOT(FlagActSorting);
 				gActuatorByte := 2#0000_0000_0000_0000;
 				gActuatorByte := 2#0000_0000_0000_0100;
 				ManualStepAct := MANUAL_ACTUATOR_WAIT;
-		
+				
 				//actuating actuator responsibile for sorting an element
 			MANUAL_ACTUATOR_SORTING:
-				FlagActBoth := 0;
-				FlagActBothOff := NOT(FlagActBoth);
-				FlagActDosing := 0;
-				FlagActDosingOff := NOT(FlagActDosing);
-				FlagActNone := 0;
-				FlagActNoneOff := NOT(FlagActNone);
-				FlagActSorting := 1;
-				FlagActSortingOff := NOT(FlagActSorting);
 				gActuatorByte := 2#0000_0000_0000_0000;
 				gActuatorByte := 2#0000_0000_0000_0001;	
 				ManualStepAct := MANUAL_ACTUATOR_WAIT;
-		
+				
 				//actuating both actuators 
 			MANUAL_ACTUATOR_BOTH:
-				FlagActBoth := 1;
-				FlagActBothOff := NOT(FlagActBoth);
-				FlagActDosing := 1;
-				FlagActDosingOff := NOT(FlagActDosing);
-				FlagActNone := 0;
-				FlagActNoneOff := NOT(FlagActNone);
-				FlagActSorting := 1;
-				FlagActSortingOff := NOT(FlagActSorting);
 				gActuatorByte := 2#0000_0000_0000_0000;
 				gActuatorByte := 2#0000_0000_0000_0101;
 				ManualStepAct := MANUAL_ACTUATOR_WAIT;
-			
+				
 				//disactuating both actuators 
 			MANUAL_ACTUATOR_NONE:
-				FlagActBoth := 0;
-				FlagActBothOff := NOT(FlagActBoth);
-				FlagActDosing := 0;
-				FlagActDosingOff := NOT(FlagActDosing);
-				FlagActNone := 1;
-				FlagActNoneOff := NOT(FlagActNone);
-				FlagActSorting := 0;
-				FlagActSortingOff := NOT(FlagActSorting);
 				gActuatorByte := 2#0000_0000_0000_0000;
 				ManualStepAct := MANUAL_ACTUATOR_WAIT;
-		
 		END_CASE;
 		
-//		IF ManualStepAct =  THEN
-//			
-//		END_IF;
-		
+		//------------END---OF---STATE---MACHINE---ACTUATORS---------------//
+		IF AxisPowerOn THEN
+			AxisPowerOn := 0;
+			gMotorBeltAxisBasic.Power :=1;
+		END_IF;
 	END_IF;
 	
+	//----------------------------FLAG---SECTION----------------------------//	
+	IF (FlagActDosing = FALSE AND FlagActDosingOff = FALSE) THEN
+		FlagActDosingOff := TRUE;
+	END_IF;
+	IF (FlagActSorting = FALSE AND FlagActSortingOff = FALSE) THEN
+		FlagActSortingOff := TRUE;
+	END_IF;
 	
+	IF gMode = 1 THEN
+		FlagManual := 1;
+		FlagNotManual := 0;
+	ELSE
+		FlagNotManual := 1;
+		FlagManual := 0;
+	END_IF;
+	
+	IF ManualStepAct = MANUAL_ACTUATOR_DOSING THEN
+		FlagActBoth := 0;
+		FlagActBothOff := NOT(FlagActBoth);
+		FlagActDosing := 1;
+		FlagActDosingOff := NOT(FlagActDosing);
+		FlagActNone := 0;
+		FlagActNoneOff := NOT(FlagActNone);
+		FlagActSorting := 0;
+		FlagActSortingOff := NOT(FlagActSorting);
+	ELSIF ManualStepAct = MANUAL_ACTUATOR_SORTING THEN
+		FlagActBoth := 0;
+		FlagActBothOff := NOT(FlagActBoth);
+		FlagActDosing := 0;
+		FlagActDosingOff := NOT(FlagActDosing);
+		FlagActNone := 0;
+		FlagActNoneOff := NOT(FlagActNone);
+		FlagActSorting := 1;
+		FlagActSortingOff := NOT(FlagActSorting);
+	ELSIF ManualStepAct = MANUAL_ACTUATOR_BOTH THEN
+		FlagActBoth := 1;
+		FlagActBothOff := NOT(FlagActBoth);
+		FlagActDosing := 1;
+		FlagActDosingOff := NOT(FlagActDosing);
+		FlagActNone := 0;
+		FlagActNoneOff := NOT(FlagActNone);
+		FlagActSorting := 1;
+		FlagActSortingOff := NOT(FlagActSorting);
+	ELSIF ManualStepAct = MANUAL_ACTUATOR_NONE THEN
+		FlagActBoth := 0;
+		FlagActBothOff := NOT(FlagActBoth);
+		FlagActDosing := 0;
+		FlagActDosingOff := NOT(FlagActDosing);
+		FlagActNone := 1;
+		FlagActNoneOff := NOT(FlagActNone);
+		FlagActSorting := 0;
+		FlagActSortingOff := NOT(FlagActSorting);
+	END_IF;
+	
+	IF ((gMotorBeltParType.Distance < 0) AND gMotorBeltAxisBasic.MoveActive) OR ((gMotorBeltParType.Velocity <0) AND gMotorBeltAxisBasic.MoveActive) THEN
+		FlagArrowLeft := 1;
+		FlagArrowRight := 0;
+	ELSIF ((gMotorBeltParType.Distance > 0) AND gMotorBeltAxisBasic.MoveActive) THEN
+		FlagArrowRight := 1;
+		FlagArrowLeft := 0;
+	ELSE
+		FlagArrowRight := 0;
+		FlagArrowLeft := 0;
+	END_IF;
+	
+	//----------------------END---OF---FLAG---SECTION----------------------------//
 	
 END_PROGRAM
 

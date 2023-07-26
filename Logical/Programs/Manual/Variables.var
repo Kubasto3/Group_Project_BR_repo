@@ -29,4 +29,8 @@ VAR
 	FlagNotManual : BOOL;
 	NotMoveActive : BOOL;
 	expression : BOOL;
+	PowerOn : BOOL;
+	AxisPowerOn : BOOL;
+	FlagArrowLeft : BOOL;
+	FlagArrowRight : BOOL;
 END_VAR
