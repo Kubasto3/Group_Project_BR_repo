@@ -35,8 +35,6 @@ PROGRAM _CYCLIC
 	IF gMode = 1 THEN
 		FlagManual := 1;
 		FlagNotManual := 0;
-		gMotorBeltAxisBasic.Home := 0;
-		gMotorBeltAxisBasic.Power := 0;
 		gMotorBeltParType.Distance := ManualDistance;
 		gMotorBeltParType.Velocity := ManualVelocity;
 	ELSE
@@ -50,6 +48,8 @@ PROGRAM _CYCLIC
 		gActuatorByte := 2#0000_0000_0000_0000;
 		gMotorBeltAxisBasic.MoveVelocity := 0;
 		gMotorBeltAxisBasic.MoveAdditive := 0;
+		gMotorBeltAxisBasic.Home := 0;
+		gMotorBeltAxisBasic.Power := 0;
 		ManualStep := MANUAL_WAIT;
 		ManualStepAct := MANUAL_ACTUATOR_WAIT;
 	END_IF;
