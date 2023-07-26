@@ -32,4 +32,8 @@ VAR
 	FlagArrowLeft : BOOL; (*Motor is rotating to the left side*)
 	FlagArrowRight : BOOL; (*Motor is rotating to the right side*)
 	AxisPowerOff : BOOL;
+	FlagVelAddOff : BOOL;
+	CamShoot : BOOL;
+	PhotoShoot : BOOL;
+	PhotoShow : BOOL;
 END_VAR
