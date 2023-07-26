@@ -16,6 +16,16 @@ PROGRAM _CYCLIC
 	
 	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
 	
+	IF PhotoShoot THEN
+		PhotoShoot :=0;
+	END_IF;
+	
+//	IF PhotoShow THEN
+//		gDisplayImg := 1;
+//	ELSE
+//		gDisplayImg := 0;
+//	END_IF;
+	
 	
 	//--------------DIRECTION---CHANGES--------------//
 	IF DirectionChangeVelocity THEN
@@ -48,6 +58,8 @@ PROGRAM _CYCLIC
 		ManualStepAct := MANUAL_ACTUATOR_WAIT;
 	END_IF;
 
+	FlagVelAddOff;
+	
 	
 	//----------------------MANUAL---MODE---CHECK---CONDITION----------------------//
 	IF (gMode = 1) THEN
@@ -56,13 +68,16 @@ PROGRAM _CYCLIC
 		CASE ManualStep OF
 			
 			MANUAL_WAIT:
+				FlagVelAddOff := 1;
 				IF BeltMoveAdditive THEN
 					gMotorBeltAxisBasic.Home := 0;
 					BeltMoveAdditive := 0;
+					FlagVelAddOff := 0;
 					ManualStep := MANUAL_BELT_SET_ADDITIVE;
 				ELSIF BeltMoveVelocityOn THEN
 					gMotorBeltAxisBasic.Home := 0;
 					BeltMoveVelocityOn := 0;
+					FlagVelAddOff := 0;
 					ManualStep := MANUAL_BELT_SET_VELOCITY;
 				END_IF;
 
@@ -160,6 +175,12 @@ PROGRAM _CYCLIC
 	IF (FlagActSorting = FALSE AND FlagActSortingOff = FALSE) THEN
 		FlagActSortingOff := TRUE;
 	END_IF;
+	
+//	IF ((ManualStep = MANUAL_BELT_SET_ADDITIVE) OR (ManualStep = MANUAL_BELT_MOVE_ADDITIVE)) AND  THEN
+//	  	
+//	ELSIF ManualStep = 
+//		
+//	END_IF;
 	
 	IF gMotorBeltAxisBasic.PowerOn THEN
 		AxisPowerOff := 1;

@@ -1,4 +1,4 @@
-// ALREADY WORKING, ONLY SOME CHANGES REQUIRED
+// ALREADY WORKING
 PROGRAM _INIT
 	// NEED ONLY FOR WATCH
 	gAxis_1;
@@ -7,7 +7,8 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	//CODE WORKS ONLY WHEN MANUAL MODE IS OFF
+	//CODE WORKS ONLY WHEN MANUAL MODE IS OFF	
+	
 	IF  gMode = 2 THEN
 		// MOTOR MANAGEMENT
 		gMotorBeltAxisBasic.Enable 		:= TRUE;
@@ -16,8 +17,8 @@ PROGRAM _CYCLIC
 		MotorMoveDone 					:= gMotorBeltAxisBasic.MoveDone;
 		gMotorBeltAxisBasic.Power 		:= MotorPower;
 		gMotorBeltAxisBasic.Home 		:= MotorHome;
-		SemiAutoModeSelected			:= TRUE;
 		
+		// IN STATE STOP VALUES DOESN'T FLUCTUATE
 		IF gMotorBeltAxisBasic.Velocity > 15 THEN
 			MotorVel := gMotorBeltAxisBasic.Velocity;
 		ELSE
@@ -42,10 +43,14 @@ PROGRAM _CYCLIC
 		gMotorBeltAxisBasic.Power 		 := MotorPower;
 		gMotorBeltAxisBasic.MoveAbsolute := MotorMoveAbsolute;
 		gMotorBeltAxisBasic.ErrorReset	 := MotorResetError;
+		gStopState 						 := (State = 0);
+		
 		// ASSIGNING LOCAL VARIABLES TO GLOBAL VARIABLES
 		MotorInPosition 				 := gMotorBeltAxisBasic.InPosition;
 		ItemWeight 						 := gInWeightMeasure;							 
 
+		
+		
 		// ITEM DETECTION CONDITION 
 		ItemDetected := (ItemWeight > 1);
 		gWeightDetected := ItemDetected;
@@ -68,29 +73,32 @@ PROGRAM _CYCLIC
 		CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset_Right, PV := gMaxRightStorage);
 		QuantityLeftStorage  := CTU_QuantityLeft.CV;
 		QuantityRightStorage := CTU_QuantityRight.CV;
-		
-	ELSE
-		SemiAutoModeSelected := FALSE;
-		
 	END_IF; 
+
 	
-	// STOP OR MANUAL TURNED ON
-	IF Stop OR gMode = 1 OR gMode = 0 THEN
+	// ALARM OR STOP OR MANUAL TURNED ON
+	IF	gAlarmHardware THEN	//ALARM
+		IF NOT (State = ERROR) THEN
+			State := ERROR;
+		END_IF;
+	ELSIF Stop OR gMode <> 2 OR gAlarmExist THEN 
 		Stop := FALSE;
 		State := STOP;
 	END_IF;
+	
+	
 	// PROGRAM AUTO
 	CASE State OF
 		STOP:
-			MotorPos := 0;
-			MotorVel := 0;
-			StringState := 'Stop';
 			IF gMode = 2 THEN
-				gStopBlink := TRUE;
 				MotorPower 		  := FALSE;
 				MotorMoveAbsolute := FALSE;
 				MotorHome 		  := FALSE;
-			END_IF;
+				MotorResetError   := FALSE;
+			END_IF;		
+			MotorPos := 0;
+			MotorVel := 0;
+			StringState := 'Stop';
 			TimerTonActuatorIn 	  := FALSE;
 			ActuatorSorting 	  := FALSE;
 			ActuatorPushing  	  := FALSE;
@@ -101,7 +109,6 @@ PROGRAM _CYCLIC
 		INIT:
 			StringState 		:= 'Inicjalizacja';
 			ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
-			gStopBlink 			:= FALSE;
 			AddToRight 			:= FALSE;
 			AddToLeft 			:= FALSE;
 			TimerTonActuatorIn 	:= FALSE;
@@ -111,15 +118,19 @@ PROGRAM _CYCLIC
 			MotorPower 			:= TRUE;
 			MotorHome 			:= TRUE;
 			gPicNotRecognised	:= FALSE; //pozniej musi zniknac, reset z poziomu alarmow lepszy
-			IF ItemDetected AND Approval THEN
+			State 				:= START;
+			
+		START: 
+			StringState 		:= 'Gotowy do startu';
+			IF (ItemDetected AND Approval) THEN
+				Approval := 0;
 				State := DETECTION;
 			END_IF;
 			
 		DETECTION:
 			MotorHome 	:= FALSE;
 			StringState := 'Wykrycie detalu';
-			IF TimerAfterDetect AND Approval THEN
-				Approval := 0;
+			IF TimerAfterDetect THEN
 				ItemWeightMeasured := ItemWeight;
 				State := CATEGORIZATION;
 			END_IF;
@@ -128,14 +139,14 @@ PROGRAM _CYCLIC
 			StringState := 'Kategoryzacja detalu';
 			IF gSorting.SortChoice = WEIGHT THEN
 				State := DROP;
-			ELSIF gSorting.SortChoice = OPTIC AND Approval THEN
-				Approval := 0;
+			ELSIF gSorting.SortChoice = OPTIC THEN
 				State := TAKE_PICT_CAMERA;
 			END_IF;
 			
 		TAKE_PICT_CAMERA:
-			StringState := 'Robienie zdjêcia i rozpoznawanie';
+			StringState := 'Robienie zdjecia';
 			gImageAcq 	:= TRUE;
+			//dodaj zmienna gdisplay!!!!!!!!!!!!!!
 			IF TimerCameraPicDone AND Approval THEN
 				Approval := 0;
 				IF gSorting.RecognisedModel = 0 THEN 						//0
@@ -153,8 +164,10 @@ PROGRAM _CYCLIC
 			IF TimerActuatorOut THEN
 				ActuatorPushing := FALSE;
 				IF gSorting.SortChoice = OPTIC THEN
+					gSortChoiceView := TRUE;
 					State := SORT_OPTIC;
 				ELSIF gSorting.SortChoice = WEIGHT THEN
+					gSortChoiceView := FALSE;
 					State := SORT_WEIGHT;
 				END_IF;
 			END_IF;
@@ -168,15 +181,15 @@ PROGRAM _CYCLIC
 					State := GO_STORAGE_LEFT;
 				ELSE
 					Approval := 0;
-					State := GO_STORAGE_RIGHT;	  
+					State := GO_STORAGE_RIGHT;
 				END_IF;
-			ELSIF (ItemWeightMeasured >= gSorting.ItemWeightChoosen) AND Approval THEN 
+			ELSIF ItemWeightMeasured >= gSorting.ItemWeightChoosen AND Approval THEN 
 				IF gSorting.SortLeftMin THEN
 					Approval := 0;
 					State := GO_STORAGE_RIGHT;
-				ELSE 
+				ELSE
 					Approval := 0;
-					State := GO_STORAGE_LEFT;	  
+					State := GO_STORAGE_LEFT;
 				END_IF;
 			END_IF;
 			
@@ -221,7 +234,7 @@ PROGRAM _CYCLIC
 
 		GO_STORAGE_RIGHT:
 			StringState := 'Transport detalu do prawego zbiornika';
-			MotorReqPosition := MOTOR_DIST_RIGHT;
+			MotorReqPosition  := MOTOR_DIST_RIGHT;
 			MotorMoveAbsolute := TRUE;
 			IF MotorInPosition AND MotorMoveDone AND Approval THEN
 				Approval := 0;
@@ -229,10 +242,10 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		SORT_STORAGE_LEFT:
-			StringState := 'Zepchniecie detalu z taœmy do zbiornika lewego';
+			StringState := 'Zepchniecie detalu z tasmy do zbiornika lewego';
 			MotorMoveAbsolute := FALSE;
-			ActuatorSorting := TRUE;
-			AddToLeft := TRUE;
+			ActuatorSorting   := TRUE;
+			AddToLeft 		  := TRUE;
 			IF TimerActuatorOut THEN
 				State := INIT;
 			END_IF;
@@ -243,21 +256,25 @@ PROGRAM _CYCLIC
 			State := INIT;
 		
 		UNRECOGNISED_PIC:
-			StringState := 'Nie rozpoznano zdjêcia';
-			gPicNotRecognised := TRUE;
+			StringState := 'Nie rozpoznano zdjecia';
+			gPicNotRecognised := TRUE; 
 			State := STOP;
-
+			
+		ERROR:
+			StringState := 'Wystapil blad';
+			gErrorState := TRUE;
+			IF MotorResetError THEN
+				IF gAlarmHardAck THEN
+					IF NOT gAlarmHardware THEN
+						gAlarmHardAck := FALSE;
+						gErrorState := FALSE;
+						State := STOP;
+					END_IF;
+				END_IF;
+			END_IF;
+		
 	END_CASE;
 
-	
-	IF gSorting.SortChoice = OPTIC THEN
-		gSortChoiceView := TRUE;
-		State := SORT_OPTIC;
-	ELSIF gSorting.SortChoice = WEIGHT THEN
-		gSortChoiceView := FALSE;
-		State := SORT_WEIGHT;
-	END_IF;
-	
 	
 	// TIMER INPUT TRIGGER TO DELAY ACTUATORS
 	IF ActuatorPushing OR ActuatorSorting THEN
@@ -281,13 +298,19 @@ PROGRAM _CYCLIC
 		ActuatorByte := ACTUATOR_BYTE_NOT_ACTIV;
 	END_IF;
 	
+	// HMI GUYS WANTED SOME VARIABLES
+	IF gSorting.SortChoice = OPTIC THEN
+		gSortChoiceView := TRUE;
+	ELSIF gSorting.SortChoice = WEIGHT THEN
+		gSortChoiceView := FALSE;
+	END_IF;
+	
 	ActuatorNotSorting := NOT ActuatorSorting;
 	ActuatorNotPushing 	:= NOT ActuatorPushing;
 	
 	IF Start THEN
 		Start := FALSE;
 	END_IF;
-	
 	
 	//Added by Jakub; Responsibler for changing machine state between English and Polish
 	IF IsEnglishSelected THEN
@@ -335,12 +358,10 @@ PROGRAM _CYCLIC
 		END_IF;
 	END_IF;
 	
-	
-END_PROGRAM
+		END_PROGRAM
 
 PROGRAM _EXIT
 
 	 
-END_PROGRAM
-
+		END_PROGRAM
 
