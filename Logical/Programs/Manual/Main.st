@@ -1,4 +1,4 @@
-
+ 
 PROGRAM _INIT
 //	gMotorBeltAxisBasic.Enable := 0;
 //	gMotorBeltAxisBasic.Power := 0;
@@ -74,6 +74,10 @@ PROGRAM _CYCLIC
 		ManualStop := 0;
 		gActuatorByte := 2#0000_0000_0000_0000;
 		gMotorBeltAxisBasic.Power := 0;
+		
+	END_IF;
+	
+	IF expression THEN
 		
 	END_IF;
 	

@@ -198,9 +198,11 @@
     <Parameter ID="TimerDeviceType" Value="EPLX2X" />
     <Parameter ID="TimerDevice" Value="X20CP1584.IF3" />
     <Parameter ID="TaskClassIdleTime" Value="2000" />
+    <Parameter ID="Cyclic1Duration" Value="4000" />
+    <Parameter ID="Cyclic1Tolerance" Value="0" />
     <Group ID="FileDevice1" />
     <Parameter ID="FileDeviceName1" Value="CF" />
-    <Parameter ID="FileDevicePath1" Value="C:\Users\barto\OneDrive\Pulpit\NoweReceptury" />
+    <Parameter ID="FileDevicePath1" Value="C:\Users\Szkolenie\Desktop\Recipies" />
     <Group ID="FileDevice2" />
     <Parameter ID="FileDeviceName2" Value="TegesSmeges" />
     <Parameter ID="FileDevicePath2" Value="C:\Users\barto\OneDrive\Pulpit\Folder na receptury" />

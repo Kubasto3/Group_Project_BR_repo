@@ -128,14 +128,16 @@ PROGRAM _CYCLIC
 			StringState := 'Kategoryzacja detalu';
 			IF gSortChoice = WEIGHT THEN
 				State := DROP;
-			ELSIF gSortChoice = OPTIC THEN
+			ELSIF gSortChoice = OPTIC AND Approval THEN
+				Approval := 0;
 				State := TAKE_PICT_CAMERA;
 			END_IF;
 			
 		TAKE_PICT_CAMERA:
 			StringState := 'Robienie zdjêcia i rozpoznawanie';
 			gImageAcq 	:= TRUE;
-			IF TimerCameraPicDone THEN
+			IF TimerCameraPicDone AND Approval THEN
+				Approval := 0;
 				IF gRecognisedModel = 0 THEN 						//0
 					gImageAcq 			  := FALSE;
 					StringRecognisedModel := 'Unrecognised';

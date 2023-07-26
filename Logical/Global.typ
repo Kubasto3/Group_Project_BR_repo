@@ -18,6 +18,7 @@ TYPE
 		gItemWeightChoosen : USINT := 12;
 		gSortLeftBR : BOOL;
 		gSortLeftMin : BOOL := FALSE; (*Mniejsze detale sortowane s¹ na lewo gdy 1, a wieksze na prawo gdy 1.*)
+		gSortLeftBR : BOOL;
 	END_STRUCT;
 	SortChoiceEnum : 
 		(

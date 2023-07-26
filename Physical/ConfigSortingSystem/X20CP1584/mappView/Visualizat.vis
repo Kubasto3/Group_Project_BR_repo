@@ -42,7 +42,6 @@
     <Content refId="ContentLeft" />
     <Content refId="ContentAuto" />
     <Content refId="ContentManual" />
-    <Content refId="ContentParameters" />
     <Content refId="ContentServices" />
     <Content refId="ContentAlarms" />
     <Content refId="ContentCharts" />

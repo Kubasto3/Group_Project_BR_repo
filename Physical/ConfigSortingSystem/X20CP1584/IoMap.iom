@@ -16,4 +16,11 @@ VAR_CONFIG
 	::Camera:MatchScore AT %IB."VSS112Q22.042P-000".ScoreMatch01;
 	::Camera:CameraLED_OPC AT %QB."VSS112Q22.042P-000".StatusLED;
 	::Camera:ImgProcessingActive AT %IX."VSS112Q22.042P-000".ImageProcessingActive;
+	::Alarms:ModuleOkCamera AT %IX."VSS112Q22.042P-000".ModuleOk;
+	::Alarms:ModuleOkScale AT %IX."NIC_50-RE/PLS".ModuleOk;
+	::Alarms:ModuleOkInverter AT %IX."NORD_SK_TU3-POL_SK54xE_Inverter".ModuleOk;
+	::Alarms:ModuleOkPLC_PLK AT %IX."X20IF1082".ModuleOk;
+	::Alarms:ModuleOkEncoder AT %IX."FRABA_Posital_Absolute_Rotary_Encoder".ModuleOk;
+	::Alarms:ModuleOkActuators AT %IX."Numatics_G3".ModuleOk;
+	::Alarms:ModuleOkPneu_X67BC AT %IX."X67BC8321-1".ModuleOk;
 END_VAR
