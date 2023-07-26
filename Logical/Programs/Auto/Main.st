@@ -146,6 +146,7 @@ PROGRAM _CYCLIC
 			StringState := 'Robienie zdjecia';
 			gImageAcq 	:= TRUE;
 			IF TimerCameraPicDone THEN
+				// TUTAJ DORZUC ZMIENNA GDISPLAY NA TRUE
 				IF gSorting.RecognisedModel = 0 THEN 						//0
 					gImageAcq 			  := FALSE;
 					StringRecognisedModel := 'Unrecognised';

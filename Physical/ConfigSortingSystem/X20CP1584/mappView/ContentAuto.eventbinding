@@ -179,7 +179,7 @@
           </Step>
         </Sequence>
       </EventHandler>
-      <EventHandler condition="LeftStorage = 4">
+      <EventHandler condition="LeftStorage &gt;= 4">
         <Sequence>
           <Step order="0">
             <Action>
@@ -301,7 +301,7 @@
           </Step>
         </Sequence>
       </EventHandler>
-      <EventHandler condition="RightStorage = 4">
+      <EventHandler condition="RightStorage &gt;= 4">
         <Sequence>
           <Step order="0">
             <Action>

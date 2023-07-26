@@ -61,7 +61,9 @@
         <Variable Name="gMpRecipeUI_0" RecursiveEnable="1" />
         <Variable Name="gUIConnect">
           <Variable Name="Status" />
-          <Variable Name="Recipe" />
+          <Variable Name="Recipe">
+            <Variable Name="List" RecursiveEnable="2" />
+          </Variable>
           <Variable Name="New" />
           <Variable Name="MessageBox" />
           <Variable Name="DefaultLayerStatus" />
