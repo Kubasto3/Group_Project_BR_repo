@@ -50,9 +50,11 @@
         <Variable Name="gSortChoiceView" />
         <Variable Name="gSortChoice" />
         <Variable Name="gSorting">
-          <Variable Name="gItemWeightChoosen" EURangesId="3" EngineeringUnitId="3" />
-          <Variable Name="gSortLeftBR" />
-          <Variable Name="gSortLeftMin" />
+          <Variable Name="RecognisedModel" />
+          <Variable Name="ItemWeightChoosen" />
+          <Variable Name="SortLeftMin" />
+          <Variable Name="SortLeftBR" />
+          <Variable Name="SortChoice" />
         </Variable>
         <Variable Name="gMpRecipeUI_0" RecursiveEnable="1" />
         <Variable Name="gUIConnect">
@@ -138,7 +140,6 @@
         <Variable Name="ItemWeightMeasured" EngineeringUnitId="3" />
         <Variable Name="QuantityLeftStorage" />
         <Variable Name="QuantityRightStorage" />
-        <Variable Name="SortChoice" />
         <Variable Name="Start" />
         <Variable Name="State" />
         <Variable Name="Stop" />

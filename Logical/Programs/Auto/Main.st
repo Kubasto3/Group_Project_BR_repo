@@ -10,12 +10,7 @@ PROGRAM _CYCLIC
 	//CODE WORKS ONLY WHEN MANUAL MODE IS OFF	
 	
 	IF  gMode = 0 THEN
-		//ALARM
-		IF gAlarmHardware THEN
-			IF NOT (State = ERROR) THEN
-				State := ERROR;
-			END_IF;
-		END_IF;
+
 		
 		// MOTOR MANAGEMENT
 		gMotorBeltAxisBasic.Enable 		:= TRUE;
@@ -84,18 +79,20 @@ PROGRAM _CYCLIC
 	END_IF; 
 	
 	
-	// STOP OR MANUAL TURNED ON
-	IF Stop OR gMode <> 0 THEN //uwagaw trzeba to zmienic alarm
+	// ALARM OR STOP OR MANUAL TURNED ON
+	IF	gAlarmHardware THEN	//ALARM
+		IF NOT (State = ERROR) THEN
+			State := ERROR;
+		END_IF;
+	ELSIF Stop OR gMode <> 0 OR gAlarmExist THEN 
 		Stop := FALSE;
 		State := STOP;
 	END_IF;
+	
+	
 	// PROGRAM AUTO
 	CASE State OF
 		STOP:
-			IF gAlarmHardware THEN
-				State := ERROR;
-			END_IF;
-			
 			IF gMode = 0 THEN
 				MotorPower 		  := FALSE;
 				MotorMoveAbsolute := FALSE;
@@ -166,26 +163,26 @@ PROGRAM _CYCLIC
 			ActuatorPushing := TRUE;
 			IF TimerActuatorOut THEN
 				ActuatorPushing := FALSE;
-				IF gSortChoice = OPTIC THEN
+				IF gSorting.SortChoice = OPTIC THEN
 					gSortChoiceView := TRUE;
 					State := SORT_OPTIC;
-				ELSIF gSortChoice = WEIGHT THEN
+				ELSIF gSorting.SortChoice = WEIGHT THEN
 					gSortChoiceView := FALSE;
 					State := SORT_WEIGHT;
 				END_IF;
 			END_IF;
 			
-			// ABOVE 1 TO gItemWeightChoosen ITEM FALL INTO THE LEFT, EQUAL AND ABOVE gItemWeightChoosen INTO THE RIGHT	
+			// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, EQUAL AND ABOVE ItemWeightChoosen INTO THE RIGHT	
 		SORT_WEIGHT: 
 			StringState := 'Sortowanie wagowe';
-			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < gItemWeightChoosen THEN
-				IF SortLeftMin THEN
+			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < gSorting.ItemWeightChoosen THEN
+				IF gSorting.SortLeftMin THEN
 					State := GO_STORAGE_LEFT;
 				ELSE
 					State := GO_STORAGE_RIGHT;
 				END_IF;
-			ELSIF ItemWeightMeasured >= gItemWeightChoosen THEN 
-				IF SortLeftMin THEN
+			ELSIF ItemWeightMeasured >= gSorting.ItemWeightChoosen THEN 
+				IF gSorting.SortLeftMin THEN
 					State := GO_STORAGE_RIGHT;
 				ELSE
 					State := GO_STORAGE_LEFT;
@@ -194,19 +191,19 @@ PROGRAM _CYCLIC
 			
 		SORT_OPTIC:
 			StringState := 'Sortowanie optyczne';
-			IF gRecognisedModel = 1 THEN	
+			IF gSorting.RecognisedModel = 1 THEN	
 				gImageAcq 			  := FALSE;
 				StringRecognisedModel := 'B&R';					//1
-				IF SortLeftBR THEN
+				IF gSorting.SortLeftBR THEN
 					State := GO_STORAGE_LEFT;
 				ELSE
 					State := GO_STORAGE_RIGHT;
 				END_IF;
 			
-			ELSIF gRecognisedModel = 2 THEN						//2
+			ELSIF gSorting.RecognisedModel = 2 THEN						//2
 				gImageAcq 			  := FALSE;
 				StringRecognisedModel := 'AS';
-				IF SortLeftBR THEN
+				IF gSorting.SortLeftBR THEN
 					State := GO_STORAGE_RIGHT;
 				ELSE
 					State := GO_STORAGE_LEFT;
@@ -252,16 +249,16 @@ PROGRAM _CYCLIC
 		ERROR:
 			StringState := 'Wystapil blad';
 			gErrorState := TRUE;
-			MotorResetError := TRUE;
-			IF gAlarmHardAck THEN
-				MotorResetError := FALSE;
-				IF NOT gAlarmHardware THEN
-					gAlarmHardAck := FALSE;
-					gErrorState := FALSE;
-					State := STOP;
+			IF MotorResetError THEN
+				IF gAlarmHardAck THEN
+					IF NOT gAlarmHardware THEN
+						gAlarmHardAck := FALSE;
+						gErrorState := FALSE;
+						State := STOP;
+					END_IF;
 				END_IF;
 			END_IF;
-			
+		
 	END_CASE;
 
 	
@@ -340,10 +337,10 @@ PROGRAM _CYCLIC
 		END_IF;
 	END_IF;
 	
-END_PROGRAM
+		END_PROGRAM
 
 PROGRAM _EXIT
 
 	 
-END_PROGRAM
+		END_PROGRAM
 

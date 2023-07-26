@@ -1,6 +1,7 @@
 
 PROGRAM _INIT
 (* Insert code here *)
+	gMode;
 	PhotosTaken;
 	NumberMatches;
 	RecognisedModel;
@@ -19,7 +20,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 
-//---CAMERA LED--Blinking-Auto-And-Semiauto---//
+//-------------CAMERA LED--Blinking-Auto-And-Semiauto-----------//
 //0 - PLC State
 //1 - Nothing
 //2 - Green
@@ -58,8 +59,21 @@ PROGRAM _CYCLIC
 		gStopBlink := TRUE;
 	END_IF;
 
+	IF gStopBlink THEN
+		CameraLED_OPC   := LED_PLC_STATUS;
+	ELSE
+		TimerTonCameraLED.IN := TRUE;
+		CameraLED_OPC := CameraLED;
+		IF TimerTonCameraLED.Q THEN
+			TimerTonCameraLED_2.IN := TRUE;
+			CameraLED_OPC := CameraLED_2; 
+			IF TimerTonCameraLED_2.Q THEN
+				TimerTonCameraLED.IN := FALSE; 				//1 TIMER
+				TimerTonCameraLED_2.IN := FALSE;			//2 TIMER
+			END_IF;
+		END_IF;
+	END_IF;
 
-	gMode;
 
 
 	//-----------------TEST--CAMERA-----------------------//

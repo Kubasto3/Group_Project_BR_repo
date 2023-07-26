@@ -19,11 +19,8 @@ VAR
 	Stop : BOOL := FALSE;
 	State : ProgramStatesEnum := STOP;
 	Start : BOOL := FALSE;
-	SortLeftMin : BOOL := FALSE; (*Mniejsze detale sortowane s¹ na lewo gdy 1, a wieksze na prawo gdy 1.*)
-	SortLeftBR : BOOL := FALSE; (*Gdy ustawiona na 1 sortuje BR na lewo, a AS na prawo*)
 	MotorVel : REAL;
 	SortChoiceView : BOOL;
-	SortChoice : SortChoiceEnum := WEIGHT;
 END_VAR
 VAR CONSTANT
 	RESET_ITEM_MEM_WEIGHT : USINT := 0;

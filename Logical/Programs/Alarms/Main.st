@@ -24,7 +24,8 @@ PROGRAM _CYCLIC
 
 	ModuleOkServo := NOT gMotorBeltAxisBasic.Error;
 	//hardware alarm
-	IF NOT ModuleOkServo OR NOT ModuleOkActuators OR NOT ModuleOkCamera OR NOT ModuleOkEncoder OR NOT ModuleOkInverter OR NOT ModuleOkPLC_PLK OR NOT ModuleOkPneu_X67BC OR NOT ModuleOkScale OR NOT ModuleOkServo THEN
+	//NOT ModuleOkServo OR
+	IF NOT ModuleOkActuators OR NOT ModuleOkCamera OR NOT ModuleOkEncoder OR NOT ModuleOkInverter OR NOT ModuleOkPLC_PLK OR NOT ModuleOkPneu_X67BC OR NOT ModuleOkScale THEN
 		gAlarmHardware := TRUE;
 	ELSE 
 		gAlarmHardware := FALSE;
