@@ -137,7 +137,7 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonStopMovement" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::Manual:BeltMoveVelocityOff">
+          <Target xsi:type="opcUa.NodeAction" refId="::Manual:ManualStop">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>

@@ -43,6 +43,7 @@
           <Variable Name="JogNegative" />
           <Variable Name="MoveActive" />
           <Variable Name="MoveVelocity" />
+          <Variable Name="Power" />
         </Variable>
         <Variable Name="gMpRecipeXML_0" RecursiveEnable="1">
           <Variable Name="Save" />

@@ -159,5 +159,9 @@
 <Source xsi:type="opcUa" refId="::SemiAuto:QuantityLeftStorage" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="NumericOutputLeftChamber" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gMotorBeltAxisBasic.Power" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="EllipsePowerDiodeOn" attribute="visible" />
+</Binding>
 </Bindings>
 </BindingsSet>
