@@ -307,26 +307,6 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="ContentManual.ButtonResetLeftChamber.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonResetLeftChamber" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Left">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="ContentManual.ButtonResetRightChamber.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonResetRightChamber" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Right">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
     <EventBinding id="EventBinding_7" comment="When machine stops">
       <Source xsi:type="opcUa.Event" refId="::SemiAuto:State" event="ValueChanged" />
       <EventHandler condition="newValue = 0 OR newValue = 15">
@@ -501,7 +481,7 @@
       <EventHandler condition="RightStorageM = 1">
         <Action>
           <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR1">
-            <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+            <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
           </Target>
         </Action>
       </EventHandler>
@@ -510,14 +490,14 @@
           <Step order="0">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR2">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
               </Target>
             </Action>
           </Step>
           <Step order="1">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR1">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
               </Target>
             </Action>
           </Step>
@@ -528,21 +508,21 @@
           <Step order="0">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR3">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
               </Target>
             </Action>
           </Step>
           <Step order="1">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR1">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
               </Target>
             </Action>
           </Step>
           <Step order="2">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR2">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
               </Target>
             </Action>
           </Step>
@@ -553,28 +533,28 @@
           <Step order="0">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR4">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
               </Target>
             </Action>
           </Step>
           <Step order="1">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR1">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
               </Target>
             </Action>
           </Step>
           <Step order="2">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR2">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
               </Target>
             </Action>
           </Step>
           <Step order="3">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR3">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
               </Target>
             </Action>
           </Step>
@@ -592,21 +572,21 @@
           <Step order="1">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR2">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="false" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="false" />
               </Target>
             </Action>
           </Step>
           <Step order="2">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR3">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="false" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="false" />
               </Target>
             </Action>
           </Step>
           <Step order="3">
             <Action>
               <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR4">
-                <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="false" />
+                <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="false" />
               </Target>
             </Action>
           </Step>
@@ -629,6 +609,46 @@
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::Manual:PhotoShoot">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_11">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonResetRightChamber" event="MouseDown" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Right">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_12">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonResetRightChamber" event="MouseUp" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Right">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_13">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonResetLeftChamber" event="MouseDown" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Left">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_14">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonResetLeftChamber" event="MouseUp" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Left">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
           </Target>
         </Action>
       </EventHandler>
