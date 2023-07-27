@@ -1,4 +1,3 @@
-// ALREADY WORKING
 PROGRAM _INIT
 	// NEED ONLY FOR WATCH
 	gAxis_1;
@@ -7,8 +6,8 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	//CODE WORKS ONLY WHEN MANUAL MODE IS OFF	
-	
+
+	// CODE WORKS ONLY WHEN AUTO IS ACTIVE
 	IF  gMode = 0 THEN
 		// MOTOR MANAGEMENT
 		gMotorBeltAxisBasic.Enable 		:= TRUE;
@@ -17,6 +16,8 @@ PROGRAM _CYCLIC
 		MotorMoveDone 					:= gMotorBeltAxisBasic.MoveDone;
 		gMotorBeltAxisBasic.Power 		:= MotorPower;
 		gMotorBeltAxisBasic.Home 		:= MotorHome;
+		
+		gMotorBeltAxisBasic();
 		
 		// IN STATE STOP VALUES DOESN'T FLUCTUATE
 		IF gMotorBeltAxisBasic.Velocity > 15 THEN
@@ -35,22 +36,17 @@ PROGRAM _CYCLIC
 		gMotorBeltParType.Deceleration 	:= MotorReqDec; 
 		gMotorBeltParType.Velocity 		:= MotorReqVel;
 		gMotorBeltParType.Position 		:= MotorReqPosition;
-		
-		gMotorBeltAxisBasic();
 	
 		// ASSIGNING GLOBAL VARIABLES TO LOCAL VARIABLES
 		gActuatorByte					 := ActuatorByte;
 		gMotorBeltAxisBasic.Power 		 := MotorPower;
 		gMotorBeltAxisBasic.MoveAbsolute := MotorMoveAbsolute;
-		gMotorBeltAxisBasic.ErrorReset	 := MotorResetError;
 		gStopState 						 := (State = 0);
 		
 		// ASSIGNING LOCAL VARIABLES TO GLOBAL VARIABLES
 		MotorInPosition 				 := gMotorBeltAxisBasic.InPosition;
 		ItemWeight 						 := gInWeightMeasure;							 
 
-		
-		
 		// ITEM DETECTION CONDITION 
 		ItemDetected := (ItemWeight > 1);
 		gWeightDetected := ItemDetected;
@@ -76,8 +72,8 @@ PROGRAM _CYCLIC
 	END_IF; 
 
 	
-	// ALARM OR STOP OR MANUAL TURNED ON
-	IF	gAlarmHardware THEN	//ALARM
+	// ALARM OR STOP OR AUTO NOT ACTIVE
+	IF	gAlarmHardware THEN	
 		IF NOT (State = ERROR) THEN
 			State := ERROR;
 		END_IF;
@@ -94,7 +90,6 @@ PROGRAM _CYCLIC
 				MotorPower 		  := FALSE;
 				MotorMoveAbsolute := FALSE;
 				MotorHome 		  := FALSE;
-				MotorResetError   := FALSE;
 			END_IF;		
 			MotorPos := 0;
 			MotorVel := 0;
@@ -117,7 +112,7 @@ PROGRAM _CYCLIC
 			MotorMoveAbsolute 	:= FALSE;
 			MotorPower 			:= TRUE;
 			MotorHome 			:= TRUE;
-			gPicNotRecognised	:= FALSE; //pozniej musi zniknac, reset z poziomu alarmow lepszy
+			gPicNotRecognised	:= FALSE;
 			State 				:= START;
 			
 		START: 
@@ -191,16 +186,16 @@ PROGRAM _CYCLIC
 			StringState := 'Sortowanie optyczne';
 			IF gSorting.RecognisedModel = 1 THEN	
 				gImageAcq 			  := FALSE;
-				StringRecognisedModel := 'B&R';					//1
+				StringRecognisedModel := 'B&R';							//1
 				IF gSorting.SortLeftBR THEN
 					State := GO_STORAGE_LEFT;
 				ELSE
 					State := GO_STORAGE_RIGHT;
 				END_IF;
 			
-			ELSIF gSorting.RecognisedModel = 2 THEN						//2
+			ELSIF gSorting.RecognisedModel = 2 THEN						
 				gImageAcq 			  := FALSE;
-				StringRecognisedModel := 'AS';
+				StringRecognisedModel := 'AS';							//2
 				IF gSorting.SortLeftBR THEN
 					State := GO_STORAGE_RIGHT;
 				ELSE
@@ -247,13 +242,11 @@ PROGRAM _CYCLIC
 		ERROR:
 			StringState := 'Wystapil blad';
 			gErrorState := TRUE;
-			IF MotorResetError THEN
-				IF gAlarmHardAck THEN
-					IF NOT gAlarmHardware THEN
-						gAlarmHardAck := FALSE;
-						gErrorState := FALSE;
-						State := STOP;
-					END_IF;
+			IF gAlarmHardAck THEN
+				IF NOT gAlarmHardware THEN
+					gAlarmHardAck := FALSE;
+					gErrorState := FALSE;
+					State := STOP;
 				END_IF;
 			END_IF;
 		

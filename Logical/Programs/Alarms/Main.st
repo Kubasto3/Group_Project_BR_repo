@@ -18,13 +18,10 @@ PROGRAM _CYCLIC
 	MpUserXConfig_0.Configuration := ADR(MpUserXConfigType_0);
 	MpUserXConfig_0();
 	
-	
 	redIconTimer.PT := T#500ms;
 	redIconTimer();
 
-	ModuleOkServo := NOT gMotorBeltAxisBasic.Error;
-	//hardware alarm
-	//NOT ModuleOkServo OR
+	// HARDWARE ALARM DETECTION
 	IF NOT ModuleOkActuators OR NOT ModuleOkCamera OR NOT ModuleOkEncoder OR NOT ModuleOkInverter OR NOT ModuleOkPLC_PLK OR NOT ModuleOkPneu_X67BC OR NOT ModuleOkScale THEN
 		gAlarmHardware := TRUE;
 	ELSE 

@@ -8,11 +8,8 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	//CODE WORKS ONLY WHEN MANUAL MODE IS OFF	
-	
 	SemiAutoModeSelected := (gMode=2);
-	
-	
-	IF  gMode = 2 THEN
+	IF  SemiAutoModeSelected THEN
 		// MOTOR MANAGEMENT
 		gMotorBeltAxisBasic.Enable 		:= TRUE;
 		gMotorBeltAxisBasic.MpLink 		:= ADR(gAxis_1);
@@ -84,7 +81,7 @@ PROGRAM _CYCLIC
 		IF NOT (State = ERROR) THEN
 			State := ERROR;
 		END_IF;
-	ELSIF Stop OR gMode <> 2 OR gAlarmExist THEN 
+	ELSIF Stop OR NOT SemiAutoModeSelected OR gAlarmExist THEN 
 		Stop := FALSE;
 		State := STOP;
 	END_IF;
@@ -93,7 +90,7 @@ PROGRAM _CYCLIC
 	// PROGRAM AUTO
 	CASE State OF
 		STOP:
-			IF gMode = 2 THEN
+			IF SemiAutoModeSelected THEN
 				MotorPower 		  := FALSE;
 				MotorMoveAbsolute := FALSE;
 				MotorHome 		  := FALSE;
@@ -149,8 +146,9 @@ PROGRAM _CYCLIC
 		TAKE_PICT_CAMERA:
 			StringState := 'Robienie zdjecia';
 			gImageAcq 	:= TRUE;
-			//dodaj zmienna gdisplay!!!!!!!!!!!!!!
 			IF TimerCameraPicDone AND Approval THEN
+				StringState := 'Zdjecie zrobione';
+				gDisplayImg := TRUE;
 				Approval := 0;
 				IF gSorting.RecognisedModel = 0 THEN 						//0
 					gImageAcq 			  := FALSE;
@@ -266,13 +264,11 @@ PROGRAM _CYCLIC
 		ERROR:
 			StringState := 'Wystapil blad';
 			gErrorState := TRUE;
-			IF MotorResetError THEN
-				IF gAlarmHardAck THEN
-					IF NOT gAlarmHardware THEN
-						gAlarmHardAck := FALSE;
-						gErrorState := FALSE;
-						State := STOP;
-					END_IF;
+			IF gAlarmHardAck THEN
+				IF NOT gAlarmHardware THEN
+					gAlarmHardAck := FALSE;
+					gErrorState := FALSE;
+					State := STOP;
 				END_IF;
 			END_IF;
 		
@@ -319,6 +315,9 @@ PROGRAM _CYCLIC
 	IF IsEnglishSelected THEN
 		IF StringState = 'Inicjalizacja' THEN
 			StringState := 'Initialization';
+			
+		ELSIF StringState = 'Zdjecie zrobione' THEN
+			StringState := 'Picture taken';
 			
 		ELSIF StringState = 'Gotowy do startu' THEN
 			StringState := 'Ready';
