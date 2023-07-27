@@ -9,13 +9,15 @@ PROGRAM _CYCLIC
 	
 	//-------FUNCTION---BLOCK---CALL-------//
 	gMotorBeltAxisBasic();
-	ImageTON();
+	ImageShootTON();
+	ImageDisplayTON();
 	
 	//-------VAR---CALL-------//
 	gAxis_1;
 	gExposureTime;
 	gSetFocus;
-	ImageTON.PT := T#500ms;
+	ImageShootTON.PT := T#500ms;
+	ImageDisplayTON.PT := T#500ms;
 	
 	//----------ALARM----------//
 	IF gAlarmHardware THEN								//if module is not ok the error will occour and manual mode will be stopped
@@ -180,29 +182,38 @@ PROGRAM _CYCLIC
 		
 		//------------PHOTO---FUNCTIONS---------------//
 		CASE sCamera OF
-			0:	ImageTON.IN := 0;
-				sCamera := 1;
-			1:
+			CAMERA_INIT:	
+				ImageShootTON.IN := 0;
+				sCamera := CAMERA_PHOTO_SHOOT_WAIT;
+			CAMERA_PHOTO_SHOOT_WAIT:
 				IF PhotoShoot THEN	
-					gDisplayImg := FALSE;//taking a photo
 					PhotoShoot :=0;
 					gImageAcq 	:= 1;
-					sCamera := 2;
+					sCamera := CAMERA_PHOTO_DISPLAY_INIT;
 				END_IF;
-			2: ImageTON.IN := 1;
-				IF ImageTON.Q THEN
-					ImageTON.IN := 0;
+			CAMERA_PHOTO_DISPLAY_INIT: 
+				ImageShootTON.IN := 1;
+				IF ImageShootTON.Q THEN
+					ImageShootTON.IN := 0;
 					gImageAcq 	:= 0;
-					sCamera := 0;
-					gDisplayImg := TRUE;
+					sCamera := CAMERA_PHOTO_DISPLAY;
 				END_IF;
+			CAMERA_PHOTO_DISPLAY:
+				ImageDisplayTON.IN := 1;
+				IF ImageDisplayTON.Q THEN
+					ImageDisplayTON.IN := 0;
+					gImageAcq 	:= 0;
+					gDisplayImg := TRUE;					
+					sCamera := CAMERA_INIT;
+				END_IF;
+			
 		END_CASE;
 	
-		IF PhotoShow THEN					//displaying a photo
-			gDisplayImg := 1;
-		ELSE
-			gDisplayImg := 0;
-		END_IF;
+//		IF PhotoShow THEN					//displaying a photo
+//			gDisplayImg := 1;
+//		ELSE
+//			gDisplayImg := 0;
+//		END_IF;
 		//---------END---OF---PHOTO---FUNCTIONS------------//
 		
 	END_IF;

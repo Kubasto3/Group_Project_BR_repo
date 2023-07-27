@@ -1,4 +1,5 @@
 VAR
+	ImageDisplayTON : TON;
 	JogEnableVar : BOOL; (*Jog enablling variable*)
 	FlagAdd : BOOL; (*Flag that enables user to see if additive move is active*)
 	ManualStep : ManualStepsEnum; (*Enum steps of Manual's state machine*)
@@ -38,6 +39,6 @@ VAR
 	PhotoShoot : BOOL; (*Shooting a photo*)
 	PhotoShow : BOOL; (*Displaying a photo*)
 	FlagVel : BOOL; (*Flag that enables user to see if velocity  move is active*)
-	sCamera : USINT;
-	ImageTON : TON;
+	sCamera : CameraEnum;
+	ImageShootTON : TON;
 END_VAR
