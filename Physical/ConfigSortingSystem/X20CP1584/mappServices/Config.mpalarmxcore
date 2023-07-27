@@ -45,6 +45,9 @@
         <Selector ID="Behavior" Value="DiscreteValueMonitoring">
           <Group ID="Monitoring">
             <Property ID="MonitoredPV" Value="::gMotorBeltAxisBasic.Error" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="1" />
+            </Group>
           </Group>
         </Selector>
       </Group>
@@ -69,6 +72,18 @@
             <Selector ID="HighLimitEnable" Value="Dynamic">
               <Property ID="LimitPV" Value="::gMaxRightStorage" />
             </Selector>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="Hardware error" />
+        <Property ID="Message" Value="No connection to at least on module. Fix connections and reset hardware via service page" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::gAlarmHardware" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="1" />
+            </Group>
           </Group>
         </Selector>
       </Group>

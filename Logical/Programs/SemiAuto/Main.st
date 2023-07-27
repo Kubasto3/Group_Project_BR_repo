@@ -357,6 +357,9 @@ PROGRAM _CYCLIC
 			
 		ELSIF StringState = 'Wystapil blad' THEN
 			StringState := 'Error';
+			
+		ELSIF StringState = 'Gotowy do startu' THEN
+			StringState := 'Ready to start';
 		END_IF;
 	END_IF;
 	

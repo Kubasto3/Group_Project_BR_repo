@@ -329,7 +329,7 @@
     </EventBinding>
     <EventBinding id="EventBinding_7" comment="When machine stops">
       <Source xsi:type="opcUa.Event" refId="::SemiAuto:State" event="ValueChanged" />
-      <EventHandler condition="newValue = 0">
+      <EventHandler condition="newValue = 0 OR newValue = 15">
         <Sequence>
           <Step order="0">
             <Action>
@@ -350,7 +350,7 @@
     </EventBinding>
     <EventBinding id="EventBinding_8" comment="When machine starts running">
       <Source xsi:type="opcUa.Event" refId="::SemiAuto:State" event="ValueChanged" />
-      <EventHandler condition="newValue &gt; 0">
+      <EventHandler condition="newValue &gt; 0 AND newValue &lt; 15">
         <Sequence>
           <Step order="0">
             <Action>
@@ -371,19 +371,19 @@
     </EventBinding>
     <EventBinding id="EventBinding_9">
       <Source xsi:type="opcUa.Event" refId="::SemiAuto:QuantityLeftStorage" event="ValueChanged" />
-      <Operand datatype="ANY_INT" name="LeftStorage">
+      <Operand datatype="ANY_INT" name="LeftStorageM">
         <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::Auto:QuantityLeftStorage">
           <Method xsi:type="opcUa.NodeAction.GetValue" />
         </ReadTarget>
       </Operand>
-      <EventHandler condition="LeftStorage = 1">
+      <EventHandler condition="LeftStorageM = 1">
         <Action>
           <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleL1">
             <Method xsi:type="widgets.brease.Rectangle.Action.SetVisible" value="true" />
           </Target>
         </Action>
       </EventHandler>
-      <EventHandler condition="LeftStorage = 2">
+      <EventHandler condition="LeftStorageM = 2">
         <Sequence>
           <Step order="0">
             <Action>
@@ -401,7 +401,7 @@
           </Step>
         </Sequence>
       </EventHandler>
-      <EventHandler condition="LeftStorage = 3">
+      <EventHandler condition="LeftStorageM = 3">
         <Sequence>
           <Step order="0">
             <Action>
@@ -426,7 +426,7 @@
           </Step>
         </Sequence>
       </EventHandler>
-      <EventHandler condition="LeftStorage &gt;= 4">
+      <EventHandler condition="LeftStorageM &gt;= 4">
         <Sequence>
           <Step order="0">
             <Action>
@@ -458,7 +458,7 @@
           </Step>
         </Sequence>
       </EventHandler>
-      <EventHandler condition="LeftStorage = 0">
+      <EventHandler condition="LeftStorageM = 0">
         <Sequence>
           <Step order="0">
             <Action>
@@ -493,19 +493,19 @@
     </EventBinding>
     <EventBinding id="EventBinding_10">
       <Source xsi:type="opcUa.Event" refId="::SemiAuto:QuantityRightStorage" event="ValueChanged" />
-      <Operand datatype="ANY_INT" name="RightStorage">
+      <Operand datatype="ANY_INT" name="RightStorageM">
         <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::SemiAuto:QuantityRightStorage">
           <Method xsi:type="opcUa.NodeAction.GetValue" />
         </ReadTarget>
       </Operand>
-      <EventHandler condition="RightStorage = 1">
+      <EventHandler condition="RightStorageM = 1">
         <Action>
           <Target xsi:type="widgets.brease.Rectangle.Action" contentRefId="ContentManual" widgetRefId="RectangleR1">
             <Method xsi:type="widgets.brease.Rectangle.Action.SetEnable" value="true" />
           </Target>
         </Action>
       </EventHandler>
-      <EventHandler condition="RightStorage = 2">
+      <EventHandler condition="RightStorageM = 2">
         <Sequence>
           <Step order="0">
             <Action>
@@ -523,7 +523,7 @@
           </Step>
         </Sequence>
       </EventHandler>
-      <EventHandler condition="RightStorage = 3">
+      <EventHandler condition="RightStorageM = 3">
         <Sequence>
           <Step order="0">
             <Action>
@@ -548,7 +548,7 @@
           </Step>
         </Sequence>
       </EventHandler>
-      <EventHandler condition="RightStorage &gt;= 4">
+      <EventHandler condition="RightStorageM &gt;= 4">
         <Sequence>
           <Step order="0">
             <Action>
@@ -580,7 +580,7 @@
           </Step>
         </Sequence>
       </EventHandler>
-      <EventHandler condition="RightStorage = 0">
+      <EventHandler condition="RightStorageM = 0">
         <Sequence>
           <Step order="0">
             <Action>
@@ -618,6 +618,16 @@
       <EventHandler>
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::Manual:AxisPowerOn">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentManual.ButtonMakePhoto.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="ButtonMakePhoto" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::Manual:PhotoShoot">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>

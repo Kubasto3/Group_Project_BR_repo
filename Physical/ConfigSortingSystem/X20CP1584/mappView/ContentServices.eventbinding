@@ -75,5 +75,46 @@
         </Sequence>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="ContentServices.ButtonReset.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentServices" widgetRefId="ButtonReset" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gAlarmHardAck">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentServices.ButtonReset1.MouseDown">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentServices" widgetRefId="ButtonReset1" event="MouseDown" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMotorBeltAxisBasic.Power">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMotorBeltAxisBasic.ErrorReset">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentServices.ButtonReset1.MouseUp">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentServices" widgetRefId="ButtonReset1" event="MouseUp" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMotorBeltAxisBasic.ErrorReset">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

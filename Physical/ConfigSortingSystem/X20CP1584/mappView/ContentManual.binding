@@ -187,5 +187,21 @@
 <Source xsi:type="opcUa" refId="::Camera:URL" attribute="value" samplingRate="slow" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="PaperImageManual" attribute="svgContent" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:NotMoveActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonChangeDirectionAdditive" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:NotMoveActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonChangeDirectionVelocity" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:FlagVelAddOff" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonMoveLeft" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:FlagVelAddOff" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonMoveRight" attribute="enable" />
+</Binding>
 </Bindings>
 </BindingsSet>
