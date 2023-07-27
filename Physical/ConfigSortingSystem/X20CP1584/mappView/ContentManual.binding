@@ -189,14 +189,8 @@
 <Source xsi:type="opcUa" refId="::Manual:NotMoveActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonChangeDirectionVelocity" attribute="enable" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Manual:FlagVelAddOff" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonMoveLeft" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Manual:FlagVelAddOff" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonMoveRight" attribute="enable" />
-</Binding>
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gQuantityRightStorage" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="NumericOutputRightChamber" attribute="value" />
@@ -212,6 +206,14 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gInWeightMeasure" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="NumericOutputActualWeight1" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:JogEnableVar" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonMoveLeft" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Manual:JogEnableVar" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ButtonMoveRight" attribute="enable" />
 </Binding>
 </Bindings>
 </BindingsSet>

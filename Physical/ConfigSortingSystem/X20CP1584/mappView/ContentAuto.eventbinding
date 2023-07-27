@@ -89,8 +89,8 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentAuto" widgetRefId="ButtonResetLeftChamber" event="MouseUp" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Right">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Left">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
           </Target>
         </Action>
       </EventHandler>

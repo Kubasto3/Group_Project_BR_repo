@@ -7,13 +7,15 @@ END_PROGRAM
 PROGRAM _CYCLIC
 	
 	
-	//-------FUNCTION---BLOCK---WYWOLANIE-------//
+	//-------FUNCTION---BLOCK---CALL-------//
 	gMotorBeltAxisBasic();
+	ImageTON();
 	
+	//-------VAR---CALL-------//
 	gAxis_1;
 	gExposureTime;
 	gSetFocus;
-
+	ImageTON.PT := T#500ms;
 	
 	//----------ALARM----------//
 	IF gAlarmHardware THEN								//if module is not ok the error will occour and manual mode will be stopped
@@ -177,13 +179,24 @@ PROGRAM _CYCLIC
 		END_IF;
 		
 		//------------PHOTO---FUNCTIONS---------------//
-		IF PhotoShoot THEN					//taking a photo
-			PhotoShoot :=0;
-			gImageAcq 	:= 1;
-			IF gImageAcq = 1 THEN
-				gImageAcq 	:= 0;	  
-			END_IF;
-		END_IF;
+		CASE sCamera OF
+			0:	ImageTON.IN := 0;
+				gDisplayImg := FALSE;
+				sCamera := 1;
+			1:
+				IF PhotoShoot THEN					//taking a photo
+					PhotoShoot :=0;
+					gImageAcq 	:= 1;
+					sCamera := 2;
+				END_IF;
+			2: ImageTON.IN := 1;
+				IF ImageTON.Q THEN
+					ImageTON.IN := 0;
+					gImageAcq 	:= 0;
+					sCamera := 0;
+					gDisplayImg := TRUE;
+				END_IF;
+		END_CASE;
 	
 		IF PhotoShow THEN					//displaying a photo
 			gDisplayImg := 1;

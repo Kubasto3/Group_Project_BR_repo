@@ -31,8 +31,8 @@ PROGRAM _CYCLIC
 	//isAcknowledged := MpAlarmXCheckState(gAlarmXCore, 'test_alarm', mpALARMX_STATE_ACKNOWLEDGED);
 	IF (MpAlarmXCheckState(gAlarmXCore, 'Unrecognized object', mpALARMX_STATE_ACKNOWLEDGED) AND
 		MpAlarmXCheckState(gAlarmXCore, 'Left box is full', mpALARMX_STATE_ACKNOWLEDGED) AND
-		MpAlarmXCheckState(gAlarmXCore, 'Left box is full (manual)', mpALARMX_STATE_ACKNOWLEDGED) AND
-		MpAlarmXCheckState(gAlarmXCore, 'Right box is full (manual)', mpALARMX_STATE_ACKNOWLEDGED) AND
+		MpAlarmXCheckState(gAlarmXCore, 'Hardware error', mpALARMX_STATE_ACKNOWLEDGED) AND
+		MpAlarmXCheckState(gAlarmXCore, 'Motor error', mpALARMX_STATE_ACKNOWLEDGED) AND
 		MpAlarmXCheckState(gAlarmXCore, 'Right box is full', mpALARMX_STATE_ACKNOWLEDGED)) THEN
 		isAcknowledged := TRUE;
 	ELSE

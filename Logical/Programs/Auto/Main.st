@@ -101,7 +101,6 @@ PROGRAM _CYCLIC
 			
 		INIT:
 			StringState 		:= 'Inicjalizacja';
-			ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
 			gAddToRight 			:= FALSE;
 			gAddToLeft 			:= FALSE;
 			TimerTonActuatorIn 	:= FALSE;
@@ -114,6 +113,7 @@ PROGRAM _CYCLIC
 			State 				:= START;
 			
 		START: 
+			ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
 			StringState 		:= 'Gotowy do startu';
 			IF ItemDetected THEN
 				State := DETECTION;
@@ -138,8 +138,8 @@ PROGRAM _CYCLIC
 		TAKE_PICT_CAMERA:
 			StringState := 'Robienie zdjecia';
 			gImageAcq 	:= TRUE;
+			gDisplayImg := TRUE;
 			IF TimerCameraPicDone THEN
-				gDisplayImg := TRUE;
 				IF gSorting.RecognisedModel = 0 THEN 						//0
 					gImageAcq 			  := FALSE;
 					StringRecognisedModel := 'Unrecognised';
@@ -289,6 +289,8 @@ PROGRAM _CYCLIC
 	gQuantityLeftStorage  := gCTU_QuantityLeft.CV;
 	gQuantityRightStorage := gCTU_QuantityRight.CV;
 	
+	gCTU_QuantityLeft();
+	gCTU_QuantityRight();
 	
 	// HMI GUYS WANTED SOME VARIABLES
 	IF gSorting.SortChoice = OPTIC THEN

@@ -137,5 +137,25 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gInWeightMeasure" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputActualWeight" attribute="node" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:SelectedAuto" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="EllipseAutoDiodeOn" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:SelectedAuto" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="GroupBoxMachineState" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:SelectedAuto" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="GroupBoxAutoControl" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:SelectedAuto" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="GroupBoxCounter" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Auto:NotSelectedAuto" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="ButtonSetToAuto" attribute="enable" />
+</Binding>
 </Bindings>
 </BindingsSet>

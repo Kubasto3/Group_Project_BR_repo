@@ -38,4 +38,6 @@ VAR
 	PhotoShoot : BOOL; (*Shooting a photo*)
 	PhotoShow : BOOL; (*Displaying a photo*)
 	FlagVel : BOOL; (*Flag that enables user to see if velocity  move is active*)
+	sCamera : USINT;
+	ImageTON : TON;
 END_VAR

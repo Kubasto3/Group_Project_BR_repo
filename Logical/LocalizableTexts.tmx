@@ -594,7 +594,7 @@
         <seg>Zresetuj Hardware</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Reset hardwarew error</seg>
+        <seg>Reset hardware error</seg>
       </tuv>
     </tu>
     <tu tuid="Services_ResetMotorError">

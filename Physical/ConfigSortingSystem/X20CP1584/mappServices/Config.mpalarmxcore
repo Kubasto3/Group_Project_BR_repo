@@ -20,7 +20,7 @@
         <Property ID="Message" Value="Left box reached maximum ammount of objects in it" />
         <Selector ID="Behavior" Value="LevelMonitoring">
           <Group ID="Monitoring">
-            <Property ID="MonitoredPV" Value="::Auto:QuantityLeftStorage" />
+            <Property ID="MonitoredPV" Value="::gQuantityLeftStorage" />
             <Selector ID="HighLimitEnable" Value="Dynamic">
               <Property ID="LimitPV" Value="::gMaxLeftStorage" />
             </Selector>
@@ -32,7 +32,7 @@
         <Property ID="Message" Value="Right box reached maximum ammount of objects in it" />
         <Selector ID="Behavior" Value="LevelMonitoring">
           <Group ID="Monitoring">
-            <Property ID="MonitoredPV" Value="::Auto:QuantityRightStorage" />
+            <Property ID="MonitoredPV" Value="::gQuantityRightStorage" />
             <Selector ID="HighLimitEnable" Value="Dynamic">
               <Property ID="LimitPV" Value="::gMaxRightStorage" />
             </Selector>
@@ -52,30 +52,6 @@
         </Selector>
       </Group>
       <Group ID="[4]">
-        <Property ID="Name" Value="Right box is full (manual)" />
-        <Property ID="Message" Value="Right box reached maximum ammount of objects in it (manual mode)" />
-        <Selector ID="Behavior" Value="LevelMonitoring">
-          <Group ID="Monitoring">
-            <Property ID="MonitoredPV" Value="::SemiAuto:QuantityRightStorage" />
-            <Selector ID="HighLimitEnable" Value="Dynamic">
-              <Property ID="LimitPV" Value="::gMaxRightStorage" />
-            </Selector>
-          </Group>
-        </Selector>
-      </Group>
-      <Group ID="[5]">
-        <Property ID="Name" Value="Left box is full (manual)" />
-        <Property ID="Message" Value="Left box reached maximum ammount of objects in it (manual mode)" />
-        <Selector ID="Behavior" Value="LevelMonitoring">
-          <Group ID="Monitoring">
-            <Property ID="MonitoredPV" Value="::SemiAuto:QuantityLeftStorage" />
-            <Selector ID="HighLimitEnable" Value="Dynamic">
-              <Property ID="LimitPV" Value="::gMaxRightStorage" />
-            </Selector>
-          </Group>
-        </Selector>
-      </Group>
-      <Group ID="[6]">
         <Property ID="Name" Value="Hardware error" />
         <Property ID="Message" Value="No connection to at least on module. Fix connections and reset hardware via service page" />
         <Selector ID="Behavior" Value="DiscreteValueMonitoring">
