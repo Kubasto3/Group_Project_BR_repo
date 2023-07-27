@@ -105,7 +105,6 @@ PROGRAM _CYCLIC
 			
 		INIT:
 			StringState 		:= 'Inicjalizacja';
-			ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
 			gAddToRight 		:= FALSE;
 			gAddToLeft 			:= FALSE;
 			TimerTonActuatorIn 	:= FALSE;
@@ -120,6 +119,7 @@ PROGRAM _CYCLIC
 		START: 
 			StringState 		:= 'Gotowy do startu';
 			IF (ItemDetected AND Approval) THEN
+				ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
 				Approval := 0;
 				State := DETECTION;
 			END_IF;
@@ -144,8 +144,8 @@ PROGRAM _CYCLIC
 			StringState := 'Robienie zdjecia';
 			gImageAcq 	:= TRUE;
 			IF TimerCameraPicDone AND Approval THEN
-				StringState := 'Zdjecie zrobione';
 				gDisplayImg := TRUE;
+				StringState := 'Zdjecie zrobione';
 				Approval := 0;
 				IF gSorting.RecognisedModel = 0 THEN 						//0
 					gImageAcq 			  := FALSE;

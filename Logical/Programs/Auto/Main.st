@@ -101,7 +101,7 @@ PROGRAM _CYCLIC
 			
 		INIT:
 			StringState 		:= 'Inicjalizacja';
-			gAddToRight 			:= FALSE;
+			gAddToRight 		:= FALSE;
 			gAddToLeft 			:= FALSE;
 			TimerTonActuatorIn 	:= FALSE;
 			ActuatorSorting 	:= FALSE;
@@ -113,9 +113,9 @@ PROGRAM _CYCLIC
 			State 				:= START;
 			
 		START: 
-			ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
 			StringState 		:= 'Gotowy do startu';
 			IF ItemDetected THEN
+				ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
 				State := DETECTION;
 			END_IF;
 			
@@ -138,8 +138,8 @@ PROGRAM _CYCLIC
 		TAKE_PICT_CAMERA:
 			StringState := 'Robienie zdjecia';
 			gImageAcq 	:= TRUE;
-			gDisplayImg := TRUE;
 			IF TimerCameraPicDone THEN
+				gDisplayImg := TRUE;
 				IF gSorting.RecognisedModel = 0 THEN 						//0
 					gImageAcq 			  := FALSE;
 					StringRecognisedModel := 'Unrecognised';
@@ -280,7 +280,7 @@ PROGRAM _CYCLIC
 			ActuatorSorting := FALSE;
 		END_IF;
 	ELSE
-		ActuatorByte := ACTUATOR_BYTE_NOT_ACTIV;
+		ActuatorByte := ACTUATOR_BYTE_NOT_ACTIV; 
 	END_IF;
 	
 	// COUNTERS

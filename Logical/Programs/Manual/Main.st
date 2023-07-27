@@ -181,10 +181,10 @@ PROGRAM _CYCLIC
 		//------------PHOTO---FUNCTIONS---------------//
 		CASE sCamera OF
 			0:	ImageTON.IN := 0;
-				gDisplayImg := FALSE;
 				sCamera := 1;
 			1:
-				IF PhotoShoot THEN					//taking a photo
+				IF PhotoShoot THEN	
+					gDisplayImg := FALSE;//taking a photo
 					PhotoShoot :=0;
 					gImageAcq 	:= 1;
 					sCamera := 2;

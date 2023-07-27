@@ -25,7 +25,7 @@
       <Source xsi:type="widgets.brease.RadioButton.Event" contentRefId="ContentParameters" widgetRefId="RadioButtonOpticSortLeft" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:Sorting.gSortLeftBR">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSorting.SortLeftBR">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
@@ -35,7 +35,7 @@
       <Source xsi:type="widgets.brease.RadioButton.Event" contentRefId="ContentParameters" widgetRefId="RadioButtonOpticSortRight" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:Sorting.gSortLeftBR">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSorting.SortLeftBR">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
           </Target>
         </Action>

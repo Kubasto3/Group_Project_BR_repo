@@ -99,7 +99,7 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentAuto" widgetRefId="ButtonResetRightChamber" event="MouseDown" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::Auto:CTU_Reset_Right">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Right">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
@@ -109,7 +109,7 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentAuto" widgetRefId="ButtonResetRightChamber" event="MouseUp" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::Auto:CTU_Reset_Right">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Right">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
           </Target>
         </Action>
