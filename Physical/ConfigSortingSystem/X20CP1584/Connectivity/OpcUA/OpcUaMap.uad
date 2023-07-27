@@ -78,6 +78,12 @@
         <Variable Name="gRecipeXml" />
         <Variable Name="gAlarmHardware" />
         <Variable Name="gAlarmHardAck" />
+        <Variable Name="gCTU_QuantityLeft" />
+        <Variable Name="gCTU_QuantityRight" />
+        <Variable Name="gCTU_Reset_Left" />
+        <Variable Name="gCTU_Reset_Right" />
+        <Variable Name="gQuantityLeftStorage" />
+        <Variable Name="gQuantityRightStorage" />
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
@@ -95,16 +101,12 @@
         <Variable Name="ItemDetected" />
         <Variable Name="ItemWeightMeasured" EngineeringUnitId="3" />
         <Variable Name="ItemWeight" />
-        <Variable Name="QuantityLeftStorage" />
-        <Variable Name="QuantityRightStorage" />
         <Variable Name="ActuatorPushing" />
         <Variable Name="ActuatorSorting" />
         <Variable Name="StringRecognisedModel" />
         <Variable Name="StringState" />
         <Variable Name="ActuatorNotPushing" />
         <Variable Name="ActuatorNotSorting" />
-        <Variable Name="CTU_Reset_Left" />
-        <Variable Name="CTU_Reset_Right" />
         <Variable Name="MotorVel" EngineeringUnitId="2" />
         <Variable Name="MotorPos" EngineeringUnitId="1" />
         <Variable Name="IsEnglishSelected" />
@@ -148,13 +150,9 @@
         <Variable Name="ActuatorNotSorting" />
         <Variable Name="ActuatorPushing" />
         <Variable Name="ActuatorSorting" />
-        <Variable Name="CTU_Reset_Left" />
-        <Variable Name="CTU_Reset_Right" />
         <Variable Name="ItemDetected" />
         <Variable Name="ItemWeight" />
         <Variable Name="ItemWeightMeasured" EngineeringUnitId="3" />
-        <Variable Name="QuantityLeftStorage" />
-        <Variable Name="QuantityRightStorage" />
         <Variable Name="Start" />
         <Variable Name="State" />
         <Variable Name="Stop" />

@@ -4,11 +4,14 @@ PROGRAM _INIT
 	gMotorBeltParType;
 	gMotorBeltAxisBasic;
 END_PROGRAM
-
+//po namyœle mo¿na by³o u¿yæ struktur do zmiennych :P 
 PROGRAM _CYCLIC
 
+	SelectedAuto := (gMode = 0);
+	NotSelectedAuto := NOT SelectedAuto;
+	
 	// CODE WORKS ONLY WHEN AUTO IS ACTIVE
-	IF  gMode = 0 THEN
+	IF  SelectedAuto THEN
 		// MOTOR MANAGEMENT
 		gMotorBeltAxisBasic.Enable 		:= TRUE;
 		gMotorBeltAxisBasic.MpLink 		:= ADR(gAxis_1);
@@ -76,13 +79,12 @@ PROGRAM _CYCLIC
 	ELSIF Stop OR gMode <> 0 OR gAlarmExist THEN 
 		Stop := FALSE;
 		State := STOP;
-	END_IF;
-	
+	END_IF; 
 	
 	// PROGRAM AUTO
 	CASE State OF
 		STOP:
-			IF gMode = 0 THEN
+			IF SelectedAuto THEN
 				MotorPower 		  := FALSE;
 				MotorMoveAbsolute := FALSE;
 				MotorHome 		  := FALSE;
@@ -100,8 +102,8 @@ PROGRAM _CYCLIC
 		INIT:
 			StringState 		:= 'Inicjalizacja';
 			ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
-			AddToRight 			:= FALSE;
-			AddToLeft 			:= FALSE;
+			gAddToRight 			:= FALSE;
+			gAddToLeft 			:= FALSE;
 			TimerTonActuatorIn 	:= FALSE;
 			ActuatorSorting 	:= FALSE;
 			ActuatorPushing 	:= FALSE;
@@ -220,13 +222,13 @@ PROGRAM _CYCLIC
 			StringState := 'Zepchniecie detalu z tasmy do zbiornika lewego';
 			MotorMoveAbsolute := FALSE;
 			ActuatorSorting   := TRUE;
-			AddToLeft 		  := TRUE;
+			gAddToLeft 		  := TRUE;
 			IF TimerActuatorOut THEN
 				State := INIT;
 			END_IF;
 
 		SORT_STORAGE_RIGHT:
-			AddToRight := TRUE;
+			gAddToRight := TRUE;
 			MotorMoveAbsolute := FALSE;
 			State := INIT;
 		
@@ -235,7 +237,17 @@ PROGRAM _CYCLIC
 			gPicNotRecognised := TRUE; 
 			State := STOP;
 			
-		ERROR:
+		ERROR: // SPONTANICZNA DECYZJA CTRL V Z STOP DLA LEPSZEJ FUNKCJONALNOŒCI - BRAKLO CZASU NA DOKLADNIEJSZE POPRAWKI
+			IF gMode = 0 THEN
+				MotorPower 		  := FALSE;
+				MotorMoveAbsolute := FALSE;
+				MotorHome 		  := FALSE;
+			END_IF;		
+			MotorPos := 0;
+			MotorVel := 0;
+			TimerTonActuatorIn 	  := FALSE;
+			ActuatorSorting 	  := FALSE;
+			ActuatorPushing  	  := FALSE;
 			StringState := 'Wystapil blad';
 			gErrorState := TRUE;
 			IF gAlarmHardAck THEN
@@ -272,10 +284,10 @@ PROGRAM _CYCLIC
 	END_IF;
 	
 	// COUNTERS
-	CTU_QuantityLeft(CU := AddToLeft, RESET := CTU_Reset_Left, PV := gMaxLeftStorage);
-	CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset_Right, PV := gMaxRightStorage);
-	QuantityLeftStorage  := CTU_QuantityLeft.CV;
-	QuantityRightStorage := CTU_QuantityRight.CV;
+	gCTU_QuantityLeft(CU := gAddToLeft, RESET := gCTU_Reset_Left, PV := gMaxLeftStorage);
+	gCTU_QuantityRight(CU := gAddToRight, RESET := gCTU_Reset_Right, PV := gMaxRightStorage);
+	gQuantityLeftStorage  := gCTU_QuantityLeft.CV;
+	gQuantityRightStorage := gCTU_QuantityRight.CV;
 	
 	
 	// HMI GUYS WANTED SOME VARIABLES

@@ -86,7 +86,7 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentAuto" widgetRefId="ButtonResetLeftChamber" event="MouseDown" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::Auto:CTU_Reset_Left">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Left">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
@@ -96,8 +96,8 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentAuto" widgetRefId="ButtonResetLeftChamber" event="MouseUp" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::Auto:CTU_Reset_Left">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gCTU_Reset_Right">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
       </EventHandler>
@@ -123,9 +123,9 @@
       </EventHandler>
     </EventBinding>
     <EventBinding id="LeftStorage">
-      <Source xsi:type="opcUa.Event" refId="::Auto:QuantityLeftStorage" event="ValueChanged" />
+      <Source xsi:type="opcUa.Event" refId="::AsGlobalPV:gQuantityLeftStorage" event="ValueChanged" />
       <Operand datatype="ANY_INT" name="LeftStorage">
-        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::Auto:QuantityLeftStorage">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:gQuantityLeftStorage">
           <Method xsi:type="opcUa.NodeAction.GetValue" />
         </ReadTarget>
       </Operand>
@@ -245,9 +245,9 @@
       </EventHandler>
     </EventBinding>
     <EventBinding id="RightStorage">
-      <Source xsi:type="opcUa.Event" refId="::Auto:QuantityRightStorage" event="ValueChanged" />
+      <Source xsi:type="opcUa.Event" refId="::AsGlobalPV:gQuantityRightStorage" event="ValueChanged" />
       <Operand datatype="ANY_INT" name="RightStorage">
-        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::Auto:QuantityRightStorage">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:gQuantityRightStorage">
           <Method xsi:type="opcUa.NodeAction.GetValue" />
         </ReadTarget>
       </Operand>

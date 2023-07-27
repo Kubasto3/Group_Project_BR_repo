@@ -8,14 +8,8 @@
 
 
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Auto:QuantityLeftStorage" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputLeftChamber" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Auto:QuantityRightStorage" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputRightChamber" attribute="value" />
-</Binding>
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Auto:ActuatorPushing" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleBoxPistonActuatorGreen" attribute="visible" />
@@ -126,6 +120,14 @@
 <Binding mode="oneWay">
 <Source xsi:type="opcUa" refId="::Camera:URL" attribute="value" samplingRate="slow" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="PaperImageAuto" attribute="svgContent" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gQuantityLeftStorage" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputLeftChamber" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gQuantityRightStorage" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputRightChamber" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>
