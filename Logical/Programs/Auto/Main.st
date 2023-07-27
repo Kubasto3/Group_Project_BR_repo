@@ -64,13 +64,9 @@ PROGRAM _CYCLIC
 		TimerAfterDetect := TimerTonDetect.Q;
 		TimerTonDetect();
 	
-		// COUNTERS
-		CTU_QuantityLeft(CU := AddToLeft, RESET := CTU_Reset_Left, PV := gMaxLeftStorage);
-		CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset_Right, PV := gMaxRightStorage);
-		QuantityLeftStorage  := CTU_QuantityLeft.CV;
-		QuantityRightStorage := CTU_QuantityRight.CV;
+		
 	END_IF; 
-
+		
 	
 	// ALARM OR STOP OR AUTO NOT ACTIVE
 	IF	gAlarmHardware THEN	
@@ -274,6 +270,13 @@ PROGRAM _CYCLIC
 	ELSE
 		ActuatorByte := ACTUATOR_BYTE_NOT_ACTIV;
 	END_IF;
+	
+	// COUNTERS
+	CTU_QuantityLeft(CU := AddToLeft, RESET := CTU_Reset_Left, PV := gMaxLeftStorage);
+	CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset_Right, PV := gMaxRightStorage);
+	QuantityLeftStorage  := CTU_QuantityLeft.CV;
+	QuantityRightStorage := CTU_QuantityRight.CV;
+	
 	
 	// HMI GUYS WANTED SOME VARIABLES
 	IF gSorting.SortChoice = OPTIC THEN
