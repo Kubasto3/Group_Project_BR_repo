@@ -45,6 +45,7 @@
           <Variable Name="MoveVelocity" />
           <Variable Name="Power" />
           <Variable Name="PowerOn" />
+          <Variable Name="ErrorReset" />
         </Variable>
         <Variable Name="gMpRecipeXML_0" RecursiveEnable="1">
           <Variable Name="Save" />
@@ -75,6 +76,8 @@
           <Variable Name="AutoLoadHeader" />
         </Variable>
         <Variable Name="gRecipeXml" />
+        <Variable Name="gAlarmHardware" />
+        <Variable Name="gAlarmHardAck" />
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
@@ -137,6 +140,8 @@
         <Variable Name="FlagArrowLeft" />
         <Variable Name="FlagArrowRight" />
         <Variable Name="AxisPowerOn" />
+        <Variable Name="FlagVelAddOff" />
+        <Variable Name="PhotoShoot" />
       </Task>
       <Task Name="SemiAuto">
         <Variable Name="ActuatorNotPushing" />

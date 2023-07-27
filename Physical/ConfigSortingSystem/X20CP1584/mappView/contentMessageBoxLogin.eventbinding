@@ -4,21 +4,50 @@
     <EventBinding id="contentMessageBoxLogin.ButtonLogout.Click">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentMessageBoxLogin" widgetRefId="ButtonLogout" event="Click" />
       <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.Logout" />
-          </Target>
-        </Action>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="clientSystem.Action">
+                <Method xsi:type="clientSystem.Action.Logout" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="clientSystem.Action">
+                <Method xsi:type="clientSystem.Action.Navigate" pageId="PageAuto" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="clientSystem.Action">
+                <Method xsi:type="clientSystem.Action.CloseDialog" dialogId="dialogMessageBoxLogin" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
       </EventHandler>
     </EventBinding>
     <EventBinding id="EventBinding_6">
       <Source xsi:type="widgets.brease.Login.Event" contentRefId="contentMessageBoxLogin" widgetRefId="LoginBox" event="LoginSuccess" />
       <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.CloseDialog" dialogId="dialogMessageBoxLogin" />
-          </Target>
-        </Action>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="clientSystem.Action">
+                <Method xsi:type="clientSystem.Action.CloseDialog" dialogId="dialogMessageBoxLogin" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="clientSystem.Action">
+                <Method xsi:type="clientSystem.Action.Navigate" pageId="PageAuto" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
       </EventHandler>
     </EventBinding>
   </Bindings>

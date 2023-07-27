@@ -4,10 +4,10 @@
     <Widget xsi:type="widgets.brease.Label" id="Label1" top="542" left="1177" zIndex="0" text="Services" visible="false" />
     <Widget xsi:type="widgets.brease.GroupBox" id="GroupBoxUsers" top="20" left="400" width="840" height="540" zIndex="1" text="$IAT/Main/Services_UserMngt" permissionOperate="['Administrator']" permissionView="['Administrator']">
       <Widgets>
-        <Widget xsi:type="widgets.brease.UserList" id="UserList1" top="3" left="19" width="801" height="397" zIndex="0" nextText="$IAT/Main/Alarm_ButtonNext" previousText="$IAT/Main/AlarmButtonPrevious">
+        <Widget xsi:type="widgets.brease.UserList" id="UserList1" top="3" left="19" width="801" height="397" zIndex="0" itemsPerPage="9" nextText="$IAT/Main/Alarm_ButtonNext" previousText="$IAT/Main/AlarmButtonPrevious">
           <Widgets>
             <Widget xsi:type="widgets.brease.UserListItem" id="UserListItemUsername" width="500" zIndex="0" text="$IAT/Main/Services_Username" />
-            <Widget xsi:type="widgets.brease.UserListItem" id="UserListItemRole" width="300" zIndex="1" text="$IAT/Main/Services_Role" />
+            <Widget xsi:type="widgets.brease.UserListItem" id="UserListItemRole" width="300" zIndex="1" columnType="Roles" text="$IAT/Main/Services_Role" />
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.Button" id="ButtonAddUser" top="420" left="19" width="241" height="60" zIndex="1" text="$IAT/Main/Services_ButtonAddUser" />
@@ -23,6 +23,7 @@
         <Widget xsi:type="widgets.brease.Label" id="LabelSelectSystem" top="180" left="19" width="141" height="80" zIndex="3" multiLine="true" text="$IAT/Main/Services_SelectMeasurement" wordWrap="true" textAlign="center" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.Button" id="ButtonReset" top="480" left="20" width="340" height="60" zIndex="3" text="ButtonReset" permissionOperate="['Administrator', 'Service']" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonReset" top="480" left="20" width="360" height="60" zIndex="3" text="&quot;Reset hardware error&quot;" permissionOperate="['Administrator', 'Service']" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonReset1" top="380" left="20" width="360" height="60" zIndex="4" text="&quot;Reset motor error&quot;" permissionOperate="['Administrator', 'Service']" />
   </Widgets>
 </Content>

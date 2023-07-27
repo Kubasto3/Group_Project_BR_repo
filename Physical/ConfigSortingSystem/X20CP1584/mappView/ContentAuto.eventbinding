@@ -42,7 +42,7 @@
     </EventBinding>
     <EventBinding id="EventBinding_2" comment="When machine stops">
       <Source xsi:type="opcUa.Event" refId="::Auto:State" event="ValueChanged" />
-      <EventHandler condition="newValue = 0">
+      <EventHandler condition="newValue = 0 OR newValue = 15">
         <Sequence>
           <Step order="0">
             <Action>
@@ -63,7 +63,7 @@
     </EventBinding>
     <EventBinding id="EventBinding_3" comment="When machine starts running">
       <Source xsi:type="opcUa.Event" refId="::Auto:State" event="ValueChanged" />
-      <EventHandler condition="newValue &gt; 0">
+      <EventHandler condition="newValue &gt; 0 AND newValue &lt;15">
         <Sequence>
           <Step order="0">
             <Action>
