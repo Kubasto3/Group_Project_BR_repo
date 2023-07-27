@@ -129,5 +129,13 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gQuantityRightStorage" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputRightChamber" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSortChoiceView" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="PaperImageAuto" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gInWeightMeasure" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputActualWeight" attribute="node" />
+</Binding>
 </Bindings>
 </BindingsSet>

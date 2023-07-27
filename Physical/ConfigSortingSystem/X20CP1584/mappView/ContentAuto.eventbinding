@@ -8,17 +8,10 @@
           <Method xsi:type="opcUa.NodeAction.GetValue" />
         </ReadTarget>
       </Operand>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMode">
-            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
-          </Target>
-        </Action>
-      </EventHandler>
       <EventHandler condition="item_weight = 0">
         <Action>
           <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="No object detected in starting area. Place an object before starting." header="No object in starting area!" icon="Exclamation" />
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/Main/MessBox_NoObjectDetected" header="$IAT/Main/MessBox_NoObject" icon="Exclamation" />
           </Target>
         </Action>
       </EventHandler>
@@ -364,6 +357,16 @@
             </Action>
           </Step>
         </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentAuto.ButtonSetToAuto.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentAuto" widgetRefId="ButtonSetToAuto" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gMode">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+          </Target>
+        </Action>
       </EventHandler>
     </EventBinding>
   </Bindings>
