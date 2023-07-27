@@ -6,19 +6,28 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	
+	
+	//-------FUNCTION---BLOCK---WYWOLANIE-------//
 	gMotorBeltAxisBasic();
 	
 	gAxis_1;
-	
 	gExposureTime;
 	gSetFocus;
 
-	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
 	
+	//----------ALARM----------//
+	IF gAlarmHardware THEN								//if module is not ok the error will occour and manual mode will be stopped
+		gActuatorByte := 2#0000_0000_0000_0000;
+		gMotorBeltAxisBasic.MoveVelocity := 0;
+		gMotorBeltAxisBasic.MoveAdditive := 0;
+		gMotorBeltAxisBasic.Home := 0;
+		gMotorBeltAxisBasic.Power := 0;
+	END_IF;
+		
 
 	
 	//--------------DIRECTION---CHANGES--------------//
-	IF DirectionChangeVelocity THEN
+	IF DirectionChangeVelocity THEN						//changing the direction of the manual distance and manual velocity
 		DirectionChangeVelocity := 0;
 		ManualVelocity := (-1)*ManualVelocity;
 	END_IF;
@@ -31,13 +40,13 @@ PROGRAM _CYCLIC
 	
 	//---------AXIS---VARIABLES---ASSIGMENT----------//
 	
-	IF gMode = 1 THEN
+	IF gMode = 1 THEN									//assigning variables value of distance and velocity
 		gMotorBeltParType.Distance := ManualDistance;
 		gMotorBeltParType.Velocity := ManualVelocity;
 	END_IF;
 	
 	//-----------------MANUAL---STOP-----------------//
-	IF ManualStop THEN
+	IF ManualStop THEN									//machine stop
 		ManualStop := 0;
 		gActuatorByte := 2#0000_0000_0000_0000;
 		gMotorBeltAxisBasic.MoveVelocity := 0;
@@ -47,9 +56,6 @@ PROGRAM _CYCLIC
 		ManualStep := MANUAL_WAIT;
 		ManualStepAct := MANUAL_ACTUATOR_WAIT;
 	END_IF;
-
-	FlagVelAddOff;
-	
 	
 	//----------------------MANUAL---MODE---CHECK---CONDITION----------------------//
 	IF (gMode = 1) THEN
@@ -61,13 +67,13 @@ PROGRAM _CYCLIC
 				FlagVelAddOff := 1;
 				FlagAdd := 0;
 				FlagVel := 0;
-				IF BeltMoveAdditive THEN
+				IF BeltMoveAdditive THEN				//choosing between axis movement modes; additive
 					gMotorBeltAxisBasic.Home := 0;
 					BeltMoveAdditive := 0;
 					FlagVelAddOff := 0;
 					FlagAdd := 1;
 					ManualStep := MANUAL_BELT_SET_ADDITIVE;
-				ELSIF BeltMoveVelocityOn THEN
+				ELSIF BeltMoveVelocityOn THEN			//velocity
 					gMotorBeltAxisBasic.Home := 0;
 					BeltMoveVelocityOn := 0;
 					FlagVelAddOff := 0;
@@ -76,7 +82,7 @@ PROGRAM _CYCLIC
 				END_IF;
 
 			MANUAL_BELT_SET_ADDITIVE:
-				ManualVelocity := ABS(ManualVelocity);
+				ManualVelocity := ABS(ManualVelocity);	//to avoid error: velocity and distance cannot have a negative value at the same time)
 				gMotorBeltAxisBasic.Power := 0;
 				gMotorBeltAxisBasic.Power := 1;
 				IF gMotorBeltAxisBasic.PowerOn THEN
@@ -112,8 +118,6 @@ PROGRAM _CYCLIC
 						ManualStep := MANUAL_WAIT;
 					END_IF;
 				END_IF;
-			
-			MANUAL_BELT_ERROR:
 				
 		END_CASE;
 		
@@ -157,24 +161,23 @@ PROGRAM _CYCLIC
 				gActuatorByte := 2#0000_0000_0000_0000;
 				ManualStepAct := MANUAL_ACTUATOR_WAIT;
 			
-			MANUAL_ACTUATOR_ERROR:
-			
 		END_CASE;
 		
 		//------------END---OF---STATE---MACHINE---ACTUATORS---------------//
-		IF AxisPowerOn THEN
+		
+		IF AxisPowerOn THEN 											//monostable button enabling axis
 			AxisPowerOn := 0;
-			gMotorBeltAxisBasic.Power :=1;	//Axis power off is enabling by the button that is binded with stop step
+			gMotorBeltAxisBasic.Power :=1;								//Axis power off is enabling by the button that is binded with stop step
 		END_IF;
 		
-		IF FlagVelAddOff AND gMotorBeltAxisBasic.PowerOn THEN
+		IF FlagVelAddOff AND gMotorBeltAxisBasic.PowerOn THEN			//flag for visualisation purposes
 			JogEnableVar := 1;
 		ELSE
 			JogEnableVar := 0;
 		END_IF;
 		
 		//------------PHOTO---FUNCTIONS---------------//
-		IF PhotoShoot THEN
+		IF PhotoShoot THEN					//taking a photo
 			PhotoShoot :=0;
 			gImageAcq 	:= 1;
 			IF gImageAcq = 1 THEN
@@ -182,7 +185,7 @@ PROGRAM _CYCLIC
 			END_IF;
 		END_IF;
 	
-		IF PhotoShow THEN
+		IF PhotoShow THEN					//displaying a photo
 			gDisplayImg := 1;
 		ELSE
 			gDisplayImg := 0;
@@ -193,21 +196,22 @@ PROGRAM _CYCLIC
 	
 	
 	//----------------------------FLAG---SECTION----------------------------//	
-	IF (FlagActDosing = FALSE AND FlagActDosingOff = FALSE) THEN
+	IF (FlagActDosing = FALSE AND FlagActDosingOff = FALSE) THEN 	//if the power of the axis is enabled
 		FlagActDosingOff := TRUE;
 	END_IF;
-	IF (FlagActSorting = FALSE AND FlagActSortingOff = FALSE) THEN
+	
+	IF (FlagActSorting = FALSE AND FlagActSortingOff = FALSE) THEN	//if the power of the axis is enabled
 		FlagActSortingOff := TRUE;
 	END_IF;
 	
 	
-	IF gMotorBeltAxisBasic.PowerOn THEN
+	IF gMotorBeltAxisBasic.PowerOn THEN								//if the power of the axis is enabled
 		AxisPowerOff := 1;
 	ELSE
 		AxisPowerOff := 0;
 	END_IF;
 	
-	IF gMode = 1 THEN
+	IF gMode = 1 THEN												//flag for manual mode choosen
 		FlagManual := 1;
 		FlagNotManual := 0;
 	ELSE
@@ -215,7 +219,7 @@ PROGRAM _CYCLIC
 		FlagManual := 0;
 	END_IF;
 	
-	IF ManualStepAct = MANUAL_ACTUATOR_DOSING THEN
+	IF ManualStepAct = MANUAL_ACTUATOR_DOSING THEN					//flag for dosing actuator
 		FlagActBoth := 0;
 		FlagActBothOff := NOT(FlagActBoth);
 		FlagActDosing := 1;
@@ -224,7 +228,7 @@ PROGRAM _CYCLIC
 		FlagActNoneOff := NOT(FlagActNone);
 		FlagActSorting := 0;
 		FlagActSortingOff := NOT(FlagActSorting);
-	ELSIF ManualStepAct = MANUAL_ACTUATOR_SORTING THEN
+	ELSIF ManualStepAct = MANUAL_ACTUATOR_SORTING THEN				//flag for sorting actuator
 		FlagActBoth := 0;
 		FlagActBothOff := NOT(FlagActBoth);
 		FlagActDosing := 0;
@@ -233,7 +237,7 @@ PROGRAM _CYCLIC
 		FlagActNoneOff := NOT(FlagActNone);
 		FlagActSorting := 1;
 		FlagActSortingOff := NOT(FlagActSorting);
-	ELSIF ManualStepAct = MANUAL_ACTUATOR_BOTH THEN
+	ELSIF ManualStepAct = MANUAL_ACTUATOR_BOTH THEN					//flag for both actuators
 		FlagActBoth := 1;
 		FlagActBothOff := NOT(FlagActBoth);
 		FlagActDosing := 1;
@@ -242,7 +246,7 @@ PROGRAM _CYCLIC
 		FlagActNoneOff := NOT(FlagActNone);
 		FlagActSorting := 1;
 		FlagActSortingOff := NOT(FlagActSorting);
-	ELSIF ManualStepAct = MANUAL_ACTUATOR_NONE THEN
+	ELSIF ManualStepAct = MANUAL_ACTUATOR_NONE THEN					//flag for none of actuators
 		FlagActBoth := 0;
 		FlagActBothOff := NOT(FlagActBoth);
 		FlagActDosing := 0;
@@ -253,16 +257,18 @@ PROGRAM _CYCLIC
 		FlagActSortingOff := NOT(FlagActSorting);
 	END_IF;
 	
-	IF (((gMotorBeltParType.Distance < 0) AND gMotorBeltAxisBasic.MoveActive AND FlagAdd) OR ((gMotorBeltParType.Velocity <0) AND gMotorBeltAxisBasic.MoveActive AND FlagVel)) THEN
+	IF (((gMotorBeltParType.Distance < 0) AND gMotorBeltAxisBasic.MoveActive AND FlagAdd) OR ((gMotorBeltParType.Velocity <0) AND gMotorBeltAxisBasic.MoveActive AND FlagVel)) THEN		//flag for visibility of left arrow
 		FlagArrowLeft := 1;
 		FlagArrowRight := 0;
-	ELSIF (((gMotorBeltParType.Distance > 0) AND gMotorBeltAxisBasic.MoveActive AND FlagAdd) OR ((gMotorBeltParType.Velocity > 0) AND gMotorBeltAxisBasic.MoveActive AND FlagVel)) THEN
+	ELSIF (((gMotorBeltParType.Distance > 0) AND gMotorBeltAxisBasic.MoveActive AND FlagAdd) OR ((gMotorBeltParType.Velocity > 0) AND gMotorBeltAxisBasic.MoveActive AND FlagVel)) THEN	//flag for visibility of right arrow
 		FlagArrowRight := 1;
 		FlagArrowLeft := 0;
-	ELSE
+	ELSE								//flag for visibility of none of arrows
 		FlagArrowRight := 0;
 		FlagArrowLeft := 0;
 	END_IF;
+	
+	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
 	//----------------------END---OF---FLAG---SECTION----------------------------//
 	
 END_PROGRAM

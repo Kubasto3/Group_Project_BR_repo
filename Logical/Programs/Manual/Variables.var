@@ -1,5 +1,5 @@
 VAR
-	JogEnableVar : BOOL;
+	JogEnableVar : BOOL; (*Jog enablling variable*)
 	FlagAdd : BOOL; (*Flag that enables user to see if additive move is active*)
 	ManualStep : ManualStepsEnum; (*Enum steps of Manual's state machine*)
 	ManualStop : BOOL := FALSE; (*Stopping all of the processes*)
