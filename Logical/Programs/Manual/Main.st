@@ -13,19 +13,9 @@ PROGRAM _CYCLIC
 	gExposureTime;
 	gSetFocus;
 
-	
 	NotMoveActive := NOT(gMotorBeltAxisBasic.MoveActive);
 	
-	IF PhotoShoot THEN
-		PhotoShoot :=0;
-	END_IF;
-	
-	IF PhotoShow THEN
-		gDisplayImg := 1;
-	ELSE
-		gDisplayImg := 0;
-	END_IF;
-	
+
 	
 	//--------------DIRECTION---CHANGES--------------//
 	IF DirectionChangeVelocity THEN
@@ -122,25 +112,29 @@ PROGRAM _CYCLIC
 						ManualStep := MANUAL_WAIT;
 					END_IF;
 				END_IF;
+			
+			MANUAL_BELT_ERROR:
+				
 		END_CASE;
 		
 		//-------------------STATE---MACHINE---ACTUATORS---------------------//
 		CASE ManualStepAct OF
 			MANUAL_ACTUATOR_WAIT:
-				IF ManualActuatorDosing THEN
+				IF ManualActuatorDosing THEN					//monostable button for dosing actuator
 					ManualActuatorDosing := 0;
 					ManualStepAct := MANUAL_ACTUATOR_DOSING;
-				ELSIF ManualActuatorSorting THEN
+				ELSIF ManualActuatorSorting THEN				//monostable button for sorting actuator
 					ManualActuatorSorting := 0;
 					ManualStepAct := MANUAL_ACTUATOR_SORTING;
-				ELSIF ManualActuatorBoth THEN
+				ELSIF ManualActuatorBoth THEN					//monostable button for both actuators
 					ManualActuatorBoth := 0;
 					ManualStepAct := MANUAL_ACTUATOR_BOTH;
-				ELSIF ManualActuatorNone THEN
+				ELSIF ManualActuatorNone THEN					//monostable button for dosing actuator
 					ManualActuatorNone := 0;
 					ManualStepAct := MANUAL_ACTUATOR_NONE;
 				END_IF;
 			
+				//actuating actuator responsibile for DOSING an element
 			MANUAL_ACTUATOR_DOSING:
 				gActuatorByte := 2#0000_0000_0000_0000;
 				gActuatorByte := 2#0000_0000_0000_0100;
@@ -162,6 +156,9 @@ PROGRAM _CYCLIC
 			MANUAL_ACTUATOR_NONE:
 				gActuatorByte := 2#0000_0000_0000_0000;
 				ManualStepAct := MANUAL_ACTUATOR_WAIT;
+			
+			MANUAL_ACTUATOR_ERROR:
+			
 		END_CASE;
 		
 		//------------END---OF---STATE---MACHINE---ACTUATORS---------------//
@@ -169,7 +166,21 @@ PROGRAM _CYCLIC
 			AxisPowerOn := 0;
 			gMotorBeltAxisBasic.Power :=1;	//Axis power off is enabling by the button that is binded with stop step
 		END_IF;
+		
+		//------------PHOTO---FUNCTIONS---------------//
+		IF PhotoShoot THEN
+			PhotoShoot :=0;
+		END_IF;
+	
+		IF PhotoShow THEN
+			gDisplayImg := 1;
+		ELSE
+			gDisplayImg := 0;
+		END_IF;
+		//---------END---OF---PHOTO---FUNCTIONS------------//
+		
 	END_IF;
+	
 	
 	//----------------------------FLAG---SECTION----------------------------//	
 	IF (FlagActDosing = FALSE AND FlagActDosingOff = FALSE) THEN
@@ -179,14 +190,6 @@ PROGRAM _CYCLIC
 		FlagActSortingOff := TRUE;
 	END_IF;
 	
-	//strzalka
-	//robienie zdjecia
-	
-	//	IF ((ManualStep = MANUAL_BELT_SET_ADDITIVE) OR (ManualStep = MANUAL_BELT_MOVE_ADDITIVE)) AND  THEN
-	//	  	
-	//	ELSIF ManualStep = 
-	//		
-	//	END_IF;
 	
 	IF gMotorBeltAxisBasic.PowerOn THEN
 		AxisPowerOff := 1;
