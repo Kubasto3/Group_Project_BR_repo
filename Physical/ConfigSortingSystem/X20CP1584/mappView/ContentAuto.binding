@@ -127,5 +127,13 @@
 <Source xsi:type="opcUa" refId="::Camera:URL" attribute="value" samplingRate="slow" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="PaperImageAuto" attribute="svgContent" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gSortChoiceView" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="PaperImageAuto" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gInWeightMeasure" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="NumericOutputActualWeight" attribute="node" />
+</Binding>
 </Bindings>
 </BindingsSet>

@@ -23,7 +23,7 @@
         <Widget xsi:type="widgets.brease.Label" id="LabelSelectSystem" top="180" left="19" width="141" height="80" zIndex="3" multiLine="true" text="$IAT/Main/Services_SelectMeasurement" wordWrap="true" textAlign="center" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.Button" id="ButtonReset" top="480" left="20" width="360" height="60" zIndex="3" text="&quot;Reset hardware error&quot;" permissionOperate="['Administrator', 'Service']" />
-    <Widget xsi:type="widgets.brease.Button" id="ButtonReset1" top="380" left="20" width="360" height="60" zIndex="4" text="&quot;Reset motor error&quot;" permissionOperate="['Administrator', 'Service']" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonReset" top="480" left="20" width="360" height="60" zIndex="3" text="$IAT/Main/Services_ResetHardwarewError" permissionOperate="['Administrator', 'Service']" />
+    <Widget xsi:type="widgets.brease.Button" id="ButtonReset1" top="380" left="20" width="360" height="60" zIndex="4" text="$IAT/Main/Services_ResetMotorError" permissionOperate="['Administrator', 'Service']" />
   </Widgets>
 </Content>

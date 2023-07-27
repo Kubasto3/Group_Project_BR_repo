@@ -78,6 +78,7 @@
         <Variable Name="gRecipeXml" />
         <Variable Name="gAlarmHardware" />
         <Variable Name="gAlarmHardAck" />
+        <Variable Name="gInWeightMeasure" EngineeringUnitId="3" />
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0" />
