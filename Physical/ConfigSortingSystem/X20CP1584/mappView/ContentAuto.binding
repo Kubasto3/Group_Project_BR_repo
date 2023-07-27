@@ -122,5 +122,10 @@
 <Source xsi:type="opcUa" refId="::Auto:Rectangle1_Left_Visibility" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="RectangleL1" attribute="visible" />
 </Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Camera:URL" attribute="value" samplingRate="slow" />
+<Target xsi:type="brease" contentRefId="ContentAuto" widgetRefId="PaperImageAuto" attribute="svgContent" />
+</Binding>
 </Bindings>
 </BindingsSet>
