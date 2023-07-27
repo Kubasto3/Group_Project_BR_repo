@@ -20,11 +20,11 @@ PROGRAM _CYCLIC
 		PhotoShoot :=0;
 	END_IF;
 	
-//	IF PhotoShow THEN
-//		gDisplayImg := 1;
-//	ELSE
-//		gDisplayImg := 0;
-//	END_IF;
+	//	IF PhotoShow THEN
+	//		gDisplayImg := 1;
+	//	ELSE
+	//		gDisplayImg := 0;
+	//	END_IF;
 	
 	
 	//--------------DIRECTION---CHANGES--------------//
@@ -69,15 +69,19 @@ PROGRAM _CYCLIC
 			
 			MANUAL_WAIT:
 				FlagVelAddOff := 1;
+				FlagAdd := 0;
+				FlagVel := 0;
 				IF BeltMoveAdditive THEN
 					gMotorBeltAxisBasic.Home := 0;
 					BeltMoveAdditive := 0;
 					FlagVelAddOff := 0;
+					FlagAdd := 1;
 					ManualStep := MANUAL_BELT_SET_ADDITIVE;
 				ELSIF BeltMoveVelocityOn THEN
 					gMotorBeltAxisBasic.Home := 0;
 					BeltMoveVelocityOn := 0;
 					FlagVelAddOff := 0;
+					FlagVel := 1;
 					ManualStep := MANUAL_BELT_SET_VELOCITY;
 				END_IF;
 
@@ -87,7 +91,6 @@ PROGRAM _CYCLIC
 				gMotorBeltAxisBasic.Power := 1;
 				IF gMotorBeltAxisBasic.PowerOn THEN
 					gMotorBeltAxisBasic.Home := 0;
-				
 					ManualStep := MANUAL_BELT_MOVE_ADDITIVE;	  
 				END_IF;
 			
@@ -176,11 +179,14 @@ PROGRAM _CYCLIC
 		FlagActSortingOff := TRUE;
 	END_IF;
 	
-//	IF ((ManualStep = MANUAL_BELT_SET_ADDITIVE) OR (ManualStep = MANUAL_BELT_MOVE_ADDITIVE)) AND  THEN
-//	  	
-//	ELSIF ManualStep = 
-//		
-//	END_IF;
+	//strzalka
+	//robienie zdjecia
+	
+	//	IF ((ManualStep = MANUAL_BELT_SET_ADDITIVE) OR (ManualStep = MANUAL_BELT_MOVE_ADDITIVE)) AND  THEN
+	//	  	
+	//	ELSIF ManualStep = 
+	//		
+	//	END_IF;
 	
 	IF gMotorBeltAxisBasic.PowerOn THEN
 		AxisPowerOff := 1;
@@ -234,16 +240,17 @@ PROGRAM _CYCLIC
 		FlagActSortingOff := NOT(FlagActSorting);
 	END_IF;
 	
-	IF ((gMotorBeltParType.Distance < 0) AND gMotorBeltAxisBasic.MoveActive) OR ((gMotorBeltParType.Velocity <0) AND gMotorBeltAxisBasic.MoveActive) THEN
+	IF (((gMotorBeltParType.Distance < 0) AND gMotorBeltAxisBasic.MoveActive AND FlagAdd) OR ((gMotorBeltParType.Velocity <0) AND gMotorBeltAxisBasic.MoveActive AND FlagVel)) THEN
 		FlagArrowLeft := 1;
 		FlagArrowRight := 0;
-	ELSIF ((gMotorBeltParType.Distance > 0) AND gMotorBeltAxisBasic.MoveActive) THEN
+	ELSIF (((gMotorBeltParType.Distance > 0) AND gMotorBeltAxisBasic.MoveActive AND FlagAdd) OR ((gMotorBeltParType.Velocity > 0) AND gMotorBeltAxisBasic.MoveActive AND FlagVel)) THEN
 		FlagArrowRight := 1;
 		FlagArrowLeft := 0;
 	ELSE
 		FlagArrowRight := 0;
 		FlagArrowLeft := 0;
 	END_IF;
+	
 	
 	//----------------------END---OF---FLAG---SECTION----------------------------//
 	

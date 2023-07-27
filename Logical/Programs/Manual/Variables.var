@@ -1,4 +1,5 @@
 VAR
+	FlagAdd : BOOL;
 	ManualStep : ManualStepsEnum; (*Enum steps of Manual's state machine*)
 	ManualStop : BOOL := FALSE; (*Stopping all of the processes*)
 	ManualDistance : LREAL := 300; (*Setting distance of the belt move [mm]*)
@@ -36,4 +37,5 @@ VAR
 	CamShoot : BOOL;
 	PhotoShoot : BOOL;
 	PhotoShow : BOOL;
+	FlagVel : BOOL;
 END_VAR
