@@ -119,9 +119,9 @@ PROGRAM _CYCLIC
 
 	//setting variable for recognised model with acknowledgement of 2 different types of B&R logos
 	IF (RecognisedModel=1) OR (RecognisedModel=3) THEN
-		gRecognisedModel := 1;
+		gSorting.RecognisedModel := 1;
 	ELSE
-		gRecognisedModel := RecognisedModel;
+		gSorting.RecognisedModel := RecognisedModel;
 	END_IF
 	
 	//calling variables used in I/O matching of camera to delete warnings

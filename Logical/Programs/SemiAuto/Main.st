@@ -9,6 +9,9 @@ END_PROGRAM
 PROGRAM _CYCLIC
 	//CODE WORKS ONLY WHEN MANUAL MODE IS OFF	
 	
+	SemiAutoModeSelected := (gMode=2);
+	
+	
 	IF  gMode = 2 THEN
 		// MOTOR MANAGEMENT
 		gMotorBeltAxisBasic.Enable 		:= TRUE;

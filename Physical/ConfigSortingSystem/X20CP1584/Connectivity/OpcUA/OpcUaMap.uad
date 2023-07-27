@@ -159,6 +159,7 @@
         <Variable Name="MotorPos" EngineeringUnitId="1" />
         <Variable Name="MotorVel" EngineeringUnitId="2" />
         <Variable Name="IsEnglishSelected" />
+        <Variable Name="SemiAutoModeSelected" />
       </Task>
       <Task Name="ProgramRec" />
     </Module>

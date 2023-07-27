@@ -41,11 +41,7 @@ END_VAR
 VAR
 	QuantityLeftStorage : UINT;
 	QuantityRightStorage : UINT;
-END_VAR
-VAR CONSTANT
-	RESET_ITEM_MEM_WEIGHT : USINT := 0;
-END_VAR
-VAR
+	RESET_ITEM_MEM_WEIGHT : {REDUND_UNREPLICABLE} USINT := 0;
 	Start : BOOL := FALSE;
 	State : ProgramStatesEnum := STOP;
 	Stop : BOOL := FALSE;
