@@ -30,4 +30,5 @@ VAR
 	gUIConnect : MpRecipeUIConnectType;
 	gUISetup : MpRecipeUISetupType;
 	gWeightDetected : BOOL := FALSE;
+	gDisplayImg : BOOL;
 END_VAR

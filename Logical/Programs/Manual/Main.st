@@ -20,11 +20,11 @@ PROGRAM _CYCLIC
 		PhotoShoot :=0;
 	END_IF;
 	
-	//	IF PhotoShow THEN
-	//		gDisplayImg := 1;
-	//	ELSE
-	//		gDisplayImg := 0;
-	//	END_IF;
+	IF PhotoShow THEN
+		gDisplayImg := 1;
+	ELSE
+		gDisplayImg := 0;
+	END_IF;
 	
 	
 	//--------------DIRECTION---CHANGES--------------//
