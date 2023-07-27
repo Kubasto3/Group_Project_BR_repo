@@ -167,9 +167,19 @@ PROGRAM _CYCLIC
 			gMotorBeltAxisBasic.Power :=1;	//Axis power off is enabling by the button that is binded with stop step
 		END_IF;
 		
+		IF FlagVelAddOff AND gMotorBeltAxisBasic.PowerOn THEN
+			JogEnableVar := 1;
+		ELSE
+			JogEnableVar := 0;
+		END_IF;
+		
 		//------------PHOTO---FUNCTIONS---------------//
 		IF PhotoShoot THEN
 			PhotoShoot :=0;
+			gImageAcq 	:= 1;
+			IF gImageAcq = 1 THEN
+				gImageAcq 	:= 0;	  
+			END_IF;
 		END_IF;
 	
 		IF PhotoShow THEN
@@ -253,8 +263,6 @@ PROGRAM _CYCLIC
 		FlagArrowRight := 0;
 		FlagArrowLeft := 0;
 	END_IF;
-	
-	
 	//----------------------END---OF---FLAG---SECTION----------------------------//
 	
 END_PROGRAM

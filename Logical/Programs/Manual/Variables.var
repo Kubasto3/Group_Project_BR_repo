@@ -1,5 +1,6 @@
 VAR
-	FlagAdd : BOOL;
+	JogEnableVar : BOOL;
+	FlagAdd : BOOL; (*Flag that enables user to see if additive move is active*)
 	ManualStep : ManualStepsEnum; (*Enum steps of Manual's state machine*)
 	ManualStop : BOOL := FALSE; (*Stopping all of the processes*)
 	ManualDistance : LREAL := 300; (*Setting distance of the belt move [mm]*)
@@ -32,10 +33,9 @@ VAR
 	AxisPowerOn : BOOL; (*Enabling power of the motor*)
 	FlagArrowLeft : BOOL; (*Motor is rotating to the left side*)
 	FlagArrowRight : BOOL; (*Motor is rotating to the right side*)
-	AxisPowerOff : BOOL;
-	FlagVelAddOff : BOOL;
-	CamShoot : BOOL;
-	PhotoShoot : BOOL;
-	PhotoShow : BOOL;
-	FlagVel : BOOL;
+	AxisPowerOff : BOOL; (*Turning off the power of the axis*)
+	FlagVelAddOff : BOOL; (*Flag that enables user to see if additive and velocity move is turned off*)
+	PhotoShoot : BOOL; (*Shooting a photo*)
+	PhotoShow : BOOL; (*Displaying a photo*)
+	FlagVel : BOOL; (*Flag that enables user to see if velocity  move is active*)
 END_VAR
