@@ -176,5 +176,16 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gSortChoiceView" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="GroupBoxDetectedItem" attribute="visible" />
 </Binding>
+
+
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Camera:URL" attribute="value" samplingRate="slow" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="PaperImageSemi" attribute="svgContent" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Camera:URL" attribute="value" samplingRate="slow" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="PaperImageManual" attribute="svgContent" />
+</Binding>
 </Bindings>
 </BindingsSet>

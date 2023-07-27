@@ -7,10 +7,9 @@
     <Task Name="SemiAuto" Source="Programs.SemiAuto.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
-  <TaskClass Name="Cyclic#3">
-    <Task Name="Camera" Source="Programs.Camera.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-  </TaskClass>
+  <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
+    <Task Name="Camera" Source="Programs.Camera.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="ProgramRec" Source="Programs.RecipesMgmnt.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
