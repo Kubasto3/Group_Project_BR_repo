@@ -5,6 +5,14 @@
     <prop type="x-BR-TS:Namespace">IAT/Main</prop>
   </header>
   <body>
+    <tu tuid="Camera_test">
+      <tuv xml:lang="pl">
+        <seg>Test led</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Test led</seg>
+      </tuv>
+    </tu>
     <tu tuid="AddUser_AvaibleRoles">
       <tuv xml:lang="pl">
         <seg>Dostępne role</seg>

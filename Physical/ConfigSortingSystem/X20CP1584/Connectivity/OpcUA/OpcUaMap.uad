@@ -118,6 +118,7 @@
         <Variable Name="URL" />
         <Variable Name="Base64Buffer" />
         <Variable Name="ViBaseBuffer" />
+        <Variable Name="ManualLampTest" />
       </Task>
       <Task Name="Manual">
         <Variable Name="BeltMoveAdditive" />

@@ -653,5 +653,15 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="ContentManual.btnTestLed.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="ContentManual" widgetRefId="btnTestLed" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::Camera:ManualLampTest">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>
