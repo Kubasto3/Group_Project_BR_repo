@@ -9,7 +9,6 @@
     <Page refId="PageAlarms" />
     <Page refId="PageCharts" />
     <Page refId="PageDiagnostics" />
-    <Page refId="PageCamera" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -48,7 +47,6 @@
     <Content refId="contentMessageBoxLogin" />
     <Content refId="ContentDiagnostics" />
     <Content refId="ContentAlarmHistory" />
-    <Content refId="ContentCamera" />
     <Content refId="ContentParameters" />
   </Contents>
   <SnippetsSets />

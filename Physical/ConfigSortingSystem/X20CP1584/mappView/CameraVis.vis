@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <vdef:Visualization id="CameraVis" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
-  <StartPage pageRefId="PageCamera" />
-  <Pages>
-    <Page refId="PageCamera" />
-  </Pages>
+  <StartPage pageRefId="" />
+  <Pages />
   <Navigations />
   <BindingsSets>
     <BindingsSet refId="ContentCamera_binding" />
@@ -20,7 +18,6 @@
   </EventBindingsSets>
   <Dialogs />
   <Contents>
-    <Content refId="ContentCamera" />
     <Content refId="ContentParameters" />
   </Contents>
   <SnippetsSets />
