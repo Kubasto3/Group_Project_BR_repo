@@ -76,7 +76,7 @@ PROGRAM _CYCLIC
 	ATON3();
 	IF gMode = 1 THEN
 		CASE sStep OF
-			1:	
+			0:	
 				ATON1.PT := TIME_LAMP_TEST;
 				ATON2.PT := TIME_LAMP_TEST;
 				ATON3.PT := TIME_LAMP_TEST;
@@ -87,29 +87,29 @@ PROGRAM _CYCLIC
 					ManualLampTest := 0;
 					ATON1.IN := TRUE;
 					ATON2.IN := FALSE;
-					sStep := 2;
+					sStep := 1;
 				END_IF;
 		
-			2:
+			1:
 				CameraLED_OPC := 2;
 				IF ATON1.Q THEN
 					ATON2.IN := TRUE;
 					ATON3.IN := FALSE;
+					sStep := 2;
+				END_IF;
+		
+			2:
+				CameraLED_OPC := 3;
+				IF ATON2.Q THEN
 					sStep := 3;
 				END_IF;
 		
 			3:
-				CameraLED_OPC := 3;
-				IF ATON2.Q THEN
-					sStep := 4;
-				END_IF;
-		
-			4:
 				CameraLED_OPC := 4;
 				ATON3.IN := TRUE;
 				ATON2.IN := FALSE;
 				IF ATON3.Q THEN
-					sStep := 1;
+					sStep := 0;
 				END_IF;
 		END_CASE;
 	END_IF;

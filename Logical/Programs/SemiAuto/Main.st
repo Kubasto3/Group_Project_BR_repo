@@ -68,11 +68,8 @@ PROGRAM _CYCLIC
 		TimerAfterDetect := TimerTonDetect.Q;
 		TimerTonDetect();
 	
-		// COUNTERS
-		CTU_QuantityLeft(CU := AddToLeft, RESET := CTU_Reset_Left, PV := gMaxLeftStorage);
-		CTU_QuantityRight(CU := AddToRight, RESET := CTU_Reset_Right, PV := gMaxRightStorage);
-		QuantityLeftStorage  := CTU_QuantityLeft.CV;
-		QuantityRightStorage := CTU_QuantityRight.CV;
+		// COUNTERS - PRZENIESIONY NA SZYBKO DO AUTO
+
 	END_IF; 
 
 	
@@ -108,21 +105,21 @@ PROGRAM _CYCLIC
 			
 		INIT:
 			StringState 		:= 'Inicjalizacja';
-			ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
-			AddToRight 			:= FALSE;
-			AddToLeft 			:= FALSE;
+			gAddToRight 		:= FALSE;
+			gAddToLeft 			:= FALSE;
 			TimerTonActuatorIn 	:= FALSE;
 			ActuatorSorting 	:= FALSE;
 			ActuatorPushing 	:= FALSE;
 			MotorMoveAbsolute 	:= FALSE;
 			MotorPower 			:= TRUE;
 			MotorHome 			:= TRUE;
-			gPicNotRecognised	:= FALSE; //pozniej musi zniknac, reset z poziomu alarmow lepszy
+			gPicNotRecognised	:= FALSE; 
 			State 				:= START;
 			
 		START: 
 			StringState 		:= 'Gotowy do startu';
 			IF (ItemDetected AND Approval) THEN
+				ItemWeightMeasured 	:= RESET_ITEM_MEM_WEIGHT;
 				Approval := 0;
 				State := DETECTION;
 			END_IF;
@@ -147,8 +144,8 @@ PROGRAM _CYCLIC
 			StringState := 'Robienie zdjecia';
 			gImageAcq 	:= TRUE;
 			IF TimerCameraPicDone AND Approval THEN
-				StringState := 'Zdjecie zrobione';
 				gDisplayImg := TRUE;
+				StringState := 'Zdjecie zrobione';
 				Approval := 0;
 				IF gSorting.RecognisedModel = 0 THEN 						//0
 					gImageAcq 			  := FALSE;
@@ -173,7 +170,7 @@ PROGRAM _CYCLIC
 				END_IF;
 			END_IF;
 			
-			// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, EQUAL AND ABOVE ItemWeightChoosen INTO THE RIGHT	
+		// ABOVE 1 TO ItemWeightChoosen ITEM FALL INTO THE LEFT, EQUAL AND ABOVE ItemWeightChoosen INTO THE RIGHT	
 		SORT_WEIGHT: 
 			StringState := 'Sortowanie wagowe';
 			IF ItemWeightMeasured > 1 AND ItemWeightMeasured < gSorting.ItemWeightChoosen AND Approval THEN
@@ -246,13 +243,13 @@ PROGRAM _CYCLIC
 			StringState := 'Zepchniecie detalu z tasmy do zbiornika lewego';
 			MotorMoveAbsolute := FALSE;
 			ActuatorSorting   := TRUE;
-			AddToLeft 		  := TRUE;
+			gAddToLeft 		  := TRUE;
 			IF TimerActuatorOut THEN
 				State := INIT;
 			END_IF;
 
 		SORT_STORAGE_RIGHT:
-			AddToRight := TRUE;
+			gAddToRight := TRUE;
 			MotorMoveAbsolute := FALSE;
 			State := INIT;
 		

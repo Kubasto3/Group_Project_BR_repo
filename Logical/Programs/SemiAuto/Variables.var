@@ -12,12 +12,6 @@ VAR CONSTANT
 	ACTUATOR_BYTE_SORT : INT := 2#0000000000000001;
 END_VAR
 VAR
-	AddToLeft : BOOL;
-	AddToRight : BOOL;
-	CTU_QuantityLeft : CTU;
-	CTU_QuantityRight : CTU;
-	CTU_Reset_Left : BOOL := FALSE;
-	CTU_Reset_Right : BOOL;
 	IsEnglishSelected : BOOL := TRUE;
 	ItemDetected : BOOL := FALSE;
 	ItemWeight : USINT;
@@ -38,12 +32,6 @@ END_VAR
 VAR CONSTANT
 	MOTOR_DIST_LEFT : UINT := 90;
 	MOTOR_DIST_RIGHT : UINT := 320;
-END_VAR
-VAR
-	QuantityLeftStorage : UINT;
-	QuantityRightStorage : UINT;
-END_VAR
-VAR CONSTANT
 	RESET_ITEM_MEM_WEIGHT : USINT := 0;
 END_VAR
 VAR

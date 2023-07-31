@@ -1,11 +1,10 @@
 
 PROGRAM _INIT
-	(* Insert code here *)
+
 	 
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	//FileName := 'elo';
 	
 	gMpRecipeXML_0.MpLink := 		ADR(gRecipeXml);
 	gMpRecipeXML_0.Enable := 		TRUE;
